@@ -138,6 +138,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'esperimento_di_prova',
+        'display_name': "Esperimento di Prova",
+        'num_demo_participants': 2,
+        'app_sequence': ['esperimento_di_prova', 'payment_info'],
+    },
+    {
         'name': 'public_goods',
         'display_name': "Public Goods",
         'num_demo_participants': 3,
