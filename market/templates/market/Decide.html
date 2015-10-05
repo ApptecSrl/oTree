@@ -1,0 +1,17 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Scegli il tuo prezzo e la tua qualita'
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.price with label="Scegli un numero tra 0 e 400 per il tuo prezzo" %}
+    {%formfield player.quality with label="Scegli un numero tra 0 e 400 per la tua qualita'" %}
+
+<p>{% next_button %}</p>
+
+    {% include instructions %}
+
+{% endblock %}
