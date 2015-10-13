@@ -47,10 +47,11 @@ class Group(otree.models.BaseGroup):
         q1 = players[0].quality
         q2 = players[1].quality
         share1, share2 = calculator(q1, q2, p1, p2, Constants.alpha)
-        print 'share 1: ', share1, 'type ', type(share1)
-        print 'share 2: ', share2, 'type ', type(share2)
+
         imp1 = Constants.efficiency * (400 - q1) * share1
         imp2 = Constants.efficiency * (400 - q2) * share2
+        players[0].impact = imp1
+        players[1].impact = imp2
         tmp_payoff1 = float(p1 - q1) * float(share1)
         tmp_payoff2 = float(p2 - q2) * float(share2)
         print 'payoff 1: ', tmp_payoff1, 'type', type(tmp_payoff1)
@@ -67,6 +68,7 @@ class Group(otree.models.BaseGroup):
             players[1].payoff = c(0)
 
 
+
 class Player(otree.models.BasePlayer):
     # <built-in>
     group = models.ForeignKey(Group, null=True)
@@ -80,8 +82,12 @@ class Player(otree.models.BasePlayer):
         doc="""Price player chooses to sell product for"""
     )
 
+    maxQ=min(price, Constants.maximum_price)
+
+    #print 'price = ', price
+
     quality = models.CurrencyField(
-        min=0, max=Constants.maximum_price,
+        min=0, max=maxQ,
         doc="""Price player chooses to produce with quality equal to"""
     )
 
@@ -91,6 +97,10 @@ class Player(otree.models.BasePlayer):
     )
 
     share = models.FloatField(min=0, max=1)
+
+    impact = models.CurrencyField(
+        doc="""Positive impact due to quality chosen"""
+    )
 
     def other_player(self):
         """Returns the opponent of the current player"""

@@ -13,10 +13,11 @@
 {% block content %}
 
     {% formfield player.price with label="Scegli un numero tra 0 e 400 per il tuo prezzo" %}
+
     {% formfield player.quality with label="Scegli un numero tra 0 e il prezzo scelto per la tua qualita'" %}
 <p>
     {% blocktrans trimmed %}
-        Turno {{ self.subsession.round_number }} di {{ Constants.num_rounds }}
+        Turno {{ turn }} di {{ Constants.num_rounds }}
     {% endblocktrans %}
 <p>
 

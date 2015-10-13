@@ -18,11 +18,11 @@ else:
 # IS_OTREE_DOT_ORG is only used on demo.otree.org.
 # you can assume it is None/''/0.
 if os.environ.get('IS_OTREE_DOT_ORG') in {None, '', '0'}:
-    ADMIN_PASSWORD = 'otree'
+    ADMIN_PASSWORD = 'maremmaMaiala'
     # don't share this with anybody.
     # Change this to something unique (e.g. mash your keyboard),
     # and then delete this comment.
-    SECRET_KEY = 'zzzzzzzzzzzzzzzzzzzzzzzzzzz'
+    SECRET_KEY = 'beeLabbe'
 else:
     # ignore the next 2 lines;
     # only used on demo.otree.org
@@ -37,7 +37,6 @@ DATABASES = {
     )
 }
 
-
 ADMIN_USERNAME = 'admin'
 
 # AUTH_LEVEL:
@@ -50,7 +49,8 @@ ADMIN_USERNAME = 'admin'
 # to DEMO. This will allow people to play in demo mode, but not access
 # the full admin interface.
 
-AUTH_LEVEL = os.environ.get('OTREE_AUTH_LEVEL')
+AUTH_LEVEL = 'EXPERIMENT'
+# AUTH_LEVEL = os.environ.get('OTREE_AUTH_LEVEL')
 
 # ACCESS_CODE_FOR_DEFAULT_SESSION:
 # If you have a "default session" set,
@@ -66,14 +66,13 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = True
 
 
 # e.g. en-gb, de-de, it-it, fr-fr.
 # see: https://docs.djangoproject.com/en/1.6/topics/i18n/
-LANGUAGE_CODE = 'en-us'
-
+LANGUAGE_CODE = 'it'
 
 INSTALLED_APPS = [
     'otree',
@@ -117,7 +116,7 @@ mturk_hit_settings = {
     'frame_height': 500,
     'preview_template': 'global/MTurkPreview.html',
     'minutes_allotted_per_assignment': 60,
-    'expiration_hours': 7*24, # 7 days
+    'expiration_hours': 7 * 24,  # 7 days
     #'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',# to prevent retakes
     'qualification_requirements': [
         qualification.LocaleRequirement("EqualTo", "US"),
@@ -128,8 +127,9 @@ mturk_hit_settings = {
 }
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.01,
-    'participation_fee': 10.00,
+    'real_world_currency_per_point': 0.20,
+    'participation_fee': 0.00,
+
     'num_bots': 12,
     'doc': "",
     'group_by_arrival_time': False,
@@ -155,165 +155,153 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': ['trust', 'payment_info'],
     },
-    {
-        'name': 'trust_simple',
-        'display_name': "Trust Game (simple version from tutorial)",
-        'num_demo_participants': 2,
-        'app_sequence': ['trust_simple'],
-    },
-    {
-        'name': 'beauty',
-        'display_name': "Beauty Contest",
-        'num_demo_participants': 5,
-        'num_bots': 5,
-        'app_sequence': ['beauty', 'payment_info'],
-    },
-    {
-        'name': 'survey',
-        'display_name': "Survey",
-        'num_demo_participants': 1,
-        'app_sequence': ['survey', 'payment_info'],
-    },
-    {
-        'name': 'prisoner',
-        'display_name': "Prisoner's Dilemma",
-        'num_demo_participants': 2,
-        'app_sequence': ['prisoner', 'payment_info'],
-    },
-    {
-        'name': 'ultimatum',
-        'display_name': "Ultimatum (randomized: strategy vs. direct response)",
-        'num_demo_participants': 2,
-        'app_sequence': ['ultimatum', 'payment_info'],
-    },
-    {
-        'name': 'ultimatum_strategy',
-        'display_name': "Ultimatum (strategy method treatment)",
-        'num_demo_participants': 2,
-        'app_sequence': ['ultimatum', 'payment_info'],
-        'treatment': 'strategy',
-    },
-    {
-        'name': 'ultimatum_non_strategy',
-        'display_name': "Ultimatum (direct response treatment)",
-        'num_demo_participants': 2,
-        'app_sequence': ['ultimatum', 'payment_info'],
-        'treatment': 'direct_response',
-    },
-    {
-        'name': 'battle_of_the_sexes',
-        'display_name': "Battle of the Sexes",
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'battle_of_the_sexes', 'payment_info'
-        ],
-    },
-    {
-        'name': 'vickrey_auction',
-        'display_name': "Vickrey Auction",
-        'num_demo_participants': 3,
-        'app_sequence': ['vickrey_auction', 'payment_info'],
-    },
-    {
-        'name': 'volunteer_dilemma',
-        'display_name': "Volunteer's Dilemma",
-        'num_demo_participants': 3,
-        'app_sequence': ['volunteer_dilemma', 'payment_info'],
-    },
-    {
-        'name': 'cournot_competition',
-        'display_name': "Cournot Competition",
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'cournot_competition', 'payment_info'
-        ],
-    },
-    {
-        'name': 'principal_agent',
-        'display_name': "Principal Agent",
-        'num_demo_participants': 2,
-        'app_sequence': ['principal_agent', 'payment_info'],
-    },
+    #     {
+    #         'name': 'trust_simple',
+    #         'display_name': "Trust Game (simple version from tutorial)",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['trust_simple'],
+    #     },
+    #     {
+    #         'name': 'beauty',
+    #         'display_name': "Beauty Contest",
+    #         'num_demo_participants': 5,
+    #         'num_bots': 5,
+    #         'app_sequence': ['beauty', 'payment_info'],
+    #     },
+    # {
+    #     'name': 'survey',
+    #     'display_name': "Survey",
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['survey', 'payment_info'],
+    # },
+    #     {
+    #         'name': 'prisoner',
+    #         'display_name': "Prisoner's Dilemma",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['prisoner', 'payment_info'],
+    #     },
+    #     {
+    #         'name': 'ultimatum',
+    #         'display_name': "Ultimatum (randomized: strategy vs. direct response)",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['ultimatum', 'payment_info'],
+    #     },
+    #     {
+    #         'name': 'ultimatum_strategy',
+    #         'display_name': "Ultimatum (strategy method treatment)",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['ultimatum', 'payment_info'],
+    #         'treatment': 'strategy',
+    #     },
+    #     {
+    #         'name': 'ultimatum_non_strategy',
+    #         'display_name': "Ultimatum (direct response treatment)",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['ultimatum', 'payment_info'],
+    #         'treatment': 'direct_response',
+    #     },
+    #     {
+    #         'name': 'battle_of_the_sexes',
+    #         'display_name': "Battle of the Sexes",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': [
+    #             'battle_of_the_sexes', 'payment_info'
+    #         ],
+    #     },
+    #     {
+    #         'name': 'vickrey_auction',
+    #         'display_name': "Vickrey Auction",
+    #         'num_demo_participants': 3,
+    #         'app_sequence': ['vickrey_auction', 'payment_info'],
+    #     },
+    #     {
+    #         'name': 'volunteer_dilemma',
+    #         'display_name': "Volunteer's Dilemma",
+    #         'num_demo_participants': 3,
+    #         'app_sequence': ['volunteer_dilemma', 'payment_info'],
+    #     },
+    #     {
+    #         'name': 'cournot_competition',
+    #         'display_name': "Cournot Competition",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': [
+    #             'cournot_competition', 'payment_info'
+    #         ],
+    #     },
+    #     {
+    #         'name': 'principal_agent',
+    #         'display_name': "Principal Agent",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['principal_agent', 'payment_info'],
+    #     },
     {
         'name': 'dictator',
         'display_name': "Dictator Game",
         'num_demo_participants': 2,
         'app_sequence': ['dictator', 'payment_info'],
     },
+    #     {
+    #         'name': 'matching_pennies',
+    #         'display_name': "Matching Pennies",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': [
+    #             'matching_pennies', 'payment_info'
+    #         ],
+    #     },
+    #     {
+    #         'name': 'matching_pennies_tutorial',
+    #         'display_name': "Matching Pennies (tutorial version)",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': [
+    #             'matching_pennies_tutorial',
+    #         ],
+    #     },
+    #     {
+    #         'name': 'traveler_dilemma',
+    #         'display_name': "Traveler's Dilemma",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['traveler_dilemma', 'payment_info'],
+    #     },
+    #     {
+    #         'name': 'bargaining',
+    #         'display_name': "Bargaining Game",
+    #         'num_demo_participants': 2,
+    #         'app_sequence': ['bargaining', 'payment_info'],
+    #     },
+    #     {
+    #         'name': 'common_value_auction',
+    #         'display_name': "Common Value Auction",
+    #         'num_demo_participants': 3,
+    #         'app_sequence': ['common_value_auction', 'payment_info'],
+    #     },
     {
-        'name': 'matching_pennies',
-        'display_name': "Matching Pennies",
+        'name': 'market',
+        'display_name': "Market game",
+        'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
-            'matching_pennies', 'payment_info'
+            'market', 'payment_info'
         ],
     },
+         # {
+         #     'name': 'bertrand_competition',
+         #     'display_name': "Bertrand Competition",
+         #     'num_demo_participants': 2,
+         #     'app_sequence': [
+         #         'bertrand_competition', 'payment_info'
+         #     ],
+         # },
     {
-        'name': 'matching_pennies_tutorial',
-        'display_name': "Matching Pennies (tutorial version)",
+        'name': 'prova_sequenza',
+        'display_name': "Sessione lunedi 12 ottobre",
         'num_demo_participants': 2,
+        'participation_fee': 0.00,  #'use_points': False,
         'app_sequence': [
-            'matching_pennies_tutorial',
+            'market', 'dictator', 'payment_info'
         ],
     },
-    {
-        'name': 'traveler_dilemma',
-        'display_name': "Traveler's Dilemma",
-        'num_demo_participants': 2,
-        'app_sequence': ['traveler_dilemma', 'payment_info'],
-    },
-    {
-        'name': 'bargaining',
-        'display_name': "Bargaining Game",
-        'num_demo_participants': 2,
-        'app_sequence': ['bargaining', 'payment_info'],
-    },
-    {
-        'name': 'common_value_auction',
-        'display_name': "Common Value Auction",
-        'num_demo_participants': 3,
-        'app_sequence': ['common_value_auction', 'payment_info'],
-    },
-    {
-        'name': 'stackelberg_competition',
-        'display_name': "Stackelberg Competition",
-        'real_world_currency_per_point': 0.01,
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'stackelberg_competition', 'payment_info'
-        ],
-    },
-    {
-        'name': 'bertrand_competition',
-        'display_name': "Bertrand Competition",
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'bertrand_competition', 'payment_info'
-        ],
-    },
-    {
-        'name': 'stag_hunt',
-        'display_name': "Stag Hunt",
-        'num_demo_participants': 2,
-        'app_sequence': ['stag_hunt', 'payment_info'],
-    },
-    {
-        'name': 'real_effort',
-        'display_name': "Real-effort transcription task",
-        'num_demo_participants': 1,
-        'app_sequence': [
-            'real_effort',
-        ],
-    },
-    {
-        'name': 'lemon_market',
-        'display_name': "Lemon Market Game",
-        'num_demo_participants': 3,
-        'app_sequence': [
-            'lemon_market', 'payment_info'
-        ],
-    },
-]
 
+
+]
 
 otree.settings.augment_settings(globals())

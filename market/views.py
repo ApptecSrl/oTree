@@ -58,6 +58,8 @@ class Decide(Page):
 
     form_model = models.Player
     form_fields = ['price', 'quality']
+    def vars_for_template(self):
+        turn = self.subsession.round_number
 
 
 class ResultsWaitPage(WaitPage):
@@ -79,12 +81,14 @@ class ResultsTemp(Page):
 
         return {
             'table': [
+                (_('Turno numero'), self.subsession.round_number),
                 (_('Il prezzo che hai scelto'), self.player.price),
-                (_('Il prezzo scelto dall\'altro giocatore'), self.player.other_player().price),
                 (_('La qualita\' che hai scelto'), self.player.quality),
+                ('', ''),
+                (_('Il prezzo scelto dall\'altro giocatore'), self.player.other_player().price),
                 (_('La qualita\' scelta dall\'altro giocatore'), self.player.other_player().quality),
                 ('', ''),
-                (_('La tua quota di mercato in percentuale'), loc_share),
+                (_('La tua quota di mercato'), format(self.player.share, '.2%')),
                 (_('Il tuo profitto eventualmente risultante se questo fosse il periodo pagato'), self.player.pot_payoff),
             ]
         }
@@ -102,16 +106,26 @@ class ResultsFinal(Page):
         print type(self.player.share)
         loc_share=100*round(float(self.player.share), 2)
 
+
+        for p in self.player.in_all_rounds():
+            if p.subsession.round_number == self.session.vars['paying_round']:
+                p_price = p.price
+                p_quality = p.quality
+                p_impact = p.impact
+                p_share = p.share
+
+
+
         return {
             'table': [
                 (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
-                (_('Il prezzo che hai scelto'), self.player.price),
-                (_('Il prezzo scelto dall\'altro giocatore'), self.player.other_player().price),
-                (_('La qualita\' che hai scelto'), self.player.quality),
-                (_('La qualita\' scelta dall\'altro giocatore'), self.player.other_player().quality),
+                (_('Il prezzo che hai scelto nel periodo pagato'), p_price),
+                (_('La qualita\' che hai scelto nel periodo pagato'), p_quality),
+                (_('L\'impatto positivo dovuto alle tue scelte'), p_impact),
+
                 ('', ''),
-                (_('La tua quota di mercato in percentuale'), loc_share),
-                (_('Il tuo profitto risultante'), self.player.payoff),
+                (_('La tua quota di mercato nel periodo pagato'), format(p_share, '.2%')),
+                (_('Il tuo profitto effettivo in questa attivita\''), sum([p.payoff for p in self.player.in_all_rounds()])),
                 #rendere share e impact visibili qui
             ]
         }

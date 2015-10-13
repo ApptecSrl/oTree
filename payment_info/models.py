@@ -36,8 +36,9 @@ class Constants(otree.constants.BaseConstants):
 class Subsession(otree.models.BaseSubsession):
 
     def before_session_starts(self):
-        for p in self.get_players():
-            p.payoff = 0
+         for p in self.get_players():
+             #p.payoff = 0
+             mario=16
 
 
 

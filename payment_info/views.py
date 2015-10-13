@@ -8,9 +8,12 @@ class PaymentInfo(Page):
 
     def vars_for_template(self):
         participant = self.player.participant
+        print self.player.participant.vars
+        soldi = self.player.payoff
         return {
             'redemption_code': participant.label or participant.code,
             'participant': participant,
+            'soldi': soldi,
         }
 
 
