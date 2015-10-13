@@ -1,10 +1,10 @@
 {% extends "global/Instructions.html" %}
+{% load i18n %}
+
 
 {% block instructions %}
-<p>
-You have been randomly and anonymously paired with another participant. Each of you will represent a firm.  Each firm manufactures one unit of the same product at no cost.
-</p>
-<p>
-Each of you privately sets your price, anything from 0 to 100 points. The buyer in the market will always buy one unit of the product at the lower price. In case of a tie, the buyer will buy from one of you at random. Your profit is your price if your product is sold and zero otherwise.
-</p>
+
+{% trans "Sei stato accoppiato casualmente ad un altro partecipante. Ciascuno di voi rappresenta una azienda, che produce lo stesso bene o servizio. Producete un bene a cui sono associate delle ripercussioni negative sulla collettività dal punto di vista sociale od ambientale. All’inizio di ogni round entrambi potete determinare in che misura impiegare la caratteristica Z che vi permette di ridurre l’impatto negativo della vostra produzione dal punto di vista socio-ambientale (ad esempio la proporzione di materiali riciclati impiegati o di fattori provenienti da imprese che rispettano i diritti dei lavoratori) e il prezzo P a cui vendere il bene. Sia la caratteristica Z che il prezzo possono essere scelti fra un minimo di 0 e un massimo di 400. Una volta scelto Z, la produzione di ogni unità del bene che venderete costerà esattamente Z, mentre le conseguenze negative socio ambientali saranno diminuite in misura pari a 1,5xZ. Quindi un maggiore impiego di Z implica maggiori costi ma anche un minore impatto sulla collettività." %}
+
 {% endblock %}
+

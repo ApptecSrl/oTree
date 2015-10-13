@@ -1,8 +1,9 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
+{% load i18n %}
 
 {% block title %}
-    Results
+    {% trans "Risultati di questa attivita'" %}
 {% endblock %}
 
 {% block content %}
@@ -12,18 +13,18 @@
     <table class="table" style="width:300px">
 
         <tr>
-            <td>Your price</td>
-            <td>{{ price }}</td>
+            <td>Il tuo prezzo</td>
+            <td>{{ self.player.price }}</td>
         </tr>
 
         <tr>
-            <td>Lowest price</td>
-            <td>{{ winning_price }}</td>
+            <td>Your quality</td>
+            <td>{{ self.player.quality }}</td>
         </tr>
 
         <tr>
-            <td>Firms offering the lowest price</td>
-            <td>{{ num_winners }}</td>
+            <td>Your share</td>
+            <td>{{ share }}</td>
         </tr>
 
         <tr class="success">
@@ -35,6 +36,6 @@
 
 <p>{% next_button %}</p>
 
-    {% include instructions %}
+
     
 {% endblock %}

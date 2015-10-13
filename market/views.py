@@ -66,24 +66,57 @@ class ResultsWaitPage(WaitPage):
         self.group.set_payoffs()
 
 
-class Results(Page):
+class ResultsTemp(Page):
 
     template_name = 'global/ResultsTable.html'
 
     def vars_for_template(self):
+        loc_share = 0.25
         self.player.participant.vars['share'] = self.player.share
+        print(self.player.share)
+        print type(self.player.share)
+        loc_share=100*round(float(self.player.share), 2)
+
         return {
             'table': [
-                ('', 'Punti'),
-                (_('Your price'), self.player.price),
-                ('Your quality', self.player.quality),
-                ('Your profit', self.player.payoff),
-                ('Your share', self.player.share),
+                (_('Il prezzo che hai scelto'), self.player.price),
+                (_('Il prezzo scelto dall\'altro giocatore'), self.player.other_player().price),
+                (_('La qualita\' che hai scelto'), self.player.quality),
+                (_('La qualita\' scelta dall\'altro giocatore'), self.player.other_player().quality),
+                ('', ''),
+                (_('La tua quota di mercato in percentuale'), loc_share),
+                (_('Il tuo profitto eventualmente risultante se questo fosse il periodo pagato'), self.player.pot_payoff),
+            ]
+        }
+
+class ResultsFinal(Page):
+
+    template_name = 'global/ResultsTable.html'
+    def is_displayed(self):
+        return self.subsession.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
+        loc_share = 0.25
+        self.player.participant.vars['share'] = self.player.share
+        print(self.player.share)
+        print type(self.player.share)
+        loc_share=100*round(float(self.player.share), 2)
+
+        return {
+            'table': [
+                (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
+                (_('Il prezzo che hai scelto'), self.player.price),
+                (_('Il prezzo scelto dall\'altro giocatore'), self.player.other_player().price),
+                (_('La qualita\' che hai scelto'), self.player.quality),
+                (_('La qualita\' scelta dall\'altro giocatore'), self.player.other_player().quality),
+                ('', ''),
+                (_('La tua quota di mercato in percentuale'), loc_share),
+                (_('Il tuo profitto risultante'), self.player.payoff),
                 #rendere share e impact visibili qui
             ]
         }
 
-
 page_sequence = [Decide,
             ResultsWaitPage,
-            Results]
+            ResultsTemp,
+            ResultsFinal]

@@ -1,17 +1,32 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+
+
 
 {% block title %}
-    Scegli il tuo prezzo e la tua qualita'
+    {% trans "Scegli il tuo prezzo e la tua qualita'" %}
 {% endblock %}
 
 {% block content %}
 
     {% formfield player.price with label="Scegli un numero tra 0 e 400 per il tuo prezzo" %}
-    {%formfield player.quality with label="Scegli un numero tra 0 e 400 per la tua qualita'" %}
+    {% formfield player.quality with label="Scegli un numero tra 0 e il prezzo scelto per la tua qualita'" %}
+<p>
+    {% blocktrans trimmed %}
+        Turno {{ self.subsession.round_number }} di {{ Constants.num_rounds }}
+    {% endblocktrans %}
+<p>
 
 <p>{% next_button %}</p>
 
     {% include instructions %}
 
 {% endblock %}
+
+
+
+
+
