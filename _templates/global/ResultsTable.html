@@ -1,6 +1,10 @@
 {% extends "global/Base.html" %}
 {% load otree_tags %}
-{% block title %}Results{% endblock %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Risultati" %}
+{% endblock %}
 {% block content %}
 <table class=table style='width: auto'>
     {% for row in table %}
@@ -17,5 +21,5 @@
 </table>
 
 <p>{% next_button %}</p>
-{% include instructions %}
+<!--{% include instructions %}-->
 {% endblock %}
