@@ -4,7 +4,130 @@
 
 {% block instructions %}
 
-{% trans "Sei stato accoppiato casualmente ad un altro partecipante. Ciascuno di voi rappresenta una azienda, che produce lo stesso bene o servizio. Producete un bene a cui sono associate delle ripercussioni negative sulla collettività dal punto di vista sociale od ambientale. All’inizio di ogni round entrambi potete determinare in che misura impiegare la caratteristica Z che vi permette di ridurre l’impatto negativo della vostra produzione dal punto di vista socio-ambientale (ad esempio la proporzione di materiali riciclati impiegati o di fattori provenienti da imprese che rispettano i diritti dei lavoratori) e il prezzo P a cui vendere il bene. Sia la caratteristica Z che il prezzo possono essere scelti fra un minimo di 0 e un massimo di 400. Una volta scelto Z, la produzione di ogni unità del bene che venderete costerà esattamente Z, mentre le conseguenze negative socio ambientali saranno diminuite in misura pari a 1,5xZ. Quindi un maggiore impiego di Z implica maggiori costi ma anche un minore impatto sulla collettività." %}
+{% blocktrans trimmed %}
+<p> Stai per partecipare ad un gioco di mercato assieme ad un altro partecipante abbinato a te casualmente.
+Rappresentate due imprese che competono fra loro. Producete un bene fittizio di cui potete determinare la qualità sociale,
+    ovvero il tipo di ricaduta esterna associata alla sua produzione.
+    Potete pensare alla scelta di input produttivi che migliorano l’impatto ambientale o sociale del bene stesso (es. Materiali meno inquinanti, assenza di lavoro minorile, etc.).</p>
+<p> Una maggiore qualità sociale comporta maggiori costi di produzione. Inoltre ogni impresa deve determinare anche il prezzo di vendita.
+    La quota di mercato di ogni impresa è determinata automaticamente dal computer tramite un algoritmo matematico che riproduce delle preferenze realistiche di consumatori
+    con un certo grado di sensibilità sociale. Sinteticamente, la quota di mercato di una impresa è tanto maggiore quanto più alta
+    la qualità sociale del suo bene e più basso il suo prezzo di vendita. Allo stesso tempo, sarà crescente nel prezzo del rivale e decrescente nella qualità sociale del suo bene.
+    La seguente tabella sintetizza queste relazioni.</p>
 
+
+<p>
+    <table align="center" class="table" style="width:70%">
+
+        <tr>
+            <td> </td>
+            <td> Tua qualità  </td>
+            <td> Tuo prezzo </td>
+            <td> Sua qualità </td>
+            <td> Suo prezzo </td>
+        </tr>
+        <tr>
+            <td> Tua quota di mercato </td>
+            <td> + </td>
+            <td> - </td>
+            <td> - </td>
+            <td> + </td>
+        </tr>
+        <tr>
+            <td> Sua quota di mercato </td>
+            <td> - </td>
+            <td> + </td>
+            <td> + </td>
+            <td> - </td>
+        </tr>
+
+    </table>
+
+</p>
+<p> La qualità può essere un qualsiasi numero intero fra 0 e 400, il prezzo un qualsiasi numero intero compreso fra la qualità scelta e 400. La quota di mercato sarà una percentuale compresa tra lo 0 e il 100%.
+Il gioco durerà per 10 round consecutivi in cui fronteggerai sempre lo stesso “rivale”. Anche l’algoritmo che determina le quote di mercato è lo stesso per tutta la durata del gioco.
+    In ogni round il profitto di impresa ottenuto sia da te che dal rivale sarà pari al seguente punteggio:</p>
+<p>
+    <style>
+  #ex2_container { width:100%}
+  #ex2_content { margin:1px auto; color:black; display:table; }
+  #ex3_container { width:100%}
+  #ex3_content { margin:1px auto; color:black; display:table; }
+</style>
+<div id="ex2_container"><div id="ex2_content"><strong>Profitto = (Prezzo - Qualità) x Quota di mercato</strong></div></div>
+ </p>
+<p>
+Il beneficio sociale associato alla tua produzione in ogni round del gioco sarà pari al seguente punteggio:</p>
+<p>
+
+
+<div id="ex3_container"><div id="ex3_content"><strong>Beneficio sociale = Qualità x 1,5</strong></div></div>
+ </p>
+<p>
+<p>
+Ciò significa che un incremento unitario della qualità del bene causa un aumento dei benefici sociali proporzionalmente maggiore all’aumento dei costi.</p>
+<p>
+Fra un round e l’altro del gioco saranno resi noti ad entrambi le qualità e il prezzo di ogni offerta e le rispettive quote di mercato.
+    Ti saranno pure mostrati il tuo profitto e il beneficio sociale della tua produzione.
+Alla fine del gioco sarà sorteggiato uno specifico round e i punti da te ottenuti in quel round, sia come profitto individuale sia come beneficio sociale, saranno trasformati
+    in euro secondo il tasso di conversione 2 punti = 1 euro. I punti corrispondenti al beneficio sociale saranno presi dal tuo pagamento complessivo e versati alla
+    organizzazione benefica da te indicata.</p>
+{% endblocktrans %}
 {% endblock %}
 
+{% block short_instructions %}
+
+{% blocktrans trimmed %}
+<p> Stai partecipando ad un gioco di mercato assieme ad un altro partecipante abbinato a te casualmente.
+Rappresentate due imprese che competono fra loro. Producete un bene di cui dovete scegliere qualità sociale e prezzo di vendita.
+    La quota di mercato di ogni impresa è determinata da un algoritmo che riproduce delle preferenze di consumatori
+    con un certo grado di sensibilità sociale. Sinteticamente, la quota di mercato di una impresa è tanto maggiore quanto più alta
+    la qualità sociale del suo bene e più basso il suo prezzo di vendita. Allo stesso tempo è crescente nel prezzo del rivale e decrescente nella qualità sociale del suo bene.
+    La seguente tabella sintetizza queste relazioni.</p>
+
+
+<p>
+    <table align="center" class="table" style="width:70%">
+
+        <tr>
+            <td> </td>
+            <td> Tua qualità  </td>
+            <td> Tuo prezzo </td>
+            <td> Sua qualità </td>
+            <td> Suo prezzo </td>
+        </tr>
+        <tr>
+            <td> Tua quota di mercato </td>
+            <td> + </td>
+            <td> - </td>
+            <td> - </td>
+            <td> + </td>
+        </tr>
+        <tr>
+            <td> Sua quota di mercato </td>
+            <td> - </td>
+            <td> + </td>
+            <td> + </td>
+            <td> - </td>
+        </tr>
+
+    </table>
+
+</p>
+<p> La qualità può essere un qualsiasi numero intero fra 0 e 400, il prezzo un qualsiasi numero intero compreso fra la qualità scelta e 400. La quota di mercato sarà una percentuale compresa tra lo 0 e il 100%.
+Il gioco dura per 10 round consecutivi, sempre con lo stesso “rivale”. In ogni round il profitto di impresa ottenuto sia da te che dal rivale sarà pari al seguente punteggio:</p>
+<p>
+
+<strong>Profitto = (Prezzo - Qualità) x Quota di mercato</strong>
+ </p>
+<p>
+Il beneficio sociale associato alla produzione è pari al seguente punteggio:</p>
+<p><strong>Beneficio sociale = Qualità x 1,5</strong>
+ </p>
+<p>
+Alla fine del gioco sarà sorteggiato uno specifico round e i punti da te ottenuti in quel round, sia come profitto individuale sia come beneficio sociale, saranno trasformati
+    in euro secondo il tasso di conversione 2 punti = 1 euro. I punti corrispondenti al beneficio sociale saranno presi dal tuo pagamento complessivo e versati alla
+    organizzazione benefica da te indicata.</p>
+{% endblocktrans %}
+
+{% endblock %}

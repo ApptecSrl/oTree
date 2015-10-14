@@ -23,14 +23,14 @@ class Constants(otree.constants.BaseConstants):
     num_rounds = 2
     bonus = c(0)
     maximum_price = c(400)
-    alpha = 2
+    alpha = 1.5
     efficiency = 1.5
 
 
 class Subsession(otree.models.BaseSubsession):
     def before_session_starts(self):
         if self.round_number == 1:
-            paying_round = random.randint(1, Constants.num_rounds)
+            paying_round = random.randint(Constants.num_rounds/2, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
 
 

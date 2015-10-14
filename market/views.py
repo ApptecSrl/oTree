@@ -10,7 +10,8 @@ from django.utils.translation import ugettext as _
 
 
 def vars_for_all_templates(self):
-    return {'instructions': 'market/Instructions.html'}
+    return {'instructions': 'market/Instructions.html',
+            'short_instructions': 'market/Short_Instructions.html'}
 
 
 class Introduction(Page):
@@ -75,6 +76,7 @@ class ResultsTemp(Page):
     def vars_for_template(self):
         loc_share = 0.25
         self.player.participant.vars['share'] = self.player.share
+        print 'mario'
         print(self.player.share)
         print type(self.player.share)
         loc_share=100*round(float(self.player.share), 2)
@@ -102,8 +104,10 @@ class ResultsFinal(Page):
     def vars_for_template(self):
         loc_share = 0.25
         self.player.participant.vars['share'] = self.player.share
+
         print(self.player.share)
         print type(self.player.share)
+
         loc_share=100*round(float(self.player.share), 2)
 
 
@@ -130,7 +134,8 @@ class ResultsFinal(Page):
             ]
         }
 
-page_sequence = [Decide,
-            ResultsWaitPage,
-            ResultsTemp,
-            ResultsFinal]
+page_sequence = [Introduction,
+                Decide,
+                ResultsWaitPage,
+                ResultsTemp,
+                ResultsFinal]

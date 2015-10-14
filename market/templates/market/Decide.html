@@ -7,23 +7,25 @@
 
 
 {% block title %}
-    {% trans "Scegli il tuo prezzo e la tua qualita'" %}
+    {% trans "Scegli la tua qualità e il tuo prezzo" %} {% trans " - Turno" %} {{ subsession.round_number }} {% trans "di" %} {{ Constants.num_rounds }}
 {% endblock %}
 
 {% block content %}
 
-    {% formfield player.price with label="Scegli un numero tra 0 e 400 per il tuo prezzo" %}
 
-    {% formfield player.quality with label="Scegli un numero tra 0 e il prezzo scelto per la tua qualita'" %}
+
+    {% formfield player.quality with label="Scegli un numero tra 0 e e 400 per la tua qualità" %}
+
+    {% formfield player.price with label="Scegli un numero tra la qualità scelta e 400 per il tuo prezzo" %}
 <p>
-    {% blocktrans trimmed %}
-        Turno {{ turn }} di {{ Constants.num_rounds }}
-    {% endblocktrans %}
+
+
+
 <p>
 
 <p>{% next_button %}</p>
 
-    {% include instructions %}
+    {% include short_instructions %}
 
 {% endblock %}
 
