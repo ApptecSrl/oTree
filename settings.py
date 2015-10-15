@@ -31,12 +31,15 @@ try:
             default=the_url
         )
     }
+    print '----------------------sono qui-----------------------'
+    print the_url
 except KeyError:
     DATABASES = {
         'default': dj_database_url.config(
             default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
         )
     }
+    print '-------------------------- LITE database ---------------'
 
 # AUTH_LEVEL:
 # If you are launching an experiment and want visitors to only be able to
