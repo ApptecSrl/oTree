@@ -24,11 +24,19 @@ SECRET_KEY = 'zzzzzzzzzzzzzzzzzzzzzzzzzzz'
 
 PAGE_FOOTER = ''
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-    )
-}
+try:
+    the_url = os.environ['DATABASE_URL']
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=the_url
+        )
+    }
+except KeyError:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+        )
+    }
 
 # AUTH_LEVEL:
 # If you are launching an experiment and want visitors to only be able to
