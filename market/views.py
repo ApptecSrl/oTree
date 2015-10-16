@@ -78,10 +78,6 @@ class ResultsTemp(Page):
     template_name = 'global/ResultsTable.html'
 
     def vars_for_template(self):
-        loc_share = 0.25
-        self.player.participant.vars['share'] = self.player.share
-        loc_share=100*round(float(self.player.share), 2)
-
         return {
             'table': [
                 (_('Turno numero'), self.subsession.round_number),
@@ -103,36 +99,41 @@ class ResultsFinal(Page):
         return self.subsession.round_number == Constants.num_rounds
 
     def vars_for_template(self):
-        loc_share = 0.25
-        self.player.participant.vars['share'] = self.player.share
+        p_paying_round = self.player.in_all_rounds()[self.session.vars['paying_round']-1]
+        payment_result = {
+            'p_price': p_paying_round.price,
+            'p_quality': p_paying_round.quality,
+            'p_impact': p_paying_round.impact,
+            'p_share': p_paying_round.share,
+            'payoff_sum': sum([p.payoff for p in self.player.in_all_rounds()]),
+        }
 
-        print(self.player.share)
-        print type(self.player.share)
+        result_table = [
+            (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
+            (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['p_price']),
+            (_('La qualita\' che hai scelto nel periodo pagato'), payment_result['p_quality']),
+            (_('L\'impatto positivo dovuto alle tue scelte'), payment_result['p_impact']),
+            ('', ''),
+            (_('La tua quota di mercato nel periodo pagato'), format(payment_result['p_share'], '.2%')),
+            (_('Il tuo profitto effettivo in questa attivita\''), payment_result['payoff_sum']),
+        ]
 
-        loc_share=100*round(float(self.player.share), 2)
+        game_results = {
+            'label': 'Market game',
+            'results': payment_result,
+            'table': result_table,
+        }
 
-
-        for p in self.player.in_all_rounds():
-            if p.subsession.round_number == self.session.vars['paying_round']:
-                p_price = p.price
-                p_quality = p.quality
-                p_impact = p.impact
-                p_share = p.share
-
+        # store market payment result in player session
+        if 'applications_results' in self.player.participant.vars.keys():
+            if game_results['label'] not in [app['label'] for app in self.player.participant.vars['applications_results']]:
+                self.player.participant.vars['applications_results'].append(game_results)
+        else:
+            self.player.participant.vars['applications_results'] = [game_results]
 
 
         return {
-            'table': [
-                (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
-                (_('Il prezzo che hai scelto nel periodo pagato'), p_price),
-                (_('La qualita\' che hai scelto nel periodo pagato'), p_quality),
-                (_('L\'impatto positivo dovuto alle tue scelte'), p_impact),
-
-                ('', ''),
-                (_('La tua quota di mercato nel periodo pagato'), format(p_share, '.2%')),
-                (_('Il tuo profitto effettivo in questa attivita\''), sum([p.payoff for p in self.player.in_all_rounds()])),
-                #rendere share e impact visibili qui
-            ]
+            'table': [('Gioco concluso, i risultati verranno mostrati in seguito',)]
         }
 
 page_sequence = [Introduction,
