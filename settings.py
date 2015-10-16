@@ -12,7 +12,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # DEBUG mode. If OTREE_PRODUCTION==1, then DEBUG=False
 if os.environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
     DEBUG = False
-
+else:
+    DEBUG = True
+    
 # IS_OTREE_DOT_ORG is only used on demo.otree.org.
 # you can assume it is None/''/0.
 if os.environ.get('IS_OTREE_DOT_ORG') in {None, '', '0'}:
