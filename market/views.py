@@ -80,9 +80,6 @@ class ResultsTemp(Page):
     def vars_for_template(self):
         loc_share = 0.25
         self.player.participant.vars['share'] = self.player.share
-        print 'mario'
-        print(self.player.share)
-        print type(self.player.share)
         loc_share=100*round(float(self.player.share), 2)
 
         return {
