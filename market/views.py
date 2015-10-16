@@ -62,6 +62,10 @@ class Decide(Page):
     def vars_for_template(self):
         turn = self.subsession.round_number
 
+    def error_message(self, values):
+        if values["price"] < values["quality"]:
+            return _('Il prezzo non può essere più basso della qualità')
+
 
 class ResultsWaitPage(WaitPage):
 
