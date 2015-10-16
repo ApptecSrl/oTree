@@ -64,7 +64,7 @@ class Decide(Page):
 
     def error_message(self, values):
         if values["price"] < values["quality"]:
-            return _('Il prezzo non può essere più basso della qualità')
+            return _(u'Il prezzo non può essere più basso della qualità')
 
 
 class ResultsWaitPage(WaitPage):
