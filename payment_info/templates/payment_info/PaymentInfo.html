@@ -1,26 +1,27 @@
 {% extends "global/Base.html" %}
-{% load staticfiles otree_tags %}
+{% load otree_tags %}
+{% load i18n %}
 
 {% block title %}
-    Grazie
+{% trans "Risultati" %}
 {% endblock %}
-
 {% block content %}
-
-
-    <p>
-        <em>Si tratta di un gioco di prova quindi i punti convertiti non saranno convertiti in moneta come normalmente avverrebbe.</em>
-
-
-    </p>
-    <p>
-    Comunque avresti guadagnato {{ player.participant.payoff }} che corrisponderebbero ad un totale di € {{ player.participant.money_to_pay }}.
-
-
-
-
-{% endblock %}
-
-{% block form %}
-
+{% for app in applications_results %}
+    <h3>Riepilogo attività {{ forloop.counter }}</h3>
+    <h3>Riepilogo {{ app.label }}</h3>
+    <table class=table style='width: auto'>
+        {% for row in app.table %}
+            <tr>
+                {% for cell in row %}
+                    {% if forloop.counter0 %}
+                        <th>{{cell}}</th>
+                    {% else %}
+                        <td>{{cell}}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endfor %}
+<p>{% next_button %}</p>
 {% endblock %}
