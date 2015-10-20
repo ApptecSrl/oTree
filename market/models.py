@@ -7,20 +7,22 @@ import otree.constants
 from otree import widgets
 from otree.common import Currency as c, currency_range
 from django.db import models as d_models
+from django.utils.translation import ugettext as _
+
 import random
 # </standard imports>
 
 from .share_calculator import calculator
 
 doc = """
-2 firms complete in a market by setting prices for homogenous goods.
+2 firms complete in a market by setting prices and quality for homogenous goods.
 """
 
 
 class Constants(otree.constants.BaseConstants):
     players_per_group = 2
     name_in_url = 'market'
-    num_rounds = 10
+    num_rounds = 2
     bonus = c(0)
     maximum_price = c(400)
     alpha = 1.5
@@ -32,6 +34,21 @@ class Subsession(otree.models.BaseSubsession):
         if self.round_number == 1:
             paying_round = random.randint(Constants.num_rounds/2, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
+# matching:
+            players=self.get_players()
+            # print 'players =', players
+            # num_players = len(players)
+            # print 'nr of players =', num_players
+            group_matrix = [g.get_players() for g in self.get_groups()]
+            print 'matrice dei gruppi originari =', group_matrix
+            random.shuffle(players)
+            newGr_mat=[]
+            for i in range(0,len(players),2):
+                newGr_mat.append(players[i:i+2])
+            print 'new groups matrix =', newGr_mat
+            self.set_groups(newGr_mat)
+
+
 
 
 class Group(otree.models.BaseGroup):
@@ -42,6 +59,7 @@ class Group(otree.models.BaseGroup):
 
     def set_payoffs(self):
         players = self.get_players()
+        print 'players =', players
         p1 = players[0].price
         p2 = players[1].price
         q1 = players[0].quality
@@ -60,6 +78,9 @@ class Group(otree.models.BaseGroup):
         players[1].share = share2
         players[0].pot_payoff = tmp_payoff1
         players[1].pot_payoff = tmp_payoff2
+        players[0].impact = imp1
+        players[1].impact = imp2
+
         if self.subsession.round_number == self.session.vars['paying_round']:
             players[0].payoff = tmp_payoff1
             players[1].payoff = tmp_payoff2

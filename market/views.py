@@ -89,6 +89,7 @@ class ResultsTemp(Page):
                 ('', ''),
                 (_('La tua quota di mercato'), format(self.player.share, '.2%')),
                 (_('Il tuo profitto eventualmente risultante se questo fosse il periodo pagato'), self.player.pot_payoff),
+                (_('Il tuo impatto positivo se questo fosse il periodo pagato'), self.player.impact),
             ]
         }
 

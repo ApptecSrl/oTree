@@ -15,10 +15,14 @@ class PlayerBot(Bot):
     def play_round(self):
         # compete price
         self.submit(views.Introduction)
-        self.submit(views.Question1, {'training_my_profit': c(1)})
-        self.submit(views.Feedback1)
-        self.submit(views.Decide, {'price': c(30)})
-        self.submit(views.Results)
+        pr=c(random.randint(50,400))
+        print pr
+        self.submit(views.Decide,{'price': pr,'quality': c(50)})
+
+        self.submit(views.ResultsWaitPage)
+        self.submit(views.ResultsTemp)
+        self.submit(views.ResultsFinal)
+
 
     def validate_play(self):
         pass
