@@ -30,25 +30,53 @@ class Constants(otree.constants.BaseConstants):
 
 
 class Subsession(otree.models.BaseSubsession):
-    def before_session_starts(self):
-        if self.round_number == 1:
-            paying_round = random.randint(Constants.num_rounds/2, Constants.num_rounds)
-            self.session.vars['paying_round'] = paying_round
-# matching:
-            players=self.get_players()
-            # print 'players =', players
-            # num_players = len(players)
-            # print 'nr of players =', num_players
+#Al momento non funziona a meno di non avere un numero di giocatori che sia multiplo esatto di 6
+    def match_to_create_groups(self):
+        players = self.get_players()
+        # print 'players =', players
+        num_players = len(players)
+        if num_players > 5:
+            third=num_players//3
+            lastThird=2*third
+            newGr_mat = []
+            pari = []
+            dispari = []
+            for i in range(0, lastThird, 1):
+                if (i+1) % 2 == 0:
+                    pari.append(players[i])
+                else:
+                    dispari.append(players[i])
+            random.shuffle(pari)
+            random.shuffle(dispari)
+            for i in range(0,len(pari),2):
+                newGr_mat.append(pari[i:i+2])
+            for i in range(0,len(dispari),2):
+                newGr_mat.append(dispari[i:i+2])
+            for i in range(lastThird,len(players),2):
+                newGr_mat.append(players[i:i+2])
+
             group_matrix = [g.get_players() for g in self.get_groups()]
             print 'matrice dei gruppi originari =', group_matrix
-            random.shuffle(players)
-            newGr_mat=[]
-            for i in range(0,len(players),2):
-                newGr_mat.append(players[i:i+2])
             print 'new groups matrix =', newGr_mat
             self.set_groups(newGr_mat)
 
 
+            # group_matrix = [g.get_players() for g in self.get_groups()]
+            # print 'matrice dei gruppi originari =', group_matrix
+            # random.shuffle(players)
+            # newGr_mat=[]
+            # for i in range(0,len(players),2):
+            #     newGr_mat.append(players[i:i+2])
+            # print 'new groups matrix =', newGr_mat
+            # self.set_groups(newGr_mat)
+
+
+    def before_session_starts(self):
+        if self.round_number == 1:
+            paying_round = random.randint(Constants.num_rounds / 2, Constants.num_rounds)
+            self.session.vars['paying_round'] = paying_round
+            # matching:
+            self.match_to_create_groups()
 
 
 class Group(otree.models.BaseGroup):
@@ -66,8 +94,8 @@ class Group(otree.models.BaseGroup):
         q2 = players[1].quality
         share1, share2 = calculator(q1, q2, p1, p2, Constants.alpha)
 
-        imp1 = Constants.efficiency * (400 - q1) * share1
-        imp2 = Constants.efficiency * (400 - q2) * share2
+        imp1 = Constants.efficiency * q1 * share1
+        imp2 = Constants.efficiency * q2 * share2
         players[0].impact = imp1
         players[1].impact = imp2
         tmp_payoff1 = float(p1 - q1) * float(share1)
@@ -89,7 +117,6 @@ class Group(otree.models.BaseGroup):
             players[1].payoff = c(0)
 
 
-
 class Player(otree.models.BasePlayer):
     # <built-in>
     group = models.ForeignKey(Group, null=True)
@@ -103,9 +130,9 @@ class Player(otree.models.BasePlayer):
         doc="""Price player chooses to sell product for"""
     )
 
-    maxQ=min(price, Constants.maximum_price)
+    maxQ = min(price, Constants.maximum_price)
 
-    #print 'price = ', price
+    # print 'price = ', price
 
     quality = models.CurrencyField(
         min=0, max=maxQ,
