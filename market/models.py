@@ -33,33 +33,35 @@ class Subsession(otree.models.BaseSubsession):
 #Al momento non funziona a meno di non avere un numero di giocatori che sia multiplo esatto di 6
     def match_to_create_groups(self):
         players = self.get_players()
-        # print 'players =', players
+        print 'players ha tipo', type(players)
         num_players = len(players)
         if num_players > 5:
-            third=num_players//3
-            lastThird=2*third
+            third=num_players//6
             newGr_mat = []
             pari = []
             dispari = []
-            for i in range(0, lastThird, 1):
-                if (i+1) % 2 == 0:
+            for i in range(0, num_players, 1):
+                if (i) % 2 == 0:
                     pari.append(players[i])
                 else:
                     dispari.append(players[i])
-            random.shuffle(pari)
-            random.shuffle(dispari)
-            for i in range(0,len(pari),2):
-                newGr_mat.append(pari[i:i+2])
-            for i in range(0,len(dispari),2):
-                newGr_mat.append(dispari[i:i+2])
-            for i in range(lastThird,len(players),2):
-                newGr_mat.append(players[i:i+2])
-
-            group_matrix = [g.get_players() for g in self.get_groups()]
-            print 'matrice dei gruppi originari =', group_matrix
-            print 'new groups matrix =', newGr_mat
-            self.set_groups(newGr_mat)
-
+            if len(pari)==len(dispari):
+                random.shuffle(pari)
+                random.shuffle(dispari)
+                for i in range(0,third):
+                    newGr_mat.append([pari[i],dispari[i]])
+                for i in range(third,len(pari),2):
+                    newGr_mat.append(pari[i:i+2])
+                for i in range(third,len(dispari),2):
+                    newGr_mat.append(dispari[i:i+2])
+                group_matrix = [g.get_players() for g in self.get_groups()]
+                print 'matrice dei gruppi originari =', group_matrix
+                print 'new groups matrix =', newGr_mat
+                self.set_groups(newGr_mat)
+            # else:
+            #     minPD=min(len(pari),len(dispari))
+            #     for i in range(0,minPD):
+            #         newGr_mat.append([pari[i],dispari[i]])
 
             # group_matrix = [g.get_players() for g in self.get_groups()]
             # print 'matrice dei gruppi originari =', group_matrix
