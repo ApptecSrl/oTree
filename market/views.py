@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from . import models
+import random
 from ._builtin import Page, WaitPage
 from otree.common import Currency as c, currency_range
 from .models import Constants
@@ -12,6 +13,63 @@ from django.utils.translation import ugettext as _
 def vars_for_all_templates(self):
     return {'instructions': 'market/Instructions.html',
             'short_instructions': 'market/Short_Instructions.html'}
+
+class GetInputKind(Page):
+    template_name = 'market/InputKind.html'
+    form_model = models.Player
+    form_fields = ['kind']
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+class MatchingWaitPage(WaitPage):
+    wait_for_all_groups = True
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+    def after_all_players_arrive(self):
+        print 'Ora matching in corso'
+        players = self.subsession.get_players()
+
+        if len(players) > 5:
+            newGr_mat = []
+            evenPlayers = []
+            oddPlayers = []
+            self.buildEvenOdd(players, evenPlayers, oddPlayers)
+            minEO = min(len(evenPlayers),len(oddPlayers))
+            if minEO>2:
+                threshold = self.computeThreshold(evenPlayers, oddPlayers, minEO)
+                self.makeGroups(evenPlayers, oddPlayers, newGr_mat, threshold)
+            print 'Nuovi gruppi: ', newGr_mat
+            self.subsession.set_groups(newGr_mat)
+
+    def computeThreshold(self, evenPlayers, oddPlayers, minEO):
+        threshold = minEO // 3 + minEO % 3
+        print 'valore soglia = ',threshold
+        return threshold
+
+    def makeGroups(self, evenPlayers, oddPlayers, newGr_mat, threshold):
+    #forma i gruppi con la logica: misti sino a threshold poi gli altri
+        """
+
+        :type newGr_mat: list of lists
+        """
+        for i in range(0, threshold ):
+            newGr_mat.append([evenPlayers[i], oddPlayers[i]])
+        for i in range(threshold, len(evenPlayers) - 1, 2):
+            newGr_mat.append(evenPlayers[i:i + 2])
+        for i in range(threshold, len(oddPlayers) - 1, 2):
+            newGr_mat.append(oddPlayers[i:i + 2])
+
+    def buildEvenOdd(self, players, evenPlayers, oddPLayers): #forma e rimescola i pari e dispari
+        num_players=len(players)
+        for i in range(0, num_players, 1):
+            if (players[i].kind) % 2 == 0:
+                evenPlayers.append(players[i])
+            else:
+                oddPLayers.append(players[i])
+        random.shuffle(evenPlayers)
+        random.shuffle(oddPLayers)
+        print 'pari', evenPlayers
+        print 'dispari', oddPLayers
 
 
 class Introduction(Page):
@@ -137,7 +195,9 @@ class ResultsFinal(Page):
             'table': [('Gioco concluso, i risultati verranno mostrati in seguito',)]
         }
 
-page_sequence = [Introduction,
+page_sequence = [GetInputKind,
+                MatchingWaitPage,
+                Introduction,
                 Decide,
                 ResultsWaitPage,
                 ResultsTemp,
