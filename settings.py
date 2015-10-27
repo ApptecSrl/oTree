@@ -14,7 +14,7 @@ if os.environ.get('OTREE_PRODUCTION') not in {None, '', '0'}:
     DEBUG = False
 else:
     DEBUG = True
-    
+
 # IS_OTREE_DOT_ORG is only used on demo.otree.org.
 # you can assume it is None/''/0.
 if os.environ.get('IS_OTREE_DOT_ORG') in {None, '', '0'}:
@@ -300,7 +300,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'participation_fee': 0.00,  #'use_points': False,
         'app_sequence': [
-            'market', 'dictator', 'payment_info'
+            'market', 'dictator', 'payment_recap'
         ],
     },
 

@@ -1,0 +1,27 @@
+{% extends "global/Base.html" %}
+{% load otree_tags %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Risultati" %}
+{% endblock %}
+{% block content %}
+{% for app in applications_results %}
+    <h3>Riepilogo attività {{ forloop.counter }}</h3>
+    <h3>Riepilogo {{ app.label }}</h3>
+    <table class=table style='width: auto'>
+        {% for row in app.table %}
+            <tr>
+                {% for cell in row %}
+                    {% if forloop.counter0 %}
+                        <th>{{cell}}</th>
+                    {% else %}
+                        <td>{{cell}}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endfor %}
+<p>{% next_button %}</p>
+{% endblock %}
