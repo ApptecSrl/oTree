@@ -7,6 +7,7 @@ import otree.constants
 from otree import widgets
 from otree.common import Currency as c, currency_range
 # </standard imports>
+from django.utils.translation import ugettext_lazy as _
 
 
 doc = """
@@ -65,7 +66,7 @@ class Group(otree.models.BaseGroup):
     kept = models.CurrencyField(
         doc="""Amount dictator decided to keep for himself""",
         min=0, max=Constants.allocated_amount,
-        verbose_name='I will keep (from 0 to %i)' % Constants.allocated_amount
+        verbose_name=_('I will keep (from 0 to %i)') % Constants.allocated_amount
     )
 
     def set_payoffs(self):
@@ -83,7 +84,6 @@ class Player(otree.models.BasePlayer):
     # </built-in>
 
     training_participant1_payoff = models.CurrencyField(
-        verbose_name="Participant 1's payoff would be")
+        verbose_name=_("Participant 1's payoff would be"))
     training_participant2_payoff = models.CurrencyField(
-        verbose_name="Participant 2's payoff would be")
-
+        verbose_name=_("Participant 2's payoff would be"))
