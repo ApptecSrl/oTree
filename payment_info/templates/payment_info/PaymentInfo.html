@@ -1,27 +1,43 @@
 {% extends "global/Base.html" %}
-{% load otree_tags %}
-{% load i18n %}
+{% load staticfiles otree_tags %}
 
 {% block title %}
-{% trans "Risultati" %}
+    Thank you
 {% endblock %}
+
 {% block content %}
-{% for app in applications_results %}
-    <h3>Riepilogo attività {{ forloop.counter }}</h3>
-    <h3>Riepilogo {{ app.label }}</h3>
-    <table class=table style='width: auto'>
-        {% for row in app.table %}
-            <tr>
-                {% for cell in row %}
-                    {% if forloop.counter0 %}
-                        <th>{{cell}}</th>
-                    {% else %}
-                        <td>{{cell}}</td>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-        {% endfor %}
-    </table>
-{% endfor %}
-<p>{% next_button %}</p>
+
+
+    <p>
+        <em>Note: As this is a sample game, the points you earned will not be converted to a monetary value as would normally be the case.</em>
+    </p>
+
+    <p>
+        <em>Below are examples of messages that could be displayed for different experimental settings.</em>
+    </p>
+
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Laboratory:</strong></p>
+            <p>Please remain seated until your number is called. Then take your number card, and proceed to the cashier.</p>
+            <p><em>Note: For the cashier in the laboratory, oTree can print a list of payments for all participants as a PDF.
+        </div>
+    </div>
+
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Classroom:</strong></p>
+            <p><em>If you want to keep track of how students did, the easiest thing is to assign the starting links to students by name.
+                It is even possible to give each student a single permanent link for a whole semester; so no need to waste time in each
+                lecture with handing out new links and keeping track of which student uses which link. Alternatively, you may just give
+                students anonymous links or secret nicknames.</em>
+            </p>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block form %}
+
 {% endblock %}

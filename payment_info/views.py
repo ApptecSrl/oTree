@@ -7,10 +7,11 @@ from .models import Constants
 class PaymentInfo(Page):
 
     def vars_for_template(self):
-        # retreive results from player's session
-        sessions_results = self.player.participant.vars['applications_results']
-
-        return {'applications_results': sessions_results}
+        participant = self.player.participant
+        return {
+            'redemption_code': participant.label or participant.code,
+            'participant': participant,
+        }
 
 
 page_sequence = [PaymentInfo]
