@@ -3,12 +3,11 @@
 {% load i18n %}
 
 {% block title %}
-{% trans "Risultati" %}
+{% trans "Risults" %}
 {% endblock %}
 {% block content %}
 {% for app in applications_results %}
-    <h3>Riepilogo attività {{ forloop.counter }}</h3>
-    <h3>Riepilogo {{ app.label }}</h3>
+    <h3>{% trans "Activity summary" %} {{ forloop.counter }}</h3>
     <table class=table style='width: auto'>
         {% for row in app.table %}
             <tr>
