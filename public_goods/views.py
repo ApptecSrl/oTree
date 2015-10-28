@@ -12,6 +12,7 @@ class Introduction(Page):
     """Description of the game: How to play and returns expected"""
     pass
 
+
 class Question(Page):
 
     def is_displayed(self):
@@ -33,7 +34,7 @@ class Contribute(Page):
     form_model = models.Player
     form_fields = ['contribution']
 
-    timeout_submission = {'contribution': c(Constants.endowment/2)}
+    timeout_submission = {'contribution': c(Constants.endowment / 2)}
 
 
 class ResultsWaitPage(WaitPage):
@@ -56,9 +57,11 @@ class Results(Page):
             'individual_earnings': self.player.payoff - Constants.base_points,
         }
 
-page_sequence = [Introduction,
-            Question,
-            Feedback,
-            Contribute,
-            ResultsWaitPage,
-            Results]
+page_sequence = [
+    Introduction,
+    Question,
+    Feedback,
+    Contribute,
+    ResultsWaitPage,
+    Results
+]

@@ -105,9 +105,11 @@ class Results(Page):
         }
 
 
-page_sequence = [Introduction,
-            Question1,
-            Feedback1,
-            Offer,
-            ResultsWaitPage,
-            Results]
+page_sequence = [
+    Introduction,
+    Question1,
+    Feedback1,
+    Offer,
+    ResultsWaitPage,
+    Results,
+]

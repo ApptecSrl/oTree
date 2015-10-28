@@ -83,6 +83,3 @@ class Player(otree.models.BasePlayer):
 
     def question_correct(self):
         return self.question == Constants.question_correct
-
-
-
