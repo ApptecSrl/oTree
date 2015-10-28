@@ -88,7 +88,7 @@ class Results(Page):
         result_table.append((_('Your total payoff is'), payment_result['payoff']))
 
         game_results = {
-            'label': 'Dictator game',
+            'label': _('Dictator game'),
             'results': payment_result,
             'table': result_table,
         }

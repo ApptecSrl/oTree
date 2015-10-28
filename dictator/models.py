@@ -7,9 +7,7 @@ import otree.constants
 from otree import widgets
 from otree.common import Currency as c, currency_range
 from django.utils.translation import ugettext as _
-
 # </standard imports>
-from django.utils.translation import ugettext_lazy as _
 
 
 doc = """
