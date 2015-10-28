@@ -34,7 +34,7 @@ keywords = ("Public Goods",)
 
 class Constants(otree.constants.BaseConstants):
     name_in_url = 'public_goods'
-    players_per_group = 3
+    players_per_group = None
     num_rounds = 1
 
     #"""Amount allocated to each player"""
@@ -47,7 +47,35 @@ class Constants(otree.constants.BaseConstants):
 
 class Subsession(otree.models.BaseSubsession):
 
-    pass
+    def before_session_starts(self):
+
+        # Creates groups: possibly 4 each group otherwise 2 3-groups and the rest 4-groups
+        if self.round_number == 1:
+
+            # extract and mix the players
+            players = self.get_players()
+            random.shuffle(players)
+            num_players = len(players)
+            list_of_lists = []
+            if (num_players < 6):
+                list_of_lists.append(players)
+            else:
+                if (num_players % 4) == 0: #groups are all 4 players each
+                    num_groups = num_players//4
+                    for i in range(0, num_groups*4,4):
+                        list_of_lists.append(players[i:i+4])
+
+                if (num_players % 4) == 2: #2 groups are 3 each, rest are 4 players groups
+                    num_4groups = num_players//4 - 1
+                    for i in range(0, num_4groups*4,4):
+                        list_of_lists.append(players[i:i+4])
+                    list_of_lists.append(players[num_players-6:num_players-3])
+                    list_of_lists.append(players[num_players-3:num_players])
+
+            print list_of_lists
+
+            self.set_groups(list_of_lists)
+            print self.get_groups()
 
 
 class Group(otree.models.BaseGroup):
