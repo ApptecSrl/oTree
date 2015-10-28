@@ -1,13 +1,16 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
+{% load i18n %}
 
 {% block title %}
-    Contribute
+    {% trans "Contribute" %}
 {% endblock %}
 
 {% block content %}
 
-    {% formfield player.contribution with label="How much will you contribute to the project (from 0 to 100)?" %}
+    {% trans "How much will you contribute to the project (from 0 to 100)?" as label_value %}
+
+    {% formfield player.contribution with label=label_value %}
 
     {% next_button %}
 

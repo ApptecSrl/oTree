@@ -4,6 +4,8 @@ from . import models
 from ._builtin import Page, WaitPage
 from otree.common import Currency as c, currency_range
 from .models import Constants
+from django.utils.translation import ugettext as _
+
 
 class Introduction(Page):
 
@@ -40,7 +42,7 @@ class ResultsWaitPage(WaitPage):
         self.group.set_payoffs()
 
     def body_text(self):
-        return "Waiting for other participants to contribute."
+        return _("Waiting for other participants to contribute.")
 
 
 class Results(Page):

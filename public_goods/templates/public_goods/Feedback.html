@@ -1,5 +1,7 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
+{% load i18n %}
+
 
 {% block title %}
     Solution to Understanding Question 1 of 1
@@ -9,22 +11,32 @@
 
 
     <p>
-        Your answer <span  class="text-info">{{ player.question }}</span> was {% if player.question_correct %}<span class="text-success">correct</span>
-        {% else %}<span class="text-danger">incorrect.</span>{% endif %}
+        {% trans "Your answer" %} <span  class="text-info">{{ player.question }}</span> {% trans "was" %}
+        {% if player.question_correct %}
+            <span class="text-success">{% trans "correct" %}</span>
+        {% else %}
+            <span class="text-danger">{% trans "incorrect" %}.</span>
+        {% endif %}
     </p>
     <p>
-        Suppose in a group, 1 participant contributed 80 points, 1 participant contributed 40,
-        and 1 participant contributed nothing. What would be the payoff of the participant who contributed 80 points?
+        {% blocktrans trimmed %}
+            Suppose in a group, 1 participant contributed 80 points, 1 participant contributed 40,
+            and 1 participant contributed nothing. What would be the payoff of the participant who contributed 80 points?
+        {% endblocktrans %}
     </p>
 
     <p>
-        <b>Solution: 92 points</b>
+        {% blocktrans trimmed %}
+            <b>Solution: 92 points</b>
+        {% endblocktrans %}
     </p>
 
     <p>
-        <b>Explanation:</b> Total contribution from all participants was 80+40+0=120. Total earnings from the project were 120*1.8=216.
-        Each participant got an equal share of the earnings, that is, 216/3=72. Hence, payoff for the participant who contributed 80 points
-        was 100-80+72=92.
+        {% blocktrans trimmed %}
+            <b>Explanation:</b> Total contribution from all participants was 80+40+0=120. Total earnings from the project were 120*1.8=216.
+            Each participant got an equal share of the earnings, that is, 216/3=72. Hence, payoff for the participant who contributed 80 points
+            was 100-80+72=92.
+        {% endblocktrans %}
     </p>
     {% next_button %}
 
