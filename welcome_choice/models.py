@@ -43,6 +43,18 @@ class Player(BasePlayer):
     group = models.ForeignKey(Group, null = True)
     # </built-in>
 
+    kind = models.IntegerField(
+        min=100, max=300,
+        doc="""Label received by experimenters"""
+    )
+
+    kindCopy = models.IntegerField(
+        min=100, max=300,
+        doc="""Label received by experimenters"""
+    )
+
+
+
     def get_partner(self):
         """Returns other player in group. Only valid for 2-player groups."""
         return self.get_others_in_group()[0]

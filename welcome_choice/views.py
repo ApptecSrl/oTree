@@ -6,10 +6,23 @@ from otree.common import Currency as c, currency_range, safe_json
 from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
+from django.utils.translation import ugettext as _
 
 
 class Welcome(Page):
     template_name = 'welcome_choice/Welcome.html'
+    def vars_for_template(self):
+        self.player.participant.vars['kind']=[self.player.kind]
+
+class GetInputKind(Page):
+    template_name = 'welcome_choice/InputKind.html'
+    form_model = models.Player
+    form_fields = ['kind','kindCopy']
+    def error_message(self, values):
+        if values["kind"] != values["kindCopy"]:
+            return _(u'Inserisci il valore corretto in entrambi i campi')
+    def is_displayed(self):
+        return self.subsession.round_number == 1
 
 class ResultsWaitPage(WaitPage):
 
@@ -21,7 +34,7 @@ class Choice(Page):
 
 
 page_sequence = [
+    GetInputKind,
     Welcome,
     ResultsWaitPage,
-    Choice
-]
+    ]

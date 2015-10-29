@@ -75,6 +75,8 @@ class MatchingWaitPage(WaitPage):
 class Introduction(Page):
 
     template_name = 'global/Introduction.html'
+    def vars_for_template(self):
+        tipo = self.player.participant.vars['kind']
 
     def is_displayed(self):
         return self.subsession.round_number == 1

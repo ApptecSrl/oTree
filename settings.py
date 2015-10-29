@@ -300,7 +300,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'participation_fee': 0.00,  #'use_points': False,
         'app_sequence': [
-            'welcome_choice','market', 'dictator', 'payment_recap'
+            'welcome_choice','market', 'payment_recap'
         ],
     },
 
