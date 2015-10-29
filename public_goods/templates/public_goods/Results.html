@@ -9,30 +9,45 @@
 
 {% block content %}
 
-    <table class="table-condensed" style="width:500px; margin-top:20px;">
-        <tr><td>{% trans "You contributed" %}:</td><td>{{ player.contribution }}</td></tr>
-        <tr><td>{% trans "Other participants contributed" %}:</td><td></td></tr>
-        {% for p in player.get_others_in_group %}
-            <tr><td></td><td>{{ p.contribution }}</td></tr>
+    {% comment %}
+        <table class="table-condensed" style="width:500px; margin-top:20px;">
+            <tr><td>{% trans "You contributed" %}:</td><td>{{ player.contribution }}</td></tr>
+            <tr><td>{% trans "Other participants contributed" %}:</td><td></td></tr>
+            {% for p in player.get_others_in_group %}
+                <tr><td></td><td>{{ p.contribution }}</td></tr>
+            {% endfor %}
+
+            <tr><td>{% trans "Total contribution" %}:</td><td>{{ group.total_contribution }}</td></tr>
+
+            <tr><td colspan="2"><hr/></td></tr>
+
+            <tr><td>{% trans "Total earnings from the project" %}:</td><td>{{ total_earnings }}</td></tr>
+            <tr><td>{% trans "Your earnings from the project" %}:</td><td>{{ group.individual_share }}</td></tr>
+
+            <tr><td colspan="2"><hr/></td></tr>
+
+            <tr><td>{% trans "Thus in total you earned" %}:</td><td>{{ individual_earnings }}</td></tr>
+            <tr><td>{% trans "In addition you get a participation fee of" %}:</td><td>{{ Constants.base_points }}</td></tr>
+
+            <tr><td colspan="2"><hr/></td></tr>
+
+            <tr><td>{% trans "So in sum you will get" %}:</td><td>{{ player.payoff }}</td></tr>
+        </table>
+        <p></p>
+    {% endcomment %}
+    <table class=table style='width: auto'>
+        {% for row in table %}
+            <tr>
+                {% for cell in row %}
+                    {% if forloop.counter0 %}
+                        <th>{{cell}}</th>
+                    {% else %}
+                        <td>{{cell}}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
         {% endfor %}
-
-        <tr><td>{% trans "Total contribution" %}:</td><td>{{ group.total_contribution }}</td></tr>
-
-        <tr><td colspan="2"><hr/></td></tr>
-
-        <tr><td>{% trans "Total earnings from the project" %}:</td><td>{{ total_earnings }}</td></tr>
-        <tr><td>{% trans "Your earnings from the project" %}:</td><td>{{ group.individual_share }}</td></tr>
-
-        <tr><td colspan="2"><hr/></td></tr>
-
-        <tr><td>{% trans "Thus in total you earned" %}:</td><td>{{ individual_earnings }}</td></tr>
-        <tr><td>{% trans "In addition you get a participation fee of" %}:</td><td>{{ Constants.base_points }}</td></tr>
-
-        <tr><td colspan="2"><hr/></td></tr>
-
-        <tr><td>{% trans "So in sum you will get" %}:</td><td>{{ player.payoff }}</td></tr>
     </table>
-    <p></p>
 
     {% next_button %}
 
