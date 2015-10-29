@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-28 15:16+0100\n"
+"POT-Creation-Date: 2015-10-29 12:07+0100\n"
 "PO-Revision-Date: 2015-10-28 14:44+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,40 +125,48 @@ msgstr "La sua ricompensa potrebbe essere"
 msgid "Results"
 msgstr "Risultati"
 
-#: templates/public_goods/Results.html:13
-msgid "You contributed"
-msgstr "Il tuo contributo"
-
-#: templates/public_goods/Results.html:14
-msgid "Other participants contributed"
-msgstr "Contributo dell'altro partecipante"
-
-#: templates/public_goods/Results.html:19
-msgid "Total contribution"
-msgstr "Contributi totali"
-
-#: templates/public_goods/Results.html:23
-msgid "Total earnings from the project"
-msgstr "Guadagni totali dal progetto"
-
-#: templates/public_goods/Results.html:24
-msgid "Your earnings from the project"
-msgstr "Il tuo guadagno dal progetto"
-
-#: templates/public_goods/Results.html:28
-msgid "Thus in total you earned"
-msgstr "Quindi il totale hai guadagnato"
-
-#: templates/public_goods/Results.html:29
-msgid "In addition you get a participation fee of"
-msgstr "In aggiunta prendi un premio di partecipazione di"
-
-#: templates/public_goods/Results.html:33
-msgid "So in sum you will get"
-msgstr "Quindi in totale prendi"
-
-#: views.py:46
+#: views.py:48
 #, fuzzy
 #| msgid "Other participants contributed"
 msgid "Waiting for other participants to contribute."
 msgstr "Contributo dell'altro partecipante"
+
+#: views.py:63
+msgid "You contributed"
+msgstr "Il tuo contributo"
+
+#: views.py:64
+msgid "Other participants contributed"
+msgstr "Contributo dell'altro partecipante"
+
+#: views.py:69
+msgid "Total contribution"
+msgstr "Contributi totali"
+
+#: views.py:71
+msgid "Total earnings from the project"
+msgstr "Guadagni totali dal progetto"
+
+#: views.py:72
+msgid "Your earnings from the project"
+msgstr "Il tuo guadagno dal progetto"
+
+#: views.py:74
+msgid "Thus in total you earned"
+msgstr "Quindi il totale hai guadagnato"
+
+#: views.py:75
+msgid "In addition you get a participation fee of"
+msgstr "In aggiunta prendi un premio di partecipazione di"
+
+#: views.py:77
+msgid "So in sum you will get"
+msgstr "Quindi in totale prendi"
+
+#: views.py:80
+msgid "Public goods game"
+msgstr ""
+
+#: views.py:93
+msgid "Gioco concluso, i risultati verranno mostrati in seguito"
+msgstr ""
