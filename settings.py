@@ -286,21 +286,21 @@ SESSION_CONFIGS = [
             'market', 'payment_info'
         ],
     },
-         # {
-         #     'name': 'bertrand_competition',
-         #     'display_name': "Bertrand Competition",
-         #     'num_demo_participants': 2,
-         #     'app_sequence': [
-         #         'bertrand_competition', 'payment_info'
-         #     ],
-         # },
+    {
+        'name': 'welcome_choice',
+        'display_name': "Welcome",
+        'num_demo_participants': 1,
+        'app_sequence': [
+            'welcome_choice'
+        ],
+    },
     {
         'name': 'prova_sequenza',
         'display_name': "Sessione lunedi 12 ottobre",
         'num_demo_participants': 2,
         'participation_fee': 0.00,  #'use_points': False,
         'app_sequence': [
-            'market', 'dictator', 'payment_recap'
+            'welcome_choice','market', 'dictator', 'payment_recap'
         ],
     },
 

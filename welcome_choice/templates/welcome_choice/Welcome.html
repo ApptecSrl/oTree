@@ -1,0 +1,33 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Benvenuto" %}
+{% endblock %}
+
+{% block content %}
+
+<!--
+Documentation on how to write a django template here:
+https://docs.djangoproject.com/en/dev/topics/templates/
+
+Bootstrap comes pre-loaded, so you can use any Bootstrap elements:
+http://getbootstrap.com/components/
+
+-->
+
+
+{% blocktrans trimmed %}
+<p>Siamo lieti di darti il benvenuto a questo esperimento. Ti preghiamo di leggere le seguenti istruzioni con attenzione. Durante tutto il corso dell’esperimento è assolutamente vietato comunicare con altri partecipanti. Eventuali domande di chiarimento devono essere rivolte esclusivamente agli organizzatori. </p>
+<p>
+Partecipando all'esperimento puoi guadagnare del denaro il cui preciso ammontare dipende dalle scelte che saranno effettuate da te e dagli altri partecipanti. Tale somma ti sarà pagata in contanti al termine dell’esperimento stesso.
+Nel corso dell'esperimento potrai anche, tramite le tue scelte, contribuire all’associazione benefica che hai selezionato dall’elenco che ti abbiamo proposto. La somma corrispondente, frutto delle scelte tue e degli altri partecipanti, sarà formalmente inclusa nel tuo pagamento complessivo, ma verrà immediatamente donata online alla associazione. Su tua richiesta espressa può essere donata a tuo nome.
+Ti sarà chiesto di firmare una ricevuta relativa al pagamento complessivo, compresa la donazione.
+L’esperimento consiste di 5 diverse sessioni e di un questionario finale. </p>
+<p>
+È importante che tu sia consapevole che tutte le tue decisioni e i tuoi guadagni sono informazioni private e anonime. Infatti gli sperimentatori alla fine studieranno i dati relativi alle scelte senza poterli abbinare ai partecipanti all’esperimento. Allo stesso tempo, ognuno di voi sarà pagato in privato dal personale amministrativo che non potrà in nessun modo sapere quali siano le scelte che vi hanno permesso di ottenere tali soldi.</p>
+{% endblocktrans %}
+    {% next_button %}
+
+{% endblock %}
