@@ -1,0 +1,32 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+
+
+
+{% block title %}
+    {% trans "Inserisci il codice numerico ricevuto dagli organizzatori" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+    {% formfield player.kind with label="Inserisci il numero ricevuto." %}
+
+    {% formfield player.kindCopy with label="Per sicurezza inserisci nuovamente il numero ricevuto." %}
+
+
+<p>
+
+
+
+<p>
+
+<p>{% next_button %}</p>
+
+
+
+{% endblock %}
