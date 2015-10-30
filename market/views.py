@@ -18,15 +18,25 @@ class GetInputKind(Page):
     template_name = 'market/InputKind.html'
     form_model = models.Player
     form_fields = ['kind']
+
     def is_displayed(self):
         return self.subsession.round_number == 1
 
 class MatchingWaitPage(WaitPage):
+
     wait_for_all_groups = True
+
     def is_displayed(self):
         return self.subsession.round_number == 1
+
+
+
     def after_all_players_arrive(self):
+
         print 'Ora matching in corso'
+        for p in self.subsession.get_players():
+            p.tipo=p.participant.vars['kind']
+            print p.tipo
         players = self.subsession.get_players()
 
         if len(players) > 5:
@@ -40,6 +50,8 @@ class MatchingWaitPage(WaitPage):
                 self.makeGroups(evenPlayers, oddPlayers, newGr_mat, threshold)
             print 'Nuovi gruppi: ', newGr_mat
             self.subsession.set_groups(newGr_mat)
+            #Check now the result
+            self.check_inside_groups()
 
     def computeThreshold(self, evenPlayers, oddPlayers, minEO):
         threshold = minEO // 3 + minEO % 3
@@ -62,7 +74,7 @@ class MatchingWaitPage(WaitPage):
     def buildEvenOdd(self, players, evenPlayers, oddPLayers): #forma e rimescola i pari e dispari
         num_players=len(players)
         for i in range(0, num_players, 1):
-            if (players[i].kind) % 2 == 0:
+            if (players[i].tipo) % 2 == 0:
                 evenPlayers.append(players[i])
             else:
                 oddPLayers.append(players[i])
@@ -71,12 +83,20 @@ class MatchingWaitPage(WaitPage):
         print 'pari', evenPlayers
         print 'dispari', oddPLayers
 
+    def check_inside_groups(self):
+            produced_groups = self.subsession.get_groups()
+            for g in produced_groups:
+                print 'Gruppo numero ', g
+                pl1 = g.get_player_by_id(1)
+                pl2 = g.get_player_by_id(2)
+                print 'codice del primo giocatore', pl1.tipo
+                print 'codice del secondo giocatore', pl2.tipo
 
 class Introduction(Page):
 
     template_name = 'global/Introduction.html'
-    def vars_for_template(self):
-        tipo = self.player.participant.vars['kind']
+    # def vars_for_template(self):
+    #     tipo = self.player.participant.vars['kind']
 
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -197,7 +217,7 @@ class ResultsFinal(Page):
             'table': [('Gioco concluso, i risultati verranno mostrati in seguito',)]
         }
 
-page_sequence = [GetInputKind,
+page_sequence = [#GetInputKind,
                 MatchingWaitPage,
                 Introduction,
                 Decide,
