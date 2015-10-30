@@ -7,12 +7,18 @@
 
 
 {% block title %}
-    {% trans "Inserisci il codice numerico ricevuto dagli organizzatori" %}
+    {% trans "Inserisci il codice numerico ricevuto dagli organizzatori. " %}
 {% endblock %}
 
 {% block content %}
+{% blocktrans trimmed %}
+<p>E' di fondamentale importanza inserire correttamente tale codice ai fini del regolare svolgimento di tutto l'esperimento e delle operazioni di pagamento. </p>
+<p>In caso di dubbi si prega di rivolgersi agli organizzatori.</p>
+<p></p>
+<p>
 
-
+{% endblocktrans %}
+<hr style="background:#F87431; border:0; height:7px" />
 
     {% formfield player.kind with label="Inserisci il numero ricevuto." %}
 

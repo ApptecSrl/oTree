@@ -14,13 +14,13 @@ def vars_for_all_templates(self):
     return {'instructions': 'market/Instructions.html',
             'short_instructions': 'market/Short_Instructions.html'}
 
-class GetInputKind(Page):
-    template_name = 'market/InputKind.html'
-    form_model = models.Player
-    form_fields = ['kind']
-
-    def is_displayed(self):
-        return self.subsession.round_number == 1
+# class GetInputKind(Page):
+#     template_name = 'market/InputKind.html'
+#     form_model = models.Player
+#     form_fields = ['kind']
+#
+#     def is_displayed(self):
+#         return self.subsession.round_number == 1
 
 class MatchingWaitPage(WaitPage):
 
@@ -217,9 +217,8 @@ class ResultsFinal(Page):
             'table': [('Gioco concluso, i risultati verranno mostrati in seguito',)]
         }
 
-page_sequence = [#GetInputKind,
-                MatchingWaitPage,
-                Introduction,
+page_sequence = [MatchingWaitPage,
+                #Introduction,
                 Decide,
                 ResultsWaitPage,
                 ResultsTemp,

@@ -61,7 +61,7 @@ class Group(otree.models.BaseGroup):
         tmp_payoff2 = float(p2 - q2) * float(share2)
         #print 'payoff 1: ', tmp_payoff1, 'type', type(tmp_payoff1)
         #print 'payoff 2: ', tmp_payoff2, 'type', type(tmp_payoff1)
-        print players[0].kind
+
         players[0].share = share1
         players[1].share = share2
         players[0].pot_payoff = tmp_payoff1
@@ -110,12 +110,6 @@ class Player(otree.models.BasePlayer):
         doc="""Positive impact due to quality chosen"""
     )
 
-    #tipo = models.HiddenField()
-
-    kind = models.IntegerField(
-        min=0,
-        doc="""Label received by experimenters"""
-    )
 
     def other_player(self):
         """Returns the opponent of the current player"""
