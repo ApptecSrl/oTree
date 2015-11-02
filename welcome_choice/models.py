@@ -12,10 +12,10 @@ from otree.constants import BaseConstants
 from otree.models import BaseSubsession, BaseGroup, BasePlayer
 # </standard imports>
 
-author = 'Your name here'
+author = 'Domenico Colucci'
 
 doc = """
-Your app description
+Introduces and welcomes, but first of all acquires code received by the experimenters
 """
 
 

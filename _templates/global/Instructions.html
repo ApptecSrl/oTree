@@ -1,8 +1,13 @@
 {% load otree_tags %}
+{% load i18n %}
 <div class="box effect7">
     <h4>Istruzioni</h4>
     {% block instructions %}{% endblock %}
+    {% blocktrans trimmed  %}
     <p>
-    Per comodità una sintesi di queste istruzioni rimarrà disponibile in tutte le successive schermate.
+    Per comodità le istruzioni (o una loro sintesi) rimarranno disponibili in tutte le successive schermate.
     </p>
+    {% endblocktrans %}
 </div>
+<!-- Translates:-->
+<!--For your convenience, these instructions (or a short version of them) will remain available to you on all subsequent screens of this study.-->

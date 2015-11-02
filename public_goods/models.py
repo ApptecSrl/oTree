@@ -10,13 +10,13 @@ import random
 # </standard imports>
 
 doc = """
-This is a one-period public goods game with 3 players. Assignment to groups is
-random.
+This is a one-period public goods game with 4 players or 3 players depending on the number of subjects actually available.
+An even number of subjects is assumed. Assignment to groups is random.
 
 """
 
 
-source_code = "https://github.com/oTree-org/oTree/tree/master/public_goods"
+#source_code = "https://github.com/oTree-org/oTree/tree/master/public_goods"
 
 
 bibliography = ()
@@ -47,36 +47,7 @@ class Constants(otree.constants.BaseConstants):
 
 class Subsession(otree.models.BaseSubsession):
 
-    def before_session_starts(self):
-
-        # Creates groups: possibly 4 each group otherwise 2 3-groups and the rest 4-groups
-        if self.round_number == 1:
-
-            # extract and mix the players
-            players = self.get_players()
-            random.shuffle(players)
-            num_players = len(players)
-            list_of_lists = []
-            if (num_players < 6):
-                list_of_lists.append(players)
-            else:
-                if (num_players % 4) == 0: #groups are all 4 players each
-                    num_groups = num_players//4
-                    for i in range(0, num_groups*4,4):
-                        list_of_lists.append(players[i:i+4])
-
-                if (num_players % 4) == 2: #2 groups are 3 each, rest are 4 players groups
-                    num_4groups = num_players//4 - 1
-                    for i in range(0, num_4groups*4,4):
-                        list_of_lists.append(players[i:i+4])
-                    list_of_lists.append(players[num_players-6:num_players-3])
-                    list_of_lists.append(players[num_players-3:num_players])
-
-            print list_of_lists
-
-            self.set_groups(list_of_lists)
-            print self.get_groups()
-
+    pass
 
 class Group(otree.models.BaseGroup):
 
@@ -88,9 +59,12 @@ class Group(otree.models.BaseGroup):
 
     individual_share = models.CurrencyField()
 
+
+
     def set_payoffs(self):
+        players_in_the_group=len(self.get_players())
         self.total_contribution = sum([p.contribution for p in self.get_players()])
-        self.individual_share = self.total_contribution * Constants.efficiency_factor / Constants.players_per_group
+        self.individual_share = self.total_contribution * Constants.efficiency_factor / players_in_the_group
         for p in self.get_players():
             p.payoff = (Constants.endowment - p.contribution) + self.individual_share + Constants.base_points
 

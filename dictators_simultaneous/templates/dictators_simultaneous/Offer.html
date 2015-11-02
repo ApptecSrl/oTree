@@ -1,0 +1,16 @@
+{% extends "global/Question.html" %}
+{% load otree_tags %}
+{% load i18n %}
+
+{% block title %} {% trans "Your Decision" %}{% endblock %}
+
+{% block question %}
+
+
+{% blocktrans trimmed %}
+<p>
+Please decide how many points you will keep for yourself.
+</p>
+
+{% endblocktrans %}
+{% endblock %}

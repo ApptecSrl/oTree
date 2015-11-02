@@ -5,7 +5,52 @@ from ._builtin import Page, WaitPage
 from otree.common import Currency as c, currency_range
 from .models import Constants
 from django.utils.translation import ugettext as _
+import random
 
+class MatchingWaitPage(WaitPage):
+
+    wait_for_all_groups = True
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def after_all_players_arrive(self):
+
+        print 'Ora matching public goods in corso'
+
+        players = self.subsession.get_players()
+        num_players = len(players)
+        random.shuffle(players)
+        list_of_lists = []
+
+        if (num_players < 6):
+                list_of_lists.append(players)
+        else:
+            if (num_players % 4) == 0: #groups are all 4 players each
+                num_groups = num_players//4
+                for i in range(0, num_groups*4,4):
+                    list_of_lists.append(players[i:i+4])
+
+            if (num_players % 4) == 2: #2 groups are 3 each, rest are 4 players groups
+                num_4groups = num_players//4 - 1
+                for i in range(0, num_4groups*4,4):
+                    list_of_lists.append(players[i:i+4])
+                list_of_lists.append(players[num_players-6:num_players-3])
+                list_of_lists.append(players[num_players-3:num_players])
+
+            print list_of_lists
+
+        self.subsession.set_groups(list_of_lists)
+
+        print self.subsession.get_groups()
+        #Check now the result
+       # self.check_inside_groups()
+
+    def check_inside_groups(self):
+            produced_groups = self.subsession.get_groups()
+            for g in produced_groups:
+                print 'Gruppo numero ', g
+                print 'lunghezza gruppo', len(g)
 
 class Introduction(Page):
 
@@ -72,7 +117,7 @@ class Results(Page):
         result_table.append((_('Thus in total you earned'), payment_result['individual_earnings']))
         result_table.append((_('In addition you get a participation fee of'), Constants.base_points))
         result_table.append(('', ''))
-        result_table.append((_('So in sum you will get'), self.player.payoff))
+        result_table.append((_('Your payoff in this activity'), self.player.payoff))
 
         game_results = {
             'label': _('Public goods game'),
@@ -88,10 +133,11 @@ class Results(Page):
             self.player.participant.vars['applications_results'] = [game_results]
 
         return {
-            'table': [(_('Gioco concluso, i risultati verranno mostrati in seguito'),)]
+            'table': [(_('This activity is over. Results will be shown later.'),)]
         }
 
 page_sequence = [
+    MatchingWaitPage,
     Introduction,
     Question,
     Feedback,

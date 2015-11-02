@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Otree_dictator_sim\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-02 15:50+0100\n"
+"PO-Revision-Date: 2015-11-02 16:54+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: Italian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: templates/dictators_simultaneous/Instructions.html:6
+#, python-format
+msgid ""
+"<p> You will be paired randomly and anonymously ... </p> <p> There are "
+"%(total)s to split. You have to decide decide how many points she or he will "
+"retain. The rest will go to the other participant. </p>"
+msgstr ""
+"<p> In questa ttività sei associato in modo casuale ed anonimo ... </p> <p> "
+"Ci sono %(total)s da suddividere. Devi decidere .... </p>"
+
+#: templates/dictators_simultaneous/Offer.html:5
+msgid "Your Decision"
+msgstr "La tua decisione"
+
+#: templates/dictators_simultaneous/Offer.html:10
+msgid "<p> Please decide how many points you will keep for yourself. </p>"
+msgstr "<p> Per favore decidi quanti punti tenere per te. </p>"
+
+#: views.py:126
+msgid "Another participant decided to offer you"
+msgstr "Un altro partecipante ha deciso di offrirti"
+
+#: views.py:127
+msgid "You kept for yourself"
+msgstr "Hai tenuto per te"
+
+#: views.py:130
+msgid "Your payoff in this activity"
+msgstr "Il tuo profitto in questa attività"
+
+#: views.py:146
+msgid "This activity is over. Results will be shown later."
+msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
+
+#~ msgid ""
+#~ "<p> You will be paired randomly and anonymously with another participant. "
+#~ "In this study, one of you will be Participant 1 and the other Participant "
+#~ "2. Prior to making a decision, you will learn your role, which will be "
+#~ "randomly assigned. </p> <p> There are %(Constants.allocated_amount)s to "
+#~ "split. Participant 1 will decide how many points she or he will retain. "
+#~ "Then the rest will go to Participant 2. </p>"
+#~ msgstr "Sarai associato in modo casuale ed anonimo"

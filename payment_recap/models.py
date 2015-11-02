@@ -16,7 +16,7 @@ author = ''
 
 doc = """
 This application provides a recap of all previous results
-It need to save the result you want to display in a session user variable
+You need to save the results you want to display in a session user variable
 """
 
 

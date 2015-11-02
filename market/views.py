@@ -29,28 +29,28 @@ class MatchingWaitPage(WaitPage):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
-
-
     def after_all_players_arrive(self):
+        if self.subsession.round_number == 1:
+            self.matching()
 
+    def matching(self):
         print 'Ora matching in corso'
         for p in self.subsession.get_players():
-            p.tipo=p.participant.vars['kind']
+            p.tipo = p.participant.vars['kind']
             print p.tipo
         players = self.subsession.get_players()
-
         if len(players) > 5:
             newGr_mat = []
             evenPlayers = []
             oddPlayers = []
             self.buildEvenOdd(players, evenPlayers, oddPlayers)
-            minEO = min(len(evenPlayers),len(oddPlayers))
-            if minEO>2:
+            minEO = min(len(evenPlayers), len(oddPlayers))
+            if minEO > 2:
                 threshold = self.computeThreshold(evenPlayers, oddPlayers, minEO)
                 self.makeGroups(evenPlayers, oddPlayers, newGr_mat, threshold)
             print 'Nuovi gruppi: ', newGr_mat
             self.subsession.set_groups(newGr_mat)
-            #Check now the result
+            # Check now the result
             self.check_inside_groups()
 
     def computeThreshold(self, evenPlayers, oddPlayers, minEO):
@@ -196,7 +196,7 @@ class ResultsFinal(Page):
             (_('L\'impatto positivo dovuto alle tue scelte'), payment_result['p_impact']),
             ('', ''),
             (_('La tua quota di mercato nel periodo pagato'), format(payment_result['p_share'], '.2%')),
-            (_('Il tuo profitto effettivo in questa attivita\''), payment_result['payoff_sum']),
+            (_('Il tuo profitto in questa attivita\''), payment_result['payoff_sum']),
         ]
 
         game_results = {
@@ -214,7 +214,7 @@ class ResultsFinal(Page):
 
 
         return {
-            'table': [('Gioco concluso, i risultati verranno mostrati in seguito',)]
+            'table': [(_('Questa attività è conclusa. I risultati verranno mostrati in seguito.'),)]
         }
 
 page_sequence = [MatchingWaitPage,
