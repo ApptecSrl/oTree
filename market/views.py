@@ -234,7 +234,7 @@ class ResultsFinal(Page):
 
 
         return {
-            'table': [(_('Questa attività è conclusa. I risultati verranno mostrati in seguito.'),)]
+            'table': [(_(u'Questa attività è conclusa. I risultati verranno mostrati in seguito.'),)]
         }
 
 page_sequence = [MatchingWaitPage,
