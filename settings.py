@@ -173,6 +173,15 @@ SESSION_CONFIGS = [
             'market', 'payment_info'
         ],
     },
+        {
+        'name': 'prova_market',
+        'display_name': "Prova Market game con Welcome",
+        'real_world_currency_per_point': 0.25,
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice', 'market', 'payment_info'
+        ],
+    },
     {
         'name': 'welcome_choice',
         'display_name': "Welcome",
