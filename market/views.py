@@ -11,8 +11,11 @@ from django.utils.translation import ugettext as _
 
 
 def vars_for_all_templates(self):
-    return {'instructions': 'market/Instructions.html',
-            'short_instructions': 'market/Short_Instructions.html'}
+    return {
+        'total_q': 3,
+        'instructions': 'market/Instructions.html',
+        'short_instructions': 'market/Short_Instructions.html'
+    }
 
 # class GetInputKind(Page):
 #     template_name = 'market/InputKind.html'
@@ -119,7 +122,10 @@ class Question1(Page):
         return self.subsession.round_number == 1
 
     def vars_for_template(self):
-        return {'question': self.question}
+        return {
+            'num_q': 1,
+            'question': self.question
+        }
 
 
 class Feedback1(Page):
@@ -130,18 +136,22 @@ class Feedback1(Page):
 
     def vars_for_template(self):
         p = self.player
-        return {'answers': {
-            _('"Profitto"'): [p.training_my_profit, 100],
-            _('"Contributo Sociale"'): [p.training_my_social_contribution, 0]},
-            'explanation': mark_safe(_('''<br><strong>Domanda: </strong>''') + Question1.question\
-                                     + _('''<br><br><strong>Solution: </strong>Your Profit would be equal to\
-                                     100 points and your Social Contribution would be equal to 0 points.''')\
-                                     + _('''<br><br><strong>Explanation: </strong> The Profit equals\
-                                     the Total Markup (Price - Quality) multiplied by the Market Share.\
-                                     In this case you have: <strong>(200 - 0) * 50 / 100 = 100 points</strong>.\
-                                     The Social Contribution is obtained by multiplicating the Quality,\
-                                     the Efficiency Factor and the Market Share. In this case it is:\
-                                     <strong>0 * 1.5 * 50 / 100 = 0 points</strong>.'''))
+        return {
+            'num_q': 1,
+            'answers': {
+                _('"Profitto"'): [p.training_my_profit, 100],
+                _('"Contributo Sociale"'): [p.training_my_social_contribution, 0]
+            },
+            'explanation': mark_safe(
+                _('''<br><strong>Domanda: </strong>''') + Question1.question\
+                + _('''<br><br><strong>Solution: </strong>Your Profit would be equal to\
+                100 points and your Social Contribution would be equal to 0 points.''')\
+                + _('''<br><br><strong>Explanation: </strong> The Profit equals\
+                the Total Markup (Price - Quality) multiplied by the Market Share.\
+                In this case you have: <strong>(200 - 0) * 50 / 100 = 100 points</strong>.\
+                The Social Contribution is obtained by multiplicating the Quality,\
+                the Efficiency Factor and the Market Share. In this case it is:\
+                <strong>0 * 1.5 * 50 / 100 = 0 points</strong>.'''))
         }
 
 
@@ -228,8 +238,10 @@ class ResultsFinal(Page):
         }
 
 page_sequence = [MatchingWaitPage,
-                #Introduction,
-                Decide,
-                ResultsWaitPage,
-                ResultsTemp,
-                ResultsFinal]
+                 #Introduction,
+                 Question1,
+                 Feedback1,
+                 Decide,
+                 ResultsWaitPage,
+                 ResultsTemp,
+                 ResultsFinal]
