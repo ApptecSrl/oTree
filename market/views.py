@@ -105,9 +105,15 @@ class Introduction(Page):
 class Question1(Page):
     template_name = 'global/Question.html'
     form_model = models.Player
-    form_fields = ['training_my_profit']
-    question = '''Suppose that you set your price at 40 points and the other\
-        firm at 50 points. What would be your profit?'''
+    form_fields = ['training_my_profit', 'training_my_social_contribution']
+    question = _(u"Consider the following hypothetical scenario. Your chosen quality is 0,\
+                 and your chosen price is 200. Also, as a consequence of your choices and\
+                 of your opponent's you have a 50% market share.\
+                 In this context, your profit and social contribution would be ...\
+                 Considera la seguente situazione ipotetica: hai scelto una qualità pari a 0\
+                 e un prezzo pari a 200. Inoltre, come conseguenza delle scelte tue e\
+                 dell’altro concorrente hai una quota di mercato pari al 50%.\
+                 In questo contesto, il tuo profitto e la tua contribuzione sociale sarebbero ...")
 
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -124,14 +130,18 @@ class Feedback1(Page):
 
     def vars_for_template(self):
         p = self.player
-        return {
-            'answer': [p.training_my_profit, 40],
-            'explanation': mark_safe(Question1.question + '''
-                <strong>Solution: 40 points</strong>
-                <strong>Explanation:</strong> Since your price was lower than\
-                that of the other firm, the buyer bought from you. Hence your\
-                profit would be your price, which was <strong>40\
-                points</strong>.''')
+        return {'answers': {
+            _('"Profitto"'): [p.training_my_profit, 100],
+            _('"Contributo Sociale"'): [p.training_my_social_contribution, 0]},
+            'explanation': mark_safe(_('''<br><strong>Domanda: </strong>''') + Question1.question\
+                                     + _('''<br><br><strong>Solution: </strong>Your Profit would be equal to\
+                                     100 points and your Social Contribution would be equal to 0 points.''')\
+                                     + _('''<br><br><strong>Explanation: </strong> The Profit equals\
+                                     the Total Markup (Price - Quality) multiplied by the Market Share.\
+                                     In this case you have: <strong>(200 - 0) * 50 / 100 = 100 points</strong>.\
+                                     The Social Contribution is obtained by multiplicating the Quality,\
+                                     the Efficiency Factor and the Market Share. In this case it is:\
+                                     <strong>0 * 1.5 * 50 / 100 = 0 points</strong>.'''))
         }
 
 

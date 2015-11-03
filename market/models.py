@@ -83,7 +83,10 @@ class Player(otree.models.BasePlayer):
     subsession = models.ForeignKey(Subsession)
     # </built-in>
     training_my_profit = models.CurrencyField(
-        verbose_name='My profit would be')
+        verbose_name=_('My profit would be'))
+    # Question1
+    training_my_social_contribution = models.CurrencyField(
+        verbose_name=_('My social contribution would be'))
 
     price = models.CurrencyField(
         min=0, max=Constants.maximum_price,
