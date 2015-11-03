@@ -1,11 +1,16 @@
 {% extends "global/Base.html" %}
 {% load otree_tags %}
+{% load i18n %}
 
 {% block title %}
 {% if title %}
 {{ title }}
 {% else %}
-Domande di comprensione {{ num_q|default:1 }} di {{ total_q|default:1 }}
+
+{% blocktrans with num_q=num_q|default:1 total_q=total_q|default:1 %}
+Understanding question {{ num_q }} of {{ total_q }}
+{% endblocktrans %}
+
 {% endif %}
 {% endblock %}
 
