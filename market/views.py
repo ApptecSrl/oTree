@@ -237,7 +237,7 @@ class Feedback3(Page):
         return {
             'num_q': 3,
             'answers': {
-                _('"Correct answer"'): [p.training_correct_answer_3, 2],
+                _('"Affermazione corretta"'): [p.training_correct_answer_3, 2],
             },
             'explanation': mark_safe(
                 _('''<br><strong>Question: </strong>''') + Question3.question\

@@ -28,6 +28,7 @@ class Constants(otree.constants.BaseConstants):
     maximum_price = c(400)
     alpha = 1.5
     efficiency = 1.5
+    variabileinutile = 1
 
 
 class Subsession(otree.models.BaseSubsession):
