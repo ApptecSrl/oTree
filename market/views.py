@@ -9,7 +9,6 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 
 
-
 def vars_for_all_templates(self):
     return {
         'total_q': 3,
@@ -108,12 +107,12 @@ class Introduction(Page):
 class Question1(Page):
     template_name = 'global/Question.html'
     form_model = models.Player
-    form_fields = ['training_my_profit', 'training_my_social_contribution']
+    form_fields = ['training_my_profit_1', 'training_my_social_contribution_1']
     question = _(u"Consider the following hypothetical scenario. Your chosen quality is 0,\
                  and your chosen price is 200. Also, as a consequence of your choices and\
                  of your opponent's you have a 50% market share.\
                  In this context, your profit and social contribution would be ...\
-                 Considera la seguente situazione ipotetica: hai scelto una qualità pari a 0\
+                 Considera la seguente situazione ipotetica. Hai scelto una qualità pari a 0\
                  e un prezzo pari a 200. Inoltre, come conseguenza delle scelte tue e\
                  dell’altro concorrente hai una quota di mercato pari al 50%.\
                  In questo contesto, il tuo profitto e la tua contribuzione sociale sarebbero ...")
@@ -139,11 +138,11 @@ class Feedback1(Page):
         return {
             'num_q': 1,
             'answers': {
-                _('"Profitto"'): [p.training_my_profit, 100],
-                _('"Contributo Sociale"'): [p.training_my_social_contribution, 0]
+                _('"Profit"'): [p.training_my_profit_1, 100],
+                _('"Social contribution"'): [p.training_my_social_contribution_1, 0]
             },
             'explanation': mark_safe(
-                _('''<br><strong>Domanda: </strong>''') + Question1.question\
+                _('''<br><strong>Question: </strong>''') + Question1.question\
                 + _('''<br><br><strong>Solution: </strong>Your Profit would be equal to\
                 100 points and your Social Contribution would be equal to 0 points.''')\
                 + _('''<br><br><strong>Explanation: </strong> The Profit equals\
@@ -152,6 +151,104 @@ class Feedback1(Page):
                 The Social Contribution is obtained by multiplicating the Quality,\
                 the Efficiency Factor and the Market Share. In this case it is:\
                 <strong>0 * 1.5 * 50 / 100 = 0 points</strong>.'''))
+        }
+
+class Question2(Page):
+    template_name = 'global/Question.html'
+    form_model = models.Player
+    form_fields = ['training_my_profit_2', 'training_my_social_contribution_2']
+    question = _(u"Consider the following hypothetical scenario. Your chosen quality is 200,\
+                 and your chosen price is 400. Also, as a consequence of your choices and\
+                 of your opponent's you have a 30% market share.\
+                 In this context, your profit and social contribution would be ...\
+                 Considera la seguente situazione ipotetica. Hai scelto una qualità pari a 200\
+                 e un prezzo pari a 400. Inoltre, come conseguenza delle scelte tue e\
+                 dell’altro concorrente hai una quota di mercato pari al 30%.\
+                 In questo contesto, il tuo profitto e la tua contribuzione sociale sarebbero ...")
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        return {
+            'num_q': 2,
+            'question': self.question
+        }
+
+
+class Feedback2(Page):
+    template_name = 'global/Feedback.html'
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        p = self.player
+        return {
+            'num_q': 2,
+            'answers': {
+                _('"Profit"'): [p.training_my_profit_2, 60],
+                _('"Social contribution"'): [p.training_my_social_contribution_2, 90]
+            },
+            'explanation': mark_safe(
+                _('''<br><strong>Question: </strong>''') + Question2.question\
+                + _('''<br><br><strong>Solution: </strong>Your Profit would be equal to\
+                60 points and your Social Contribution would be equal to 90 points.''')\
+                + _('''<br><br><strong>Explanation: </strong> The Profit equals\
+                the Total Markup (Price - Quality) multiplied by the Market Share.\
+                In this case you have: <strong>(400 - 200) * 30 / 100 = 60 points</strong>.\
+                The Social Contribution is obtained by multiplicating the Quality,\
+                the Efficiency Factor and the Market Share. In this case it is:\
+                <strong>200 * 1.5 * 30 / 100 = 90 points</strong>.'''))
+        }
+
+class Question3(Page):
+    template_name = 'global/Question.html'
+    form_model = models.Player
+    form_fields = ['training_correct_answer_3']
+    question = mark_safe(_(u'''Considera la seguente situazione ipotetica. Nel precedente periodo hai scelto una\
+                 qualità pari a 100 e un prezzo pari a 300. La tua quota di mercato è stata pari a 0,2.\
+                 Adesso scegli di ridurre il prezzo a 200 mantenendo la qualità uguale a 100.\
+                 Quale delle seguenti affermazioni è vera?''') + ('''<br><br>\
+                 <strong>(1)</strong> La mia quota di mercato e\' sicuramente cresciuta.<br>\
+                 <strong>(2)</strong> La mia quota di mercato e\' maggiore di quella che otterrei\
+                 mantenendo l offerta precedente.<br>\
+                 <strong>(3)</strong> La mia quota di mercato puo\' essere diminuita solo se anche\
+                 il rivale ha ridotto il suo prezzo.'''))
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        return {
+            'num_q': 3,
+            'question': self.question
+        }
+
+
+class Feedback3(Page):
+    template_name = 'global/Feedback.html'
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        p = self.player
+        return {
+            'num_q': 3,
+            'answers': {
+                _('"Correct answer"'): [p.training_correct_answer_3, 2],
+            },
+            'explanation': mark_safe(
+                _('''<br><strong>Question: </strong>''') + Question3.question\
+                + _('''<br><br><strong>Solution: </strong>Answer nr. 2 is correct.''')\
+                + _(u'''<br><br><strong>Explanation: </strong> La risposta n. 1 è falsa\
+                perché la tua quota di mercato dipende anche dalle scelte del tuo concorrente.\
+                La risposta n. 2 è vera perché per ogni possibile offerta del rivale,\
+                una riduzione del tuo prezzo aumenta la tua quota di mercato.\
+                La risposta n. 3 è falsa perché la tua quota di mercato può essere diminuita anche se\
+                il tuo concorrente ha aumentato sufficientemente la qualità mantenendo\
+                il prezzo invariato o aumentandolo di poco.'''))
         }
 
 
@@ -241,6 +338,10 @@ page_sequence = [MatchingWaitPage,
                  #Introduction,
                  Question1,
                  Feedback1,
+                 Question2,
+                 Feedback2,
+                 Question3,
+                 Feedback3,
                  Decide,
                  ResultsWaitPage,
                  ResultsTemp,
