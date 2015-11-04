@@ -8,12 +8,12 @@
 {% endblock %}
 
 {% block content %}
-{% blocktrans trimmed with payoff=player.payoff invested=player.invested %}
+
 <p>
-        This is what happened. </p>
-<p>  You invested: {{invested}}. You obtained the payoff: {{ payoff }}
+        {% trans  "Here is what happened." %} </p>
+<p> {% trans "You invested:" %} {{ player.invested }}.  {% trans "The project went" %} {{ player.stringOutcome }} {% trans "and therefore you obtained the payoff:" %} {{player.payoff }}.
      </p>
-{% endblocktrans %}
+
     {% next_button %}
 {% endblock %}
 

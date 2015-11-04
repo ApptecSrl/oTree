@@ -18,7 +18,7 @@ from django.utils.translation import ugettext as _
 author = 'Domenico Colucci'
 
 doc = """
-Simple lottery to infer risky attitudes
+Simple lottery to infer risk attitudes
 """
 
 
@@ -26,7 +26,7 @@ class Constants(BaseConstants):
     name_in_url = 'risk'
     players_per_group = None
     num_rounds = 1
-    endowment = c(100)
+    endowment = c(20)
     returnRate = 2.5
     prob = 0.5
 
@@ -54,6 +54,8 @@ class Player(BasePlayer):
 
     invested = models.CurrencyField(
         min=0, max=Constants.endowment,
-        doc="""Amount player chooses to invest in risky asset"""
+        doc="""Amount player chooses to invest in risky project"""
     )
     question = models.CurrencyField()
+
+    stringOutcome = models.BooleanField()

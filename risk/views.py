@@ -6,7 +6,7 @@ from otree.common import Currency as c, currency_range, safe_json
 from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
-
+from django.utils.translation import ugettext as _
 
 def vars_for_all_templates(self):
     return {'instructions': 'risk/Instructions.html',
@@ -46,7 +46,13 @@ class Results(Page):
     def vars_for_template(self):
         payoff=self.player.payoff
         invested = self.player.invested
+        outcome = payoff+invested-Constants.endowment
+        if outcome==0:
+            self.player.stringOutcome=_('bad')
+        else:
+            self.player.stringOutcome=_('well')
 
+        stringOutcome=self.player.stringOutcome
 
 
 
