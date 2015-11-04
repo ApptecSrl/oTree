@@ -9,15 +9,16 @@ from otree.common import Currency as c, currency_range
 from django.db import models as d_models
 from django.utils.translation import ugettext as _
 
+
 import random
 # </standard imports>
 
 from .share_calculator import calculator
 
+
 doc = """
 2 firms complete in a market by setting prices and quality for homogenous goods.
 """
-
 
 class Constants(otree.constants.BaseConstants):
     players_per_group = 2
@@ -35,7 +36,6 @@ class Subsession(otree.models.BaseSubsession):
         if self.round_number == 1:
             paying_round = random.randint(Constants.num_rounds / 2, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
-
 
 
 class Group(otree.models.BaseGroup):
@@ -81,12 +81,21 @@ class Player(otree.models.BasePlayer):
     # <built-in>
     group = models.ForeignKey(Group, null=True)
     subsession = models.ForeignKey(Subsession)
-    # </built-in>
-    training_my_profit = models.CurrencyField(
-        verbose_name=_('My profit would be'))
     # Question1
-    training_my_social_contribution = models.CurrencyField(
+    training_my_profit_1 = models.CurrencyField(
+        verbose_name=_('My profit would be'))
+    training_my_social_contribution_1 = models.CurrencyField(
         verbose_name=_('My social contribution would be'))
+    # Question2
+    training_my_profit_2 = models.CurrencyField(
+        verbose_name=_('My profit would be'))
+    training_my_social_contribution_2 = models.CurrencyField(
+        verbose_name=_('My social contribution would be'))
+    # Question3
+    training_correct_answer_3 = models.PositiveIntegerField(
+        min = 1,
+        max = 3,
+        verbose_name=_('The correct answer is'))
 
     price = models.CurrencyField(
         min=0, max=Constants.maximum_price,
