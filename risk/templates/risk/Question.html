@@ -1,0 +1,27 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+{% block title %}
+    {% trans "Understanding Question 1 of 1" %}
+{% endblock %}
+
+{% block content %}
+    <p>
+        {% blocktrans trimmed %}
+            Considera la seguente situazione: hai scelto di investire 8 punti e il progetto ha avuto un esito positivo. Quanti punti hai ottenuto in questa sessione?
+E se il progetto avesse un esito negativo? Quanti punti avrai?
+
+        {% endblocktrans %}
+    </p>
+
+    {% trans "Avrei punti" as label_value %}
+
+    {% formfield player.question with label=label_value %}
+
+    {% next_button %}
+
+    {% include 'risk/Instructions.html' %}
+
+{% endblock %}
