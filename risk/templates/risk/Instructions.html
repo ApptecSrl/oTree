@@ -1,0 +1,15 @@
+{% extends "global/Instructions.html" %}
+{% load i18n %}
+
+{% block instructions %}
+
+{% blocktrans trimmed with endowment=Constants.endowment %}
+    <p>
+        You will be asked to choose how to invest...
+    </p>
+    <p>
+        There are {{endoment}} to ...
+    </p>
+{% endblocktrans %}
+
+{% endblock %}

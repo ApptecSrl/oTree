@@ -1,0 +1,29 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% load i18n %}
+
+
+
+
+
+{% block title %}
+    {% trans "Scegli quanto investire nel progetto rischioso" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+    {% formfield player.invested with label="Scegli un numero tra 0 e 100 da investire nel progetto rischioso." %}
+
+<p>
+
+
+
+<p>
+
+<p>{% next_button %}</p>
+
+
+{% endblock %}
