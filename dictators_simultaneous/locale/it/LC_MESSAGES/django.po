@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_dictator_sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-02 15:50+0100\n"
-"PO-Revision-Date: 2015-11-02 16:54+0100\n"
+"POT-Creation-Date: 2015-11-04 16:37+0100\n"
+"PO-Revision-Date: 2015-11-04 16:40+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: Italian\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
+
+#: templates/dictators_simultaneous/Feedback.html:5
+msgid ""
+"<p> <strong>Solution:</strong> Payoffs for Participant 1 would be <strong>88 "
+"points</strong> and for 2 <strong>12 points</strong>. </p>"
+msgstr ""
+"<p> <strong>Soluzione:</strong> Il guadagno per il Participante 1 sarebbe "
+"di  <strong>88 punti</strong> e per 2 <strong>12 punti</strong>. </p>"
 
 #: templates/dictators_simultaneous/Instructions.html:6
 #, python-format
@@ -35,6 +43,14 @@ msgstr "La tua decisione"
 #: templates/dictators_simultaneous/Offer.html:10
 msgid "<p> Please decide how many points you will keep for yourself. </p>"
 msgstr "<p> Per favore decidi quanti punti tenere per te. </p>"
+
+#: templates/dictators_simultaneous/Question.html:2
+msgid ""
+"<p> Suppose that Participant 1 decided to retain 88 points. What would be "
+"the payoffs for Participant 1 and 2 respectively? </p>"
+msgstr ""
+"<p> Supponi che il Partecipante 1 decida di tenersi 88 punti. Quale sarebbe "
+"il guadagno per Partecipante 1 e 2 rispettivamente? </p>i"
 
 #: views.py:126
 msgid "Another participant decided to offer you"

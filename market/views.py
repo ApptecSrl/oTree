@@ -16,13 +16,6 @@ def vars_for_all_templates(self):
         'short_instructions': 'market/Short_Instructions.html'
     }
 
-# class GetInputKind(Page):
-#     template_name = 'market/InputKind.html'
-#     form_model = models.Player
-#     form_fields = ['kind']
-#
-#     def is_displayed(self):
-#         return self.subsession.round_number == 1
 
 class MatchingWaitPage(WaitPage):
 
@@ -212,7 +205,7 @@ class Question3(Page):
                  Quale delle seguenti affermazioni è vera?''') + ('''<br><br>\
                  <strong>(1)</strong> La mia quota di mercato e\' sicuramente cresciuta.<br>\
                  <strong>(2)</strong> La mia quota di mercato e\' maggiore di quella che otterrei\
-                 mantenendo l offerta precedente.<br>\
+                 mantenendo l\'offerta precedente.<br>\
                  <strong>(3)</strong> La mia quota di mercato puo\' essere diminuita solo se anche\
                  il rivale ha ridotto il suo prezzo.'''))
 
