@@ -103,15 +103,6 @@ class ResultsWaitPage(WaitPage):
 class Results(Page):
     template_name = 'global/ResultsTable.html'
 
-    # def offer(self):
-    #     players=self.get_players()
-    #     num_players=len(players)
-    #     for i in range(1,num_players):
-    #         p=self.get_player_by_id(i)
-    #         prec=i-1
-    #         if prec==0:
-    #             prec = num_players
-    #         p.offered=self.get_player_by_id(prec).kept
 
     def vars_for_template(self):
 

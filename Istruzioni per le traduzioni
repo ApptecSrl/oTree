@@ -1,0 +1,18 @@
+La traduzione deve essere realizzata applicazione per applicazione. mi spiego meglio:
+
+portandosi all'interno della cartella dell'applicazione si deve creare la cartella "locale"
+io ad esempio ho tradotto dictator, quindi mi sono portato all'interno di oTree/dictator
+mkdir locale
+
+poi si esegue il comando per realizzare il file .po delle traduzioni
+
+django-admin.py makemessages -l it -e py,html
+
+con -l (è una L minuscola) it si seleziona in che lingua si traduce. quindi in questo caso italiano
+con -e py,html si decide quali file tradurre, quindi in questo caso si tradurranno sia i file py (le stringe che passano per ugettext) sia i file html, ovvero i template (le stringhe presenti nei trans o blocktrans)
+
+a questo punto viene creato nella cartella locale precedentemente creata il file .po (vengono create le apposite sotto cartelle per la lingua) che può essere aperto con poedit e tradotto
+
+una volta terminata la traduzione si lancia, sempre dalla solita posizione, il comando
+
+django-admin.py compilemessages

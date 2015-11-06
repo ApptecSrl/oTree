@@ -144,19 +144,25 @@ SESSION_CONFIGS = [
         'name': 'public_goods',
         'display_name': "Public Goods",
         'num_demo_participants': 3,
-        'app_sequence': ['public_goods', 'payment_info'],
+        'app_sequence': ['public_goods', 'payment_recap'],
     },
     {
-        'name': 'trust',
-        'display_name': "Trust Game",
-        'num_demo_participants': 2,
-        'app_sequence': ['trust', 'payment_info'],
+        'name': 'risk',
+        'display_name': "Risky choice",
+        'num_demo_participants': 1,
+        'app_sequence': ['risk'],
+    },
+    {
+        'name': 'risk_final_info',
+        'display_name': "Risky choice with final recap",
+        'num_demo_participants': 1,
+        'app_sequence': ['risk', 'payment_recap'],
     },
     {
         'name': 'dictator',
         'display_name': "Dictator Game",
         'num_demo_participants': 2,
-        'app_sequence': ['dictator', 'payment_info'],
+        'app_sequence': ['dictator', 'payment_recap'],
     },
     {
         'name': 'dic_sim',
@@ -170,7 +176,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
-            'market', 'payment_info'
+            'welcome_choice','market', 'payment_recap'
         ],
     },
         {
@@ -179,7 +185,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice', 'market', 'payment_info'
+            'welcome_choice', 'market', 'payment_recap'
         ],
     },
     {
