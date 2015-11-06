@@ -6,6 +6,7 @@ from otree.common import Currency as c, currency_range, safe_json
 from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 
 def vars_for_all_templates(self):
@@ -16,18 +17,52 @@ class Introduction(Page):
 
     template_name = 'global/Introduction.html'
 
-class Question(Page):
 
-    def is_displayed(self):
-        return True
-
+class Question1(Page):
+    template_name = 'global/Question.html'
     form_model = models.Player
-    form_fields = ['question']
+    form_fields = ['training_my_profit_positive', 'training_my_profit_negative']
+    question = mark_safe(_('''Considera la seguente situazione.\
+                 Hai scelto di investire 8 punti dei 20 a tua disposizione.<br><br>\
+                 Nell'ipotesi che il progetto avesse un esito positivo, quanti punti\
+                 guadagneresti complessivamente?<br>\
+                 Se, viceversa, il progetto avesse un esito negativo, quanti punti\
+                 guadagneresti complessivamente?'''))
 
-
-class Feedback(Page):
     def is_displayed(self):
-        return True
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        return {
+            'num_q': 1,
+            'question': self.question
+        }
+
+
+class Feedback1(Page):
+    template_name = 'global/Feedback.html'
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        p = self.player
+        return {
+            'num_q': 1,
+            'answers': {
+                _('"Guadagno complessivo in caso di esito positivo"'): [p.training_my_profit_positive, 32],
+                _('"Guadagno complessivo in caso di esito negativo"'): [p.training_my_profit_negative, 12]
+            },
+            'explanation': mark_safe(
+                _('''<br><strong>Domanda: </strong>''') + Question1.question\
+                + _('''<br><br><strong>Soluzione: </strong><br>Guadagno in caso di esito positivo = 32\
+                <br>Guadagno in caso di esito negativo = 12''')\
+                + _('''<br><br><strong>Spiegazione: </strong> Il guadagno e\' dato dalla quota\
+                di punti che si e\' deciso di non investire sommata ai punti che derivano\
+                dall'investimento. In questo caso, nell'ipotesi di esito positivo si ha\
+                <strong>(20 - 8) + 8 * 2.5 = 32</strong>, mentre nell'ipotesi di esito negativo\
+                si ha <strong>(20 - 8) = 12</strong>'''))
+        }
 
 
 class Invest(Page):
@@ -35,11 +70,14 @@ class Invest(Page):
     form_model = models.Player
     form_fields = ['invested']
 
+
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         for p in self.group.get_players():
             p.set_payoffs()
             print p.payoff
+
+
 class Results(Page):
     # def after_all_players_arrive(self):
     #     self.group.set_payoffs()
@@ -54,6 +92,7 @@ class Results(Page):
 
         stringOutcome=self.player.stringOutcome
 
+
 class ResultsFinal(Page):
 
     template_name = 'global/ResultsTable.html'
@@ -66,13 +105,11 @@ class ResultsFinal(Page):
         else:
             self.player.stringOutcome=_('well')
 
-
         payment_result = {
             'invested': self.player.invested,
             'outcome': self.player.stringOutcome,
             'payoff': self.player.payoff
         }
-
 
         result_table = [
             (_('You decided to invest in the risky project'), payment_result['invested']),
@@ -100,7 +137,8 @@ class ResultsFinal(Page):
 
 page_sequence = [
     Introduction,
-    Question,
+    Question1,
+    Feedback1,
     Invest,
     ResultsWaitPage,
     ResultsFinal
