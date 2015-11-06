@@ -48,6 +48,13 @@ class Player(BasePlayer):
     subsession = models.ForeignKey(Subsession)
     group = models.ForeignKey(Group, null = True)
     # </built-in>
+
+    # Question1
+    training_my_profit_positive = models.CurrencyField(
+        verbose_name=_('My profit in the case of a positive investment outcome would be'))
+    training_my_profit_negative = models.CurrencyField(
+        verbose_name=_('My profit in the case of a negative investment outcome would be'))
+
     def set_payoffs(self):
         randOutcome = randint(0,1)
         self.payoff=Constants.endowment-self.invested+self.invested*Constants.returnRate*randOutcome
