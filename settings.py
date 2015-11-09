@@ -61,7 +61,7 @@ AUTH_LEVEL = 'EXPERIMENT'
 # You can change this as frequently as you'd like,
 # to prevent unauthorized server access.
 
-ACCESS_CODE_FOR_DEFAULT_SESSION = 'my_access_code'
+ACCESS_CODE_FOR_DEFAULT_SESSION = 'stud_session'
 
 # setting for integration with AWS Mturk
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
@@ -130,7 +130,7 @@ mturk_hit_settings = {
 }
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.20,
+    'real_world_currency_per_point': 0.50,
     'participation_fee': 0.00,
 
     'num_bots': 12,
@@ -202,7 +202,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'participation_fee': 0.00,  #'use_points': False,
         'app_sequence': [
-            'welcome_choice','market','dictators_simultaneous','public_goods','payment_recap'
+            'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],
     },
 

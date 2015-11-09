@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_risk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-06 10:42+0100\n"
-"PO-Revision-Date: 2015-11-06 10:43+0100\n"
+"POT-Creation-Date: 2015-11-06 18:16+0100\n"
+"PO-Revision-Date: 2015-11-06 18:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: Italian\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
+
+#: models.py:54
+msgid "My profit in the case of a positive investment outcome would be"
+msgstr "Il mio profitto in caso di esito positivo dell'investimento sarebbe"
+
+#: models.py:56
+msgid "My profit in the case of a negative investment outcome would be"
+msgstr "Il mio profitto in caso di esito negativo dell'investimento sarebbe"
 
 #: templates/risk/Instructions.html:6
 msgid "bla bla"
@@ -60,7 +68,7 @@ msgstr "Ecco come e' andata."
 msgid "You invested:"
 msgstr "Hai investito: "
 
-#: templates/risk/Results.html:14 views.py:79
+#: templates/risk/Results.html:14 views.py:116
 msgid "The project went"
 msgstr "Il progetto e' andato"
 
@@ -68,22 +76,60 @@ msgstr "Il progetto e' andato"
 msgid "and therefore you obtained the payoff:"
 msgstr "e quindi hai ottenuto un guadagno pari a:"
 
-#: views.py:51 views.py:65
+#: views.py:25
+msgid ""
+"Considera la seguente situazione.                 Hai scelto di investire 8 "
+"punti dei 20 a tua disposizione.<br><br>                 Nell'ipotesi che il "
+"progetto avesse un esito positivo, quanti punti                 "
+"guadagneresti complessivamente?<br>                 Se, viceversa, il "
+"progetto avesse un esito negativo, quanti punti                 "
+"guadagneresti complessivamente?"
+msgstr ""
+
+#: views.py:53
+msgid "\"Guadagno complessivo in caso di esito positivo\""
+msgstr ""
+
+#: views.py:54
+msgid "\"Guadagno complessivo in caso di esito negativo\""
+msgstr ""
+
+#: views.py:57
+msgid "<br><strong>Domanda: </strong>"
+msgstr ""
+
+#: views.py:58
+msgid ""
+"<br><br><strong>Soluzione: </strong><br>Guadagno in caso di esito positivo = "
+"32                <br>Guadagno in caso di esito negativo = 12"
+msgstr ""
+
+#: views.py:60
+msgid ""
+"<br><br><strong>Spiegazione: </strong> Il guadagno e' dato dalla "
+"quota                di punti che si e' deciso di non investire sommata ai "
+"punti che derivano                dall'investimento. In questo caso, "
+"nell'ipotesi di esito positivo si ha                <strong>(20 - 8) + 8 * "
+"2.5 = 32</strong>, mentre nell'ipotesi di esito negativo                si "
+"ha <strong>(20 - 8) = 12</strong>"
+msgstr ""
+
+#: views.py:89 views.py:104
 msgid "bad"
 msgstr "male"
 
-#: views.py:53 views.py:67
+#: views.py:91 views.py:106
 msgid "well"
 msgstr "bene"
 
-#: views.py:78
+#: views.py:115
 msgid "You decided to invest in the risky project"
 msgstr "Hai investito nel progetto rischioso"
 
-#: views.py:82
+#: views.py:119
 msgid "Your payoff in this activity"
 msgstr "Il tuo guadagno in questa attività"
 
-#: views.py:98
+#: views.py:135
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
