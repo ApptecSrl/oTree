@@ -23,7 +23,7 @@ class Question1(Page):
     form_model = models.Player
     form_fields = ['training_my_profit_positive', 'training_my_profit_negative']
     question = mark_safe(_('''Considera la seguente situazione.\
-                 Hai scelto di investire 8 punti dei 20 a tua disposizione.<br><br>\
+                 Hai scelto di investire 40 punti dei 100 a tua disposizione.<br><br>\
                  Nell'ipotesi che il progetto avesse un esito positivo, quanti punti\
                  guadagneresti complessivamente?<br>\
                  Se, viceversa, il progetto avesse un esito negativo, quanti punti\
@@ -50,18 +50,18 @@ class Feedback1(Page):
         return {
             'num_q': 1,
             'answers': {
-                _('"Guadagno complessivo in caso di esito positivo"'): [p.training_my_profit_positive, 32],
-                _('"Guadagno complessivo in caso di esito negativo"'): [p.training_my_profit_negative, 12]
+                _('"Guadagno complessivo in caso di esito positivo"'): [p.training_my_profit_positive, 160],
+                _('"Guadagno complessivo in caso di esito negativo"'): [p.training_my_profit_negative, 60]
             },
             'explanation': mark_safe(
                 _('''<br><strong>Domanda: </strong>''') + Question1.question\
-                + _('''<br><br><strong>Soluzione: </strong><br>Guadagno in caso di esito positivo = 32\
-                <br>Guadagno in caso di esito negativo = 12''')\
+                + _('''<br><br><strong>Soluzione: </strong><br>Guadagno in caso di esito positivo = 1602\
+                <br>Guadagno in caso di esito negativo = 60''')\
                 + _('''<br><br><strong>Spiegazione: </strong> Il guadagno e\' dato dalla quota\
                 di punti che si e\' deciso di non investire sommata ai punti che derivano\
                 dall'investimento. In questo caso, nell'ipotesi di esito positivo si ha\
-                <strong>(20 - 8) + 8 * 2.5 = 32</strong>, mentre nell'ipotesi di esito negativo\
-                si ha <strong>(20 - 8) = 12</strong>'''))
+                <strong>(100 - 40) + 40 * 2.5 = 160</strong>, mentre nell'ipotesi di esito negativo\
+                si ha <strong>(100 - 40) = 60 </strong>'''))
         }
 
 

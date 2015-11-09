@@ -4,7 +4,7 @@
 
 
 {% block title %}
-    Solution to Understanding Question 1 of 1
+    {% trans  "Solution to Understanding Question 1 of 1" %}
 {% endblock %}
 
 {% block content %}
@@ -27,15 +27,15 @@
 
     <p>
         {% blocktrans trimmed %}
-            <b>Solution: 92 points</b>
+            <b>Solution: 100 points</b>
         {% endblocktrans %}
     </p>
 
     <p>
         {% blocktrans trimmed %}
-            <b>Explanation:</b> Total contribution from all participants was 80+40+0=120. Total earnings from the project were 120*1.8=216.
-            Each participant got an equal share of the earnings, that is, 216/3=72. Hence, payoff for the participant who contributed 80 points
-            was 100-80+72=92.
+            <b>Explanation:</b> Total contribution from all participants was 80+40+0=120. Total earnings from the project were 120*2=240.
+            Each participant got an equal share of the earnings, that is, 240/3=80. Hence, payoff for the participant who contributed 80 points
+            was 100-80+80=80.
         {% endblocktrans %}
     </p>
     {% next_button %}

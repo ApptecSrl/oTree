@@ -29,13 +29,12 @@ msgstr "Il mio profitto in caso di esito negativo dell'investimento sarebbe"
 #: templates/risk/Instructions.html:6
 msgid "bla bla"
 msgstr ""
-"Hai a disposizione 20 punti.  Puoi decidere di investire una parte di questa "
+"Hai a disposizione 100 punti.  Puoi decidere di investire una parte di questa "
 "somma in un progetto rischioso. Se il progetto va bene cosa che può accadere "
 "con probabilità pari a 1/2  per ogni punto investito otterrai 2,5 punti. </"
 "p><p>Se invece il progetto va male perderai tutti i punti investiti in esso. "
 "I punti che non investi rimarranno a te inalterati quale che sia l'esito del "
-"progetto. Il punteggio totale di questa sessione ti sarà interamente pagato "
-"secondo il tasso di cambio 2 punti 1 euro."
+"progetto."
 
 #: templates/risk/Invest.html:11
 msgid "Scegli quanto investire nel progetto rischioso"

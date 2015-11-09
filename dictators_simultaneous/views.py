@@ -138,10 +138,10 @@ class Results(Page):
         }
 
 
-page_sequence = [Introduction,
-            #Question1,
-            #Feedback1,
-            MatchingWaitPage,
+page_sequence = [MatchingWaitPage,
+            Introduction,
+            Question1,
+            Feedback1,
             Offer,
             ResultsWaitPage,
             Results]

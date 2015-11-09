@@ -7,6 +7,7 @@ import otree.constants
 import random
 from otree import widgets
 from otree.common import Currency as c, currency_range
+from django.utils.translation import ugettext as _
 # </standard imports>
 
 
@@ -88,14 +89,14 @@ class Player(otree.models.BasePlayer):
     # </built-in>
 
     training_participant1_payoff = models.CurrencyField(
-        verbose_name="Participant 1's payoff would be")
+        verbose_name=(_("Participant 1's payoff would be")))
     training_participant2_payoff = models.CurrencyField(
-        verbose_name="Participant 2's payoff would be")
+        verbose_name=(_("Participant 2's payoff would be")))
 
     kept = models.CurrencyField(
         doc="""Amount player decided to keep for himself""",
         min=0, max=Constants.allocated_amount,
-        verbose_name='I will keep (from 0 to %i)' % Constants.allocated_amount
+        verbose_name=(_('I will keep (from 0 to %i)')) % Constants.allocated_amount
     )
 
     offered = models.CurrencyField(

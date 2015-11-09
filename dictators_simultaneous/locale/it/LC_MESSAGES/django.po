@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_dictator_sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-04 16:37+0100\n"
-"PO-Revision-Date: 2015-11-04 16:40+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-11-09 16:40+0100\n"
+"PO-Revision-Date: 2015-11-09 16:40+0100\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: Italian\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: templates/dictators_simultaneous/Feedback.html:5
+#: models.py:92
+msgid "Participant 1's payoff would be"
+msgstr "Il guadagno del Partecipante 1 sarebbe"
+
+#: models.py:94
+msgid "Participant 2's payoff would be"
+msgstr "Il guadagno del Partecipante 2 sarebbe"
+
+#: models.py:99
+#, python-format
+msgid "I will keep (from 0 to %i)"
+msgstr "Terrò per me (da 0 a %i)"
+
+#: templates/dictators_simultaneous/Feedback.html:6
 msgid ""
 "<p> <strong>Solution:</strong> Payoffs for Participant 1 would be <strong>88 "
 "points</strong> and for 2 <strong>12 points</strong>. </p>"
@@ -50,21 +63,21 @@ msgid ""
 "the payoffs for Participant 1 and 2 respectively? </p>"
 msgstr ""
 "<p> Supponi che il Partecipante 1 decida di tenersi 88 punti. Quale sarebbe "
-"il guadagno per Partecipante 1 e 2 rispettivamente? </p>i"
+"il guadagno per Partecipante 1 e 2 rispettivamente? </p>"
 
-#: views.py:126
+#: views.py:117
 msgid "Another participant decided to offer you"
 msgstr "Un altro partecipante ha deciso di offrirti"
 
-#: views.py:127
+#: views.py:118
 msgid "You kept for yourself"
 msgstr "Hai tenuto per te"
 
-#: views.py:130
+#: views.py:121
 msgid "Your payoff in this activity"
 msgstr "Il tuo profitto in questa attività"
 
-#: views.py:146
+#: views.py:137
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 

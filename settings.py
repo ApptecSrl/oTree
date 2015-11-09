@@ -130,8 +130,8 @@ mturk_hit_settings = {
 }
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.50,
-    'participation_fee': 0.00,
+    'real_world_currency_per_point': 0.05,
+    'participation_fee': 3.00,
 
     'num_bots': 12,
     'doc': "",
@@ -158,12 +158,12 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'app_sequence': ['risk', 'payment_recap'],
     },
-    {
-        'name': 'dictator',
-        'display_name': "Dictator Game",
-        'num_demo_participants': 2,
-        'app_sequence': ['dictator', 'payment_recap'],
-    },
+    # {
+    #     'name': 'dictator',
+    #     'display_name': "Dictator Game",
+    #     'num_demo_participants': 2,
+    #     'app_sequence': ['dictator', 'payment_recap'],
+    # },
     {
         'name': 'dic_sim',
         'display_name': "Simultaneous Dictator Game",
@@ -173,7 +173,7 @@ SESSION_CONFIGS = [
         {
         'name': 'market',
         'display_name': "Market game",
-        'real_world_currency_per_point': 0.25,
+        #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice','market', 'payment_recap'
@@ -182,7 +182,7 @@ SESSION_CONFIGS = [
         {
         'name': 'prova_market',
         'display_name': "Prova Market game con Welcome",
-        'real_world_currency_per_point': 0.25,
+        #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice', 'market', 'payment_recap'
@@ -200,7 +200,7 @@ SESSION_CONFIGS = [
         'name': 'prova_sequenza',
         'display_name': "Sessione completa - prova",
         'num_demo_participants': 2,
-        'participation_fee': 0.00,  #'use_points': False,
+        #'participation_fee': 0.00,  #'use_points': False,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],

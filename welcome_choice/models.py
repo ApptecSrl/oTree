@@ -44,12 +44,12 @@ class Player(BasePlayer):
     # </built-in>
 
     kind = models.IntegerField(
-        min=100, max=300,
+        min=100, max=400,
         doc="""Label received by experimenters"""
     )
 
     kindCopy = models.IntegerField(
-        min=100, max=300,
+        min=100, max=400,
         doc="""Label received by experimenters"""
     )
 

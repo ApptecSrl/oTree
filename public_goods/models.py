@@ -39,7 +39,7 @@ class Constants(otree.constants.BaseConstants):
 
     #"""Amount allocated to each player"""
     endowment = c(100)
-    efficiency_factor = 1.8
+    efficiency_factor = 2
     base_points = c(10)
 
     question_correct = c(92)

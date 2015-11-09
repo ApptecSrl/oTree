@@ -26,7 +26,7 @@ class Constants(BaseConstants):
     name_in_url = 'risk'
     players_per_group = None
     num_rounds = 1
-    endowment = c(20)
+    endowment = c(100)
     returnRate = 2.5
     prob = 0.5
 
