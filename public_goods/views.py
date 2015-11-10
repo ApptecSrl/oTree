@@ -114,9 +114,6 @@ class Results(Page):
         result_table.append((_('Total earnings from the project'), payment_result['total_earnings']))
         result_table.append((_('Your earnings from the project'), self.group.individual_share))
         result_table.append(('', ''))
-        result_table.append((_('Thus in total you earned'), payment_result['individual_earnings']))
-        result_table.append((_('In addition you get a participation fee of'), Constants.base_points))
-        result_table.append(('', ''))
         result_table.append((_('Your payoff in this activity'), self.player.payoff))
 
         game_results = {

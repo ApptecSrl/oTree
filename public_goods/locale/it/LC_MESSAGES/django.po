@@ -175,7 +175,7 @@ msgstr "Il tuo guadagno dal progetto"
 
 #: views.py:117
 msgid "Thus in total you earned"
-msgstr "Quindi il totale hai guadagnato"
+msgstr "Quindi in totale hai guadagnato"
 
 #: views.py:118
 msgid "In addition you get a participation fee of"

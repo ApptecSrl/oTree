@@ -55,7 +55,7 @@ class Feedback1(Page):
             },
             'explanation': mark_safe(
                 _('''<br><strong>Domanda: </strong>''') + Question1.question\
-                + _('''<br><br><strong>Soluzione: </strong><br>Guadagno in caso di esito positivo = 1602\
+                + _('''<br><br><strong>Soluzione: </strong><br>Guadagno in caso di esito positivo = 160\
                 <br>Guadagno in caso di esito negativo = 60''')\
                 + _('''<br><br><strong>Spiegazione: </strong> Il guadagno e\' dato dalla quota\
                 di punti che si e\' deciso di non investire sommata ai punti che derivano\

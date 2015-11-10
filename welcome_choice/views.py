@@ -21,6 +21,7 @@ class GetInputKind(Page):
     def error_message(self, values):
         if values["kind"] != values["kindCopy"]:
             return _(u'Inserisci il valore corretto in entrambi i campi')
+        #if values['kind']!=self.player.p
         self.player.participant.vars['kind']=values['kind']
     def is_displayed(self):
         return self.subsession.round_number == 1
