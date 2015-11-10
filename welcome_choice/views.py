@@ -38,5 +38,5 @@ class Choice(Page):
 page_sequence = [
     GetInputKind,
     Welcome,
-    #ResultsWaitPage,
+    ResultsWaitPage,
     ]
