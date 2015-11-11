@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
+from django.utils.translation import ugettext as _
 
 from otree.common import Currency as c
 from ._builtin import Page
@@ -26,4 +27,23 @@ class PaymentRecap(Page):
         }
 
 
-page_sequence = [PaymentRecap]
+class TotalPayoff(Page):
+
+    def vars_for_template(self):
+        if self.player.participant.vars.get('kind', None):
+            table = [(
+                _('You are the number'),
+                self.player.participant.vars['kind']
+            )]
+        else:
+            table = []
+        table.append((_('Total payoff'), self.player.total_payoff))
+        table.append((_('Total charity'), self.player.total_money_to_charity))
+        return {
+            'table': table
+        }
+
+
+page_sequence = [PaymentRecap, TotalPayoff]
+
+#  c(10).to_real_world_currency(self.session)
