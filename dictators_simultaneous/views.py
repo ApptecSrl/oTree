@@ -114,9 +114,11 @@ class Results(Page):
 
 
         result_table = [
+            #(_(u'Questa è la attività del dittatore... il quale una volta si era perso e poi tutto a un tratto arrivò un lupo il quale aveva fame blablabla'),),
             (_('Another participant decided to offer you'), payment_result['offered']),
             (_('You kept for yourself'), payment_result['kept']),
         ]
+
 
         result_table.append((_('Your payoff in this activity'), payment_result['payoff']))
 

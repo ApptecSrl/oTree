@@ -24,4 +24,4 @@ msgstr "Risultati"
 
 #: templates/payment_recap/PaymentRecap.html:10
 msgid "Activity summary"
-msgstr "Sommario dell'attivita'"
+msgstr "Sommario dell'attività"

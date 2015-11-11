@@ -11,8 +11,7 @@ from django.utils.translation import ugettext as _
 
 class Welcome(Page):
     template_name = 'welcome_choice/Welcome.html'
-    # def vars_for_template(self):
-    #     self.player.participant.vars['kind']=[self.player.kind]
+
 
 class GetInputKind(Page):
     template_name = 'welcome_choice/InputKind.html'
@@ -21,6 +20,13 @@ class GetInputKind(Page):
     def error_message(self, values):
         if values["kind"] != values["kindCopy"]:
             return _(u'Inserisci il valore corretto in entrambi i campi')
+        if values["kind"]!=int(self.player.participant.label):
+            print _(u'Controlla di aver preso posto al computer con il numero corretto: ')
+            print 'label = ',int(self.player.participant.label)
+            print 'kind = ',values["kind"]
+            print 'type of label', type(self.player.participant.label)
+            print 'type of kind', type(values["kind"])
+            return _(u'Controlla di essere alla postazione corretta')
         self.player.participant.vars['kind']=values['kind']
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -37,5 +43,5 @@ class Choice(Page):
 page_sequence = [
     GetInputKind,
     Welcome,
-    #ResultsWaitPage,
+    ResultsWaitPage,
     ]

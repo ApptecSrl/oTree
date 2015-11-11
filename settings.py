@@ -132,7 +132,6 @@ mturk_hit_settings = {
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.05,
     'participation_fee': 3.00,
-
     'num_bots': 12,
     'doc': "",
     'group_by_arrival_time': False,
@@ -150,7 +149,7 @@ SESSION_CONFIGS = [
         'name': 'risk',
         'display_name': "Risky choice",
         'num_demo_participants': 1,
-        'app_sequence': ['risk'],
+        'app_sequence': ['welcome_choice','risk'],
     },
     {
         'name': 'risk_final_info',
@@ -168,7 +167,7 @@ SESSION_CONFIGS = [
         'name': 'dic_sim',
         'display_name': "Simultaneous Dictator Game",
         'num_demo_participants': 2,
-        'app_sequence': ['welcome_choice','dictators_simultaneous'],
+        'app_sequence': ['welcome_choice','dictators_simultaneous', 'payment_recap'],
     },
         {
         'name': 'market',
@@ -181,11 +180,11 @@ SESSION_CONFIGS = [
     },
         {
         'name': 'prova_market',
-        'display_name': "Prova Market game con Welcome",
+        'display_name': "Prova Market game con Welcome recap e paymentInfo finale",
         #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice', 'market', 'payment_recap'
+            'welcome_choice', 'market', 'payment_recap', 'payment_info'
         ],
     },
     {

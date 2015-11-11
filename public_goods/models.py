@@ -40,9 +40,9 @@ class Constants(otree.constants.BaseConstants):
     #"""Amount allocated to each player"""
     endowment = c(100)
     efficiency_factor = 2
-    base_points = c(10)
+    base_points = c(0)
 
-    question_correct = c(92)
+    question_correct = c(100)
 
 
 class Subsession(otree.models.BaseSubsession):
