@@ -1,7 +1,7 @@
 {% extends "global/Base.html" %}
 {% load otree_tags %}
 
-{% block title %}Introduzione{% endblock %}
+{% block title %}{{ title|default:"Introduzione" }}{% endblock %}
 
 {% block content %}
 {% include instructions %}
