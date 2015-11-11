@@ -12,6 +12,8 @@ from otree.constants import BaseConstants
 from otree.models import BaseSubsession, BaseGroup, BasePlayer
 # </standard imports>
 
+from django.utils.translation import ugettext as _
+
 author = ''
 
 doc = """
@@ -41,5 +43,14 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     # <built-in>
     subsession = models.ForeignKey(Subsession)
-    group = models.ForeignKey(Group, null = True)
+    group = models.ForeignKey(Group, null=True)
     # </built-in>
+
+    total_payoff = models.RealWorldCurrencyField(
+        doc="""Total player payoff""",
+        verbose_name=(_("Total payoff")),
+    )
+    total_money_to_charity = models.RealWorldCurrencyField(
+        doc="""Amount player's impact to charity organization""",
+        verbose_name=(_('Charity amount')),
+    )
