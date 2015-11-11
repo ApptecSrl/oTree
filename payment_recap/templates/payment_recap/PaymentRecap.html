@@ -8,6 +8,7 @@
 {% block content %}
 {% for app in applications_results %}
     <h3>{% trans "Activity summary" %} {{ forloop.counter }}</h3>
+    <p>{{app.description}}</p>
     <table class=table style='width: auto'>
         {% for row in app.table %}
             <tr>
