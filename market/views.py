@@ -292,20 +292,21 @@ class ResultsFinal(Page):
     def vars_for_template(self):
         p_paying_round = self.player.in_all_rounds()[self.session.vars['paying_round']-1]
         payment_result = {
-            'p_price': p_paying_round.price,
-            'p_quality': p_paying_round.quality,
-            'p_impact': p_paying_round.impact,
-            'p_share': p_paying_round.share,
+            'price': p_paying_round.price,
+            'quality': p_paying_round.quality,
+            'impact': p_paying_round.impact,
+            'share': p_paying_round.share,
+            'payoff': p_paying_round.payoff,
             'payoff_sum': sum([p.payoff for p in self.player.in_all_rounds()]),
         }
 
         result_table = [
             (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
-            (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['p_price']),
-            (_('La qualita\' che hai scelto nel periodo pagato'), payment_result['p_quality']),
-            (_('L\'impatto positivo dovuto alle tue scelte'), payment_result['p_impact']),
+            (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['price']),
+            (_('La qualita\' che hai scelto nel periodo pagato'), payment_result['quality']),
+            (_('L\'impatto positivo dovuto alle tue scelte'), payment_result['impact']),
             ('', ''),
-            (_('La tua quota di mercato nel periodo pagato'), format(payment_result['p_share'], '.2%')),
+            (_('La tua quota di mercato nel periodo pagato'), format(payment_result['share'], '.2%')),
             (_('Il tuo profitto in questa attivita\''), payment_result['payoff_sum']),
         ]
 
