@@ -23,6 +23,7 @@ class PaymentRecap(Page):
             .to_real_world_currency(self.session)
         self.player.participant.vars['charity'] = self.player.total_money_to_charity
         self.player.invoice=self.player.total_payoff+self.player.total_money_to_charity
+        self.player.participant.vars['invoice'] = self.player.invoice
         self.player.save()
 
         return {

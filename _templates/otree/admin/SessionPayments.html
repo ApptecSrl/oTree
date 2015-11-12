@@ -42,6 +42,7 @@
             <th>Participation fee</th>
             <th>Variable pay</th>
             <th>Total pay</th>
+            <th>Invoice</th>
             <th>Note</th>
         </tr>
 
@@ -52,6 +53,7 @@
             <td>{{ participation_fee }}</td>
             <td>{{ p.payoff_in_real_world_currency }}</td>
             <td>{{ p.money_to_pay }}</td>
+            <td>{{ p.vars.invoice }}</td>
             <td>
                 {% if p.vars.charity %}
                     To charity: {{ p.vars.charity }}
