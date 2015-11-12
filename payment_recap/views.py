@@ -21,6 +21,7 @@ class PaymentRecap(Page):
         self.player.total_payoff = float(self.player.participant.money_to_pay())
         self.player.total_money_to_charity = c(self.retreive_charity_impact())\
             .to_real_world_currency(self.session)
+        self.player.participant.vars['charity'] = self.player.total_money_to_charity
         self.player.invoice=self.player.total_payoff+self.player.total_money_to_charity
         self.player.save()
 
