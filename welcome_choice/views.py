@@ -28,6 +28,7 @@ class GetInputKind(Page):
         #     print 'type of kind', type(values["kind"])
         #     return _(u'Controlla di essere alla postazione corretta')
         self.player.participant.vars['kind']=values['kind']
+        self.player.participant.label = 'P_LAB-{}'.format(values['kind'])
     def is_displayed(self):
         return self.subsession.round_number == 1
 
