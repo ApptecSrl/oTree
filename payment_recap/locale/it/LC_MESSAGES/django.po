@@ -7,21 +7,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-30 13:49+0100\n"
-"PO-Revision-Date: 2015-10-30 13:57+0100\n"
-"Last-Translator: dome <dome.colucci@gmail.com>\n"
+"POT-Creation-Date: 2015-11-12 09:25+0100\n"
+"PO-Revision-Date: 2015-11-12 09:27+0100\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: Italiano\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-"Language: Italiano\n"
+
+#: models.py:51
+msgid "Total payoff"
+msgstr "Guadagno complessivo"
+
+#: models.py:55
+msgid "Charity amount"
+msgstr "Cifra per associazione"
 
 #: templates/payment_recap/PaymentRecap.html:6
+#: templates/payment_recap/TotalPayoff.html:6
 msgid "Results"
 msgstr "Risultati"
 
 #: templates/payment_recap/PaymentRecap.html:10
 msgid "Activity summary"
 msgstr "Sommario dell'attività"
+
+#: views.py:35
+msgid "Your code number is"
+msgstr "Il tuo codice"
+
+#: views.py:40
+msgid "Your total payoff"
+msgstr "Il tuo guadagno complessivo"
+
+#: views.py:41
+msgid "Money going to charity"
+msgstr "Denaro che va alla associazione scelta"

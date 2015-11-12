@@ -54,3 +54,11 @@ class Player(BasePlayer):
         doc="""Amount player's impact to charity organization""",
         verbose_name=(_('Charity amount')),
     )
+    invoice = models.RealWorldCurrencyField(
+        doc="""Amount to write on invoice""",
+        verbose_name=(_('Invoice amount')),
+    )
+    kind = models.IntegerField(
+        min=100, max=400,
+        doc="""Label received by experimenters"""
+    )
