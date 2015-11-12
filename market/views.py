@@ -90,8 +90,14 @@ class MatchingWaitPage(WaitPage):
 class Introduction(Page):
 
     template_name = 'global/Introduction.html'
-    # def vars_for_template(self):
-    #     tipo = self.player.participant.vars['kind']
+
+    def vars_for_template(self):
+        ctx = super(Introduction, self).vars_for_template()
+        name = 'market'
+        n = self.player.participant.session.config['app_sequence'].index(name)
+        ctx['title'] = u'Attività n°{}'.format(n)
+        return ctx
+
 
     def is_displayed(self):
         return self.subsession.round_number == 1

@@ -55,8 +55,13 @@ class MatchingWaitPage(WaitPage):
 class Introduction(Page):
 
     """Description of the game: How to play and returns expected"""
-    pass
 
+    def vars_for_template(self):
+        ctx = super(Introduction, self).vars_for_template()
+        name = 'public_goods'
+        n = self.player.participant.session.config['app_sequence'].index(name)
+        ctx['title'] = u'Attività n°{}'.format(n)
+        return ctx
 
 class Question(Page):
 

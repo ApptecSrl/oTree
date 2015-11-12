@@ -17,6 +17,13 @@ class Introduction(Page):
 
     template_name = 'global/Introduction.html'
 
+    def vars_for_template(self):
+        ctx = super(Introduction, self).vars_for_template()
+        name = 'risk'
+        n = self.player.participant.session.config['app_sequence'].index(name)
+        ctx['title'] = u'Attività n°{}'.format(n)
+        return ctx
+
 
 class Question1(Page):
     template_name = 'global/Question.html'
