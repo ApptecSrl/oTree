@@ -89,9 +89,9 @@ class Player(otree.models.BasePlayer):
     # </built-in>
 
     training_participant1_payoff = models.CurrencyField(
-        verbose_name=(_("Participant 1's payoff would be")))
+        verbose_name=(_("Your payoff would be")))
     training_participant2_payoff = models.CurrencyField(
-        verbose_name=(_("Participant 2's payoff would be")))
+        verbose_name=(_("The other participant's payoff would be")))
 
     kept = models.CurrencyField(
         doc="""Amount player decided to keep for himself""",

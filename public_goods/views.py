@@ -125,6 +125,7 @@ class Results(Page):
             'label': _('Public goods game'),
             'results': payment_result,
             'table': result_table,
+            'description': _(u'In this activity you chose how much to contribute to a joint project. '),
         }
 
         # store public_goods payment result in player session

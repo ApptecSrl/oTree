@@ -30,7 +30,7 @@ class GetInputKind(Page):
                 print 'type of kind', type(values["kind"])
                 return _(u'Controlla di essere alla postazione corretta')
         else:
-            self.player.participant.label = 'P_LAB-{}'.format(values['kind'])
+            self.player.participant.label = 'codice={}'.format(values['kind'])
         self.player.participant.vars['kind'] = values['kind']
 
     def is_displayed(self):

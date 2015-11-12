@@ -129,6 +129,7 @@ class ResultsFinal(Page):
             'label': 'Risky choice',
             'results': payment_result,
             'table': result_table,
+            'description': _(u'In this activity you chose how much to invest in a risky project'),
         }
 
         # store dictator payment result in player session

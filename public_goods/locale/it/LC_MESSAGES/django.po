@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-09 14:58+0100\n"
-"PO-Revision-Date: 2015-11-09 15:05+0100\n"
+"POT-Creation-Date: 2015-11-12 17:37+0100\n"
+"PO-Revision-Date: 2015-11-12 17:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: Italian\n"
@@ -27,7 +27,6 @@ msgid "How much will you contribute to the project (from 0 to 100)?"
 msgstr "Quanto vuoi contribuire al progetto (da 0 a 100)?"
 
 #: templates/public_goods/Feedback.html:7
-#| msgid "Understanding Question 1 of 1"
 msgid "Solution to Understanding Question 1 of 1"
 msgstr "Soluzione alla Domanda di comprensione 1 di 1"
 
@@ -59,16 +58,10 @@ msgstr ""
 "Quale sarebbe il guadagno per il partecipante che ha contribuito di 80 punti?"
 
 #: templates/public_goods/Feedback.html:29
-#| msgid "<b>Solution: 92 points</b>"
 msgid "<b>Solution: 100 points</b>"
 msgstr "<b>Soluzione: 100 punti</b>"
 
 #: templates/public_goods/Feedback.html:35
-#| msgid ""
-#| "<b>Explanation:</b> Total contribution from all participants was "
-#| "80+40+0=120. Total earnings from the project were 120*1.8=216. Each "
-#| "participant got an equal share of the earnings, that is, 216/3=72. Hence, "
-#| "payoff for the participant who contributed 80 points was 100-80+72=92."
 msgid ""
 "<b>Explanation:</b> Total contribution from all participants was "
 "80+40+0=120. Total earnings from the project were 120*2=240. Each "
@@ -174,24 +167,28 @@ msgid "Your earnings from the project"
 msgstr "Il tuo guadagno dal progetto"
 
 #: views.py:117
-msgid "Thus in total you earned"
-msgstr "Quindi in totale hai guadagnato"
-
-#: views.py:118
-msgid "In addition you get a participation fee of"
-msgstr "In aggiunta prendi un premio di partecipazione di"
-
-#: views.py:120
 msgid "Your payoff in this activity"
 msgstr "Il tuo profitto in questa attività"
 
-#: views.py:123
+#: views.py:120
 msgid "Public goods game"
 msgstr "Gioco di contribuzione a un bene pubblico"
 
-#: views.py:136
+#: views.py:123
+msgid "In this activity you chose how much to contribute to a joint project. "
+msgstr ""
+"In questa attività hai scelto quanto contribuire ad un progetto congiunto "
+"con altri partecipanti"
+
+#: views.py:134
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
+
+#~ msgid "Thus in total you earned"
+#~ msgstr "Quindi in totale hai guadagnato"
+
+#~ msgid "In addition you get a participation fee of"
+#~ msgstr "In aggiunta prendi un premio di partecipazione di"
 
 #~ msgid "So in sum you will get"
 #~ msgstr "Quindi in totale prendi"

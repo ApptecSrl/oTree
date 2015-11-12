@@ -320,6 +320,7 @@ class ResultsFinal(Page):
             'label': 'Market game',
             'results': payment_result,
             'table': result_table,
+            'description': _(u'In this activity you chose a price and a quality in a market game. '),
         }
 
         # store market payment result in player session

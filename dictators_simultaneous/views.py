@@ -46,8 +46,8 @@ class Feedback1(Page):
     def vars_for_template(self):
         p = self.player
         return {'answers': {
-                'participant 1': [p.training_participant1_payoff, 88],
-                'participant 2': [p.training_participant2_payoff, 12]}}
+                _('payoff for you'): [p.training_participant1_payoff, 58],
+                _('payoff for the other participant'): [p.training_participant2_payoff, 42]}}
 
 
 class Offer(Page):
@@ -121,7 +121,6 @@ class Results(Page):
 
 
         result_table = [
-            #(_(u'Questa è la attività del dittatore... il quale una volta si era perso e poi tutto a un tratto arrivò un lupo il quale aveva fame blablabla'),),
             (_('Another participant decided to offer you'), payment_result['offered']),
             (_('You kept for yourself'), payment_result['kept']),
         ]
@@ -133,6 +132,7 @@ class Results(Page):
             'label': 'Dictator game',
             'results': payment_result,
             'table': result_table,
+            'description': _(u'In this activity you chose how to split a given amount between yourself and another partecipant. In addition a third participant decided how to split the same amount between him/herself and you. '),
         }
 
         # store dictator payment result in player session

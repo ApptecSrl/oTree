@@ -155,7 +155,7 @@ SESSION_CONFIGS = [
         'name': 'risk_final_info',
         'display_name': "Risky choice with final recap",
         'num_demo_participants': 1,
-        'app_sequence': ['risk', 'payment_recap'],
+        'app_sequence': ['welcome_choice','risk', 'payment_recap'],
     },
     # {
     #     'name': 'dictator',
