@@ -20,15 +20,18 @@ class GetInputKind(Page):
     def error_message(self, values):
         if values["kind"] != values["kindCopy"]:
             return _(u'Inserisci il valore corretto in entrambi i campi')
-        # if values["kind"]!=int(self.player.participant.label):
-        #     print _(u'Controlla di aver preso posto al computer con il numero corretto: ')
-        #     print 'label = ',int(self.player.participant.label)
-        #     print 'kind = ',values["kind"]
-        #     print 'type of label', type(self.player.participant.label)
-        #     print 'type of kind', type(values["kind"])
-        #     return _(u'Controlla di essere alla postazione corretta')
-        self.player.participant.vars['kind']=values['kind']
-        self.player.participant.label = 'P_LAB-{}'.format(values['kind'])
+        if self.player.participant.label:
+            if values["kind"] != int(self.player.participant.label):
+                print _(u'Controlla di aver preso posto al computer con il numero corretto: ')
+                print 'label = ', int(self.player.participant.label)
+                print 'kind = ', values["kind"]
+                print 'type of label', type(self.player.participant.label)
+                print 'type of kind', type(values["kind"])
+                return _(u'Controlla di essere alla postazione corretta')
+        else:
+            self.player.participant.label = 'P_LAB-{}'.format(values['kind'])
+        self.player.participant.vars['kind'] = values['kind']
+
     def is_displayed(self):
         return self.subsession.round_number == 1
 
