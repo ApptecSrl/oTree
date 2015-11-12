@@ -17,6 +17,7 @@ class GetInputKind(Page):
     template_name = 'welcome_choice/InputKind.html'
     form_model = models.Player
     form_fields = ['kind','kindCopy']
+
     def error_message(self, values):
         if values["kind"] != values["kindCopy"]:
             return _(u'Inserisci il valore corretto in entrambi i campi')
@@ -35,10 +36,12 @@ class GetInputKind(Page):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
+
 class ResultsWaitPage(WaitPage):
 
     def after_all_players_arrive(self):
         pass
+
 
 class Choice(Page):
     pass
