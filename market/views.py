@@ -149,7 +149,7 @@ class Feedback1(Page):
                 In this case you have: <strong>(200 - 0) * 50 / 100 = 100 points</strong>.\
                 The Social Contribution is obtained by multiplicating the Quality,\
                 the Efficiency Factor and the Market Share. In this case it is:\
-                <strong>0 * 1.5 * 50 / 100 = 0 points</strong>.'''))
+                <strong>1.5 * 0 * 50 / 100 = 0 points</strong>.'''))
         }
 
 class Question2(Page):
@@ -198,7 +198,7 @@ class Feedback2(Page):
                 In this case you have: <strong>(400 - 200) * 30 / 100 = 60 points</strong>.\
                 The Social Contribution is obtained by multiplicating the Quality,\
                 the Efficiency Factor and the Market Share. In this case it is:\
-                <strong>200 * 1.5 * 30 / 100 = 90 points</strong>.'''))
+                <strong>1.5 * 200 * 30 / 100 = 90 points</strong>.'''))
         }
 
 class Question3(Page):
@@ -284,8 +284,8 @@ class ResultsTemp(Page):
                 (_('La qualita\' scelta dall\'altro giocatore'), self.player.other_player().quality),
                 ('', ''),
                 (_('La tua quota di mercato'), format(self.player.share, '.2%')),
-                (_('Il tuo profitto eventualmente risultante se questo fosse il periodo pagato'), self.player.pot_payoff),
-                (_('Il tuo impatto positivo se questo fosse il periodo pagato'), self.player.impact),
+                (mark_safe(_('Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il periodo pagato')), self.player.pot_payoff),
+                (mark_safe(_('Il <strong>beneficio sociale generato dalle tue scelte</strong> se questo fosse il periodo pagato')), self.player.impact),
             ]
         }
 
@@ -310,10 +310,10 @@ class ResultsFinal(Page):
             (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
             (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['price']),
             (_('La qualita\' che hai scelto nel periodo pagato'), payment_result['quality']),
-            (_('L\'impatto positivo dovuto alle tue scelte'), payment_result['impact']),
+            (mark_safe(_('Il <strong>beneficio sociale</strong> dovuto alle tue scelte')), payment_result['impact']),
             ('', ''),
             (_('La tua quota di mercato nel periodo pagato'), format(payment_result['share'], '.2%')),
-            (_('Il tuo profitto in questa attivita\''), payment_result['payoff_sum']),
+            (mark_safe(_('Il tuo <strong>guadagno</strong> in questa attivita\'')), payment_result['payoff_sum']),
         ]
 
         game_results = {
