@@ -63,6 +63,48 @@ class Introduction(Page):
         ctx['title'] = u'Attività n°{}'.format(n)
         return ctx
 
+
+class Question1(Page):
+    template_name = 'global/Question.html'
+    form_model = models.Player
+    form_fields = ['training_profit']
+    question = _(u"Suppose in a group, 1 participant contributed 80 points,\
+     1 participant contributed 40, and 1 participant contributed nothing.\
+     What would be the payoff of the participant who contributed 80 points? ...")
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        return {
+            'num_q': 1,
+            'question': self.question
+        }
+
+
+class Feedback1(Page):
+    template_name = 'global/Feedback.html'
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        p = self.player
+        return {
+            'num_q': 1,
+            'answers':  {
+                _('''Payoff'''): [p.training_profit, 100]
+            },
+            'explanation': mark_safe(
+                _('''<br><strong>Question: </strong>''') + Question1.question\
+                + _('''<br><br><strong>Solution: </strong>Total contribution from all participants\
+                 was 80+40+0=120. Total earnings from the project were 120*2=240.\
+                 Each participant got an equal share of the earnings, that is, 240/3=80.\
+                 Hence, payoff for the participant who contributed 80 points\
+                 was 100-80+80=80.'''))
+        }
+
+
 class Question(Page):
 
     def is_displayed(self):

@@ -6,6 +6,7 @@ import otree.models
 import otree.constants
 from otree import widgets
 from otree.common import Currency as c, currency_range
+from django.utils.translation import ugettext as _
 import random
 # </standard imports>
 
@@ -75,6 +76,11 @@ class Player(otree.models.BasePlayer):
     group = models.ForeignKey(Group, null=True)
     subsession = models.ForeignKey(Subsession)
     # </built-in>
+
+
+    # Question1
+    training_profit = models.CurrencyField(
+        verbose_name=_('The payoff of the participant who contributed 80 points would be'))
 
     contribution = models.CurrencyField(
         min=0, max=Constants.endowment,
