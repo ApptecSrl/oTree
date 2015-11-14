@@ -107,8 +107,8 @@ class Results(Page):
 
 page_sequence = [
     Introduction,
-    Question1,
-    Feedback1,
+#    Question1,
+#    Feedback1,
     Offer,
     ResultsWaitPage,
     Results,
