@@ -310,10 +310,10 @@ class ResultsFinal(Page):
             (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
             (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['price']),
             (_('La qualita\' che hai scelto nel periodo pagato'), payment_result['quality']),
-            (mark_safe(_('Il <strong>beneficio sociale</strong> dovuto alle tue scelte')), payment_result['impact']),
+            (mark_safe(_('Il beneficio sociale dovuto alle tue scelte')), payment_result['impact']),
             ('', ''),
             (_('La tua quota di mercato nel periodo pagato'), format(payment_result['share'], '.2%')),
-            (mark_safe(_('Il tuo <strong>guadagno</strong> in questa attivita\'')), payment_result['payoff_sum']),
+            (mark_safe(_('Il tuo guadagno in questa attivita\'')), payment_result['payoff_sum']),
         ]
 
         game_results = {

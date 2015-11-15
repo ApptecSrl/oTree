@@ -149,8 +149,8 @@ class Results(Page):
 
 page_sequence = [MatchingWaitPage,
             Introduction,
-            Question1,
-            Feedback1,
+            #Question1,
+            #Feedback1,
             Offer,
             ResultsWaitPage,
             Results]

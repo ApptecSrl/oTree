@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 17:37+0100\n"
-"PO-Revision-Date: 2015-11-12 17:41+0100\n"
+"POT-Creation-Date: 2015-11-15 18:48+0100\n"
+"PO-Revision-Date: 2015-11-15 18:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: Italian\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
+
+#: models.py:83
+msgid "The payoff of the participant who contributed 80 points would be"
+msgstr "Il guadagno del partecipante che ha contribuito 80 punti sarebbe"
 
 #: templates/public_goods/Contribute.html:6
 msgid "Contribute"
@@ -53,26 +57,31 @@ msgid ""
 "contributed 40, and 1 participant contributed nothing. What would be the "
 "payoff of the participant who contributed 80 points?"
 msgstr ""
-"Considera un gruppo in cui 1 partecipante ha contribuito di 80 punti, 1 "
-"partecipante ha contribuito di 40, e 1 partecipante non ha contribuito. "
-"Quale sarebbe il guadagno per il partecipante che ha contribuito di 80 punti?"
+"Considera un gruppo in cui 1 partecipante ha contribuito 80 punti, 1 "
+"partecipante ha contribuito 40 punti, e 1 partecipante non ha contribuito. "
+"Quale sarebbe il guadagno per il partecipante che ha contribuito 80 punti?"
 
 #: templates/public_goods/Feedback.html:29
 msgid "<b>Solution: 100 points</b>"
 msgstr "<b>Soluzione: 100 punti</b>"
 
 #: templates/public_goods/Feedback.html:35
+#| msgid ""
+#| "<b>Explanation:</b> Total contribution from all participants was "
+#| "80+40+0=120. Total earnings from the project were 120*2=240. Each "
+#| "participant got an equal share of the earnings, that is, 240/3=80. Hence, "
+#| "payoff for the participant who contributed 80 points was 100-80+80=80."
 msgid ""
 "<b>Explanation:</b> Total contribution from all participants was "
 "80+40+0=120. Total earnings from the project were 120*2=240. Each "
 "participant got an equal share of the earnings, that is, 240/3=80. Hence, "
-"payoff for the participant who contributed 80 points was 100-80+80=80."
+"payoff for the participant who contributed 80 points was 100-80+80=100."
 msgstr ""
 "<b>Spiegazione:</b> Il contributo totale di tutti i partecipanti è stato "
-"pari a 80 + 40 + 0 = 120. Il guadagno totale generato dal progetto è stata "
-"pari a 120*2= 240. Tutti i partecipanti hanno ricevuto la stessa quota di "
-"tale quantità, cioè 240/3=80. Quindi, il guadagno per il partecipante che ha "
-"contribuito 80 punti è stato pari a 100-80+80=100."
+"pari a 80+40+0 = 120. Il guadagno totale generato dal progetto è stata pari "
+"a 120*2 = 240. Tutti i partecipanti hanno ricevuto la stessa quota di tale "
+"quantità, cioè 240/3 = 80. Quindi, il guadagno per il partecipante che ha "
+"contribuito 80 punti è stato pari a 100-80+80 = 100. "
 
 #: templates/public_goods/Instructions.html:3
 msgid "Instructions"
@@ -91,7 +100,8 @@ msgstr ""
 "selezionati casualmente. Ad ogni partecipante del gruppo sono assegnati "
 "%(endowment)s. Il gruppo ha l'opportunità di intraprendere un progetto "
 "congiunto. Ogni partecipante nel gruppo decide quanto contribuirà al "
-"progetto. Il contributo può essere ogni numero intero da 0 a %(endowment)s."
+"progetto. Il contributo può essere qualsiasi numero intero da 0 a "
+"%(endowment)s."
 
 #: templates/public_goods/Instructions.html:12
 #, python-format
@@ -104,11 +114,12 @@ msgid ""
 "contribute."
 msgstr ""
 "I guadagni derivanti dal progetto sono calcolati come segue: i contributi di "
-"tutti i partecipanti vengono sommati, il contributo totale è moltiplicato "
-"per un fattore pari a %(efficiency)s, e il totale che ne risulta è il "
-"guadagno totale derivante dal progetto, che viene distribuito in parti "
-"uguali tra tutti i partecipanti. Il tuo guadagno complessivo è pari alla tua "
-"quota di guadagno derivante dal progetto, più quanto non avevi contribuito. "
+"tutti i partecipanti vengono sommati, il totale viene moltiplicato per un "
+"fattore pari a %(efficiency)s. L'ammontare che ne risulta è il guadagno "
+"totale derivante dal progetto, che viene distribuito in parti uguali tra "
+"tutti i partecipanti. Il tuo guadagno complessivo è pari alla tua quota di "
+"guadagno derivante dal progetto, più i punti che inizialmente hai trattenuto "
+"per te. "
 
 #: templates/public_goods/Instructions.html:19
 msgid ""
@@ -122,13 +133,13 @@ msgstr ""
 msgid "Introduction"
 msgstr "Introduzione"
 
-#: templates/public_goods/Introduction.html:15
+#: templates/public_goods/Introduction.html:16
 msgid ""
 "On the next page, you will have to answer one question to make sure you "
 "understand the instructions correctly."
 msgstr ""
-"Nella prossima pagina dovrai rispondere a una domanda, assicurati di aver "
-"compreso correttamente le istruzioni"
+"Nella prossima pagina dovrai rispondere a una domanda, assicurati quindi di "
+"aver letto e compreso correttamente le istruzioni."
 
 #: templates/public_goods/Question.html:7
 msgid "Understanding Question 1 of 1"
@@ -142,45 +153,87 @@ msgstr "Il suo guadagno sarebbe"
 msgid "Results"
 msgstr "Risultati"
 
-#: views.py:91
+#: views.py:72
+#| msgid ""
+#| "Suppose in a group, 1 participant contributed 80 points, 1 participant "
+#| "contributed 40, and 1 participant contributed nothing. What would be the "
+#| "payoff of the participant who contributed 80 points?"
+msgid ""
+"Suppose in a group, 1 participant contributed 80 points,     1 participant "
+"contributed 40, and 1 participant contributed nothing.     What would be the "
+"payoff of the participant who contributed 80 points? ..."
+msgstr ""
+"Considera un gruppo in cui 1 partecipante ha contribuito 80 punti, 1 "
+"partecipante ha contribuito 40 punti, e 1 partecipante non ha contribuito. "
+"Quale sarebbe il guadagno per il partecipante che ha contribuito 80 punti?"
+
+#: views.py:97
+msgid "Payoff"
+msgstr "Guadagno"
+
+#: views.py:100
+msgid "<br><strong>Question: </strong>"
+msgstr "<br><strong>Domanda: </strong>"
+
+#: views.py:101
+#| msgid ""
+#| "<b>Explanation:</b> Total contribution from all participants was "
+#| "80+40+0=120. Total earnings from the project were 120*2=240. Each "
+#| "participant got an equal share of the earnings, that is, 240/3=80. Hence, "
+#| "payoff for the participant who contributed 80 points was 100-80+80=80."
+msgid ""
+"<br><br><strong>Solution: </strong>Total contribution from all "
+"participants                 was 80+40+0 = 120. Total earnings from the "
+"project were 120*2 = 240.                 Each participant got an equal "
+"share of the earnings, that is, 240/3 = 80.                 Hence, payoff "
+"for the participant who contributed 80 points                 was 100-80+80 "
+"= 100."
+msgstr ""
+"<b>Spiegazione:</b> Il contributo totale di tutti i partecipanti è stato "
+"pari a 80+40+0 = 120. Il guadagno totale generato dal progetto è stata pari "
+"a 120*2 = 240. Tutti i partecipanti hanno ricevuto la stessa quota di tale "
+"quantità, cioè 240/3 = 80. Quindi, il guadagno per il partecipante che ha "
+"contribuito 80 punti è stato pari a 100-80+80 = 100. "
+
+#: views.py:139
 msgid "Waiting for other participants to contribute."
 msgstr "In attesa dei contributi degli altri partecipanti"
 
-#: views.py:106
+#: views.py:154
 msgid "You contributed"
 msgstr "Il tuo contributo"
 
-#: views.py:107
+#: views.py:155
 msgid "Other participants contributed"
-msgstr "Contributo dell'altro partecipante"
+msgstr "Contributi degli altri partecipanti: "
 
-#: views.py:112
+#: views.py:160
 msgid "Total contribution"
 msgstr "Contributi totali"
 
-#: views.py:114
+#: views.py:162
 msgid "Total earnings from the project"
 msgstr "Guadagni totali dal progetto"
 
-#: views.py:115
+#: views.py:163
 msgid "Your earnings from the project"
 msgstr "Il tuo guadagno dal progetto"
 
-#: views.py:117
+#: views.py:165
 msgid "Your payoff in this activity"
 msgstr "Il tuo profitto in questa attività"
 
-#: views.py:120
+#: views.py:168
 msgid "Public goods game"
 msgstr "Gioco di contribuzione a un bene pubblico"
 
-#: views.py:123
+#: views.py:171
 msgid "In this activity you chose how much to contribute to a joint project. "
 msgstr ""
 "In questa attività hai scelto quanto contribuire ad un progetto congiunto "
 "con altri partecipanti"
 
-#: views.py:134
+#: views.py:182
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 

@@ -4,6 +4,7 @@ from . import models
 from ._builtin import Page, WaitPage
 from otree.common import Currency as c, currency_range
 from .models import Constants
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 import random
 
@@ -98,10 +99,10 @@ class Feedback1(Page):
             'explanation': mark_safe(
                 _('''<br><strong>Question: </strong>''') + Question1.question\
                 + _('''<br><br><strong>Solution: </strong>Total contribution from all participants\
-                 was 80+40+0=120. Total earnings from the project were 120*2=240.\
-                 Each participant got an equal share of the earnings, that is, 240/3=80.\
+                 was 80+40+0 = 120. Total earnings from the project were 120*2 = 240.\
+                 Each participant got an equal share of the earnings, that is, 240/3 = 80.\
                  Hence, payoff for the participant who contributed 80 points\
-                 was 100-80+80=80.'''))
+                 was 100-80+80 = 100.'''))
         }
 
 

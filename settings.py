@@ -178,15 +178,15 @@ SESSION_CONFIGS = [
             'welcome_choice','market', 'payment_recap'
         ],
     },
-        {
-        'name': 'prova_market',
-        'display_name': "Prova Market game con Welcome recap e paymentInfo finale",
-        #'real_world_currency_per_point': 0.25,
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'welcome_choice', 'market', 'payment_recap', 'payment_info'
-        ],
-    },
+        # {
+        # 'name': 'prova_market',
+        # 'display_name': "Prova Market game con Welcome recap e paymentInfo finale",
+        # #'real_world_currency_per_point': 0.25,
+        # 'num_demo_participants': 2,
+        # 'app_sequence': [
+        #     'welcome_choice', 'market', 'payment_recap', 'payment_info'
+        # ],
+    #},
     {
         'name': 'welcome_choice',
         'display_name': "Welcome",
@@ -195,17 +195,23 @@ SESSION_CONFIGS = [
             'welcome_choice'
         ],
     },
+    # {
+    #     'name': 'prova_sequenza',
+    #     'display_name': "Sessione completa - prova",
+    #     'num_demo_participants': 2,
+    #     'app_sequence': [
+    #         'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
+    #     ],
+    # },
+
     {
-        'name': 'prova_sequenza',
-        'display_name': "Sessione completa - prova",
+        'name': 'sequenza_completa',
+        'display_name': "Sessione studenti completa",
         'num_demo_participants': 2,
-        #'participation_fee': 0.00,  #'use_points': False,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],
     },
-
-
 ]
 
 otree.settings.augment_settings(globals())
