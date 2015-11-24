@@ -178,15 +178,15 @@ SESSION_CONFIGS = [
             'welcome_choice','market', 'payment_recap'
         ],
     },
-        # {
-        # 'name': 'prova_market',
-        # 'display_name': "Prova Market game con Welcome recap e paymentInfo finale",
-        # #'real_world_currency_per_point': 0.25,
-        # 'num_demo_participants': 2,
-        # 'app_sequence': [
-        #     'welcome_choice', 'market', 'payment_recap', 'payment_info'
-        # ],
-    #},
+        {
+        'name': 'prova_market',
+        'display_name': "Prova Market game con Welcome e recap finale",
+        #'real_world_currency_per_point': 0.25,
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice', 'market', 'payment_recap'
+        ],
+    },
     {
         'name': 'welcome_choice',
         'display_name': "Welcome",
