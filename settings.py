@@ -215,3 +215,4 @@ SESSION_CONFIGS = [
 ]
 
 otree.settings.augment_settings(globals())
+SENTRY_DSN = 'http://c8035c27b7ba4104b126561e64b30043:fa581b618fda4bec88880a4cf10eac04@sentry.otree.org/4'
