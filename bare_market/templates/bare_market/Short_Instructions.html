@@ -1,0 +1,54 @@
+{% extends "global/Short_Instructions.html" %}
+{% load i18n %}
+
+
+{% block short_instructions %}
+
+{% blocktrans trimmed %}
+<p> Ti ricordiamo che la tua quota di mercato è tanto maggiore quanto più alta la qualità del tuo bene
+    e più basso il suo prezzo. Allo stesso tempo è crescente nel prezzo del rivale e decrescente nella sua qualità.
+    La seguente tabella sintetizza queste relazioni.</p>
+
+
+<p>
+    <table align="center" class="table" style="width:70%">
+
+        <tr>
+            <td> </td>
+            <td> Tua qualità  </td>
+            <td> Tuo prezzo </td>
+            <td> Sua qualità </td>
+            <td> Suo prezzo </td>
+        </tr>
+        <tr>
+            <td> Tua quota di mercato </td>
+            <td> + </td>
+            <td> - </td>
+            <td> - </td>
+            <td> + </td>
+        </tr>
+        <tr>
+            <td> Sua quota di mercato </td>
+            <td> - </td>
+            <td> + </td>
+            <td> + </td>
+            <td> - </td>
+        </tr>
+
+    </table>
+
+</p>
+<p> In ogni turno il tuo profitto sarà pari a:</p>
+<p>
+
+<strong>Profitto = (Prezzo - Qualità) x Quota di mercato</strong>
+ </p>
+
+<p>
+    I punti da te ottenuti in termini di profitto nel turno sorteggiato saranno trasformati
+    in euro secondo il tasso di conversione <strong>20 punti = 1 euro</strong>.
+
+</p>
+{% endblocktrans %}
+
+{% endblock %}
