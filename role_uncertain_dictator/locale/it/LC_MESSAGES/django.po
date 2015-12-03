@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mario\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-02 15:50+0100\n"
+"PO-Revision-Date: 2015-12-02 17:43+0100\n"
+"Last-Translator: \n"
+"Language-Team:  < >\n"
+"Language: Italian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: models.py:84
+#, python-format
+msgid "I will keep (from 0 to %i)"
+msgstr "Terrò per me (da 0 a %i)"
+
+#: templates/role_uncertain_dictator/Instructions.html:6
+#| msgid ""
+#| "You will be paired randomly and anonymously ... There are %(total)s to "
+#| "split. You have to decide decide how many points she or he will retain. "
+#| "The rest will go to the other participant."
+msgid ""
+"You will be paired randomly and anonymously ... There are to split. You have "
+"to decide decide how many points she or he will retain. The rest will go to "
+"the other participant."
+msgstr ""
+"<p>Questa attività si svolge in un unico turno e prevede che i partecipanti "
+"siano divisi a coppie. In ogni coppia ci sono 100 punti da dividere fra i "
+"due partecipanti. Uno dei due partecipanti avrà il ruolo di DECISORE, e "
+"dovrà quindi decidere quanti dei 100 punti tenere per sé e quanto lasciare "
+"all’altro membro della coppia, che ha solo il ruolo di RICEVENTE e non può "
+"esercitare alcuna scelta. Se il soggetto decisore decide di tenere per sé la "
+"cifra K, il soggetto ricevente a lui abbinato riceve 100-K.</p>  Ogni "
+"partecipante verrà assegnato a due gruppi. In un gruppo avrà il ruolo di "
+"decisore, e il ricevente sarà un soggetto x di cui non può conoscere "
+"l’identità. Nell’altro gruppo avrà il ruolo di ricevente e il decisore sarà "
+"un soggetto y (diverso da x) di cui non può conoscere l’identità. È "
+"importante notare che i soggetti a cui siete abbinati nei due gruppi sono "
+"sicuramente diversi. Alla fine il computer estrarrà a sorte i gruppi dei "
+"quali tenere conto per il pagamento finale. In pratica ci sarà il 50%% di "
+"possibilità che venga estratto il gruppo in cui sei il decisore, e che "
+"quindi venga implementata per te e per il soggetto x la tua scelta, e il 50%"
+"% di probabilità che venga estratto il gruppo in cui sei il ricevente, e che "
+"quindi sia la scelta del soggetto y a determinare il guadagno tuo e suo. In "
+"nessun caso può accadere che per un soggetto venga estratto sia il gruppo in "
+"cui è decisore sia il gruppo in cui è ricevente."
+
+#: templates/role_uncertain_dictator/Offer.html:5
+msgid "Your Decision"
+msgstr "La tua decisione"
+
+#: templates/role_uncertain_dictator/Offer.html:10
+msgid "<p> Please decide how many points you will keep for yourself. </p>"
+msgstr "<p> Per favore decidi quanti punti tenere per te. </p>"
+
+#: views.py:67
+msgid "giver"
+msgstr "decisore"
+
+#: views.py:69
+msgid "receiver"
+msgstr "ricevente"
+
+#: views.py:79 views.py:85
+msgid "Your role in the game was chosen to be that of"
+msgstr "E' stato estratto il gruppo in cui eri"
+
+#: views.py:80
+msgid "You kept for yourself"
+msgstr "Hai tenuto per te"
+
+#: views.py:86
+msgid "Another participant decided to offer you"
+msgstr "Un altro partecipante ha deciso di offrirti"
+
+#: views.py:90
+msgid "Your payoff in this activity"
+msgstr "Il tuo guadagno in questa attività"
+
+#: views.py:96
+msgid ""
+"In this activity you chose how to split a given amount between yourself and "
+"another partecipant. In addition a third participant decided how to split "
+"the same amount between him/herself and you. "
+msgstr ""
+"In questa attività hai scelto come suddividere una certa somma tra te ad un "
+"altro partecipante. Inoltre un terzo partecipante ha scelto come suddividere "
+"una somma di stessa entità tra sé stesso e te."
+
+#: views.py:107
+msgid "This activity is over. Results will be shown later."
+msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."

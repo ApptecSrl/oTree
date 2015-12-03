@@ -53,7 +53,7 @@ ADMIN_USERNAME = 'admin'
 # the full admin interface.
 
 AUTH_LEVEL = 'EXPERIMENT'
-# AUTH_LEVEL = os.environ.get('OTREE_AUTH_LEVEL')
+#AUTH_LEVEL = os.environ.get('OTREE_AUTH_LEVEL')
 
 # ACCESS_CODE_FOR_DEFAULT_SESSION:
 # If you have a "default session" set,
@@ -140,10 +140,17 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'public_goods',
-        'display_name': "Public Goods",
-        'num_demo_participants': 3,
-        'app_sequence': ['public_goods', 'payment_recap'],
+         'name': 'public_goods',
+         'display_name': "Public Goods",
+         'num_demo_participants': 3,
+         'app_sequence': ['public_goods', 'payment_info'],
+    },
+    {
+        'name': 'beauty',
+        'display_name': "Beauty Contest",
+        'num_demo_participants': 5,
+        'num_bots': 5,
+        'app_sequence': ['beauty', 'payment_info'],
     },
     {
         'name': 'risk',
@@ -168,6 +175,13 @@ SESSION_CONFIGS = [
         'display_name': "Simultaneous Dictator Game",
         'num_demo_participants': 2,
         'app_sequence': ['welcome_choice','dictators_simultaneous', 'payment_recap'],
+    },
+    {
+        'name': 'unc_role_dic',
+        'display_name': "Role Uncertain Dictators",
+        'num_demo_participants': 2,
+        'random_start_order': True,
+        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
     },
         {
         'name': 'market',

@@ -23,7 +23,7 @@ doc = """
 class Constants(otree.constants.BaseConstants):
     players_per_group = 2
     name_in_url = 'market'
-    num_rounds = 10
+    num_rounds = 4
     bonus = c(0)
     maximum_price = c(400)
     alpha = 1.5

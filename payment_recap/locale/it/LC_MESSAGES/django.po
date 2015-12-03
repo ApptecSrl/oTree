@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 09:25+0100\n"
+"POT-Creation-Date: 2015-12-02 15:04+0100\n"
 "PO-Revision-Date: 2015-11-12 09:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,10 @@ msgstr "Guadagno complessivo"
 msgid "Charity amount"
 msgstr "Cifra per associazione"
 
+#: models.py:59
+msgid "Invoice amount"
+msgstr "Sulla fattura"
+
 #: templates/payment_recap/PaymentRecap.html:6
 #: templates/payment_recap/TotalPayoff.html:6
 msgid "Results"
@@ -35,14 +39,14 @@ msgstr "Risultati"
 msgid "Activity summary"
 msgstr "Sommario dell'attività"
 
-#: views.py:35
+#: views.py:39
 msgid "Your code number is"
 msgstr "Il tuo codice"
 
-#: views.py:40
+#: views.py:44
 msgid "Your total payoff"
 msgstr "Il tuo guadagno complessivo"
 
-#: views.py:41
+#: views.py:45
 msgid "Money going to charity"
 msgstr "Denaro che va alla associazione scelta"

@@ -65,4 +65,4 @@ class Player(BasePlayer):
     )
     question = models.CurrencyField()
 
-    stringOutcome = models.BooleanField()
+    #stringOutcome = models.BooleanField()

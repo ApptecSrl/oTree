@@ -27,6 +27,8 @@ class MatchingWaitPage(WaitPage):
     def after_all_players_arrive(self):
         if self.subsession.round_number == 1:
             self.matching()
+        for subsession in self.subsession.in_rounds(2, Constants.num_rounds):
+            subsession.group_like_round(1)
 
     def matching(self):
         print 'Ora matching in corso'
