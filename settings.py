@@ -146,11 +146,13 @@ SESSION_CONFIGS = [
          'app_sequence': ['public_goods', 'payment_info'],
     },
     {
-        'name': 'beauty',
-        'display_name': "Beauty Contest",
-        'num_demo_participants': 5,
-        'num_bots': 5,
-        'app_sequence': ['beauty', 'payment_info'],
+        'name': 'bare_market',
+        'display_name': "Bare Market game",
+        #'real_world_currency_per_point': 0.25,
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','bare_market', 'payment_recap'
+        ],
     },
     {
         'name': 'risk',
@@ -183,7 +185,7 @@ SESSION_CONFIGS = [
         'random_start_order': True,
         'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
     },
-        {
+    {
         'name': 'market',
         'display_name': "Market game",
         #'real_world_currency_per_point': 0.25,
