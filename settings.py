@@ -151,20 +151,20 @@ SESSION_CONFIGS = [
         #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice','bare_market', 'payment_recap'
+            'welcome_noCharity','bare_market', 'payment_recap'
         ],
     },
     {
         'name': 'risk',
         'display_name': "Risky choice",
         'num_demo_participants': 1,
-        'app_sequence': ['welcome_choice','risk'],
+        'app_sequence': ['welcome_noCharity','risk'],
     },
     {
         'name': 'risk_final_info',
         'display_name': "Risky choice with final recap",
         'num_demo_participants': 1,
-        'app_sequence': ['welcome_choice','risk', 'payment_recap'],
+        'app_sequence': ['welcome_noCharity','risk', 'payment_recap'],
     },
     # {
     #     'name': 'dictator',
@@ -176,14 +176,14 @@ SESSION_CONFIGS = [
         'name': 'dic_sim',
         'display_name': "Simultaneous Dictator Game",
         'num_demo_participants': 2,
-        'app_sequence': ['welcome_choice','dictators_simultaneous', 'payment_recap'],
+        'app_sequence': ['welcome_noCharity','dictators_simultaneous', 'payment_recap'],
     },
     {
         'name': 'unc_role_dic',
         'display_name': "Role Uncertain Dictators",
         'num_demo_participants': 2,
         'random_start_order': True,
-        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
+        'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
     },
     {
         'name': 'market',
@@ -204,11 +204,11 @@ SESSION_CONFIGS = [
         ],
     },
     {
-        'name': 'welcome_choice',
+        'name': 'welcome_noCharity',
         'display_name': "Welcome",
         'num_demo_participants': 1,
         'app_sequence': [
-            'welcome_choice'
+            'welcome_noCharity'
         ],
     },
     # {
@@ -216,12 +216,12 @@ SESSION_CONFIGS = [
     #     'display_name': "Sessione completa - prova",
     #     'num_demo_participants': 2,
     #     'app_sequence': [
-    #         'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
+    #         'welcome_noCharity','market','risk','public_goods','dictators_simultaneous','payment_recap'
     #     ],
     # },
 
     {
-        'name': 'sequenza_completa',
+        'name': 'sequenza_completa_conCharity',
         'display_name': "Sessione studenti completa",
         'num_demo_participants': 2,
         'app_sequence': [

@@ -8,7 +8,7 @@ from .models import Constants
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 
-
+#TODO: mettere a posto le domande di comprensione!
 def vars_for_all_templates(self):
     return {
         'total_q': 3,
@@ -127,10 +127,10 @@ class ResultsTemp(Page):
             'table': [
                 (_('Turno numero'), self.subsession.round_number),
                 (_('Il prezzo che hai scelto'), self.player.price),
-                (_('La qualita\' che hai scelto'), self.player.quality),
+                (_(u'La qualità che hai scelto'), self.player.quality),
                 ('', ''),
                 (_('Il prezzo scelto dall\'altro giocatore'), self.player.other_player().price),
-                (_('La qualita\' scelta dall\'altro giocatore'), self.player.other_player().quality),
+                (_(u'La qualità scelta dall\'altro giocatore'), self.player.other_player().quality),
                 ('', ''),
                 (_('La tua quota di mercato'), format(self.player.share, '.2%')),
                 (mark_safe(_('Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il periodo pagato')), self.player.pot_payoff),
@@ -157,10 +157,10 @@ class ResultsFinal(Page):
         result_table = [
             (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
             (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['price']),
-            (_('La qualita\' che hai scelto nel periodo pagato'), payment_result['quality']),
+            (_(u'La qualità che hai scelto nel periodo pagato'), payment_result['quality']),
             ('', ''),
             (_('La tua quota di mercato nel periodo pagato'), format(payment_result['share'], '.2%')),
-            (mark_safe(_('Il tuo guadagno in questa attivita\'')), payment_result['payoff_sum']),
+            (mark_safe(_(u'Il tuo guadagno in questa attività')), payment_result['payoff_sum']),
         ]
 
         game_results = {
