@@ -222,10 +222,26 @@ SESSION_CONFIGS = [
 
     {
         'name': 'sequenza_completa_conCharity',
-        'display_name': "Sessione studenti completa",
+        'display_name': "Sessione studenti completa con Charity",
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
+        ],
+    },
+    {
+        'name': 'sequenza_corta_conCharity',
+        'display_name': "Sessione studenti corta con Charity",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','market','role_uncertain_dictator','payment_recap'
+        ],
+    },
+    {
+        'name': 'sequenza_noCharity',
+        'display_name': "Sessione studenti senza charity, bare_market e role_unc_dictators",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_noCharity','bare_market','role_uncertain_dictator','payment_recap'
         ],
     },
 ]
