@@ -78,13 +78,11 @@ class Player(BasePlayer):
     # Question1
     training_my_profit_1 = models.CurrencyField(
         verbose_name=_('My profit would be'))
-    training_my_social_contribution_1 = models.CurrencyField(
-        verbose_name=_('My social contribution would be'))
+
     # Question2
     training_my_profit_2 = models.CurrencyField(
         verbose_name=_('My profit would be'))
-    training_my_social_contribution_2 = models.CurrencyField(
-        verbose_name=_('My social contribution would be'))
+
     # Question3
     training_correct_answer_3 = models.PositiveIntegerField(
         min = 1,

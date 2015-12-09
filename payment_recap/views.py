@@ -42,7 +42,9 @@ class TotalPayoff(Page):
         else:
             table = []
         table.append((_('Your total payoff'), self.player.total_payoff))
-        if ['Market game'] in [app['label'] for app in self.player.participant.vars['applications_results']]:
+        # if ['Market game'] in [app['label'] for app in self.player.participant.vars['applications_results']]:
+        #     table.append((_('Money going to charity'), self.player.total_money_to_charity))
+        if self.player.participant.vars['charity']:
             table.append((_('Money going to charity'), self.player.total_money_to_charity))
         return {
             'table': table

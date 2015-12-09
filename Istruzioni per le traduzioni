@@ -2,6 +2,7 @@ La traduzione deve essere realizzata applicazione per applicazione. mi spiego me
 
 portandosi all'interno della cartella dell'applicazione si deve creare la cartella "locale"
 io ad esempio ho tradotto dictator, quindi mi sono portato all'interno di oTree/dictator
+
 mkdir locale
 
 poi si esegue il comando per realizzare il file .po delle traduzioni
