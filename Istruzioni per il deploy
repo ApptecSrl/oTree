@@ -1,0 +1,13 @@
+1) Aggiornare git
+
+2) Dalla dashboard di heroku fare il deploy a mano su serene-basin-8430
+
+3) Dalla cartella di otree, fare workon otree (per creare il virtualenv)
+
+4) Fare heroku login (con id mariocioni2010gmail.com  e pw casalier1 )
+
+5) Fare il reset database su serene-basin:
+    otree-heroku resetdb serene-basin-8430
+
+6) Togliere il debug mode:
+    heroku config:set OTREE_PRODUCTION=1 --app serene-basin-8430
