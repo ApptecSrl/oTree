@@ -11,7 +11,7 @@ from django.utils.translation import ugettext as _
 #TODO: mettere a posto le domande di comprensione!
 def vars_for_all_templates(self):
     return {
-        'total_q': 3,
+        'total_q': 4,
         'instructions': 'bare_market/Instructions.html',
         'short_instructions': 'bare_market/Short_Instructions.html'
     }
@@ -201,10 +201,10 @@ class Question3(Page):
                  qualità pari a 100 e un prezzo pari a 300. La tua quota di mercato è stata pari a 0,2.\
                  Adesso scegli di ridurre il prezzo a 200 mantenendo la qualità uguale a 100.\
                  Il tuo concorrente mantiene inalterate le scelte del periodo precedente.\
-                 Quale delle seguenti affermazioni è corretta?''') + ('''<br><br>\
-                 <strong>(1)</strong> La mia quota di mercato e\' sicuramente diminuita.<br>\
-                 <strong>(2)</strong> La mia quota di mercato e\' sicuramente aumentata.<br>\
-                 <strong>(3)</strong> La mia quota di mercato puo\' essere aumentata o diminuita\
+                 Quale delle seguenti affermazioni è corretta?''') + _(u'''<br><br>\
+                 <strong>(1)</strong> La mia quota di mercato è sicuramente diminuita.<br>\
+                 <strong>(2)</strong> La mia quota di mercato è sicuramente aumentata.<br>\
+                 <strong>(3)</strong> La mia quota di mercato può essere aumentata o diminuita\
                  a seconda di quali erano state le scelte del mio concorrente nel periodo precedente.'''))
 
     def is_displayed(self):
@@ -248,21 +248,21 @@ class Question4(Page):
     form_model = models.Player
     form_fields = ['training_correct_answer_4']
     question = mark_safe(_(u'''Considera la seguente situazione ipotetica. Nel precedente periodo hai scelto una\
-                 qualità pari a 150 e un prezzo pari a 250. La tua quota di mercato è stata pari a 0,4.\
+                 qualità pari a 150 e un prezzo pari a 250. La tua quota di mercato è stata pari al 40%.\
                  In questo periodo tu hai deciso di confermare le scelte precedenti mentre il tuo\
                  concorrente decide di aumentare la qualità offerta di 50 punti\
                  rispetto a quanto aveva fatto nel periodo precedente.\
-                 Quale delle seguenti affermazioni è corretta?''') + ('''<br><br>\
-                 <strong>(1)</strong> La mia quota di mercato e\' sicuramente minore di 0,4.<br>\
-                 <strong>(2)</strong> La mia quota di mercato e\' sicuramente minore di 0,2.<br>\
-                 <strong>(3)</strong> La mia quota di mercato e\' sicuramente maggiore di 0,4.<br>.'''))
+                 Quale delle seguenti affermazioni è corretta?''') + _(u'''<br><br>\
+                 <strong>(1)</strong> La mia quota di mercato è sicuramente minore del 40%.<br>\
+                 <strong>(2)</strong> La mia quota di mercato è sicuramente minore del 20%.<br>\
+                 <strong>(3)</strong> La mia quota di mercato è sicuramente maggiore del 40%.<br>.'''))
 
     def is_displayed(self):
         return self.subsession.round_number == 1
 
     def vars_for_template(self):
         return {
-            'num_q': 3,
+            'num_q': 4,
             'question': self.question
         }
 
@@ -276,7 +276,7 @@ class Feedback4(Page):
     def vars_for_template(self):
         p = self.player
         return {
-            'num_q': 3,
+            'num_q': 4,
             'answers': {
                 _('"Affermazione corretta"'): [p.training_correct_answer_4, 1],
             },

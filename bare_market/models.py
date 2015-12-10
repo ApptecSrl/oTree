@@ -93,7 +93,7 @@ class Player(BasePlayer):
     training_correct_answer_4 = models.PositiveIntegerField(
         min = 1,
         max = 3,
-        verbose_name=_('La risposta corretta è'))
+        verbose_name=_('The correct answer is'))
 
     price = models.CurrencyField(
         min=0, max=Constants.maximum_price,

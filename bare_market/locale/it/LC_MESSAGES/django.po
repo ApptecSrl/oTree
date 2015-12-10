@@ -7,22 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_bare_market\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 16:58+0100\n"
-"PO-Revision-Date: 2015-12-09 17:15+0100\n"
+"POT-Creation-Date: 2015-12-10 19:57+0100\n"
+"PO-Revision-Date: 2015-12-10 20:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-"Language: it\n"
 
 #: models.py:80 models.py:84
 msgid "My profit would be"
 msgstr "Il mio profitto sarebbe"
 
-#: models.py:90
+#: models.py:90 models.py:96
 msgid "The correct answer is"
 msgstr "La risposta corretta è"
 
@@ -167,7 +167,7 @@ msgstr ""
 msgid "\"Profit\""
 msgstr "\"Profitto\""
 
-#: views.py:143 views.py:188 views.py:234
+#: views.py:143 views.py:188 views.py:234 views.py:284
 msgid "<br><strong>Question: </strong>"
 msgstr "<br><strong>Domanda: </strong>"
 
@@ -234,71 +234,153 @@ msgid ""
 "scelto una                 qualità pari a 100 e un prezzo pari a 300. La tua "
 "quota di mercato è stata pari a 0,2.                 Adesso scegli di "
 "ridurre il prezzo a 200 mantenendo la qualità uguale a 100.                 "
-"Quale delle seguenti affermazioni è vera?"
+"Il tuo concorrente mantiene inalterate le scelte del periodo "
+"precedente.                 Quale delle seguenti affermazioni è corretta?"
 msgstr ""
 "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
 "scelto una                 qualità pari a 100 e un prezzo pari a 300. La tua "
 "quota di mercato è stata pari al 20%.                 Adesso scegli di "
 "ridurre il prezzo a 200 mantenendo la qualità uguale a 100.                 "
-"Quale delle seguenti affermazioni è vera?"
+"Il tuo concorrente mantiene inalterate le scelte del periodo "
+"precedente.                 Quale delle seguenti affermazioni è corretta?"
 
-#: views.py:231
+#: views.py:204
+msgid ""
+"<br><br>                 <strong>(1)</strong> La mia quota di mercato è "
+"sicuramente diminuita.<br>                 <strong>(2)</strong> La mia quota "
+"di mercato è sicuramente aumentata.<br>                 <strong>(3)</strong> "
+"La mia quota di mercato può essere aumentata o diminuita                 a "
+"seconda di quali erano state le scelte del mio concorrente nel periodo "
+"precedente."
+msgstr ""
+"<br><br>                 <strong>(1)</strong> La mia quota di mercato è "
+"sicuramente diminuita.<br>                 <strong>(2)</strong> La mia quota "
+"di mercato è sicuramente aumentata.<br>                 <strong>(3)</strong> "
+"La mia quota di mercato può essere aumentata o diminuita                 a "
+"seconda di quali erano state le scelte del mio concorrente nel periodo "
+"precedente."
+
+#: views.py:231 views.py:281
 msgid "\"Affermazione corretta\""
 msgstr "\"Affermazione corretta\""
 
-#: views.py:235
+#: views.py:235 views.py:285
 msgid "<br><br><strong>Solution: </strong>Answer nr. 2 is correct."
 msgstr "<br><br><strong>Soluzione: </strong>La Risposta nr. 2 è corretta."
 
 #: views.py:236
 msgid ""
 "<br><br><strong>Explanation: </strong> La risposta n. 1 è "
-"falsa                perché la tua quota di mercato dipende anche dalle "
-"scelte del tuo concorrente.                La risposta n. 2 è vera perché "
-"per ogni possibile offerta del rivale,                una riduzione del tuo "
-"prezzo aumenta la tua quota di mercato.                La risposta n. 3 è "
-"falsa perché la tua quota di mercato può essere diminuita anche "
-"se                il tuo concorrente ha aumentato sufficientemente la "
-"qualità mantenendo                il prezzo invariato o aumentandolo di poco."
+"errata                perché la tua quota di mercato dipende in maniera "
+"negativa dal tuo prezzo.                Per la medesima ragione, la risposta "
+"n. 2 è corretta. Diminuendo il tuo prezzo                tua quota di "
+"mercato aumenta, a parità di tutti gli altri dati.                La "
+"risposta n. 3 è errata perché il tuo concorrente mantiene inalterate le "
+"scelte                e quindi queste non possono giocare alcun ruolo nella "
+"variazione delle quote di                mercato che intercorre fra il "
+"periodo precedente e quello attuale."
 msgstr ""
 "<br><br><strong>Spiegazione: </strong> La risposta n. 1 è "
-"falsa                perché la tua quota di mercato dipende anche dalle "
-"scelte del tuo concorrente.                La risposta n. 2 è vera perché "
-"per ogni possibile offerta del rivale,                una riduzione del tuo "
-"prezzo aumenta la tua quota di mercato.                La risposta n. 3 è "
-"falsa perché la tua quota di mercato può essere diminuita anche "
-"se                il tuo concorrente ha aumentato sufficientemente la "
-"qualità mantenendo                il prezzo invariato o aumentandolo di poco."
+"errata                perché la tua quota di mercato dipende in maniera "
+"negativa dal tuo prezzo.                Per la medesima ragione, la risposta "
+"n. 2 è corretta. Diminuendo il tuo prezzo                tua quota di "
+"mercato aumenta, a parità di tutti gli altri dati.                La "
+"risposta n. 3 è errata perché il tuo concorrente mantiene inalterate le "
+"scelte                e quindi queste non possono giocare alcun ruolo nella "
+"variazione delle quote di                mercato che intercorre fra il "
+"periodo precedente e quello attuale."
+
+#: views.py:250
+#| msgid ""
+#| "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
+#| "scelto una                 qualità pari a 150 e un prezzo pari a 250. La "
+#| "tua quota di mercato è stata pari a 0,4.                 In questo "
+#| "periodo tu hai deciso di confermare le scelte precedenti mentre il "
+#| "tuo                 concorrente decide di aumentare la qualità offerta di "
+#| "50 punti                 rispetto a quanto aveva fatto nel periodo "
+#| "precedente.                 Quale delle seguenti affermazioni è corretta?"
+msgid ""
+"Considera la seguente situazione ipotetica. Nel precedente periodo hai "
+"scelto una                 qualità pari a 150 e un prezzo pari a 250. La tua "
+"quota di mercato è stata pari al 40%.                 In questo periodo tu "
+"hai deciso di confermare le scelte precedenti mentre il tuo                 "
+"concorrente decide di aumentare la qualità offerta di 50 "
+"punti                 rispetto a quanto aveva fatto nel periodo "
+"precedente.                 Quale delle seguenti affermazioni è corretta?"
+msgstr ""
+"Considera la seguente situazione ipotetica. Nel precedente periodo hai "
+"scelto una                 qualità pari a 150 e un prezzo pari a 250. La tua "
+"quota di mercato è stata pari al 40%.                 In questo periodo tu "
+"hai deciso di confermare le scelte precedenti mentre il tuo                 "
+"concorrente decide di aumentare la qualità offerta di 50 "
+"punti                 rispetto a quanto aveva fatto nel periodo "
+"precedente.                 Quale delle seguenti affermazioni è corretta?"
 
 #: views.py:255
+msgid ""
+"<br><br>                 <strong>(1)</strong> La mia quota di mercato è "
+"sicuramente minore del 40%.<br>                 <strong>(2)</strong> La mia "
+"quota di mercato è sicuramente minore del 20%.<br>                 "
+"<strong>(3)</strong> La mia quota di mercato è sicuramente maggiore del 40%."
+"<br>."
+msgstr ""
+"<br><br>                 <strong>(1)</strong> La mia quota di mercato è "
+"sicuramente minore del 40%.<br>                 <strong>(2)</strong> La mia "
+"quota di mercato è sicuramente minore del 20%.<br>                 "
+"<strong>(3)</strong> La mia quota di mercato è sicuramente maggiore del 40%."
+"<br>."
+
+#: views.py:286
+msgid ""
+"<br><br><strong>Explanation: </strong> La risposta n. 1 è "
+"corretta                perché la tua quota di mercato dipende in maniera "
+"negativa dalla qualità offerta                dal tuo concorrente. La "
+"risposta n. 2 è errata perché pur potendo affermare che la                "
+"tua quota di mercato diminuisce, nulla può essere affermato riguardo "
+"all'entità di                tale diminuzione. La risposta n. 3 è errata "
+"perché se l'unico cambiamento consiste in                un'aumento della "
+"qualità del concorrente allora la tua quota di mercato deve                "
+"necessariamente diminuire."
+msgstr ""
+"<br><br><strong>Spiegazione: </strong> La risposta n. 1 è "
+"corretta                perché la tua quota di mercato dipende in maniera "
+"negativa dalla qualità offerta                dal tuo concorrente. La "
+"risposta n. 2 è errata perché pur potendo affermare che la                "
+"tua quota di mercato diminuisce, nulla può essere affermato riguardo "
+"all'entità di                tale diminuzione. La risposta n. 3 è errata "
+"perché se l'unico cambiamento consiste in                un aumento della "
+"qualità del concorrente allora la tua quota di mercato deve                "
+"necessariamente diminuire."
+
+#: views.py:305
 msgid "Il prezzo non può essere più basso della qualità"
 msgstr "Il prezzo non può essere più basso della qualità"
 
-#: views.py:268
+#: views.py:318
 msgid "Turno numero"
 msgstr "Turno numero"
 
-#: views.py:269
+#: views.py:319
 msgid "Il prezzo che hai scelto"
 msgstr "Il prezzo che hai scelto"
 
-#: views.py:270
+#: views.py:320
 msgid "La qualità che hai scelto"
 msgstr "La qualità che hai scelto"
 
-#: views.py:272
+#: views.py:322
 msgid "Il prezzo scelto dall'altro giocatore"
 msgstr "Il prezzo scelto dall'altro giocatore"
 
-#: views.py:273
+#: views.py:323
 msgid "La qualità scelta dall'altro giocatore"
 msgstr "La qualità scelta dall'altro giocatore"
 
-#: views.py:275
+#: views.py:325
 msgid "La tua quota di mercato"
 msgstr "La tua quota di mercato"
 
-#: views.py:276
+#: views.py:326
 msgid ""
 "Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il "
 "periodo pagato"
@@ -306,31 +388,31 @@ msgstr ""
 "Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il "
 "periodo pagato"
 
-#: views.py:298
+#: views.py:348
 msgid "Periodo effettivamente pagato"
 msgstr "Periodo effettivamente pagato"
 
-#: views.py:299
+#: views.py:349
 msgid "Il prezzo che hai scelto nel periodo pagato"
 msgstr "Il prezzo che hai scelto nel periodo pagato"
 
-#: views.py:300
+#: views.py:350
 msgid "La qualità che hai scelto nel periodo pagato"
 msgstr "La qualità che hai scelto nel periodo pagato"
 
-#: views.py:302
+#: views.py:352
 msgid "La tua quota di mercato nel periodo pagato"
 msgstr "La tua quota di mercato nel periodo pagato"
 
-#: views.py:303
+#: views.py:353
 msgid "Il tuo guadagno in questa attività"
 msgstr "Il tuo guadagno in questa attività"
 
-#: views.py:310
+#: views.py:360
 msgid "In this activity you chose a price and a quality in a market game. "
 msgstr ""
 "In questa attività hai scelto un prezzo e una qualità in un gioco di mercato."
 
-#: views.py:322
+#: views.py:372
 msgid "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
