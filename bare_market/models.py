@@ -89,6 +89,12 @@ class Player(BasePlayer):
         max = 3,
         verbose_name=_('The correct answer is'))
 
+    # Question4
+    training_correct_answer_4 = models.PositiveIntegerField(
+        min = 1,
+        max = 3,
+        verbose_name=_('La risposta corretta è'))
+
     price = models.CurrencyField(
         min=0, max=Constants.maximum_price,
         doc="""Price player chooses to sell product for"""
