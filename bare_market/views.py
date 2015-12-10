@@ -200,12 +200,12 @@ class Question3(Page):
     question = mark_safe(_(u'''Considera la seguente situazione ipotetica. Nel precedente periodo hai scelto una\
                  qualità pari a 100 e un prezzo pari a 300. La tua quota di mercato è stata pari a 0,2.\
                  Adesso scegli di ridurre il prezzo a 200 mantenendo la qualità uguale a 100.\
-                 Quale delle seguenti affermazioni è vera?''') + ('''<br><br>\
-                 <strong>(1)</strong> La mia quota di mercato e\' sicuramente cresciuta.<br>\
-                 <strong>(2)</strong> La mia quota di mercato e\' maggiore di quella che otterrei\
-                 mantenendo l\'offerta precedente.<br>\
-                 <strong>(3)</strong> La mia quota di mercato puo\' essere diminuita solo se anche\
-                 il rivale ha ridotto il suo prezzo.'''))
+                 Il tuo concorrente mantiene inalterate le scelte del periodo precedente.\
+                 Quale delle seguenti affermazioni è corretta?''') + ('''<br><br>\
+                 <strong>(1)</strong> La mia quota di mercato e\' sicuramente diminuita.<br>\
+                 <strong>(2)</strong> La mia quota di mercato e\' sicuramente aumentata.<br>\
+                 <strong>(3)</strong> La mia quota di mercato puo\' essere aumentata o diminuita\
+                 a seconda di quali erano state le scelte del mio concorrente nel periodo precedente.'''))
 
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -233,13 +233,63 @@ class Feedback3(Page):
             'explanation': mark_safe(
                 _('''<br><strong>Question: </strong>''') + Question3.question\
                 + _('''<br><br><strong>Solution: </strong>Answer nr. 2 is correct.''')\
-                + _(u'''<br><br><strong>Explanation: </strong> La risposta n. 1 è falsa\
-                perché la tua quota di mercato dipende anche dalle scelte del tuo concorrente.\
-                La risposta n. 2 è vera perché per ogni possibile offerta del rivale,\
-                una riduzione del tuo prezzo aumenta la tua quota di mercato.\
-                La risposta n. 3 è falsa perché la tua quota di mercato può essere diminuita anche se\
-                il tuo concorrente ha aumentato sufficientemente la qualità mantenendo\
-                il prezzo invariato o aumentandolo di poco.'''))
+                + _(u'''<br><br><strong>Explanation: </strong> La risposta n. 1 è errata\
+                perché la tua quota di mercato dipende in maniera negativa dal tuo prezzo.\
+                Per la medesima ragione, la risposta n. 2 è corretta. Diminuendo il tuo prezzo\
+                tua quota di mercato aumenta, a parità di tutti gli altri dati.\
+                La risposta n. 3 è errata perché il tuo concorrente mantiene inalterate le scelte\
+                e quindi queste non possono giocare alcun ruolo nella variazione delle quote di\
+                mercato che intercorre fra il periodo precedente e quello attuale.'''))
+        }
+
+
+class Question4(Page):
+    template_name = 'global/Question.html'
+    form_model = models.Player
+    form_fields = ['training_correct_answer_4']
+    question = mark_safe(_(u'''Considera la seguente situazione ipotetica. Nel precedente periodo hai scelto una\
+                 qualità pari a 150 e un prezzo pari a 250. La tua quota di mercato è stata pari a 0,4.\
+                 In questo periodo tu hai deciso di confermare le scelte precedenti mentre il tuo\
+                 concorrente decide di aumentare la qualità offerta di 50 punti\
+                 rispetto a quanto aveva fatto nel periodo precedente.\
+                 Quale delle seguenti affermazioni è corretta?''') + ('''<br><br>\
+                 <strong>(1)</strong> La mia quota di mercato e\' sicuramente minore di 0,4.<br>\
+                 <strong>(2)</strong> La mia quota di mercato e\' sicuramente minore di 0,2.<br>\
+                 <strong>(3)</strong> La mia quota di mercato e\' sicuramente maggiore di 0,4.<br>.'''))
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        return {
+            'num_q': 3,
+            'question': self.question
+        }
+
+
+class Feedback4(Page):
+    template_name = 'global/Feedback.html'
+
+    def is_displayed(self):
+        return self.subsession.round_number == 1
+
+    def vars_for_template(self):
+        p = self.player
+        return {
+            'num_q': 3,
+            'answers': {
+                _('"Affermazione corretta"'): [p.training_correct_answer_4, 1],
+            },
+            'explanation': mark_safe(
+                _('''<br><strong>Question: </strong>''') + Question3.question\
+                + _('''<br><br><strong>Solution: </strong>Answer nr. 2 is correct.''')\
+                + _(u'''<br><br><strong>Explanation: </strong> La risposta n. 1 è corretta\
+                perché la tua quota di mercato dipende in maniera negativa dalla qualità offerta\
+                dal tuo concorrente. La risposta n. 2 è errata perché pur potendo affermare che la\
+                tua quota di mercato diminuisce, nulla può essere affermato riguardo all'entità di\
+                tale diminuzione. La risposta n. 3 è errata perché se l'unico cambiamento consiste in\
+                un'aumento della qualità del concorrente allora la tua quota di mercato deve\
+                necessariamente diminuire.'''))
         }
 
 
@@ -330,6 +380,8 @@ page_sequence = [MatchingWaitPage,
                  Feedback2,
                  Question3,
                  Feedback3,
+                 Question4,
+                 Feedback4,
                  Decide,
                  ResultsWaitPage,
                  ResultsTemp,
