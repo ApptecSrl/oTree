@@ -281,8 +281,8 @@ class Feedback4(Page):
                 _('"Affermazione corretta"'): [p.training_correct_answer_4, 1],
             },
             'explanation': mark_safe(
-                _('''<br><strong>Question: </strong>''') + Question3.question\
-                + _('''<br><br><strong>Solution: </strong>Answer nr. 2 is correct.''')\
+                _('''<br><strong>Question: </strong>''') + Question4.question\
+                + _('''<br><br><strong>Solution: </strong>Answer nr. 1 is correct.''')\
                 + _(u'''<br><br><strong>Explanation: </strong> La risposta n. 1 è corretta\
                 perché la tua quota di mercato dipende in maniera negativa dalla qualità offerta\
                 dal tuo concorrente. La risposta n. 2 è errata perché pur potendo affermare che la\

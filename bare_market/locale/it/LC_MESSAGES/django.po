@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_bare_market\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 19:57+0100\n"
-"PO-Revision-Date: 2015-12-10 20:00+0100\n"
+"POT-Creation-Date: 2015-12-11 09:28+0100\n"
+"PO-Revision-Date: 2015-12-11 09:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -264,7 +264,7 @@ msgstr ""
 msgid "\"Affermazione corretta\""
 msgstr "\"Affermazione corretta\""
 
-#: views.py:235 views.py:285
+#: views.py:235
 msgid "<br><br><strong>Solution: </strong>Answer nr. 2 is correct."
 msgstr "<br><br><strong>Soluzione: </strong>La Risposta nr. 2 è corretta."
 
@@ -291,14 +291,6 @@ msgstr ""
 "periodo precedente e quello attuale."
 
 #: views.py:250
-#| msgid ""
-#| "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
-#| "scelto una                 qualità pari a 150 e un prezzo pari a 250. La "
-#| "tua quota di mercato è stata pari a 0,4.                 In questo "
-#| "periodo tu hai deciso di confermare le scelte precedenti mentre il "
-#| "tuo                 concorrente decide di aumentare la qualità offerta di "
-#| "50 punti                 rispetto a quanto aveva fatto nel periodo "
-#| "precedente.                 Quale delle seguenti affermazioni è corretta?"
 msgid ""
 "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
 "scelto una                 qualità pari a 150 e un prezzo pari a 250. La tua "
@@ -329,6 +321,11 @@ msgstr ""
 "quota di mercato è sicuramente minore del 20%.<br>                 "
 "<strong>(3)</strong> La mia quota di mercato è sicuramente maggiore del 40%."
 "<br>."
+
+#: views.py:285
+#| msgid "<br><br><strong>Solution: </strong>Answer nr. 2 is correct."
+msgid "<br><br><strong>Solution: </strong>Answer nr. 1 is correct."
+msgstr "<br><br><strong>Soluzione: </strong>La Risposta nr. 1 è corretta."
 
 #: views.py:286
 msgid ""
