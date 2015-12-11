@@ -24,7 +24,7 @@ A market game version with no charities
 class Constants(BaseConstants):
     players_per_group = 2
     name_in_url = 'bare_market'
-    num_rounds = 2
+    num_rounds = 10
     bonus = c(0)
     maximum_price = c(400)
     alpha = 1.5
