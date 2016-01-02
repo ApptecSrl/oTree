@@ -135,7 +135,7 @@ class Question1(Page):
     form_fields = ['training_my_profit_1', 'training_my_social_contribution_1']
     question = _(u"Consider the following hypothetical scenario. Your chosen quality is 0,\
                  and your chosen price is 200. Also, as a consequence of your choices and\
-                 of your opponent's you have a 50% marketInfo share.\
+                 of your opponent's you have a 50% market share.\
                  In this context, your profit and social contribution would be ...\
                  Considera la seguente situazione ipotetica. Hai scelto una qualità pari a 0\
                  e un prezzo pari a 200. Inoltre, come conseguenza delle scelte tue e\
@@ -184,7 +184,7 @@ class Question2(Page):
     form_fields = ['training_my_profit_2', 'training_my_social_contribution_2']
     question = _(u"Consider the following hypothetical scenario. Your chosen quality is 200,\
                  and your chosen price is 400. Also, as a consequence of your choices and\
-                 of your opponent's you have a 30% marketInfo share.\
+                 of your opponent's you have a 30% market share.\
                  In this context, your profit and social contribution would be ...\
                  Considera la seguente situazione ipotetica. Hai scelto una qualità pari a 200\
                  e un prezzo pari a 400. Inoltre, come conseguenza delle scelte tue e\
@@ -346,7 +346,7 @@ class ResultsFinal(Page):
             'label': 'Market game',
             'results': payment_result,
             'table': result_table,
-            'description': _(u'In this activity you chose a price and a quality in a marketInfo game. '),
+            'description': _(u'In this activity you chose a price and a quality in a market game. '),
         }
 
         # store marketInfo payment result in player session

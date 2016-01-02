@@ -17,12 +17,12 @@ from .share_calculator import calculator
 
 
 doc = """
-2 firms complete in a marketInfo by setting prices and quality for homogenous goods.
+2 firms complete in a market by setting prices and quality for homogenous goods.
 """
 
 class Constants(otree.constants.BaseConstants):
     players_per_group = 2
-    name_in_url = 'marketInfo'
+    name_in_url = 'market'
     num_rounds = 10
     bonus = c(0)
     maximum_price = c(400)

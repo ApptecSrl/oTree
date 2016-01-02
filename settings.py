@@ -200,7 +200,7 @@ SESSION_CONFIGS = [
         #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice', 'marketInfo', 'payment_recap'
+            'welcome_choice', 'market', 'payment_recap'
         ],
     },
     {
@@ -216,7 +216,7 @@ SESSION_CONFIGS = [
     #     'display_name': "Sessione completa - prova",
     #     'num_demo_participants': 2,
     #     'app_sequence': [
-    #         'welcome_noCharity','marketInfo','risk','public_goods','dictators_simultaneous','payment_recap'
+    #         'welcome_noCharity','market','risk','public_goods','dictators_simultaneous','payment_recap'
     #     ],
     # },
 
@@ -225,7 +225,7 @@ SESSION_CONFIGS = [
         'display_name': "Sessione studenti completa con Charity",
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice','marketInfo','risk','public_goods','dictators_simultaneous','payment_recap'
+            'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],
     },
     {
@@ -233,7 +233,7 @@ SESSION_CONFIGS = [
         'display_name': "Sessione studenti corta con Charity",
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice','marketInfo','role_uncertain_dictator','payment_recap'
+            'welcome_choice','market','role_uncertain_dictator','payment_recap'
         ],
     },
     {
