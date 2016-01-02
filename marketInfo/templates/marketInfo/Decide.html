@@ -1,0 +1,35 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+
+
+
+{% block title %}
+    {% trans "Scegli la tua qualità e il tuo prezzo" %} {% trans " - Turno" %} {{ subsession.round_number }} {% trans "di" %} {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+
+
+
+    {% formfield player.quality with label="Scegli un numero tra 0 e 400 per la tua qualità." %}
+
+    {% formfield player.price with label="Scegli un numero tra la qualità scelta e 400 per il tuo prezzo." %}
+<p>
+
+
+
+<p>
+
+<p>{% next_button %}</p>
+
+    {% include short_instructions %}
+
+{% endblock %}
+
+
+
+
+

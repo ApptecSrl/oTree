@@ -1,0 +1,27 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+{% load i18n %}
+
+
+
+
+
+{% block title %}
+{% blocktrans trimmed with num_rounds=Constants.num_rounds %}
+Please notice: for this specific activity, during its {{ num_rounds }} rounds,
+you have been matched with: <br> <br> <strong>{{ esito }}</strong>  <br>  <br> {% endblocktrans %}
+
+{% endblock %}
+{% block content %}
+
+
+<p>{% next_button %}</p>
+
+
+
+{% endblock %}
+
+
+
+
+
