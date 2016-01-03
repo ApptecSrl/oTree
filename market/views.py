@@ -100,7 +100,6 @@ class Introduction(Page):
         ctx['title'] = u'Attività n°{}'.format(n)
         return ctx
 
-
     def is_displayed(self):
         return self.subsession.round_number == 1
 
