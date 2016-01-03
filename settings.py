@@ -211,14 +211,14 @@ SESSION_CONFIGS = [
             'welcome_noCharity'
         ],
     },
-    # {
-    #     'name': 'prova_sequenza',
-    #     'display_name': "Sessione completa - prova",
-    #     'num_demo_participants': 2,
-    #     'app_sequence': [
-    #         'welcome_noCharity','market','risk','public_goods','dictators_simultaneous','payment_recap'
-    #     ],
-    # },
+    {
+        'name': 'Entrepreneurs_sessione1',
+        'display_name': "Sessione imprenditori completa con Charity",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
+        ],
+    },
 
     {
         'name': 'sequenza_completa_conCharity',
