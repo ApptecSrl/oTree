@@ -362,7 +362,7 @@ class ResultsFinal(Page):
         }
 
 page_sequence = [MatchingWaitPage,
-                 Introduction,
+                 #Introduction,
                  # Question1,
                  # Feedback1,
                  # Question2,
