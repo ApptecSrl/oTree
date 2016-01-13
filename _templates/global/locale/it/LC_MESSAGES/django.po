@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_templates\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-06 18:22+0100\n"
+"POT-Creation-Date: 2016-01-12 17:33+0100\n"
 "PO-Revision-Date: 2015-11-06 18:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,31 +19,54 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 
 #: Feedback.html:6
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Solution to Understanding Question %(num_q)s of %(total_q)s\n"
 msgid ""
 "\n"
-"Solution to Understanding Question %(num_q)s of %(total_q)s\n"
+"\n"
+"Soluzione alla Domanda di comprensione %(num_q)s di %(total_q)s\n"
 msgstr ""
 "\n"
 "Soluzione alla Domanda di Comprensione %(num_q)s di %(total_q)s\n"
 
+#: Instructions.html:4
+msgid "Instructions"
+msgstr "Istruzioni"
+
 #: Instructions.html:6
+#, fuzzy
+#| msgid ""
+#| "<p> For your convenience, these instructions (or a short version of them) "
+#| "will remain available to you on all subsequent screens of this study. </p>"
 msgid ""
 "<p> For your convenience, these instructions (or a short version of them) "
-"will remain available to you on all subsequent screens of this study. </p>"
+"will remain available to you on all subsequent screens of this activity. </p>"
 msgstr ""
 "<p> Per comodità le istruzioni (o una loro sintesi) rimarranno disponibili "
 "in tutte le successive schermate.</p>"
 
 #: Question.html:10
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Solution to Understanding Question %(num_q)s of %(total_q)s\n"
 msgid ""
 "\n"
-"Understanding question %(num_q)s of %(total_q)s\n"
+"Domanda di Comprensione %(num_q)s di %(total_q)s\n"
+"<!--Understanding question %(num_q)s of %(total_q)s-->\n"
 msgstr ""
 "\n"
-"Domanda di Comprensione %(num_q)s di %(total_q)s\n"
+"Soluzione alla Domanda di Comprensione %(num_q)s di %(total_q)s\n"
 
 #: ResultsTable.html:6
 msgid "Results"
 msgstr "Risultati"
+
+#~ msgid ""
+#~ "\n"
+#~ "Understanding question %(num_q)s of %(total_q)s\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Domanda di Comprensione %(num_q)s di %(total_q)s\n"

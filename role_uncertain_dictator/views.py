@@ -38,11 +38,8 @@ class MatchingWaitPage(WaitPage):
     def makeTheGroup(self):
         for p in self.subsession.get_players():
             p.tipo=p.participant.vars['kind']
-            print p.tipo
         for group in self.subsession.get_groups():
-            print 'mario mario mario'
             players = random.shuffle(self.subsession.get_players())
-            print 'players', players
             group.set_players(players)
 
 

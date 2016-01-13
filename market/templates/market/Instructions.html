@@ -5,37 +5,36 @@
 {% block instructions %}
 
 {% blocktrans trimmed %}
-<p> Stai per partecipare ad un gioco di mercato assieme ad un altro partecipante abbinato a te casualmente.
-Rappresentate due imprese che competono fra loro. Producete un bene fittizio di cui dovete determinare
-    il <strong>prezzo di vendita</strong> e la <strong>qualità sociale</strong>, ovvero il tipo di ricaduta esterna
-    associata alla sua produzione. Ad esempio, potete pensare alla scelta di input produttivi che migliorano l’impatto
-    ambientale o sociale del bene stesso (es. materiali meno inquinanti, assenza di lavoro minorile, etc.).
-    Una maggiore qualità sociale comporta maggiori costi di produzione.</p>
-<p> La <strong>quota di mercato</strong> di ogni impresa è determinata automaticamente dal computer tramite un algoritmo matematico che riproduce delle preferenze realistiche di consumatori
-    con un certo grado di sensibilità sociale. Sinteticamente, la quota di mercato di una impresa è tanto maggiore quanto più alta
-    la qualità sociale del suo bene e quanto più basso il suo prezzo di vendita. Allo stesso tempo, sarà crescente nel prezzo del rivale e decrescente nella qualità sociale del suo bene.
-    La seguente tabella sintetizza queste relazioni.</p>
-
+<p> You are about to participate in a market game, together with another participant who has been randomly associated with you.
+    You represent two firms competing against each other. You produce a fictional good and you are responsible for choosing
+    its <strong>selling price</strong> and its <strong>social quality</strong>, that is the type of external effect due to its production.
+    For example, you may think of choosing production inputs with a better environmental or social impact  (e.g. materials that involve less pollution,
+    no child labour, etc.). More social quality implies greater production costs.</p>
+<p> Each firm's <strong>market share</strong> is automatically determined by the computer, using
+ a mathematical algorithm which mimics the realistic preferences of consumers having a given degree of social consciousness.
+A firm's market share is higher, the higher the produced good's social quality and the lower its price. At the same time, it is increasing in
+    the competitor's selling price and decreasing in its social quality. The following table summarizes these relations. </p>
+{% endblocktrans %}
 
 <p>
     <table align="center" class="table" style="width:70%">
 
         <tr>
             <td> </td>
-            <td> Tua qualità  </td>
-            <td> Tuo prezzo </td>
-            <td> Sua qualità </td>
-            <td> Suo prezzo </td>
+            <td> {% trans "Your quality" %}  </td>
+            <td> {% trans "Your price" %} </td>
+            <td> {% trans "Competitor's quality" %} </td>
+            <td> {% trans "Competitor's price" %} </td>
         </tr>
         <tr>
-            <td> Tua quota di mercato </td>
+            <td> {% trans "Your market share" %} </td>
             <td> + </td>
             <td> - </td>
             <td> - </td>
             <td> + </td>
         </tr>
         <tr>
-            <td> Sua quota di mercato </td>
+            <td> {% trans "Competitor's market share" %} </td>
             <td> - </td>
             <td> + </td>
             <td> + </td>
@@ -45,12 +44,13 @@ Rappresentate due imprese che competono fra loro. Producete un bene fittizio di 
     </table>
 
 </p>
-<p> La qualità può essere un qualsiasi numero intero fra 0 e 400: più alto il numero scelto, più alta sarà la qualità
-    (e quindi anche i costi di produzione). Il prezzo può essere un qualsiasi numero intero compreso fra la qualità
-    scelta e 400. La quota di mercato sarà una percentuale compresa tra lo 0% e il 100%.
-    Il gioco durerà per 10 turni consecutivi in cui fronteggerai sempre lo stesso “rivale”.
-    Anche l’algoritmo che determina le quote di mercato è lo stesso per tutta la durata del gioco.
-    In ogni turno il profitto di impresa ottenuto sia da te che dal rivale sarà pari al seguente punteggio:</p>
+{% blocktrans trimmed %}
+<p> The quality can be any integer number between 0 and 400: higher numbers mean higher quality (and hence higher production costs).
+The price can be any integer number between the chosen quality and 400. The market share will be a percentage between 0% and 100%.
+The game will last for 10 consecutive rounds in which you will be facing the same competitor. The algorithm that determines the market shares also remains
+the same throughout the whole game. At each round the firm's profit earned by yourself and your competitor will be equal to:</p>
+{% endblocktrans %}
+
 <p>
     <style>
   #ex2_container { width:100%}
@@ -58,77 +58,24 @@ Rappresentate due imprese che competono fra loro. Producete un bene fittizio di 
   #ex3_container { width:100%}
   #ex3_content { margin:1px auto; color:black; display:table; }
 </style>
-<div id="ex2_container"><div id="ex2_content"><strong>Profitto = (Prezzo - Qualità) x Quota di mercato</strong></div></div>
+<div id="ex2_container"><div id="ex2_content"><strong>{% trans "Profit = (Price - Quality) x Market share" %}</strong></div></div>
  </p>
-<p> Il beneficio sociale associato alla tua produzione in ogni turno del gioco sarà pari al seguente punteggio:</p>
-<p>
-
-<div id="ex3_container"><div id="ex3_content"><strong>Beneficio sociale = 1,5 x Qualità x Quota di mercato</strong></div></div>
- </p>
-<p>
-<p> Puoi notare che un incremento unitario della qualità del bene genera un aumento dei benefici sociali
-    proporzionalmente maggiore all’aumento dei costi (ciò è determinato dal fattore moltiplicativo pari a 1,5).</p>
-<p> Fra un turno e l’altro del gioco saranno resi noti ad entrambi le qualità e il prezzo di ogni offerta e le
-    rispettive quote di mercato. Ti saranno pure mostrati il tuo profitto e il beneficio sociale della tua produzione.
-    Alla fine del gioco sarà sorteggiato uno specifico turno e i punti da te ottenuti in quel turno, sia come profitto
-    sia come beneficio sociale, saranno trasformati in euro secondo il tasso di conversione 10 punti = 1 euro.
-    I punti corrispondenti al beneficio sociale saranno versati alla organizzazione benefica da te indicata.</p>
-{% endblocktrans %}
-{% endblock %}
-
-{% block short_instructions %}
 
 {% blocktrans trimmed %}
-<p> Stai partecipando ad un gioco di mercato assieme ad un altro partecipante abbinato a te casualmente.
-Rappresentate due imprese che competono fra loro. Producete un bene di cui dovete scegliere qualità sociale e prezzo di vendita.
-    La quota di mercato di ogni impresa è determinata da un algoritmo che riproduce delle preferenze di consumatori
-    con un certo grado di sensibilità sociale. Sinteticamente, la quota di mercato di una impresa è tanto maggiore quanto più alta
-    la qualità sociale del suo bene e più basso il suo prezzo di vendita. Allo stesso tempo è crescente nel prezzo del rivale e decrescente nella qualità sociale del suo bene.
-    La seguente tabella sintetizza queste relazioni.</p>
-
-
+<p> The social contribution associated to your production at each round of the game will be equal to:</p>
 <p>
-    <table align="center" class="table" style="width:70%">
-
-        <tr>
-            <td> </td>
-            <td> Tua qualità  </td>
-            <td> Tuo prezzo </td>
-            <td> Sua qualità </td>
-            <td> Suo prezzo </td>
-        </tr>
-        <tr>
-            <td> Tua quota di mercato </td>
-            <td> + </td>
-            <td> - </td>
-            <td> - </td>
-            <td> + </td>
-        </tr>
-        <tr>
-            <td> Sua quota di mercato </td>
-            <td> - </td>
-            <td> + </td>
-            <td> + </td>
-            <td> - </td>
-        </tr>
-
-    </table>
-
-</p>
-<p> La qualità può essere un qualsiasi numero intero fra 0 e 400, il prezzo un qualsiasi numero intero compreso fra la qualità scelta e 400. La quota di mercato sarà una percentuale compresa tra lo 0 e il 100%.
-Il gioco dura per 10 round consecutivi, sempre con lo stesso “rivale”. In ogni round il profitto di impresa ottenuto sia da te che dal rivale sarà pari al seguente punteggio:</p>
-<p>
-
-<strong>Profitto = (Prezzo - Qualità) x Quota di mercato</strong>
- </p>
-<p>
-Il beneficio sociale associato alla produzione è pari al seguente punteggio:</p>
-<p><strong>Beneficio sociale = Qualità x 1,5 x Quota di mercato</strong>
- </p>
-<p>
-Alla fine del gioco sarà sorteggiato uno specifico round e i punti da te ottenuti in quel round, sia come profitto individuale sia come beneficio sociale, saranno trasformati
-    in euro secondo il tasso di conversione 10 punti = 1 euro. I punti corrispondenti al beneficio sociale saranno presi dal tuo pagamento complessivo e versati alla
-    organizzazione benefica da te indicata.</p>
 {% endblocktrans %}
-
+<div id="ex3_container"><div id="ex3_content"><strong>{% trans "Social contribution = 1,5 x Quality x Market share" %}</strong></div></div>
+ </p>
+<p>
+{% blocktrans trimmed %}
+<p> Notice that a unit increase in the good's quality generates an increase in social contribution which is proportionally higher than the
+cost increase (this is due to the multiplicative factor 1.5 in the formula). </p>
+<p> Between each round and the next both players will be notified qualities and prices and the resulting market shares. Your profit and social contribution
+will also be shown. At the end of the game one specific round will be randomly selected and the points you earned in that period, both in terms of
+profit and social contribution, will be transformed in cash. The money corresponding to the social contribution in the paying period will be transferred to the charity of your choice.
+</p>
+{% endblocktrans %}
 {% endblock %}
+
+

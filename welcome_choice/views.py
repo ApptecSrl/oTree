@@ -9,8 +9,25 @@ from .models import Constants
 from django.utils.translation import ugettext as _
 
 
-class Welcome(Page):
+class RateCalculator:
+    def get_tasso(self):
+        prova = self.player.participant.session.config['real_world_currency_per_point']
+        tasso = int(1 / prova)
+        return tasso
+
+
+class Welcome(Page, RateCalculator):
     template_name = 'welcome_choice/Welcome.html'
+    def vars_for_template(self):
+        listApp=self.player.participant.session.config['app_sequence']
+        n=len(listApp)
+        print 'n=',n
+
+        tasso = self.get_tasso()
+        return {
+            'n': n-2,
+            'tasso':tasso
+        }
 
 
 class GetInputKind(Page):

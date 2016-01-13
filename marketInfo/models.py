@@ -23,7 +23,7 @@ doc = """
 class Constants(otree.constants.BaseConstants):
     players_per_group = 2
     name_in_url = 'marketInfo'
-    num_rounds = 2
+    num_rounds = 10
     bonus = c(0)
     maximum_price = c(400)
     alpha = 1.5
@@ -33,7 +33,6 @@ class Constants(otree.constants.BaseConstants):
 class Subsession(otree.models.BaseSubsession):
     def before_session_starts(self):
         exchRate = c(1/(c(1).to_real_world_currency(self.session)))
-        print 'Tasso: ', exchRate
         if self.round_number == 1:
             paying_round = random.randint(Constants.num_rounds / 2, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round

@@ -75,7 +75,8 @@ USE_POINTS = True
 
 # e.g. en-gb, de-de, it-it, fr-fr.
 # see: https://docs.djangoproject.com/en/1.6/topics/i18n/
-LANGUAGE_CODE = 'it'
+# LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'it-it'
 
 INSTALLED_APPS = [
     'otree',
@@ -130,8 +131,8 @@ mturk_hit_settings = {
 }
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.1,
-    'participation_fee': 15.00,
+    'real_world_currency_per_point': 0.05,
+    'participation_fee': 3.00,
     'num_bots': 12,
     'doc': "",
     'group_by_arrival_time': False,
@@ -215,6 +216,8 @@ SESSION_CONFIGS = [
         'name': 'Entrepreneurs_sessione1',
         'display_name': "Sessione imprenditori completa con Charity",
         'num_demo_participants': 2,
+        'real_world_currency_per_point': 0.1,
+        'participation_fee': 15.00,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],
@@ -242,6 +245,14 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_noCharity','bare_market','role_uncertain_dictator','payment_recap'
+        ],
+    },
+    {
+        'name': 'sequenza_Market_MarketInfo',
+        'display_name': "Sessione studenti con Market seguito da MarketInfo e RU_Dict",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','market','marketInfo','role_uncertain_dictator','payment_recap'
         ],
     },
 ]

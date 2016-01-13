@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_market\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-15 18:02+0100\n"
-"PO-Revision-Date: 2015-12-09 17:16+0100\n"
+"POT-Creation-Date: 2016-01-12 17:01+0100\n"
+"PO-Revision-Date: 2016-01-12 17:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -40,94 +40,129 @@ msgstr " - Turno"
 
 #: templates/market/Decide.html:10
 msgid "di"
-msgstr ""
+msgstr "di"
 
 #: templates/market/Instructions.html:7
-#, python-format
 msgid ""
+"<p> You are about to participate in a market game, together with another "
+"participant who has been randomly associated with you. You represent two "
+"firms competing against each other. You produce a fictional good and you are "
+"responsible for choosing its <strong>selling price</strong> and its "
+"<strong>social quality</strong>, that is the type of external effect due to "
+"its production. For example, you may think of choosing production inputs "
+"with a better environmental or social impact  (e.g. materials that involve "
+"less pollution, no child labour, etc.). More social quality implies greater "
+"production costs.</p> <p> Each firm's <strong>market share</strong> is "
+"automatically determined by the computer, using a mathematical algorithm "
+"which mimics the realistic preferences of consumers having a given degree of "
+"social consciousness. A firm's market share is higher, the higher the "
+"produced good's social quality and the lower its price. At the same time, it "
+"is increasing in the competitor's selling price and decreasing in its social "
+"quality. The following table summarizes these relations. </p>"
+msgstr ""
 "<p> Stai per partecipare ad un gioco di mercato assieme ad un altro "
-"partecipante abbinato a te casualmente. Rappresentate due imprese che "
-"competono fra loro. Producete un bene fittizio di cui dovete determinare il "
-"<strong>prezzo di vendita</strong> e la <strong>qualità sociale</strong>, "
-"ovvero il tipo di ricaduta esterna associata alla sua produzione. Ad "
+"partecipante abbinato a te casualmente.    Rappresentate due imprese che "
+"competono fra loro. Producete un bene fittizio di cui dovete determinare    "
+"il <strong>prezzo di vendita</strong> e la <strong>qualità sociale</strong>, "
+"ovvero il tipo di ricaduta esterna    associata alla sua produzione. Ad "
 "esempio, potete pensare alla scelta di input produttivi che migliorano "
-"l’impatto ambientale o sociale del bene stesso (es. materiali meno "
-"inquinanti, assenza di lavoro minorile, etc.). Una maggiore qualità sociale "
-"comporta maggiori costi di produzione.</p> <p> La <strong>quota di mercato</"
-"strong> di ogni impresa è determinata automaticamente dal computer tramite "
-"un algoritmo matematico che riproduce delle preferenze realistiche di "
-"consumatori con un certo grado di sensibilità sociale. Sinteticamente, la "
-"quota di mercato di una impresa è tanto maggiore quanto più alta la qualità "
-"sociale del suo bene e quanto più basso il suo prezzo di vendita. Allo "
-"stesso tempo, sarà crescente nel prezzo del rivale e decrescente nella "
-"qualità sociale del suo bene. La seguente tabella sintetizza queste "
-"relazioni.</p> <p> <table align=\"center\" class=\"table\" style=\"width:70%%"
-"\"> <tr> <td> </td> <td> Tua qualità  </td> <td> Tuo prezzo </td> <td> Sua "
-"qualità </td> <td> Suo prezzo </td> </tr> <tr> <td> Tua quota di mercato </"
-"td> <td> + </td> <td> - </td> <td> - </td> <td> + </td> </tr> <tr> <td> Sua "
-"quota di mercato </td> <td> - </td> <td> + </td> <td> + </td> <td> - </td> </"
-"tr> </table> </p> <p> La qualità può essere un qualsiasi numero intero fra 0 "
-"e 400: più alto il numero scelto, più alta sarà la qualità (e quindi anche i "
-"costi di produzione). Il prezzo può essere un qualsiasi numero intero "
-"compreso fra la qualità scelta e 400. La quota di mercato sarà una "
-"percentuale compresa tra lo 0%% e il 100%%. Il gioco durerà per 10 turni "
-"consecutivi in cui fronteggerai sempre lo stesso “rivale”. Anche l’algoritmo "
-"che determina le quote di mercato è lo stesso per tutta la durata del gioco. "
-"In ogni turno il profitto di impresa ottenuto sia da te che dal rivale sarà "
-"pari al seguente punteggio:</p> <p> <style> #ex2_container { width:100%%} "
-"#ex2_content { margin:1px auto; color:black; display:table; } #ex3_container "
-"{ width:100%%} #ex3_content { margin:1px auto; color:black; display:table; } "
-"</style> <div id=\"ex2_container\"><div id=\"ex2_content\"><strong>Profitto "
-"= (Prezzo - Qualità) x Quota di mercato</strong></div></div> </p> <p> Il "
-"beneficio sociale associato alla tua produzione in ogni turno del gioco sarà "
-"pari al seguente punteggio:</p> <p> <div id=\"ex3_container\"><div id="
-"\"ex3_content\"><strong>Beneficio sociale = 1,5 x Qualità x Quota di "
-"mercato</strong></div></div> </p> <p> <p> Puoi notare che un incremento "
-"unitario della qualità del bene genera un aumento dei benefici sociali "
-"proporzionalmente maggiore all’aumento dei costi (ciò è determinato dal "
-"fattore moltiplicativo pari a 1,5).</p> <p> Fra un turno e l’altro del gioco "
-"saranno resi noti ad entrambi le qualità e il prezzo di ogni offerta e le "
-"rispettive quote di mercato. Ti saranno pure mostrati il tuo profitto e il "
-"beneficio sociale della tua produzione. Alla fine del gioco sarà sorteggiato "
-"uno specifico turno e i punti da te ottenuti in quel turno, sia come "
-"profitto sia come beneficio sociale, saranno trasformati in euro secondo il "
-"tasso di conversione 20 punti = 1 euro. I punti corrispondenti al beneficio "
-"sociale saranno versati alla organizzazione benefica da te indicata.</p>"
-msgstr ""
+"l’impatto    ambientale o sociale del bene stesso (es. materiali meno "
+"inquinanti, assenza di lavoro minorile, etc.).    Una maggiore qualità "
+"sociale comporta maggiori costi di produzione.</p><p> La <strong>quota di "
+"mercato</strong> di ogni impresa è determinata automaticamente dal computer "
+"tramite un algoritmo matematico che riproduce delle preferenze realistiche "
+"di consumatori    con un certo grado di sensibilità sociale. Sinteticamente, "
+"la quota di mercato di una impresa è tanto maggiore quanto più alta    la "
+"qualità sociale del suo bene e quanto più basso il suo prezzo di vendita. "
+"Allo stesso tempo, sarà crescente nel prezzo del rivale e decrescente nella "
+"qualità sociale del suo bene.    La seguente tabella sintetizza queste "
+"relazioni.</p>"
 
-#: templates/market/Instructions.html:81
+#: templates/market/Instructions.html:24
+msgid "Your quality"
+msgstr "Tua qualità"
+
+#: templates/market/Instructions.html:25
+msgid "Your price"
+msgstr "Tuo prezzo"
+
+#: templates/market/Instructions.html:26
+msgid "Competitor's quality"
+msgstr "Sua qualità"
+
+#: templates/market/Instructions.html:27
+msgid "Competitor's price"
+msgstr "Suo prezzo"
+
+#: templates/market/Instructions.html:30
+msgid "Your market share"
+msgstr "Tua quota di mercato"
+
+#: templates/market/Instructions.html:37
+msgid "Competitor's market share"
+msgstr "Sua quota di mercato"
+
+#: templates/market/Instructions.html:47
 #, python-format
 msgid ""
-"<p> Stai partecipando ad un gioco di mercato assieme ad un altro "
-"partecipante abbinato a te casualmente. Rappresentate due imprese che "
-"competono fra loro. Producete un bene di cui dovete scegliere qualità "
-"sociale e prezzo di vendita. La quota di mercato di ogni impresa è "
-"determinata da un algoritmo che riproduce delle preferenze di consumatori "
-"con un certo grado di sensibilità sociale. Sinteticamente, la quota di "
-"mercato di una impresa è tanto maggiore quanto più alta la qualità sociale "
-"del suo bene e più basso il suo prezzo di vendita. Allo stesso tempo è "
-"crescente nel prezzo del rivale e decrescente nella qualità sociale del suo "
-"bene. La seguente tabella sintetizza queste relazioni.</p> <p> <table align="
-"\"center\" class=\"table\" style=\"width:70%%\"> <tr> <td> </td> <td> Tua "
-"qualità  </td> <td> Tuo prezzo </td> <td> Sua qualità </td> <td> Suo prezzo "
-"</td> </tr> <tr> <td> Tua quota di mercato </td> <td> + </td> <td> - </td> "
-"<td> - </td> <td> + </td> </tr> <tr> <td> Sua quota di mercato </td> <td> - "
-"</td> <td> + </td> <td> + </td> <td> - </td> </tr> </table> </p> <p> La "
-"qualità può essere un qualsiasi numero intero fra 0 e 400, il prezzo un "
-"qualsiasi numero intero compreso fra la qualità scelta e 400. La quota di "
-"mercato sarà una percentuale compresa tra lo 0 e il 100%%. Il gioco dura per "
-"10 round consecutivi, sempre con lo stesso “rivale”. In ogni round il "
-"profitto di impresa ottenuto sia da te che dal rivale sarà pari al seguente "
-"punteggio:</p> <p> <strong>Profitto = (Prezzo - Qualità) x Quota di mercato</"
-"strong> </p> <p> Il beneficio sociale associato alla produzione è pari al "
-"seguente punteggio:</p> <p><strong>Beneficio sociale = Qualità x 1,5 x Quota "
-"di mercato</strong> </p> <p> Alla fine del gioco sarà sorteggiato uno "
-"specifico round e i punti da te ottenuti in quel round, sia come profitto "
-"individuale sia come beneficio sociale, saranno trasformati in euro secondo "
-"il tasso di conversione 20 punti = 1 euro. I punti corrispondenti al "
-"beneficio sociale saranno presi dal tuo pagamento complessivo e versati alla "
-"organizzazione benefica da te indicata.</p>"
+"<p> The quality can be any integer number between 0 and 400: higher numbers "
+"mean higher quality (and hence higher production costs). The price can be "
+"any integer number between the chosen quality and 400. The market share will "
+"be a percentage between 0%% and 100%%. The game will last for 10 consecutive "
+"rounds in which you will be facing the same competitor. The algorithm that "
+"determines the market shares also remains the same throughout the whole "
+"game. At each round the firm's profit earned by yourself and your competitor "
+"will be equal to:</p>"
 msgstr ""
+"<p> La qualità può essere un qualsiasi numero intero fra 0 e 400: più alto "
+"il numero scelto, più alta sarà la qualità    (e quindi anche i costi di "
+"produzione). Il prezzo può essere un qualsiasi numero intero compreso fra la "
+"qualità    scelta e 400. La quota di mercato sarà una percentuale compresa "
+"tra lo 0%% e il 100%%.    Il gioco durerà per 10 turni consecutivi in cui "
+"fronteggerai sempre lo stesso “rivale”.    Anche l’algoritmo che determina "
+"le quote di mercato è lo stesso per tutta la durata del gioco.    In ogni "
+"turno il profitto di impresa ottenuto sia da te che dal rivale sarà pari al "
+"seguente punteggio:</p>"
+
+#: templates/market/Instructions.html:61
+msgid "Profit = (Price - Quality) x Market share"
+msgstr "Profitto = (Prezzo - Qualità) x Quota di mercato"
+
+#: templates/market/Instructions.html:64
+msgid ""
+"<p> The social contribution associated to your production at each round of "
+"the game will be equal to:</p> <p>"
+msgstr ""
+"<p> Il beneficio sociale associato alla tua produzione in ogni turno del "
+"gioco sarà pari al seguente punteggio:</p> <p>"
+
+#: templates/market/Instructions.html:68
+msgid "Social contribution = 1,5 x Quality x Market share"
+msgstr "Beneficio sociale = 1,5 x Qualità x Quota di mercato"
+
+#: templates/market/Instructions.html:71
+msgid ""
+"<p> Notice that a unit increase in the good's quality generates an increase "
+"in social contribution which is proportionally higher than the cost increase "
+"(this is due to the multiplicative factor 1.5 in the formula). </p> <p> "
+"Between each round and the next both players will be notified qualities and "
+"prices and the resulting market shares. Your profit and social contribution "
+"will also be shown. At the end of the game one specific round will be "
+"randomly selected and the points you earned in that period, both in terms of "
+"profit and social contribution, will be transformed in cash. The money "
+"corresponding to the social contribution in the paying period will be "
+"transferred to the charity of your choice. </p>"
+msgstr ""
+"<p> Puoi notare che un incremento unitario della qualità del bene genera un "
+"aumento dei benefici sociali    proporzionalmente maggiore all’aumento dei "
+"costi (ciò è determinato dal fattore moltiplicativo pari a 1,5).</p><p> Fra "
+"un turno e l’altro del gioco saranno resi noti ad entrambi le qualità e il "
+"prezzo di ogni offerta e le    rispettive quote di mercato. Ti saranno pure "
+"mostrati il tuo profitto e il beneficio sociale della tua produzione.    "
+"Alla fine del gioco sarà sorteggiato uno specifico turno e i punti da te "
+"ottenuti in quel turno, sia come profitto    sia come beneficio sociale, "
+"saranno trasformati in euro.    I punti corrispondenti al beneficio sociale "
+"saranno versati alla organizzazione benefica da te indicata.</p>"
 
 #: templates/market/Results.html:6
 msgid "Risultati di questa attivita'"
@@ -150,10 +185,15 @@ msgid ""
 "produzione è pari a:</p> <p><strong>Beneficio sociale = 1,5 x Qualità x "
 "Quota di mercato</strong> </p> <p> I punti da te ottenuti in termini di "
 "profitto e di beneficio sociale nel turno sorteggiato saranno trasformati in "
-"euro secondo il tasso di conversione <strong>20 punti = 1 euro</strong>. </p>"
+"euro. </p>"
 msgstr ""
 
-#: views.py:110
+#: views.py:96
+#| msgid "(Attività n°{})"
+msgid "(Activity n.{})"
+msgstr "(Attività  n°{})"
+
+#: views.py:124
 msgid ""
 "Consider the following hypothetical scenario. Your chosen quality is "
 "0,                 and your chosen price is 200. Also, as a consequence of "
@@ -171,19 +211,19 @@ msgstr ""
 "contesto, il tuo profitto e il beneficio sociale della tua produzione "
 "sarebbero ..."
 
-#: views.py:140 views.py:189
+#: views.py:154 views.py:203
 msgid "\"Profit\""
 msgstr "\"Profitto\""
 
-#: views.py:141 views.py:190
+#: views.py:155 views.py:204
 msgid "\"Social contribution\""
 msgstr "\"Beneficio sociale\""
 
-#: views.py:144 views.py:193 views.py:242
+#: views.py:158 views.py:207 views.py:256
 msgid "<br><strong>Question: </strong>"
 msgstr "<br><strong>Domanda: </strong>"
 
-#: views.py:145
+#: views.py:159
 msgid ""
 "<br><br><strong>Solution: </strong>Your Profit would be equal "
 "to                100 points and your Social Contribution would be equal to "
@@ -193,15 +233,7 @@ msgstr ""
 "a                100 punti e il beneficio sociale della tua produzione a 0 "
 "punti."
 
-#: views.py:147
-#| msgid ""
-#| "<br><br><strong>Explanation: </strong> The Profit equals                "
-#| "the Total Markup (Price - Quality) multiplied by the Market "
-#| "Share.                In this case you have: <strong>(200 - 0) * 50 / 100 "
-#| "= 100 points</strong>.                The Social Contribution is obtained "
-#| "by multiplicating the Quality,                the Efficiency Factor and "
-#| "the Market Share. In this case it is:                <strong>0 * 1.5 * "
-#| "50 / 100 = 0 points</strong>."
+#: views.py:161
 msgid ""
 "<br><br><strong>Explanation: </strong> The Profit equals                the "
 "Total Markup (Price - Quality) multiplied by the Market "
@@ -219,7 +251,7 @@ msgstr ""
 "1,5) e la quota di mercato. In questo caso:                <strong>0 * 1.5 * "
 "50 / 100 = 0 punti</strong>."
 
-#: views.py:159
+#: views.py:173
 msgid ""
 "Consider the following hypothetical scenario. Your chosen quality is "
 "200,                 and your chosen price is 400. Also, as a consequence of "
@@ -237,7 +269,7 @@ msgstr ""
 "pari al 30%.                 In questo contesto, il tuo profitto e il "
 "beneficio sociale della tua produzione sarebbero ..."
 
-#: views.py:194
+#: views.py:208
 msgid ""
 "<br><br><strong>Solution: </strong>Your Profit would be equal "
 "to                60 points and your Social Contribution would be equal to "
@@ -247,15 +279,7 @@ msgstr ""
 "a                60 punti e il beneficio sociale della tua produzione a 90 "
 "punti."
 
-#: views.py:196
-#| msgid ""
-#| "<br><br><strong>Explanation: </strong> The Profit equals                "
-#| "the Total Markup (Price - Quality) multiplied by the Market "
-#| "Share.                In this case you have: <strong>(400 - 200) * 30 / "
-#| "100 = 60 points</strong>.                The Social Contribution is "
-#| "obtained by multiplicating the Quality,                the Efficiency "
-#| "Factor and the Market Share. In this case it is:                "
-#| "<strong>200 * 1.5 * 30 / 100 = 90 points</strong>."
+#: views.py:210
 msgid ""
 "<br><br><strong>Explanation: </strong> The Profit equals                the "
 "Total Markup (Price - Quality) multiplied by the Market "
@@ -273,7 +297,7 @@ msgstr ""
 "1,5) e la quota di mercato. In questo caso:                <strong>200 * 1.5 "
 "* 30 / 100 = 90 punti</strong>."
 
-#: views.py:208
+#: views.py:222
 msgid ""
 "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
 "scelto una                 qualità pari a 100 e un prezzo pari a 300. La tua "
@@ -287,15 +311,15 @@ msgstr ""
 "ridurre il prezzo a 200 mantenendo la qualità uguale a 100.                 "
 "Quale delle seguenti affermazioni è vera?"
 
-#: views.py:239
+#: views.py:253
 msgid "\"Affermazione corretta\""
 msgstr ""
 
-#: views.py:243
+#: views.py:257
 msgid "<br><br><strong>Solution: </strong>Answer nr. 2 is correct."
 msgstr "<br><br><strong>Soluzione: </strong>La Risposta nr. 2 è corretta."
 
-#: views.py:244
+#: views.py:258
 msgid ""
 "<br><br><strong>Explanation: </strong> La risposta n. 1 è "
 "falsa                perché la tua quota di mercato dipende anche dalle "
@@ -315,75 +339,189 @@ msgstr ""
 "se                il tuo concorrente ha aumentato sufficientemente la "
 "qualità mantenendo                il prezzo invariato o aumentandolo di poco."
 
-#: views.py:263
+#: views.py:277
 msgid "Il prezzo non può essere più basso della qualità"
 msgstr ""
 
-#: views.py:279
+#: views.py:293
 msgid "Turno numero"
 msgstr ""
 
-#: views.py:280
+#: views.py:294
 msgid "Il prezzo che hai scelto"
 msgstr ""
 
-#: views.py:281
-msgid "La qualita' che hai scelto"
+#: views.py:295
+msgid "La qualità che hai scelto"
 msgstr ""
 
-#: views.py:283
+#: views.py:297
 msgid "Il prezzo scelto dall'altro giocatore"
 msgstr ""
 
-#: views.py:284
-msgid "La qualita' scelta dall'altro giocatore"
+#: views.py:298
+msgid "La qualità scelta dall'altro giocatore"
 msgstr ""
 
-#: views.py:286
+#: views.py:300
 msgid "La tua quota di mercato"
 msgstr ""
 
-#: views.py:287
+#: views.py:301
 msgid ""
 "Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il "
 "periodo pagato"
 msgstr ""
 
-#: views.py:288
+#: views.py:302
 msgid ""
 "Il <strong>beneficio sociale generato dalle tue scelte</strong> se questo "
 "fosse il periodo pagato"
 msgstr ""
 
-#: views.py:310
+#: views.py:324
 msgid "Periodo effettivamente pagato"
 msgstr ""
 
-#: views.py:311
+#: views.py:325
 msgid "Il prezzo che hai scelto nel periodo pagato"
 msgstr ""
 
-#: views.py:312
-msgid "La qualita' che hai scelto nel periodo pagato"
+#: views.py:326
+msgid "La qualità che hai scelto nel periodo pagato"
 msgstr ""
 
-#: views.py:313
-msgid "Il <strong>beneficio sociale</strong> dovuto alle tue scelte"
+#: views.py:327
+msgid "Il beneficio sociale dovuto alle tue scelte"
 msgstr ""
 
-#: views.py:315
+#: views.py:329
 msgid "La tua quota di mercato nel periodo pagato"
 msgstr ""
 
-#: views.py:316
-msgid "Il tuo <strong>guadagno</strong> in questa attivita'"
+#: views.py:330
+msgid "Il tuo guadagno in questa attività"
 msgstr ""
 
-#: views.py:323
+#: views.py:337
 msgid "In this activity you chose a price and a quality in a market game. "
 msgstr ""
 "In questa attività hai scelto un prezzo e una qualità in un gioco di mercato."
 
-#: views.py:335
+#: views.py:349
 msgid "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 msgstr ""
+
+#~ msgid ""
+#~ "<p> Il beneficio sociale associato alla tua produzione in ogni turno del "
+#~ "gioco sarà pari al seguente punteggio:</p> <p>"
+#~ msgstr ""
+#~ "<p> Il beneficio sociale associato alla tua produzione in ogni turno del "
+#~ "gioco sarà pari al seguente punteggio:</p> <p>"
+
+#~ msgid "Rival's price"
+#~ msgstr "Suo prezzo"
+
+#~ msgid ""
+#~ "<p> You are about to participate in a market game, together with another "
+#~ "participant who has been randomly associated with you. You represent two "
+#~ "firms competing against each other. You produce a fictional good and you "
+#~ "are responsible for choosing its <strong>selling price</strong> and its "
+#~ "<strong>social quality</strong>, that is the type of external effect due "
+#~ "to its production. For example, you may think of choosing production "
+#~ "inputs with a better environmental or social impact  (e.g. materials that "
+#~ "involve less pollution, no child labour, etc.). More social quality "
+#~ "implies greater production costs.</p> <p> Each firm's <strong>market "
+#~ "share</strong> is automatically determined by the computer, using a "
+#~ "mathematical algorithm which mimics the realistic preferences of "
+#~ "consumers having a given degree of social consciousness. A firm's market "
+#~ "share is higher, the higher the produced good's social quality and the "
+#~ "lower its price. At the same time, it is increasing in the rival's "
+#~ "selling price and decreasing in its social quality. The following table "
+#~ "summarizes these relations. </p> <p> <table align=\"center\" class=\"table"
+#~ "\" style=\"width:70%%\"> <tr> <td> </td> <td> Tua qualità  </td> <td> Tuo "
+#~ "prezzo </td> <td> Sua qualità </td> <td> Suo prezzo </td> </tr> <tr> <td> "
+#~ "Tua quota di mercato </td> <td> + </td> <td> - </td> <td> - </td> <td> + "
+#~ "</td> </tr> <tr> <td> Sua quota di mercato </td> <td> - </td> <td> + </"
+#~ "td> <td> + </td> <td> - </td> </tr> </table> </p> <p> La qualità può "
+#~ "essere un qualsiasi numero intero fra 0 e 400: più alto il numero scelto, "
+#~ "più alta sarà la qualità (e quindi anche i costi di produzione). Il "
+#~ "prezzo può essere un qualsiasi numero intero compreso fra la qualità "
+#~ "scelta e 400. La quota di mercato sarà una percentuale compresa tra lo 0%"
+#~ "% e il 100%%. Il gioco durerà per 10 turni consecutivi in cui "
+#~ "fronteggerai sempre lo stesso “rivale”. Anche l’algoritmo che determina "
+#~ "le quote di mercato è lo stesso per tutta la durata del gioco. In ogni "
+#~ "turno il profitto di impresa ottenuto sia da te che dal rivale sarà pari "
+#~ "al seguente punteggio:</p> <p> <style> #ex2_container { width:100%%} "
+#~ "#ex2_content { margin:1px auto; color:black; display:table; } "
+#~ "#ex3_container { width:100%%} #ex3_content { margin:1px auto; color:"
+#~ "black; display:table; } </style> <div id=\"ex2_container\"><div id="
+#~ "\"ex2_content\"><strong>Profitto = (Prezzo - Qualità) x Quota di mercato</"
+#~ "strong></div></div> </p> <p> Il beneficio sociale associato alla tua "
+#~ "produzione in ogni turno del gioco sarà pari al seguente punteggio:</p> "
+#~ "<p> <div id=\"ex3_container\"><div id=\"ex3_content\"><strong>Beneficio "
+#~ "sociale = 1,5 x Qualità x Quota di mercato</strong></div></div> </p> <p> "
+#~ "<p> Puoi notare che un incremento unitario della qualità del bene genera "
+#~ "un aumento dei benefici sociali proporzionalmente maggiore all’aumento "
+#~ "dei costi (ciò è determinato dal fattore moltiplicativo pari a 1,5).</p> "
+#~ "<p> Fra un turno e l’altro del gioco saranno resi noti ad entrambi le "
+#~ "qualità e il prezzo di ogni offerta e le rispettive quote di mercato. Ti "
+#~ "saranno pure mostrati il tuo profitto e il beneficio sociale della tua "
+#~ "produzione. Alla fine del gioco sarà sorteggiato uno specifico turno e i "
+#~ "punti da te ottenuti in quel turno, sia come profitto sia come beneficio "
+#~ "sociale, saranno trasformati in euro. I punti corrispondenti al beneficio "
+#~ "sociale saranno versati alla organizzazione benefica da te indicata.</p>"
+#~ msgstr ""
+#~ "<p> Stai per partecipare ad un gioco di mercato assieme ad un altro "
+#~ "partecipante abbinato a te casualmente.    Rappresentate due imprese che "
+#~ "competono fra loro. Producete un bene fittizio di cui dovete "
+#~ "determinare    il <strong>prezzo di vendita</strong> e la <strong>qualità "
+#~ "sociale</strong>, ovvero il tipo di ricaduta esterna    associata alla "
+#~ "sua produzione. Ad esempio, potete pensare alla scelta di input "
+#~ "produttivi che migliorano l’impatto    ambientale o sociale del bene "
+#~ "stesso (es. materiali meno inquinanti, assenza di lavoro minorile, "
+#~ "etc.).    Una maggiore qualità sociale comporta maggiori costi di "
+#~ "produzione.</p><p> La <strong>quota di mercato</strong> di ogni impresa è "
+#~ "determinata automaticamente dal computer tramite un algoritmo matematico "
+#~ "che riproduce delle preferenze realistiche di consumatori    con un certo "
+#~ "grado di sensibilità sociale. Sinteticamente, la quota di mercato di una "
+#~ "impresa è tanto maggiore quanto più alta    la qualità sociale del suo "
+#~ "bene e quanto più basso il suo prezzo di vendita. Allo stesso tempo, sarà "
+#~ "crescente nel prezzo del rivale e decrescente nella qualità sociale del "
+#~ "suo bene.    La seguente tabella sintetizza queste relazioni.</p><p>    "
+#~ "<table align=\"center\" class=\"table\" style=\"width:70%\">        "
+#~ "<tr>            <td> </td>            <td> Tua qualità  </td>            "
+#~ "<td> Tuo prezzo </td>            <td> Sua qualità </td>            <td> "
+#~ "Suo prezzo </td>        </tr>        <tr>            <td> Tua quota di "
+#~ "mercato </td>            <td> + </td>            <td> - </td>            "
+#~ "<td> - </td>            <td> + </td>        </tr>        <tr>            "
+#~ "<td> Sua quota di mercato </td>            <td> - </td>            <td> + "
+#~ "</td>            <td> + </td>            <td> - </td>        </tr>    </"
+#~ "table></p><p> La qualità può essere un qualsiasi numero intero fra 0 e "
+#~ "400: più alto il numero scelto, più alta sarà la qualità    (e quindi "
+#~ "anche i costi di produzione). Il prezzo può essere un qualsiasi numero "
+#~ "intero compreso fra la qualità    scelta e 400. La quota di mercato sarà "
+#~ "una percentuale compresa tra lo 0% e il 100%.    Il gioco durerà per 10 "
+#~ "turni consecutivi in cui fronteggerai sempre lo stesso rivale.    Anche "
+#~ "l’algoritmo che determina le quote di mercato è lo stesso per tutta la "
+#~ "durata del gioco.    In ogni turno il profitto di impresa ottenuto sia da "
+#~ "te che dal rivale sarà pari al seguente punteggio:</p><p>    <style>  "
+#~ "#ex2_container { width:100%}  #ex2_content { margin:1px auto; color:"
+#~ "black; display:table; }  #ex3_container { width:100%}  #ex3_content "
+#~ "{ margin:1px auto; color:black; display:table; }</style><div id="
+#~ "\"ex2_container\"><div id=\"ex2_content\"><strong>Profitto = (Prezzo - "
+#~ "Qualità) x Quota di mercato</strong></div></div> </p><p> Il beneficio "
+#~ "sociale associato alla tua produzione in ogni turno del gioco sarà pari "
+#~ "al seguente punteggio:</p><p><div id=\"ex3_container\"><div id="
+#~ "\"ex3_content\"><strong>Beneficio sociale = 1,5 x Qualità x Quota di "
+#~ "mercato</strong></div></div> </p><p><p> Puoi notare che un incremento "
+#~ "unitario della qualità del bene genera un aumento dei benefici sociali    "
+#~ "proporzionalmente maggiore all’aumento dei costi (ciò è determinato dal "
+#~ "fattore moltiplicativo pari a 1,5).</p><p> Fra un turno e l’altro del "
+#~ "gioco saranno resi noti ad entrambi le qualità e il prezzo di ogni "
+#~ "offerta e le    rispettive quote di mercato. Ti saranno pure mostrati il "
+#~ "tuo profitto e il beneficio sociale della tua produzione.    Alla fine "
+#~ "del gioco sarà sorteggiato uno specifico turno e i punti da te ottenuti "
+#~ "in quel turno, sia come profitto    sia come beneficio sociale, saranno "
+#~ "trasformati in euro.    I punti corrispondenti al beneficio sociale "
+#~ "saranno versati alla organizzazione benefica da te indicata.</p>"

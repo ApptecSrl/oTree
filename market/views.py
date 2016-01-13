@@ -57,10 +57,6 @@ class MatchingWaitPage(WaitPage):
 
     def makeGroups(self, evenPlayers, oddPlayers, newGr_mat, threshold):
     #forma i gruppi con la logica: misti sino a threshold poi gli altri
-        """
-
-        :type newGr_mat: list of lists
-        """
         for i in range(0, threshold ):
             newGr_mat.append([evenPlayers[i], oddPlayers[i]])
         for i in range(threshold, len(evenPlayers) - 1, 2):
@@ -97,11 +93,29 @@ class Introduction(Page):
         ctx = super(Introduction, self).vars_for_template()
         name = 'market'
         n = self.player.participant.session.config['app_sequence'].index(name)
-        ctx['title'] = u'Attività n°{}'.format(n)
+        ctx['title'] = _(u'Activity n.{}').format(n)
+        tasso=self.get_tasso()
+        ctx['tasso'] = tasso
         return ctx
+
+    def get_tasso(self):
+        prova = self.player.participant.session.config['real_world_currency_per_point']
+        tasso = int(1 / prova)
+        return tasso
 
     def is_displayed(self):
         return self.subsession.round_number == 1
+
+class Instructions(Page):
+    def vars_for_template(self):
+            return self.get_tasso()
+
+    def get_tasso(self):
+        prova = self.player.participant.session.config['real_world_currency_per_point']
+        tasso = int(1 / prova)
+        return {
+            'tasso': tasso
+        }
 
 
 class Question1(Page):
