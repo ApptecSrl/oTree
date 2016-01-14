@@ -219,7 +219,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.1,
         'participation_fee': 15.00,
         'app_sequence': [
-            'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
+            'welcome_choice','market','risk','public_goods','role_uncertain_dictator','payment_recap'
         ],
     },
 

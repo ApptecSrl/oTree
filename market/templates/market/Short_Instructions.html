@@ -8,27 +8,27 @@
 <p> Ti ricordiamo che la tua quota di mercato è tanto maggiore quanto più alta la qualità del tuo bene
     e più basso il suo prezzo. Allo stesso tempo è crescente nel prezzo del rivale e decrescente nella sua qualità.
     La seguente tabella sintetizza queste relazioni.</p>
-
+{% endblocktrans %}
 
 <p>
     <table align="center" class="table" style="width:70%">
 
         <tr>
             <td> </td>
-            <td> Tua qualità  </td>
-            <td> Tuo prezzo </td>
-            <td> Sua qualità </td>
-            <td> Suo prezzo </td>
+            <td> {% trans "Your quality" %}  </td>
+            <td> {% trans "Your price" %} </td>
+            <td> {% trans "Competitor's quality" %} </td>
+            <td> {% trans "Competitor's price" %} </td>
         </tr>
         <tr>
-            <td> Tua quota di mercato </td>
+            <td> {% trans "Your market share" %} </td>
             <td> + </td>
             <td> - </td>
             <td> - </td>
             <td> + </td>
         </tr>
         <tr>
-            <td> Sua quota di mercato </td>
+            <td> {% trans "Competitor's market share" %} </td>
             <td> - </td>
             <td> + </td>
             <td> + </td>
@@ -37,7 +37,9 @@
 
     </table>
 
+
 </p>
+{% blocktrans trimmed %}
 <p> In ogni turno il tuo profitto sarà pari a:</p>
 <p>
 
