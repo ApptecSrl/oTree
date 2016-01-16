@@ -99,9 +99,8 @@ class Introduction(Page):
         return ctx
 
     def get_tasso(self):
-        prova = self.player.participant.session.config['real_world_currency_per_point']
-        tasso = int(1 / prova)
-        return tasso
+        moneyXpoint = self.player.participant.session.config['real_world_currency_per_point']
+        return int(1 / moneyXpoint)
 
     def is_displayed(self):
         return self.subsession.round_number == 1

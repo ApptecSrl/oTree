@@ -34,8 +34,10 @@ class Subsession(otree.models.BaseSubsession):
     def before_session_starts(self):
         exchRate = c(1/(c(1).to_real_world_currency(self.session)))
         if self.round_number == 1:
+
+            random.jumpahead(10)
             paying_round = random.randint(Constants.num_rounds / 2, Constants.num_rounds)
-            self.session.vars['paying_round'] = paying_round
+            self.session.vars['paying_round_Info'] = paying_round
 
 
 class Group(otree.models.BaseGroup):

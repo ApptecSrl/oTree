@@ -186,7 +186,7 @@ class ResultsFinal(Page):
         }
 
         result_table = [
-            (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
+            (_('Periodo effettivamente pagato'), self.session.vars['paying_round_Info']),
             (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['price']),
             (_(u'La qualità che hai scelto nel periodo pagato'), payment_result['quality']),
             (mark_safe(_('Il beneficio sociale dovuto alle tue scelte')), payment_result['impact']),
