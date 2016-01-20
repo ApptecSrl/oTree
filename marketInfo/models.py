@@ -71,7 +71,7 @@ class Group(otree.models.BaseGroup):
         players[0].impact = imp1
         players[1].impact = imp2
 
-        if self.subsession.round_number == self.session.vars['paying_round']:
+        if self.subsession.round_number == self.session.vars['paying_round_Info']:
             players[0].payoff = tmp_payoff1
             players[1].payoff = tmp_payoff2
         else:

@@ -1,0 +1,13 @@
+1. Accendere le macchine con i numeri corrispondenti ai codici distribuiti
+
+2. Accesso alle macchine con le credenziali:
+    Utente: beelab
+    pass: blbunifi
+   ed avviare un browser (premendo anche F11)
+
+3. Quando si è certi del numero di partecipanti: settare la sessione appropriata a default su serene-basin-8430
+
+4. Macchina per macchina: prendere dal file di testo presente nella cartella condivisa (sottocartella beelab)
+    l'indirizzo cui collegarsi e incollarlo nella barra dell'indirizzo del browser
+    https://serene-basin-8430.herokuapp.com/AssignVisitorToDefaultSession?access_code_for_default_session=stud_session&participant_label=
+

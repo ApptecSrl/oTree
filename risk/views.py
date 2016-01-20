@@ -13,6 +13,9 @@ def vars_for_all_templates(self):
     return {'instructions': 'risk/Instructions.html',
             'constants': Constants}
 
+class WaitOthers(WaitPage):
+    def after_all_players_arrive(self):
+        print 'via'
 class Introduction(Page):
 
     template_name = 'global/Introduction.html'
@@ -144,6 +147,7 @@ class ResultsFinal(Page):
         }
 
 page_sequence = [
+    WaitOthers,
     Introduction,
     Question1,
     Feedback1,

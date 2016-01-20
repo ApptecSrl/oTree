@@ -264,8 +264,6 @@ class Feedback3(Page):
                 il prezzo invariato o aumentandolo di poco.'''))
         }
 
-class WaitPage(WaitPage):
-    wait_for_all_groups = True
 
 class Decide(Page):
 
@@ -359,7 +357,6 @@ page_sequence = [MatchingWaitPage,
                  Feedback2,
                  Question3,
                  Feedback3,
-                 WaitPage,
                  Decide,
                  ResultsWaitPage,
                  ResultsTemp,
