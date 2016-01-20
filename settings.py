@@ -82,10 +82,9 @@ INSTALLED_APPS = [
     'otree',
 ]
 
-if 'SENTRY_DSN' in os.environ:
-    INSTALLED_APPS += [
-        'raven.contrib.django.raven_compat',
-    ]
+INSTALLED_APPS += [
+    'raven.contrib.django.raven_compat',
+]
 
 DEMO_PAGE_INTRO_TEXT = """
 <ul>
@@ -258,4 +257,7 @@ SESSION_CONFIGS = [
 ]
 
 otree.settings.augment_settings(globals())
-SENTRY_DSN = 'http://c8035c27b7ba4104b126561e64b30043:fa581b618fda4bec88880a4cf10eac04@sentry.otree.org/4'
+if 'SENTRY_DSN' in os.environ:
+    SENTRY_DSN = os.environ['SENTRY_DSN']
+else:
+    SENTRY_DSN = 'http://70fb2d62c5de48739cbaca564d2c855e:29ebb03040ee4eb79eca7e359f26b627@pingu.pin.unifi.it:8002/9'
