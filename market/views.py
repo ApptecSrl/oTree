@@ -48,7 +48,7 @@ class MatchingWaitPage(WaitPage):
             print 'Nuovi gruppi: ', newGr_mat
             self.subsession.set_groups(newGr_mat)
             # Check now the result
-            self.check_inside_groups()
+            # self.check_inside_groups()
 
     def computeThreshold(self, evenPlayers, oddPlayers, minEO):
         threshold = minEO // 3 + minEO % 3
@@ -264,6 +264,8 @@ class Feedback3(Page):
                 il prezzo invariato o aumentandolo di poco.'''))
         }
 
+class WaitPage(WaitPage):
+    wait_for_all_groups = True
 
 class Decide(Page):
 
@@ -357,6 +359,7 @@ page_sequence = [MatchingWaitPage,
                  Feedback2,
                  Question3,
                  Feedback3,
+                 WaitPage,
                  Decide,
                  ResultsWaitPage,
                  ResultsTemp,
