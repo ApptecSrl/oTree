@@ -216,7 +216,7 @@ SESSION_CONFIGS = [
         'display_name': "Sessione imprenditori completa con Charity",
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.1,
-        'participation_fee': 15.00,
+        'participation_fee': 35.00,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','role_uncertain_dictator','payment_recap'
         ],
