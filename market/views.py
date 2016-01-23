@@ -219,15 +219,14 @@ class Question3(Page):
     template_name = 'global/Question.html'
     form_model = models.Player
     form_fields = ['training_correct_answer_3']
-    question = mark_safe(_(u'''Considera la seguente situazione ipotetica. Nel precedente periodo hai scelto una\
-                 qualità pari a 100 e un prezzo pari a 300. La tua quota di mercato è stata pari a 0,2.\
-                 Adesso scegli di ridurre il prezzo a 200 mantenendo la qualità uguale a 100.\
-                 Quale delle seguenti affermazioni è vera?''') + ('''<br><br>\
-                 <strong>(1)</strong> La mia quota di mercato e\' sicuramente cresciuta.<br>\
-                 <strong>(2)</strong> La mia quota di mercato e\' maggiore di quella che otterrei\
-                 mantenendo l\'offerta precedente.<br>\
-                 <strong>(3)</strong> La mia quota di mercato puo\' essere diminuita solo se anche\
-                 il rivale ha ridotto il suo prezzo.'''))
+    question = mark_safe(_(u'''Consider the following hypothetical situation. In the previous period you chose\
+                a quality of 100 and a price of 300. Your market share was 20%.\
+                Now you choose to lower your price to 200 while leaving the quality to 100.\
+                Your competitor makes the same choices of the previous period.\
+                Which of the following statements is correct?''') + _('''<br><br>\
+                 <strong>(1)</strong> My market share will certainly decrease.<br>\
+                 <strong>(2)</strong> My market share will certainly increase.<br>\
+                 <strong>(3)</strong> My market share may increase or decrease depending on the choices made by my competitor the previous period'''))
 
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -255,13 +254,13 @@ class Feedback3(Page):
             'explanation': mark_safe(
                 _('''<br><strong>Question: </strong>''') + Question3.question\
                 + _('''<br><br><strong>Solution: </strong>Answer nr. 2 is correct.''')\
-                + _(u'''<br><br><strong>Explanation: </strong> La risposta n. 1 è falsa\
-                perché la tua quota di mercato dipende anche dalle scelte del tuo concorrente.\
-                La risposta n. 2 è vera perché per ogni possibile offerta del rivale,\
-                una riduzione del tuo prezzo aumenta la tua quota di mercato.\
-                La risposta n. 3 è falsa perché la tua quota di mercato può essere diminuita anche se\
-                il tuo concorrente ha aumentato sufficientemente la qualità mantenendo\
-                il prezzo invariato o aumentandolo di poco.'''))
+                + _(u'''<br><br><strong>Explanation: </strong> Answer n. 1 is wrong\
+                because your market share depends negatively on your price.\
+                For the same reason Answer n. 1 is correct. Lowering your price\
+                leaving all the other variables unchanged, increases  your market share.\
+                Answer n. 3 is wrong because your competitor makes the same choices,\
+                hence those choices cannot influence the change in the market shares\
+                from previous to current period. '''))
         }
 
 

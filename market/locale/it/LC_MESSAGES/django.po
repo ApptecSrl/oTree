@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_market\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-14 19:41+0100\n"
-"PO-Revision-Date: 2016-01-14 19:45+0100\n"
+"POT-Creation-Date: 2016-01-23 12:33+0100\n"
+"PO-Revision-Date: 2016-01-23 12:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -147,18 +147,6 @@ msgid "Social contribution = 1,5 x Quality x Market share"
 msgstr "Beneficio sociale = 1,5 x Qualità x Quota di mercato"
 
 #: templates/market/Instructions.html:71
-#| msgid ""
-#| "<p> Notice that a unit increase in the good's quality generates an "
-#| "increase in social contribution which is proportionally higher than the "
-#| "cost increase (this is due to the multiplicative factor 1.5 in the "
-#| "formula). </p> <p> Between each round and the next both players will be "
-#| "notified qualities and prices and the resulting market shares. Your "
-#| "profit and social contribution will also be shown. At the end of the game "
-#| "one specific round will be randomly selected and the points you earned in "
-#| "that period, both in terms of profit and social contribution, will be "
-#| "transformed in cash at the rate of %(tasso)s points for 1€. The money "
-#| "corresponding to the social contribution in the paying period will be "
-#| "transferred to the charity of your choice. </p>"
 msgid ""
 "<p> Notice that a unit increase in the good's quality generates an increase "
 "in social contribution which is proportionally higher than the cost increase "
@@ -209,7 +197,7 @@ msgstr ""
 msgid "Activity n.{}"
 msgstr "Attività  n°{}"
 
-#: views.py:125
+#: views.py:124
 msgid ""
 "Consider the following hypothetical scenario. Your chosen quality is "
 "0,                 and your chosen price is 200. Also, as a consequence of "
@@ -227,19 +215,19 @@ msgstr ""
 "contesto, il tuo profitto e il beneficio sociale della tua produzione "
 "sarebbero ..."
 
-#: views.py:155 views.py:204
+#: views.py:154 views.py:203
 msgid "\"Profit\""
 msgstr "\"Profitto\""
 
-#: views.py:156 views.py:205
+#: views.py:155 views.py:204
 msgid "\"Social contribution\""
 msgstr "\"Beneficio sociale\""
 
-#: views.py:159 views.py:208 views.py:257
+#: views.py:158 views.py:207 views.py:255
 msgid "<br><strong>Question: </strong>"
 msgstr "<br><strong>Domanda: </strong>"
 
-#: views.py:160
+#: views.py:159
 msgid ""
 "<br><br><strong>Solution: </strong>Your Profit would be equal "
 "to                100 points and your Social Contribution would be equal to "
@@ -249,7 +237,7 @@ msgstr ""
 "a                100 punti e il beneficio sociale della tua produzione a 0 "
 "punti."
 
-#: views.py:162
+#: views.py:161
 msgid ""
 "<br><br><strong>Explanation: </strong> The Profit equals                the "
 "Total Markup (Price - Quality) multiplied by the Market "
@@ -267,7 +255,7 @@ msgstr ""
 "1,5) e la quota di mercato. In questo caso:                <strong>0 * 1.5 * "
 "50 / 100 = 0 punti</strong>."
 
-#: views.py:174
+#: views.py:173
 msgid ""
 "Consider the following hypothetical scenario. Your chosen quality is "
 "200,                 and your chosen price is 400. Also, as a consequence of "
@@ -285,7 +273,7 @@ msgstr ""
 "pari al 30%.                 In questo contesto, il tuo profitto e il "
 "beneficio sociale della tua produzione sarebbero ..."
 
-#: views.py:209
+#: views.py:208
 msgid ""
 "<br><br><strong>Solution: </strong>Your Profit would be equal "
 "to                60 points and your Social Contribution would be equal to "
@@ -295,7 +283,7 @@ msgstr ""
 "a                60 punti e il beneficio sociale della tua produzione a 90 "
 "punti."
 
-#: views.py:211
+#: views.py:210
 msgid ""
 "<br><br><strong>Explanation: </strong> The Profit equals                the "
 "Total Markup (Price - Quality) multiplied by the Market "
@@ -313,120 +301,170 @@ msgstr ""
 "1,5) e la quota di mercato. In questo caso:                <strong>200 * 1.5 "
 "* 30 / 100 = 90 punti</strong>."
 
-#: views.py:223
+#: views.py:222
 msgid ""
-"Considera la seguente situazione ipotetica. Nel precedente periodo hai "
-"scelto una                 qualità pari a 100 e un prezzo pari a 300. La tua "
-"quota di mercato è stata pari a 0,2.                 Adesso scegli di "
-"ridurre il prezzo a 200 mantenendo la qualità uguale a 100.                 "
-"Quale delle seguenti affermazioni è vera?"
+"Consider the following hypothetical situation. In the previous period you "
+"chose                a quality of 100 and a price of 300. Your market share "
+"was 20%.                Now you choose to lower your price to 200 while "
+"leaving the quality to 100.                Your competitor makes the same "
+"choices of the previous period.                Which of the following "
+"statements is correct?"
 msgstr ""
 "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
-"scelto una                 qualità pari a 100 e un prezzo pari a 300. La tua "
-"quota di mercato è stata pari al 20%.                 Adesso scegli di "
-"ridurre il prezzo a 200 mantenendo la qualità uguale a 100.                 "
-"Quale delle seguenti affermazioni è vera?"
+"scelto una  qualità pari a 100 e un prezzo pari a 300. La tua quota di "
+"mercato è stata pari a al 20%. Adesso scegli di ridurre il prezzo a 200 "
+"mantenendo la qualità uguale a 100.  Il tuo concorrente mantiene inalterate "
+"le scelte del periodo precedente."
 
-#: views.py:254
+#: views.py:226
+msgid ""
+"<br><br>                 <strong>(1)</strong> My market share will certainly "
+"decrease.<br>                 <strong>(2)</strong> My market share will "
+"certainly increase.<br>                 <strong>(3)</strong> My market share "
+"may increase or decrease depending on the choices made by my competitor the "
+"previous period"
+msgstr ""
+"<br><br>                 <strong>(1)</strong> La mia quota di mercato è "
+"sicuramente diminuita.<br>                 <strong>(2)</strong> La mia quota "
+"di mercato è sicuramente aumentata.<br>                 <strong>(3)</strong> "
+"La mia quota di mercato può essere aumentata o diminuita a seconda di quali "
+"erano state le scelte del mio concorrente nel periodo precedente."
+
+#: views.py:252
 msgid "\"Affermazione corretta\""
 msgstr ""
 
-#: views.py:258
+#: views.py:256
 msgid "<br><br><strong>Solution: </strong>Answer nr. 2 is correct."
 msgstr "<br><br><strong>Soluzione: </strong>La Risposta nr. 2 è corretta."
 
-#: views.py:259
+#: views.py:257
 msgid ""
-"<br><br><strong>Explanation: </strong> La risposta n. 1 è "
-"falsa                perché la tua quota di mercato dipende anche dalle "
-"scelte del tuo concorrente.                La risposta n. 2 è vera perché "
-"per ogni possibile offerta del rivale,                una riduzione del tuo "
-"prezzo aumenta la tua quota di mercato.                La risposta n. 3 è "
-"falsa perché la tua quota di mercato può essere diminuita anche "
-"se                il tuo concorrente ha aumentato sufficientemente la "
-"qualità mantenendo                il prezzo invariato o aumentandolo di poco."
+"<br><br><strong>Explanation: </strong> Answer n. 1 is wrong                "
+"because your market share depends negatively on your price.                "
+"For the same reason Answer n. 1 is correct. Lowering your "
+"price                leaving all the other variables unchanged, increases  "
+"your market share.                Answer n. 3 is wrong because your "
+"competitor makes the same choices,                hence those choices cannot "
+"influence the change in the market shares                from previous to "
+"current period. "
 msgstr ""
 "<br><br><strong>Spiegazione: </strong> La risposta n. 1 è "
-"falsa                perché la tua quota di mercato dipende anche dalle "
-"scelte del tuo concorrente.                La risposta n. 2 è vera perché "
-"per ogni possibile offerta del rivale,                una riduzione del tuo "
-"prezzo aumenta la tua quota di mercato.                La risposta n. 3 è "
-"falsa perché la tua quota di mercato può essere diminuita anche "
-"se                il tuo concorrente ha aumentato sufficientemente la "
-"qualità mantenendo                il prezzo invariato o aumentandolo di poco."
+"errata                 perché la tua quota di mercato dipende in maniera "
+"negativa dal tuo prezzo.                Per la medesima ragione, la risposta "
+"n. 2 è corretta. Diminuendo il tuo prezzo                tua quota di "
+"mercato aumenta, a parità di tutti gli altri dati.                La "
+"risposta n. 3 è errata perché il tuo concorrente mantiene inalterate le "
+"scelte                e quindi queste non possono giocare alcun ruolo nella "
+"variazione delle quote di                mercato che intercorre fra il "
+"periodo precedente e quello attuale."
 
-#: views.py:278
+#: views.py:276
 msgid "Il prezzo non può essere più basso della qualità"
 msgstr ""
 
-#: views.py:294
+#: views.py:292
 msgid "Turno numero"
 msgstr ""
 
-#: views.py:295
+#: views.py:293
 msgid "Il prezzo che hai scelto"
 msgstr ""
 
-#: views.py:296
+#: views.py:294
 msgid "La qualità che hai scelto"
 msgstr ""
 
-#: views.py:298
+#: views.py:296
 msgid "Il prezzo scelto dall'altro giocatore"
 msgstr ""
 
-#: views.py:299
+#: views.py:297
 msgid "La qualità scelta dall'altro giocatore"
 msgstr ""
 
-#: views.py:301
+#: views.py:299
 msgid "La tua quota di mercato"
 msgstr ""
 
-#: views.py:302
+#: views.py:300
 msgid ""
 "Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il "
 "periodo pagato"
 msgstr ""
 
-#: views.py:303
+#: views.py:301
 msgid ""
 "Il <strong>beneficio sociale generato dalle tue scelte</strong> se questo "
 "fosse il periodo pagato"
 msgstr ""
 
-#: views.py:325
+#: views.py:323
 msgid "Periodo effettivamente pagato"
 msgstr ""
 
-#: views.py:326
+#: views.py:324
 msgid "Il prezzo che hai scelto nel periodo pagato"
 msgstr ""
 
-#: views.py:327
+#: views.py:325
 msgid "La qualità che hai scelto nel periodo pagato"
 msgstr ""
 
-#: views.py:328
+#: views.py:326
 msgid "Il beneficio sociale dovuto alle tue scelte"
 msgstr ""
 
-#: views.py:330
+#: views.py:328
 msgid "La tua quota di mercato nel periodo pagato"
 msgstr ""
 
-#: views.py:331
+#: views.py:329
 msgid "Il tuo guadagno in questa attività"
 msgstr ""
 
-#: views.py:338
+#: views.py:336
 msgid "In this activity you chose a price and a quality in a market game. "
 msgstr ""
 "In questa attività hai scelto un prezzo e una qualità in un gioco di mercato."
 
-#: views.py:350
+#: views.py:348
 msgid "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 msgstr ""
+
+#~ msgid ""
+#~ "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
+#~ "scelto una                 qualità pari a 100 e un prezzo pari a 300. La "
+#~ "tua quota di mercato è stata pari a 0,2.                 Adesso scegli di "
+#~ "ridurre il prezzo a 200 mantenendo la qualità uguale a "
+#~ "100.                 Quale delle seguenti affermazioni è vera?"
+#~ msgstr ""
+#~ "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
+#~ "scelto una                 qualità pari a 100 e un prezzo pari a 300. La "
+#~ "tua quota di mercato è stata pari al 20%.                 Adesso scegli "
+#~ "di ridurre il prezzo a 200 mantenendo la qualità uguale a "
+#~ "100.                 Quale delle seguenti affermazioni è vera?"
+
+#~ msgid ""
+#~ "<br><br><strong>Explanation: </strong> La risposta n. 1 è "
+#~ "falsa                perché la tua quota di mercato dipende anche dalle "
+#~ "scelte del tuo concorrente.                La risposta n. 2 è vera perché "
+#~ "per ogni possibile offerta del rivale,                una riduzione del "
+#~ "tuo prezzo aumenta la tua quota di mercato.                La risposta n. "
+#~ "3 è falsa perché la tua quota di mercato può essere diminuita anche "
+#~ "se                il tuo concorrente ha aumentato sufficientemente la "
+#~ "qualità mantenendo                il prezzo invariato o aumentandolo di "
+#~ "poco."
+#~ msgstr ""
+#~ "<br><br><strong>Spiegazione: </strong> La risposta n. 1 è "
+#~ "falsa                perché la tua quota di mercato dipende anche dalle "
+#~ "scelte del tuo concorrente.                La risposta n. 2 è vera perché "
+#~ "per ogni possibile offerta del rivale,                una riduzione del "
+#~ "tuo prezzo aumenta la tua quota di mercato.                La risposta n. "
+#~ "3 è falsa perché la tua quota di mercato può essere diminuita anche "
+#~ "se                il tuo concorrente ha aumentato sufficientemente la "
+#~ "qualità mantenendo                il prezzo invariato o aumentandolo di "
+#~ "poco."
 
 #~ msgid ""
 #~ "<p> Il beneficio sociale associato alla tua produzione in ogni turno del "
