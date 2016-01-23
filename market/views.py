@@ -161,7 +161,7 @@ class Feedback1(Page):
                 + _('''<br><br><strong>Explanation: </strong> The Profit equals\
                 the Total Markup (Price - Quality) multiplied by the Market Share.\
                 In this case you have: <strong>(200 - 0) * 50 / 100 = 100 points</strong>.\
-                The Social Contribution is obtained by multiplicating the Quality,\
+                The Social Contribution is obtained multiplying the Quality,\
                 the Efficiency Factor and the Market Share. In this case it is:\
                 <strong>1.5 * 0 * 50 / 100 = 0 points</strong>.'''))
         }
