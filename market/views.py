@@ -158,11 +158,11 @@ class Feedback1(Page):
                 _('''<br><strong>Question: </strong>''') + Question1.question\
                 + _('''<br><br><strong>Solution: </strong>Your Profit would be equal to\
                 100 points and your Social Contribution would be equal to 0 points.''')\
-                + _('''<br><br><strong>Explanation: </strong> The Profit equals\
-                the Total Markup (Price - Quality) multiplied by the Market Share.\
+                + _('''<br><br><strong>Explanation: </strong> Profit equals\
+                 Markup (Price - Quality) times market share.\
                 In this case you have: <strong>(200 - 0) * 50 / 100 = 100 points</strong>.\
-                The Social Contribution is obtained multiplying the Quality,\
-                the Efficiency Factor and the Market Share. In this case it is:\
+                The Social Contribution is obtained as Quality\
+                times the Efficiency Factor of 1.5 times market share. In this case it is:\
                 <strong>1.5 * 0 * 50 / 100 = 0 points</strong>.'''))
         }
 
