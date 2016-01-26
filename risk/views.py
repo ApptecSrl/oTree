@@ -24,7 +24,7 @@ class Introduction(Page):
         ctx = super(Introduction, self).vars_for_template()
         name = 'risk'
         n = self.player.participant.session.config['app_sequence'].index(name)
-        ctx['title'] = u'Attività n°{}'.format(n)
+        ctx['title'] = _(u'Activity n.{}').format(n)
         return ctx
 
 
@@ -32,12 +32,11 @@ class Question1(Page):
     template_name = 'global/Question.html'
     form_model = models.Player
     form_fields = ['training_my_profit_positive', 'training_my_profit_negative']
-    question = mark_safe(_('''Considera la seguente situazione.\
-                 Hai scelto di investire 40 punti dei 100 a tua disposizione.<br><br>\
-                 Nell'ipotesi che il progetto avesse un esito positivo, quanti punti\
-                 guadagneresti complessivamente?<br>\
-                 Se, viceversa, il progetto avesse un esito negativo, quanti punti\
-                 guadagneresti complessivamente?'''))
+    question = mark_safe(_('''Consider the following situation.\
+             You chose to invest 40 of your 100 points.<br><br>\
+             Assuming the project went well, how many points\
+             would you earn as a whole?<br>\
+             If instead the project failed, how many points would you earn?'''))
 
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -60,18 +59,17 @@ class Feedback1(Page):
         return {
             'num_q': 1,
             'answers': {
-                _('"Guadagno complessivo in caso di esito positivo"'): [p.training_my_profit_positive, 160],
-                _('"Guadagno complessivo in caso di esito negativo"'): [p.training_my_profit_negative, 60]
+                _('"Amount earned in case of successful project"'): [p.training_my_profit_positive, 160],
+                _('"Amount earned in case of failed project"'): [p.training_my_profit_negative, 60]
             },
             'explanation': mark_safe(
-                _('''<br><strong>Domanda: </strong>''') + Question1.question\
-                + _('''<br><br><strong>Soluzione: </strong><br>Guadagno in caso di esito positivo = 160\
-                <br>Guadagno in caso di esito negativo = 60''')\
-                + _('''<br><br><strong>Spiegazione: </strong> Il guadagno e\' dato dalla quota\
-                di punti che si e\' deciso di non investire sommata ai punti che derivano\
-                dall'investimento. In questo caso, nell'ipotesi di esito positivo si ha\
-                <strong>(100 - 40) + 40 * 2.5 = 160</strong>, mentre nell'ipotesi di esito negativo\
-                si ha <strong>(100 - 40) = 60 </strong>'''))
+                _('''<br><strong>Question: </strong>''') + Question1.question\
+                + _('''<br><br><strong>Solution: </strong><br>Amount earned in case of successful project = 160\
+                <br>Amount earned in case of failed project = 60''')\
+                + _('''<br><br><strong>Explanation: </strong> You earn the sum of the points\
+                that you retained and those coming from the project. In this case if the project succeeded\
+                <strong>(100 - 40) + 40 * 2.5 = 160</strong>, while if the project failed\
+                <strong>(100 - 40) = 60 </strong>'''))
         }
 
 
