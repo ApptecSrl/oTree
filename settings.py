@@ -142,9 +142,9 @@ SESSION_CONFIG_DEFAULTS = {
 SESSION_CONFIGS = [
     {
          'name': 'public_goods',
-         'display_name': "Public Goods",
+         'display_name': "Public Goods with final recap",
          'num_demo_participants': 3,
-         'app_sequence': ['public_goods', 'payment_recap'],
+         'app_sequence': ['welcome_choice', 'public_goods', 'payment_recap'],
     },
     # {
     #     'name': 'bare_market',
@@ -165,7 +165,7 @@ SESSION_CONFIGS = [
         'name': 'risk_final_info',
         'display_name': "Risky choice with final recap",
         'num_demo_participants': 1,
-        'app_sequence': ['welcome_noCharity','risk', 'payment_recap'],
+        'app_sequence': ['welcome_choice','risk', 'payment_recap'],
     },
     # {
     #     'name': 'dictator',
@@ -181,10 +181,10 @@ SESSION_CONFIGS = [
     # },
     {
         'name': 'unc_role_dic',
-        'display_name': "Role Uncertain Dictators",
+        'display_name': "Role Uncertain Dictators with final recap",
         'num_demo_participants': 2,
         'random_start_order': True,
-        'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
+        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
     },
     # {
     #     'name': 'marketInfo',
