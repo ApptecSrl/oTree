@@ -61,7 +61,7 @@ class Introduction(Page):
         ctx = super(Introduction, self).vars_for_template()
         name = 'public_goods'
         n = self.player.participant.session.config['app_sequence'].index(name)
-        ctx['title'] = u'Attività n°{}'.format(n)
+        ctx['title'] = _(u'Activity n.{}').format(n)
         return ctx
 
 

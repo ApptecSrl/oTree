@@ -8,14 +8,15 @@
 
 
 {% block title %}
-    {% trans "Scegli quanto investire nel progetto rischioso" %}
+    {% trans "Choose how much to invest in the risky project" %}
 {% endblock %}
 
 {% block content %}
 
 
+     {% trans "Insert a number from 0 to 100" as label_value %}
 
-    {% formfield player.invested with label="Inserisci un numero tra 0 e 100." %}
+    {% formfield player.invested with label=label_value %}
 
 <p>
 

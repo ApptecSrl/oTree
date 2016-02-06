@@ -175,7 +175,7 @@ class ResultsFinal(Page):
         return self.subsession.round_number == Constants.num_rounds
 
     def vars_for_template(self):
-        p_paying_round = self.player.in_all_rounds()[self.session.vars['paying_round']-1]
+        p_paying_round = self.player.in_all_rounds()[self.session.vars['paying_round_Info']-1]
         payment_result = {
             'price': p_paying_round.price,
             'quality': p_paying_round.quality,

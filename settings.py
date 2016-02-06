@@ -69,14 +69,15 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'EUR'
+#REAL_WORLD_CURRENCY_CODE = 'EUR'
+REAL_WORLD_CURRENCY_CODE = 'GBP'
 USE_POINTS = True
 
 
 # e.g. en-gb, de-de, it-it, fr-fr.
 # see: https://docs.djangoproject.com/en/1.6/topics/i18n/
-# LANGUAGE_CODE = 'en-gb'
-LANGUAGE_CODE = 'it-it'
+LANGUAGE_CODE = 'en-gb'
+# LANGUAGE_CODE = 'it-it'
 
 INSTALLED_APPS = [
     'otree',
@@ -130,8 +131,8 @@ mturk_hit_settings = {
 }
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.05,
-    'participation_fee': 3.00,
+    'real_world_currency_per_point': 0.04,
+    'participation_fee': 2.50,
     'num_bots': 12,
     'doc': "",
     'group_by_arrival_time': False,
@@ -145,21 +146,21 @@ SESSION_CONFIGS = [
          'num_demo_participants': 3,
          'app_sequence': ['public_goods', 'payment_recap'],
     },
-    {
-        'name': 'bare_market',
-        'display_name': "Bare Market game",
-        #'real_world_currency_per_point': 0.25,
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'welcome_noCharity','bare_market', 'payment_recap'
-        ],
-    },
-    {
-        'name': 'risk',
-        'display_name': "Risky choice",
-        'num_demo_participants': 1,
-        'app_sequence': ['welcome_noCharity','risk'],
-    },
+    # {
+    #     'name': 'bare_market',
+    #     'display_name': "Bare Market game",
+    #     #'real_world_currency_per_point': 0.25,
+    #     'num_demo_participants': 2,
+    #     'app_sequence': [
+    #         'welcome_noCharity','bare_market', 'payment_recap'
+    #     ],
+    # },
+    # {
+    #     'name': 'risk',
+    #     'display_name': "Risky choice",
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['welcome_noCharity','risk'],
+    # },
     {
         'name': 'risk_final_info',
         'display_name': "Risky choice with final recap",
@@ -172,12 +173,12 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': 2,
     #     'app_sequence': ['dictator', 'payment_recap'],
     # },
-    {
-        'name': 'dic_sim',
-        'display_name': "Simultaneous Dictator Game",
-        'num_demo_participants': 2,
-        'app_sequence': ['welcome_noCharity','dictators_simultaneous', 'payment_recap'],
-    },
+    # {
+    #     'name': 'dic_sim',
+    #     'display_name': "Simultaneous Dictator Game",
+    #     'num_demo_participants': 2,
+    #     'app_sequence': ['welcome_noCharity','dictators_simultaneous', 'payment_recap'],
+    # },
     {
         'name': 'unc_role_dic',
         'display_name': "Role Uncertain Dictators",
@@ -185,38 +186,38 @@ SESSION_CONFIGS = [
         'random_start_order': True,
         'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
     },
-    {
-        'name': 'marketInfo',
-        'display_name': "Informed Market game",
-        #'real_world_currency_per_point': 0.25,
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'welcome_choice','marketInfo'
-        ],
-    },
+    # {
+    #     'name': 'marketInfo',
+    #     'display_name': "Informed Market game",
+    #     #'real_world_currency_per_point': 0.25,
+    #     'num_demo_participants': 2,
+    #     'app_sequence': [
+    #         'welcome_choice','marketInfo'
+    #     ],
+    # },
         {
         'name': 'prova_market',
-        'display_name': "Prova Market game con Welcome e recap finale",
+        'display_name': "Market game, Welcome and recap",
         #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice', 'market', 'payment_recap'
         ],
     },
+    # {
+    #     'name': 'welcome_noCharity',
+    #     'display_name': "Welcome",
+    #     'num_demo_participants': 1,
+    #     'app_sequence': [
+    #         'welcome_noCharity'
+    #     ],
+    # },
     {
-        'name': 'welcome_noCharity',
-        'display_name': "Welcome",
-        'num_demo_participants': 1,
-        'app_sequence': [
-            'welcome_noCharity'
-        ],
-    },
-    {
-        'name': 'Entrepreneurs_sessione1',
-        'display_name': "Sessione imprenditori completa con Charity",
+        'name': 'Entrepreneurs_UK_session',
+        'display_name': "Entrepreneurs, UK session",
         'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.1,
-        'participation_fee': 35.00,
+        'real_world_currency_per_point': 0.076923077,
+        'participation_fee': 27.00,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','role_uncertain_dictator','payment_recap'
         ],
@@ -224,36 +225,36 @@ SESSION_CONFIGS = [
 
     {
         'name': 'sequenza_completa_conCharity',
-        'display_name': "Sessione studenti completa con Charity",
+        'display_name': "Students, UK session",
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],
     },
-    {
-        'name': 'sequenza_corta_conCharity',
-        'display_name': "Sessione studenti corta con Charity",
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'welcome_choice','market','role_uncertain_dictator','payment_recap'
-        ],
-    },
-    {
-        'name': 'sequenza_noCharity',
-        'display_name': "Sessione studenti senza charity, bare_market e role_unc_dictators",
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'welcome_noCharity','bare_market','role_uncertain_dictator','payment_recap'
-        ],
-    },
-    {
-        'name': 'sequenza_Market_MarketInfo',
-        'display_name': "Sessione studenti con Market seguito da MarketInfo e RU_Dict",
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'welcome_choice','market','marketInfo','role_uncertain_dictator','payment_recap'
-        ],
-    },
+    # {
+    #     'name': 'sequenza_corta_conCharity',
+    #     'display_name': "Sessione studenti corta con Charity",
+    #     'num_demo_participants': 2,
+    #     'app_sequence': [
+    #         'welcome_choice','market','role_uncertain_dictator','payment_recap'
+    #     ],
+    # },
+    # {
+    #     'name': 'sequenza_noCharity',
+    #     'display_name': "Sessione studenti senza charity, bare_market e role_unc_dictators",
+    #     'num_demo_participants': 2,
+    #     'app_sequence': [
+    #         'welcome_noCharity','bare_market','role_uncertain_dictator','payment_recap'
+    #     ],
+    # },
+    # {
+    #     'name': 'sequenza_Market_MarketInfo',
+    #     'display_name': "Sessione studenti con Market seguito da MarketInfo e RU_Dict",
+    #     'num_demo_participants': 2,
+    #     'app_sequence': [
+    #         'welcome_choice','market','marketInfo','role_uncertain_dictator','payment_recap'
+    #     ],
+    # },
 ]
 
 otree.settings.augment_settings(globals())

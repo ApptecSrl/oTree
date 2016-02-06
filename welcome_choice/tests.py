@@ -14,8 +14,12 @@ class PlayerBot(Bot):
     """Bot that plays one round"""
 
     def play_round(self):
-        self.submit(views.MyPage)
-        self.submit(views.Choice)
+        x=random.randint(100, 400)
+        self.submit(views.GetInputKind, {
 
+            "kind": x,
+            "kindCopy": x,
+        })
+        self.submit(views.Welcome)
     def validate_play(self):
         pass

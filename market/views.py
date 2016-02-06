@@ -124,11 +124,7 @@ class Question1(Page):
     question = _(u"Consider the following hypothetical scenario. Your chosen quality is 0,\
                  and your chosen price is 200. Also, as a consequence of your choices and\
                  of your opponent's you have a 50% market share.\
-                 In this context, your profit and social contribution would be ...\
-                 Considera la seguente situazione ipotetica. Hai scelto una qualità pari a 0\
-                 e un prezzo pari a 200. Inoltre, come conseguenza delle scelte tue e\
-                 dell’altro concorrente hai una quota di mercato pari al 50%.\
-                 In questo contesto, il tuo profitto e la tua contribuzione sociale sarebbero ...")
+                 In this context, your profit and social contribution would be ...")
 
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -173,11 +169,7 @@ class Question2(Page):
     question = _(u"Consider the following hypothetical scenario. Your chosen quality is 200,\
                  and your chosen price is 400. Also, as a consequence of your choices and\
                  of your opponent's you have a 30% market share.\
-                 In this context, your profit and social contribution would be ...\
-                 Considera la seguente situazione ipotetica. Hai scelto una qualità pari a 200\
-                 e un prezzo pari a 400. Inoltre, come conseguenza delle scelte tue e\
-                 dell’altro concorrente hai una quota di mercato pari al 30%.\
-                 In questo contesto, il tuo profitto e la tua contribuzione sociale sarebbero ...")
+                 In this context, your profit and social contribution would be ...")
 
     def is_displayed(self):
         return self.subsession.round_number == 1
@@ -207,11 +199,11 @@ class Feedback2(Page):
                 _('''<br><strong>Question: </strong>''') + Question2.question\
                 + _('''<br><br><strong>Solution: </strong>Your Profit would be equal to\
                 60 points and your Social Contribution would be equal to 90 points.''')\
-                + _('''<br><br><strong>Explanation: </strong> The Profit equals\
-                the Total Markup (Price - Quality) multiplied by the Market Share.\
+                + _('''<br><br><strong>Explanation: </strong> Profit equals\
+                 Markup (Price - Quality) times market share.\
                 In this case you have: <strong>(400 - 200) * 30 / 100 = 60 points</strong>.\
-                The Social Contribution is obtained by multiplicating the Quality,\
-                the Efficiency Factor and the Market Share. In this case it is:\
+                The Social Contribution is obtained as Quality\
+                times the Efficiency Factor of 1.5, times market share. In this case it is:\
                 <strong>1.5 * 200 * 30 / 100 = 90 points</strong>.'''))
         }
 
@@ -249,7 +241,7 @@ class Feedback3(Page):
         return {
             'num_q': 3,
             'answers': {
-                _('"Affermazione corretta"'): [p.training_correct_answer_3, 2],
+                _('"Correct statement"'): [p.training_correct_answer_3, 2],
             },
             'explanation': mark_safe(
                 _('''<br><strong>Question: </strong>''') + Question3.question\
@@ -273,7 +265,7 @@ class Decide(Page):
 
     def error_message(self, values):
         if values["price"] < values["quality"]:
-            return _(u'Il prezzo non può essere più basso della qualità')
+            return _(u'Price cannot be lower than quality')
 
 
 class ResultsWaitPage(WaitPage):
@@ -289,16 +281,16 @@ class ResultsTemp(Page):
     def vars_for_template(self):
         return {
             'table': [
-                (_('Turno numero'), self.subsession.round_number),
-                (_('Il prezzo che hai scelto'), self.player.price),
-                (_(u'La qualità che hai scelto'), self.player.quality),
+                (_('Round number'), self.subsession.round_number),
+                (_('The price you chose'), self.player.price),
+                (_(u'The quality you chose'), self.player.quality),
                 ('', ''),
-                (_('Il prezzo scelto dall\'altro giocatore'), self.player.other_player().price),
-                (_(u'La qualità scelta dall\'altro giocatore'), self.player.other_player().quality),
+                (_('The price chosen by the competitor'), self.player.other_player().price),
+                (_(u'The quality chosen by the competitor'), self.player.other_player().quality),
                 ('', ''),
-                (_('La tua quota di mercato'), format(self.player.share, '.2%')),
-                (mark_safe(_('Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il periodo pagato')), self.player.pot_payoff),
-                (mark_safe(_('Il <strong>beneficio sociale generato dalle tue scelte</strong> se questo fosse il periodo pagato')), self.player.impact),
+                (_('Your market share'), format(self.player.share, '.2%')),
+                (mark_safe(_('Your <strong>payoff</strong> if this is the paying period')), self.player.pot_payoff),
+                (mark_safe(_('The <strong>social contribution arising from your choices</strong> if this is the paying period')), self.player.impact),
             ]
         }
 
@@ -320,13 +312,13 @@ class ResultsFinal(Page):
         }
 
         result_table = [
-            (_('Periodo effettivamente pagato'), self.session.vars['paying_round']),
-            (_('Il prezzo che hai scelto nel periodo pagato'), payment_result['price']),
-            (_(u'La qualità che hai scelto nel periodo pagato'), payment_result['quality']),
-            (mark_safe(_('Il beneficio sociale dovuto alle tue scelte')), payment_result['impact']),
+            (_('Paying period'), self.session.vars['paying_round']),
+            (_('Price chosen in the paying period'), payment_result['price']),
+            (_(u'Quality chosen in the paying period'), payment_result['quality']),
+            (mark_safe(_('Social contribution due to your choices')), payment_result['impact']),
             ('', ''),
-            (_('La tua quota di mercato nel periodo pagato'), format(payment_result['share'], '.2%')),
-            (mark_safe(_(u'Il tuo guadagno in questa attività')), payment_result['payoff_sum']),
+            (_('Your market share in the paying period'), format(payment_result['share'], '.2%')),
+            (mark_safe(_(u'Your payoff from this activity')), payment_result['payoff_sum']),
         ]
 
         game_results = {
@@ -345,7 +337,7 @@ class ResultsFinal(Page):
 
 
         return {
-            'table': [(_(u'Questa attività è conclusa. I risultati verranno mostrati in seguito.'),)]
+            'table': [(_(u'This activity is over. Results will be shown later.'),)]
         }
 
 page_sequence = [MatchingWaitPage,

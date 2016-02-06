@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mario\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-02 15:50+0100\n"
-"PO-Revision-Date: 2015-12-02 17:43+0100\n"
+"POT-Creation-Date: 2016-01-28 10:30+0100\n"
+"PO-Revision-Date: 2016-01-28 10:30+0100\n"
 "Last-Translator: \n"
 "Language-Team:  < >\n"
 "Language: Italian\n"
@@ -23,15 +23,51 @@ msgstr ""
 msgid "I will keep (from 0 to %i)"
 msgstr "Terrò per me (da 0 a %i)"
 
-#: templates/role_uncertain_dictator/Instructions.html:6
+#: templates/role_uncertain_dictator/Instructions.html:7
+#, python-format
 #| msgid ""
-#| "You will be paired randomly and anonymously ... There are %(total)s to "
-#| "split. You have to decide decide how many points she or he will retain. "
-#| "The rest will go to the other participant."
+#| "This activity is played on a single round and participants will be "
+#| "matched in pairs. Each pair has an endowment of %(total)s points to split "
+#| "between the two participants. One of the participant will play the role "
+#| "of DECIDER, and thus will have to decide how to split the 100 points, by "
+#| "choosing the amount to keep. The rest will go to the other participant "
+#| "who will play the role of RECEIVER and does not play any active part. If "
+#| "the decider keeps an amount K, the corresponding receiver will get 100-K. "
+#| "</p> Each participant will in fact be part of two groups: in one group he/"
+#| "she will play the role of decider, while the receiver will be some "
+#| "subject x, whose identity he/she cannot know. In the other group he/she "
+#| "will be receiver, while the decider will be some other subject y "
+#| "(different from x), whose identity he/she cannot know. It is important to "
+#| "notice that the two groups to which you will be associated are certainly "
+#| "different. Eventually the computer will randomly select the groups to "
+#| "keep into account to determine the actual payoffs. In practice, there "
+#| "will be a 50%% chance that the group in which you are decider is "
+#| "selected, and therefore that your choice will be implemented for you and "
+#| "subject x, and a 50%% chance that instead the group in which you are "
+#| "receiver is selected, and therefore that subject y's choice will "
+#| "determine his/her and your payoff. The situation in which, for a subject, "
+#| "both groups to which he/she is associated are selected cannot arise."
 msgid ""
-"You will be paired randomly and anonymously ... There are to split. You have "
-"to decide decide how many points she or he will retain. The rest will go to "
-"the other participant."
+"This activity is played on a single round and participants will be matched "
+"in pairs. Each pair has an endowment of 100 points to split between the two "
+"participants. One of the participant will play the role of DECIDER, and thus "
+"will have to decide how to split the 100 points, by choosing the amount to "
+"keep. The rest will go to the other participant who will play the role of "
+"RECEIVER and does not play any active part. If the decider keeps an amount "
+"K, the corresponding receiver will get 100-K. </p> Each participant will in "
+"fact be part of two groups: in one group he/she will play the role of "
+"decider, while the receiver will be some subject x, whose identity he/she "
+"cannot know. In the other group he/she will be receiver, while the decider "
+"will be some other subject y (different from x), whose identity he/she "
+"cannot know. It is important to notice that the two groups to which you will "
+"be associated are certainly different. Eventually the computer will randomly "
+"select the groups to keep into account to determine the actual payoffs. In "
+"practice, there will be a 50%% chance that the group in which you are "
+"decider is selected, and therefore that your choice will be implemented for "
+"you and subject x, and a 50%% chance that instead the group in which you are "
+"receiver is selected, and therefore that subject y's choice will determine "
+"his/her and your payoff. The situation in which, for a subject, both groups "
+"to which he/she is associated are selected cannot arise."
 msgstr ""
 "<p>Questa attività si svolge in un unico turno e prevede che i partecipanti "
 "siano divisi a coppie. In ogni coppia ci sono 100 punti da dividere fra i "
@@ -48,11 +84,11 @@ msgstr ""
 "sicuramente diversi. Alla fine il computer estrarrà a sorte i gruppi dei "
 "quali tenere conto per il pagamento finale. In pratica ci sarà il 50%% di "
 "possibilità che venga estratto il gruppo in cui sei il decisore, e che "
-"quindi venga implementata per te e per il soggetto x la tua scelta, e il 50%"
-"% di probabilità che venga estratto il gruppo in cui sei il ricevente, e che "
-"quindi sia la scelta del soggetto y a determinare il guadagno tuo e suo. In "
-"nessun caso può accadere che per un soggetto venga estratto sia il gruppo in "
-"cui è decisore sia il gruppo in cui è ricevente."
+"quindi venga implementata per te e per il soggetto x la tua scelta, e il "
+"50%% di probabilità che venga estratto il gruppo in cui sei il ricevente, e "
+"che quindi sia la scelta del soggetto y a determinare il guadagno tuo e suo. "
+"In nessun caso può accadere che per un soggetto venga estratto sia il gruppo "
+"in cui è decisore sia il gruppo in cui è ricevente."
 
 #: templates/role_uncertain_dictator/Offer.html:5
 msgid "Your Decision"
@@ -62,31 +98,35 @@ msgstr "La tua decisione"
 msgid "<p> Please decide how many points you will keep for yourself. </p>"
 msgstr "<p> Per favore decidi quanti punti tenere per te. </p>"
 
-#: views.py:67
+#: views.py:26
+msgid "Activity n.{}"
+msgstr "Attività n.{}"
+
+#: views.py:64
 msgid "giver"
 msgstr "decisore"
 
-#: views.py:69
+#: views.py:66
 msgid "receiver"
 msgstr "ricevente"
 
-#: views.py:79 views.py:85
+#: views.py:76 views.py:82
 msgid "Your role in the game was chosen to be that of"
 msgstr "E' stato estratto il gruppo in cui eri"
 
-#: views.py:80
+#: views.py:77
 msgid "You kept for yourself"
 msgstr "Hai tenuto per te"
 
-#: views.py:86
+#: views.py:83
 msgid "Another participant decided to offer you"
 msgstr "Un altro partecipante ha deciso di offrirti"
 
-#: views.py:90
+#: views.py:87
 msgid "Your payoff in this activity"
 msgstr "Il tuo guadagno in questa attività"
 
-#: views.py:96
+#: views.py:93
 msgid ""
 "In this activity you chose how to split a given amount between yourself and "
 "another partecipant. In addition a third participant decided how to split "
@@ -96,6 +136,33 @@ msgstr ""
 "altro partecipante. Inoltre un terzo partecipante ha scelto come suddividere "
 "una somma di stessa entità tra sé stesso e te."
 
-#: views.py:107
+#: views.py:104
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
+
+#~ msgid ""
+#~ "You will be paired randomly and anonymously ... There are to split. You "
+#~ "have to decide decide how many points she or he will retain. The rest "
+#~ "will go to the other participant."
+#~ msgstr ""
+#~ "<p>Questa attività si svolge in un unico turno e prevede che i "
+#~ "partecipanti siano divisi a coppie. In ogni coppia ci sono 100 punti da "
+#~ "dividere fra i due partecipanti. Uno dei due partecipanti avrà il ruolo "
+#~ "di DECISORE, e dovrà quindi decidere quanti dei 100 punti tenere per sé e "
+#~ "quanto lasciare all’altro membro della coppia, che ha solo il ruolo di "
+#~ "RICEVENTE e non può esercitare alcuna scelta. Se il soggetto decisore "
+#~ "decide di tenere per sé la cifra K, il soggetto ricevente a lui abbinato "
+#~ "riceve 100-K.</p>  Ogni partecipante verrà assegnato a due gruppi. In un "
+#~ "gruppo avrà il ruolo di decisore, e il ricevente sarà un soggetto x di "
+#~ "cui non può conoscere l’identità. Nell’altro gruppo avrà il ruolo di "
+#~ "ricevente e il decisore sarà un soggetto y (diverso da x) di cui non può "
+#~ "conoscere l’identità. È importante notare che i soggetti a cui siete "
+#~ "abbinati nei due gruppi sono sicuramente diversi. Alla fine il computer "
+#~ "estrarrà a sorte i gruppi dei quali tenere conto per il pagamento finale. "
+#~ "In pratica ci sarà il 50%% di possibilità che venga estratto il gruppo in "
+#~ "cui sei il decisore, e che quindi venga implementata per te e per il "
+#~ "soggetto x la tua scelta, e il 50%% di probabilità che venga estratto il "
+#~ "gruppo in cui sei il ricevente, e che quindi sia la scelta del soggetto y "
+#~ "a determinare il guadagno tuo e suo. In nessun caso può accadere che per "
+#~ "un soggetto venga estratto sia il gruppo in cui è decisore sia il gruppo "
+#~ "in cui è ricevente."

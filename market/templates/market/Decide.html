@@ -7,16 +7,18 @@
 
 
 {% block title %}
-    {% trans "Scegli la tua qualità e il tuo prezzo" %} {% trans " - Turno" %} {{ subsession.round_number }} {% trans "di" %} {{ Constants.num_rounds }}
+    {% trans "Please choose quality and price" %} {% trans " - Round" %} {{ subsession.round_number }} {% trans "of" %} {{ Constants.num_rounds }}
 {% endblock %}
 
 {% block content %}
 
+{% trans "Choose a number between 0 and 400 as your quality." as label_q %}
+{% trans "Choose a number between quality (chosen above) and 400 as your price." as label_p %}
 
 
-    {% formfield player.quality with label="Scegli un numero tra 0 e 400 per la tua qualità." %}
+    {% formfield player.quality with label=label_q %}
 
-    {% formfield player.price with label="Scegli un numero tra la qualità scelta e 400 per il tuo prezzo." %}
+    {% formfield player.price with label=label_p %}
 <p>
 
 

@@ -12,6 +12,7 @@ from django.utils.translation import ugettext as _
 class RateCalculator:
     def get_tasso(self):
         prova = self.player.participant.session.config['real_world_currency_per_point']
+        print prova
         tasso = int(1 / prova)
         return tasso
 
@@ -22,7 +23,6 @@ class Welcome(Page, RateCalculator):
         listApp=self.player.participant.session.config['app_sequence']
         n=len(listApp)
         print 'n=',n
-
         tasso = self.get_tasso()
         return {
             'n': n-2,
@@ -37,15 +37,15 @@ class GetInputKind(Page):
 
     def error_message(self, values):
         if values["kind"] != values["kindCopy"]:
-            return _(u'Inserisci il valore corretto in entrambi i campi')
+            return _(u'Please insert the correct key in both fields')
         if self.player.participant.label:
             if values["kind"] != int(self.player.participant.label):
-                print _(u'Controlla di aver preso posto al computer con il numero corretto: ')
-                print 'label = ', int(self.player.participant.label)
-                print 'kind = ', values["kind"]
-                print 'type of label', type(self.player.participant.label)
-                print 'type of kind', type(values["kind"])
-                return _(u'Controlla di essere alla postazione corretta')
+                # print _(u'Controlla di aver preso posto al computer con il numero corretto: ')
+                # print 'label = ', int(self.player.participant.label)
+                # print 'kind = ', values["kind"]
+                # print 'type of label', type(self.player.participant.label)
+                # print 'type of kind', type(values["kind"])
+                return _(u'Please check the number of the workstation you are sitting at')
         else:
             self.player.participant.label = 'codice={}'.format(values['kind'])
         self.player.participant.vars['kind'] = values['kind']

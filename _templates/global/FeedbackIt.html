@@ -5,7 +5,7 @@
 {% block title %}
 {% blocktrans with num_q=num_q|default:1 total_q=total_q|default:1 %}
 
-Solution to Understanding Question {{ num_q }} of {{ total_q }}
+Soluzione alla Domanda di comprensione {{ num_q }} di {{ total_q }}
 {% endblocktrans %}
 {% endblock %}
 <!--Solution to Understanding Question {{ num_q }} of {{ total_q }}-->
@@ -13,22 +13,22 @@ Solution to Understanding Question {{ num_q }} of {{ total_q }}
 {% for question, answer in answers.items|default:answers %}
 {% ifequal answer.0 answer.1 %}
 <p class="text-success">
-Your answer {{answer.0}} to {{question}} was correct.
+La tua risposta {{answer.0}} a {{question}} era corretta.
 </p>
 {% else %}
 <p class="text-danger">
-Your answer {{answer.0}} to {{question}} was incorrect.
+La tua risposta {{answer.0}} a {{question}} era sbagliata.
 </p>
 {% endifequal %}
 {% endfor %}
 {% if answer %}
 {% ifequal answer.0 answer.1 %}
 <p class="text-success">
-Your answer {{answer.0}} was correct.
+La tua risposta {{answer.0}} era corretta.
 </p>
 {% else %}
 <p class="text-danger">
-Your answer {{answer.0}} was incorrect.
+La tua risposta {{answer.0}} era sbagliata.
 </p>
 {% endifequal %}
 {% endif %}

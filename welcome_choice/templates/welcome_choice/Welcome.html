@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-    {% trans "Benvenuto" %}
+    {% trans "Welcome" %}
 {% endblock %}
 
 {% block content %}
@@ -19,22 +19,20 @@ http://getbootstrap.com/components/
 
 
 {% blocktrans trimmed %}
-<p>Siamo lieti di darti il benvenuto a questo esperimento. Ti preghiamo di leggere le seguenti istruzioni con attenzione. Durante tutto il corso dell’esperimento è assolutamente vietato comunicare con altri partecipanti. Eventuali domande di chiarimento devono essere rivolte esclusivamente agli organizzatori. </p>
+We are happy to welcome you to this experiment. Please read the following instructions carefully. During the experiment it is forbidden to communicate with other participants. Questions should be addressed to the organisers only.</p>
 <p>
-Partecipando all'esperimento puoi guadagnare del denaro il cui preciso ammontare dipende dalle scelte che saranno effettuate da te e dagli altri partecipanti. Al termine dell’esperimento, tale somma ti sarà pagata in contanti e in forma privata in modo da garantire la riservatezza.
-Nel corso dell'esperimento potrai anche, tramite le tue scelte, contribuire all’associazione benefica che hai selezionato al momento della tua identificazione. La somma corrispondente, frutto delle scelte tue e degli altri partecipanti, sarà formalmente inclusa nel tuo pagamento complessivo, ma verrà immediatamente donata online alla associazione.
-Ti sarà chiesto di firmare una ricevuta relativa al pagamento complessivo, compresa la donazione.</p>
+Taking part in this experiment you can earn money. The exact amount you will earn depends on your and the other participants' choices. At the end of the session, the amount will be paid to you in cash and in private.
+During the experiment you may also contribute to the charity you have chosen during your identification. The corresponding amount, arising from your own and other participants' choices will formally be included in your invoice, but it will be immediately donated online to the charity of your choice after the end of the session. You will be asked to sign an invoice comprising your payment and the donation to the charity.</p>
 <p>
-L’esperimento consiste di {{ n }} diverse attività da svolgere al computer e di un breve questionario cartaceo finale.
-Le scelte effettuate durante una specifica attività non avranno alcuna influenza sugli esiti delle altre attività, precedenti o successive. I guadagni conseguiti in ogni attività saranno comunicati ad ogni partecipante solo al termine dell'esperimento.
+The experiments includes {{ n }} different activities to be carried out on the computer and a brief final survey on paper.
+The choices you will make in each activity will have no influence on neither previous nor following activities. The earnings accrued within each activity will be notified to each participant, only at the end of the experiment.
 </p>
 <p>
-    <strong>Ciascuna attività consente di guadagnare dei punti che sono poi convertiti in denaro al tasso di {{ tasso }} punti per 1 Euro. </strong>
+    <strong>Each activity allows to earn points which are converted to real money at the rate of {{ tasso }} points for 1£. </strong>
 </p>
 <p>
-È importante che tu sia consapevole che tutte le tue decisioni e i tuoi guadagni sono informazioni private e anonime.
-    Nessuno degli altri partecipanti potrà conoscere le scelte da te effettuate durante l’esperimento né l’ammontare dei tuoi guadagni. Anche gli sperimentatori studieranno i dati relativi alle scelte senza poterli abbinare all'identità dei partecipanti all’esperimento.
-    Allo stesso tempo, ognuno di voi sarà pagato in privato dal personale amministrativo che non potrà in alcun modo sapere quali siano le scelte che hanno determinato i vostri guadagni.</p>
+It is important to be aware that all your decisions and earnings are strictly private and anonymous. The experimenters will study the data pertaining to the choices made today without being able to link them to the actual identity of the participants.
+At the same time you will be paid by the administrative staff, who will have no access to the data concerning the choices that determined your earnings.
 {% endblocktrans %}
     {% next_button %}
 

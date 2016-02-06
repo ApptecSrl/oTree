@@ -7,22 +7,29 @@
 
 
 {% block title %}
-    {% trans "Inserisci il codice numerico ricevuto dagli organizzatori. " %}
+    {% trans "Please insert the 3-Digit code you received from the organisers." %}
 {% endblock %}
 
 {% block content %}
 {% blocktrans trimmed %}
-<p>E' di fondamentale importanza inserire correttamente tale codice ai fini del regolare svolgimento di tutto l'esperimento e delle operazioni di pagamento. </p>
-<p>In caso di dubbi si prega di rivolgersi agli organizzatori.</p>
+<p>In order for the experiment to unwind regularly and to receive the payment it is very important to insert the code correctly. </p>
+<p>Ask the organisers if you have doubts.</p>
 <p></p>
 <p>
 
 {% endblocktrans %}
 <hr style="background:#F87431; border:0; height:7px" />
+{% trans "Insert the code you received." as label_value1 %}
 
-    {% formfield player.kind with label="Inserisci il numero ricevuto." %}
+{% trans "Please insert the code again." as label_value2 %}
 
-    {% formfield player.kindCopy with label="Per sicurezza inserisci nuovamente il numero ricevuto." %}
+
+
+    {% formfield player.kind with label=label_value1 %}
+
+    {% formfield player.kindCopy with label=label_value2 %}
+
+
 
 
 <p>
