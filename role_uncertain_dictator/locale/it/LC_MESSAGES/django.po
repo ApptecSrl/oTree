@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mario\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-28 10:30+0100\n"
+"POT-Creation-Date: 2016-02-11 10:05+0100\n"
 "PO-Revision-Date: 2016-01-28 10:30+0100\n"
 "Last-Translator: \n"
 "Language-Team:  < >\n"
@@ -18,16 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:84
+#: role_uncertain_dictator/models.py:84
 #, python-format
 msgid "I will keep (from 0 to %i)"
 msgstr "Terrò per me (da 0 a %i)"
 
-#: templates/role_uncertain_dictator/Instructions.html:7
-#, python-format
+#: role_uncertain_dictator/templates/role_uncertain_dictator/Instructions.html:7
+#, fuzzy, python-format
 #| msgid ""
 #| "This activity is played on a single round and participants will be "
-#| "matched in pairs. Each pair has an endowment of %(total)s points to split "
+#| "matched in pairs. Each pair has an endowment of 100 points to split "
 #| "between the two participants. One of the participant will play the role "
 #| "of DECIDER, and thus will have to decide how to split the 100 points, by "
 #| "choosing the amount to keep. The rest will go to the other participant "
@@ -50,24 +50,23 @@ msgstr "Terrò per me (da 0 a %i)"
 msgid ""
 "This activity is played on a single round and participants will be matched "
 "in pairs. Each pair has an endowment of 100 points to split between the two "
-"participants. One of the participant will play the role of DECIDER, and thus "
-"will have to decide how to split the 100 points, by choosing the amount to "
-"keep. The rest will go to the other participant who will play the role of "
-"RECEIVER and does not play any active part. If the decider keeps an amount "
-"K, the corresponding receiver will get 100-K. </p> Each participant will in "
-"fact be part of two groups: in one group he/she will play the role of "
-"decider, while the receiver will be some subject x, whose identity he/she "
-"cannot know. In the other group he/she will be receiver, while the decider "
-"will be some other subject y (different from x), whose identity he/she "
-"cannot know. It is important to notice that the two groups to which you will "
-"be associated are certainly different. Eventually the computer will randomly "
-"select the groups to keep into account to determine the actual payoffs. In "
-"practice, there will be a 50%% chance that the group in which you are "
-"decider is selected, and therefore that your choice will be implemented for "
-"you and subject x, and a 50%% chance that instead the group in which you are "
-"receiver is selected, and therefore that subject y's choice will determine "
-"his/her and your payoff. The situation in which, for a subject, both groups "
-"to which he/she is associated are selected cannot arise."
+"participants. One participant will play the role of DECIDER, and will have "
+"to decide how to split the 100 points, by choosing what amount to keep. The "
+"rest will go to the other participant who will play the role of RECEIVER who "
+"does not play any active part. If the DECIDER keeps an amount K, the "
+"corresponding RECEIVER will get 100-K. </p> Each participant will actually "
+"be part of two groups: in one group he/she will play the role of DECIDER, "
+"while the RECEIVER will be some subject x, whose identity he/she cannot "
+"know. In the other group he/she will be RECEIVER, while the DECIDER will be "
+"some other subject y (different from x), whose identity he/she cannot know. "
+"It is important to note that note that you will be assigned to two different "
+"groups. Eventually the computer will randomly select which groups determine "
+"the actual payoffs. In practice, there will be a 50%% chance that the group "
+"in which you are DECIDER is selected, and therefore that your choice will be "
+"implemented for you and subject x, and a 50%% chance that instead the group "
+"in which you are RECEIVER is selected, and therefore that subject y's choice "
+"will determine his/her and your payoff. The situation in which, for a "
+"subject, both groups to which he/she is associated are selected cannot arise."
 msgstr ""
 "<p>Questa attività si svolge in un unico turno e prevede che i partecipanti "
 "siano divisi a coppie. In ogni coppia ci sono 100 punti da dividere fra i "
@@ -90,53 +89,58 @@ msgstr ""
 "In nessun caso può accadere che per un soggetto venga estratto sia il gruppo "
 "in cui è decisore sia il gruppo in cui è ricevente."
 
-#: templates/role_uncertain_dictator/Offer.html:5
+#: role_uncertain_dictator/templates/role_uncertain_dictator/Offer.html:5
 msgid "Your Decision"
 msgstr "La tua decisione"
 
-#: templates/role_uncertain_dictator/Offer.html:10
+#: role_uncertain_dictator/templates/role_uncertain_dictator/Offer.html:10
 msgid "<p> Please decide how many points you will keep for yourself. </p>"
 msgstr "<p> Per favore decidi quanti punti tenere per te. </p>"
 
-#: views.py:26
+#: role_uncertain_dictator/views.py:26
 msgid "Activity n.{}"
 msgstr "Attività n.{}"
 
-#: views.py:64
+#: role_uncertain_dictator/views.py:64
 msgid "giver"
 msgstr "decisore"
 
-#: views.py:66
+#: role_uncertain_dictator/views.py:66
 msgid "receiver"
 msgstr "ricevente"
 
-#: views.py:76 views.py:82
+#: role_uncertain_dictator/views.py:76 role_uncertain_dictator/views.py:82
 msgid "Your role in the game was chosen to be that of"
 msgstr "E' stato estratto il gruppo in cui eri"
 
-#: views.py:77
+#: role_uncertain_dictator/views.py:77
 msgid "You kept for yourself"
 msgstr "Hai tenuto per te"
 
-#: views.py:83
+#: role_uncertain_dictator/views.py:83
 msgid "Another participant decided to offer you"
 msgstr "Un altro partecipante ha deciso di offrirti"
 
-#: views.py:87
+#: role_uncertain_dictator/views.py:87
 msgid "Your payoff in this activity"
 msgstr "Il tuo guadagno in questa attività"
 
-#: views.py:93
+#: role_uncertain_dictator/views.py:93
+#, fuzzy
+#| msgid ""
+#| "In this activity you chose how to split a given amount between yourself "
+#| "and another partecipant. In addition a third participant decided how to "
+#| "split the same amount between him/herself and you. "
 msgid ""
 "In this activity you chose how to split a given amount between yourself and "
-"another partecipant. In addition a third participant decided how to split "
+"another participant. In addition a third participant decided how to split "
 "the same amount between him/herself and you. "
 msgstr ""
 "In questa attività hai scelto come suddividere una certa somma tra te ad un "
 "altro partecipante. Inoltre un terzo partecipante ha scelto come suddividere "
 "una somma di stessa entità tra sé stesso e te."
 
-#: views.py:104
+#: role_uncertain_dictator/views.py:104
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 

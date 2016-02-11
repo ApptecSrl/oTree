@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_risk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-26 10:47+0100\n"
+"POT-Creation-Date: 2016-02-11 10:05+0100\n"
 "PO-Revision-Date: 2016-01-26 10:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,27 +18,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:54
+#: risk/models.py:54
 msgid "My profit in the case of a positive investment outcome would be"
 msgstr ""
 "Il mio guadagno complessivo da questa attività in caso di esito positivo "
 "dell'investimento sarebbe"
 
-#: models.py:56
+#: risk/models.py:56
 msgid "My profit in the case of a negative investment outcome would be"
 msgstr ""
 "Il mio guadagno complessivo da questa attività in caso di esito negativo "
 "dell'investimento sarebbe"
 
-#: templates/risk/Instructions.html:6
-#, python-format
+#: risk/templates/risk/Instructions.html:6
+#, fuzzy, python-format
+#| msgid ""
+#| "You have an endowment of 100 points.  You can choose to invest part of "
+#| "this sum in a risky project. If the project goes well, which can happen "
+#| "with a 50%% probability you will obtain 2.5 points for each point you "
+#| "invested. </p><p>If the project fails instead, you'll loose all the "
+#| "points invested in it. The points you do not invest will remain to you "
+#| "whatever the outcome of the project."
 msgid ""
 "You have an endowment of 100 points.  You can choose to invest part of this "
 "sum in a risky project. If the project goes well, which can happen with a "
-"50%% probability you will obtain 2.5 points for each point you invested. </"
-"p><p>If the project fails instead, you'll loose all the points invested in "
-"it. The points you do not invest will remain to you whatever the outcome of "
-"the project."
+"50%% probability, you will obtain 2.5 points for each point you invested. </"
+"p><p>If the project fails instead, you'll lose all the points you invested. "
+"The points you do not invest will remain to you whatever the outcome of the "
+"project."
 msgstr ""
 "Hai a disposizione 100 punti.  Puoi decidere di investire una parte di "
 "questa somma in un progetto rischioso. Se il progetto va bene, cosa che può "
@@ -47,39 +54,39 @@ msgstr ""
 "investiti in esso. I punti che non investi rimarranno a te inalterati quale "
 "che sia l'esito del progetto."
 
-#: templates/risk/Invest.html:11
+#: risk/templates/risk/Invest.html:11
 msgid "Choose how much to invest in the risky project"
 msgstr "Scegli quanto investire nel progetto rischioso"
 
-#: templates/risk/Invest.html:17
+#: risk/templates/risk/Invest.html:17
 msgid "Insert a number from 0 to 100"
 msgstr "Inserisci un numero tra 0 e 100"
 
-#: templates/risk/Results.html:7
+#: risk/templates/risk/Results.html:7
 msgid "Results"
 msgstr "Risultati"
 
-#: templates/risk/Results.html:13
+#: risk/templates/risk/Results.html:13
 msgid "Here is what happened."
 msgstr "Ecco come e' andata."
 
-#: templates/risk/Results.html:14
+#: risk/templates/risk/Results.html:14
 msgid "You invested:"
 msgstr "Hai investito: "
 
-#: templates/risk/Results.html:14 views.py:124
+#: risk/templates/risk/Results.html:14 risk/views.py:124
 msgid "The project went"
 msgstr "Il progetto e' andato"
 
-#: templates/risk/Results.html:14
+#: risk/templates/risk/Results.html:14
 msgid "and therefore you obtained the payoff:"
 msgstr "e quindi hai ottenuto un guadagno pari a:"
 
-#: views.py:27
+#: risk/views.py:27
 msgid "Activity n.{}"
 msgstr "Attività n.{}"
 
-#: views.py:35
+#: risk/views.py:35
 msgid ""
 "Consider the following situation.             You chose to invest 40 of your "
 "100 points.<br><br>             Assuming the project went well, how many "
@@ -93,19 +100,19 @@ msgstr ""
 "progetto avesse un esito negativo, quanti punti                 "
 "guadagneresti complessivamente?"
 
-#: views.py:62
+#: risk/views.py:62
 msgid "\"Amount earned in case of successful project\""
 msgstr "\"Guadagno complessivo in caso di esito positivo\""
 
-#: views.py:63
+#: risk/views.py:63
 msgid "\"Amount earned in case of failed project\""
 msgstr "\"Guadagno complessivo in caso di esito negativo\""
 
-#: views.py:66
+#: risk/views.py:66
 msgid "<br><strong>Question: </strong>"
 msgstr "<br><strong>Domanda: </strong>"
 
-#: views.py:67
+#: risk/views.py:67
 msgid ""
 "<br><br><strong>Solution: </strong><br>Amount earned in case of successful "
 "project = 160                <br>Amount earned in case of failed project = 60"
@@ -114,7 +121,7 @@ msgstr ""
 "esito positivo = 160                <br>Guadagno complessivo in caso di "
 "esito negativo = 60"
 
-#: views.py:69
+#: risk/views.py:69
 msgid ""
 "<br><br><strong>Explanation: </strong> You earn the sum of the "
 "points                that you retained and those coming from the project. "
@@ -129,28 +136,28 @@ msgstr ""
 "strong>, mentre nell'ipotesi di esito negativo               si ha "
 "<strong>(100 - 40) = 60 </strong>"
 
-#: views.py:97 views.py:112
+#: risk/views.py:97 risk/views.py:112
 msgid "bad"
 msgstr "male"
 
-#: views.py:99 views.py:114
+#: risk/views.py:99 risk/views.py:114
 msgid "well"
 msgstr "bene"
 
-#: views.py:123
+#: risk/views.py:123
 msgid "You decided to invest in the risky project"
 msgstr "Hai investito nel progetto rischioso"
 
-#: views.py:127
+#: risk/views.py:127
 msgid "Your payoff in this activity"
 msgstr "Il tuo guadagno in questa attività"
 
-#: views.py:133
+#: risk/views.py:133
 msgid "In this activity you chose how much to invest in a risky project"
 msgstr ""
 "In questa attività hai scelto quanto investire in un progetto rischioso"
 
-#: views.py:144
+#: risk/views.py:144
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_market\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-14 20:01+0100\n"
+"POT-Creation-Date: 2016-02-11 10:05+0100\n"
 "PO-Revision-Date: 2016-01-14 20:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,31 +18,31 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:86 models.py:91
+#: marketInfo/models.py:88 marketInfo/models.py:93
 msgid "My profit would be"
 msgstr "Il mio profitto sarebbe"
 
-#: models.py:88 models.py:93
+#: marketInfo/models.py:90 marketInfo/models.py:95
 msgid "My social contribution would be"
 msgstr "Il beneficio sociale della mia produzione sarebbe"
 
-#: models.py:98
+#: marketInfo/models.py:100
 msgid "The correct answer is"
 msgstr "La risposta corretta è"
 
-#: templates/marketInfo/Decide.html:10
+#: marketInfo/templates/marketInfo/Decide.html:10
 msgid "Scegli la tua qualità e il tuo prezzo"
 msgstr "Scegli la tua qualità e il tuo prezzo"
 
-#: templates/marketInfo/Decide.html:10
+#: marketInfo/templates/marketInfo/Decide.html:10
 msgid " - Turno"
 msgstr " - Turno"
 
-#: templates/marketInfo/Decide.html:10
+#: marketInfo/templates/marketInfo/Decide.html:10
 msgid "di"
 msgstr ""
 
-#: templates/marketInfo/Info.html:10
+#: marketInfo/templates/marketInfo/Info.html:10
 #, python-format
 msgid ""
 "For this specific activity, during its %(num_rounds)s rounds, you have been "
@@ -52,12 +52,7 @@ msgstr ""
 "%(num_rounds)s turni, sei stato associato con: <br> <br> <strong>%(esito)s</"
 "strong>  <br>  <br>"
 
-#: templates/marketInfo/Instructions.html:7
-#| msgid ""
-#| "This activity is exactly the same as the previous one. The only "
-#| "difference will be that you will be informed of the course of studies of "
-#| "your competitor (in the following screen). Your new competitor will in "
-#| "any case be someone different from the previous activity. <br>  <br>"
+#: marketInfo/templates/marketInfo/Instructions.html:7
 msgid ""
 "This activity is exactly the same as the previous one. The only difference "
 "will be that you will be informed of the course of studies of your "
@@ -69,11 +64,11 @@ msgstr ""
 "(nella prossima schermata).  Il nuovo rivale sarà in ogni caso di nuovo "
 "selezionato casualmente. <br>  <br>"
 
-#: templates/marketInfo/Results.html:6
+#: marketInfo/templates/marketInfo/Results.html:6
 msgid "Risultati di questa attivita'"
 msgstr ""
 
-#: templates/marketInfo/Short_Instructions.html:7
+#: marketInfo/templates/marketInfo/Short_Instructions.html:7
 #, python-format
 msgid ""
 "<p> Ti ricordiamo che la tua quota di mercato è tanto maggiore quanto più "
@@ -93,90 +88,90 @@ msgid ""
 "euro. </p>"
 msgstr ""
 
-#: views.py:106
+#: marketInfo/views.py:106
 msgid "a student from the same field of studies as yourself"
 msgstr "uno/a studente/essa del tuo stesso corso di studi"
 
-#: views.py:109
+#: marketInfo/views.py:109
 msgid "a social studies student"
 msgstr ""
 "uno studente/studentessa iscritto/a a Sviluppo Ecomomico e Cooperazione "
 "Internazionale"
 
-#: views.py:111
+#: marketInfo/views.py:111
 msgid "a business studies student"
 msgstr "uno studente/studentessa iscritto/a Economia Aziendale"
 
-#: views.py:142
+#: marketInfo/views.py:142
 msgid "Il prezzo non può essere più basso della qualità"
 msgstr ""
 
-#: views.py:158
+#: marketInfo/views.py:158
 msgid "Turno numero"
 msgstr ""
 
-#: views.py:159
+#: marketInfo/views.py:159
 msgid "Il prezzo che hai scelto"
 msgstr ""
 
-#: views.py:160
+#: marketInfo/views.py:160
 msgid "La qualità che hai scelto"
 msgstr ""
 
-#: views.py:162
+#: marketInfo/views.py:162
 msgid "Il prezzo scelto dall'altro giocatore"
 msgstr ""
 
-#: views.py:163
+#: marketInfo/views.py:163
 msgid "La qualità scelta dall'altro giocatore"
 msgstr ""
 
-#: views.py:165
+#: marketInfo/views.py:165
 msgid "La tua quota di mercato"
 msgstr ""
 
-#: views.py:166
+#: marketInfo/views.py:166
 msgid ""
 "Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il "
 "periodo pagato"
 msgstr ""
 
-#: views.py:167
+#: marketInfo/views.py:167
 msgid ""
 "Il <strong>beneficio sociale generato dalle tue scelte</strong> se questo "
 "fosse il periodo pagato"
 msgstr ""
 
-#: views.py:189
+#: marketInfo/views.py:189
 msgid "Periodo effettivamente pagato"
 msgstr ""
 
-#: views.py:190
+#: marketInfo/views.py:190
 msgid "Il prezzo che hai scelto nel periodo pagato"
 msgstr ""
 
-#: views.py:191
+#: marketInfo/views.py:191
 msgid "La qualità che hai scelto nel periodo pagato"
 msgstr ""
 
-#: views.py:192
+#: marketInfo/views.py:192
 msgid "Il beneficio sociale dovuto alle tue scelte"
 msgstr ""
 
-#: views.py:194
+#: marketInfo/views.py:194
 msgid "La tua quota di mercato nel periodo pagato"
 msgstr ""
 
-#: views.py:195
+#: marketInfo/views.py:195
 msgid "Il tuo guadagno in questa attività"
 msgstr ""
 
-#: views.py:202
+#: marketInfo/views.py:202
 msgid "In this activity you chose a price and a quality in a market game. "
 msgstr ""
 "In questa attività hai scelto un prezzo e una qualità in un gioco di mercato."
 
-#: views.py:214
+#: marketInfo/views.py:214
 msgid "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 msgstr ""
 

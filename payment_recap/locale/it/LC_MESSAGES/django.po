@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-27 19:15+0100\n"
+"POT-Creation-Date: 2016-02-11 10:05+0100\n"
 "PO-Revision-Date: 2016-01-27 19:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,36 +18,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:51
+#: payment_recap/models.py:51
 msgid "Total payoff"
 msgstr "Guadagno complessivo"
 
-#: models.py:55
+#: payment_recap/models.py:55
 msgid "Charity amount"
 msgstr "Cifra per associazione"
 
-#: models.py:59
+#: payment_recap/models.py:59
 msgid "Invoice amount"
 msgstr "Sulla fattura"
 
-#: templates/payment_recap/PaymentRecap.html:6
-#: templates/payment_recap/TotalPayoff.html:6
+#: payment_recap/templates/payment_recap/PaymentRecap.html:6
+#: payment_recap/templates/payment_recap/TotalPayoff.html:6
 msgid "Results"
 msgstr "Risultati"
 
-#: templates/payment_recap/PaymentRecap.html:10
+#: payment_recap/templates/payment_recap/PaymentRecap.html:10
 msgid "Summary of Activity"
 msgstr "Sommario della Attività"
 
-#: views.py:39
+#: payment_recap/views.py:39
 msgid "Your code number is"
 msgstr "Il tuo codice"
 
-#: views.py:44
+#: payment_recap/views.py:44
 msgid "Your total payoff"
 msgstr "Il tuo guadagno complessivo"
 
-#: views.py:48
+#: payment_recap/views.py:48
 msgid "Money going to charity"
 msgstr "Denaro che va alla associazione scelta"
 

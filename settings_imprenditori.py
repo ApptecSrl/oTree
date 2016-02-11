@@ -69,23 +69,22 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-#REAL_WORLD_CURRENCY_CODE = 'EUR'
-REAL_WORLD_CURRENCY_CODE = 'GBP'
+REAL_WORLD_CURRENCY_CODE = 'EUR'
 USE_POINTS = True
 
 
 # e.g. en-gb, de-de, it-it, fr-fr.
 # see: https://docs.djangoproject.com/en/1.6/topics/i18n/
-LANGUAGE_CODE = 'en-gb'
-#LANGUAGE_CODE = 'it-it'
+LANGUAGE_CODE = 'it'
 
 INSTALLED_APPS = [
     'otree',
 ]
 
-INSTALLED_APPS += [
-    'raven.contrib.django.raven_compat',
-]
+if 'SENTRY_DSN' in os.environ:
+    INSTALLED_APPS += [
+        'raven.contrib.django.raven_compat',
+    ]
 
 DEMO_PAGE_INTRO_TEXT = """
 <ul>
@@ -113,8 +112,6 @@ DEMO_PAGE_INTRO_TEXT = """
 # and also in docs for boto:
 # https://boto.readthedocs.org/en/latest/ref/mturk.html?highlight=mturk#module-boto.mturk.qualification
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
-
 mturk_hit_settings = {
     'keywords': ['easy', 'bonus', 'choice', 'study'],
     'title': 'Title for your experiment',
@@ -133,8 +130,8 @@ mturk_hit_settings = {
 }
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.04,
-    'participation_fee': 2.50,
+    'real_world_currency_per_point': 0.1,
+    'participation_fee': 15.00,
     'num_bots': 12,
     'doc': "",
     'group_by_arrival_time': False,
@@ -144,30 +141,30 @@ SESSION_CONFIG_DEFAULTS = {
 SESSION_CONFIGS = [
     {
          'name': 'public_goods',
-         'display_name': "Public Goods with final recap",
+         'display_name': "Public Goods",
          'num_demo_participants': 3,
-         'app_sequence': ['welcome_choice', 'public_goods', 'payment_recap'],
+         'app_sequence': ['public_goods', 'payment_recap'],
     },
-    # {
-    #     'name': 'bare_market',
-    #     'display_name': "Bare Market game",
-    #     #'real_world_currency_per_point': 0.25,
-    #     'num_demo_participants': 2,
-    #     'app_sequence': [
-    #         'welcome_noCharity','bare_market', 'payment_recap'
-    #     ],
-    # },
-    # {
-    #     'name': 'risk',
-    #     'display_name': "Risky choice",
-    #     'num_demo_participants': 1,
-    #     'app_sequence': ['welcome_noCharity','risk'],
-    # },
+    {
+        'name': 'bare_market',
+        'display_name': "Bare Market game",
+        #'real_world_currency_per_point': 0.25,
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_noCharity','bare_market', 'payment_recap'
+        ],
+    },
+    {
+        'name': 'risk',
+        'display_name': "Risky choice",
+        'num_demo_participants': 1,
+        'app_sequence': ['welcome_noCharity','risk'],
+    },
     {
         'name': 'risk_final_info',
         'display_name': "Risky choice with final recap",
         'num_demo_participants': 1,
-        'app_sequence': ['welcome_choice','risk', 'payment_recap'],
+        'app_sequence': ['welcome_noCharity','risk', 'payment_recap'],
     },
     # {
     #     'name': 'dictator',
@@ -175,92 +172,87 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': 2,
     #     'app_sequence': ['dictator', 'payment_recap'],
     # },
-    # {
-    #     'name': 'dic_sim',
-    #     'display_name': "Simultaneous Dictator Game",
-    #     'num_demo_participants': 2,
-    #     'app_sequence': ['welcome_noCharity','dictators_simultaneous', 'payment_recap'],
-    # },
+    {
+        'name': 'dic_sim',
+        'display_name': "Simultaneous Dictator Game",
+        'num_demo_participants': 2,
+        'app_sequence': ['welcome_noCharity','dictators_simultaneous', 'payment_recap'],
+    },
     {
         'name': 'unc_role_dic',
-        'display_name': "Role Uncertain Dictators with final recap",
+        'display_name': "Role Uncertain Dictators",
         'num_demo_participants': 2,
         'random_start_order': True,
-        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
+        'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
     },
-    # {
-    #     'name': 'marketInfo',
-    #     'display_name': "Informed Market game",
-    #     #'real_world_currency_per_point': 0.25,
-    #     'num_demo_participants': 2,
-    #     'app_sequence': [
-    #         'welcome_choice','marketInfo'
-    #     ],
-    # },
+    {
+        'name': 'marketInfo',
+        'display_name': "Informed Market game",
+        #'real_world_currency_per_point': 0.25,
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','marketInfo'
+        ],
+    },
         {
-        'name': 'Test_market',
-        'display_name': "Market game, Welcome and recap",
+        'name': 'prova_market',
+        'display_name': "Prova Market game con Welcome e recap finale",
         #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice', 'market', 'payment_recap'
         ],
     },
-    # {
-    #     'name': 'welcome_noCharity',
-    #     'display_name': "Welcome",
-    #     'num_demo_participants': 1,
-    #     'app_sequence': [
-    #         'welcome_noCharity'
-    #     ],
-    # },
     {
-        'name': 'Entrepreneurs_UK_session',
-        'display_name': "Entrepreneurs, UK session",
-        'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.076923077,
-        'participation_fee': 27.00,
+        'name': 'welcome_noCharity',
+        'display_name': "Welcome",
+        'num_demo_participants': 1,
         'app_sequence': [
-            'welcome_choice','market','risk','public_goods','role_uncertain_dictator','payment_recap'
+            'welcome_noCharity'
         ],
     },
-
     {
-        'name': 'sequenza_completa_conCharity',
-        'display_name': "Students, UK session",
+        'name': 'Entrepreneurs_sessione1',
+        'display_name': "Sessione imprenditori completa con Charity",
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],
     },
-    # {
-    #     'name': 'sequenza_corta_conCharity',
-    #     'display_name': "Sessione studenti corta con Charity",
-    #     'num_demo_participants': 2,
-    #     'app_sequence': [
-    #         'welcome_choice','market','role_uncertain_dictator','payment_recap'
-    #     ],
-    # },
-    # {
-    #     'name': 'sequenza_noCharity',
-    #     'display_name': "Sessione studenti senza charity, bare_market e role_unc_dictators",
-    #     'num_demo_participants': 2,
-    #     'app_sequence': [
-    #         'welcome_noCharity','bare_market','role_uncertain_dictator','payment_recap'
-    #     ],
-    # },
-    # {
-    #     'name': 'sequenza_Market_MarketInfo',
-    #     'display_name': "Sessione studenti con Market seguito da MarketInfo e RU_Dict",
-    #     'num_demo_participants': 2,
-    #     'app_sequence': [
-    #         'welcome_choice','market','marketInfo','role_uncertain_dictator','payment_recap'
-    #     ],
-    # },
+
+    {
+        'name': 'sequenza_completa_conCharity',
+        'display_name': "Sessione studenti completa con Charity",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
+        ],
+    },
+    {
+        'name': 'sequenza_corta_conCharity',
+        'display_name': "Sessione studenti corta con Charity",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','market','role_uncertain_dictator','payment_recap'
+        ],
+    },
+    {
+        'name': 'sequenza_noCharity',
+        'display_name': "Sessione studenti senza charity, bare_market e role_unc_dictators",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_noCharity','bare_market','role_uncertain_dictator','payment_recap'
+        ],
+    },
+    {
+        'name': 'sequenza_Market_MarketInfo',
+        'display_name': "Sessione studenti con Market seguito da MarketInfo e RU_Dict",
+        'num_demo_participants': 2,
+        'app_sequence': [
+            'welcome_choice','market','marketInfo','role_uncertain_dictator','payment_recap'
+        ],
+    },
 ]
 
 otree.settings.augment_settings(globals())
-if 'SENTRY_DSN' in os.environ:
-    SENTRY_DSN = os.environ['SENTRY_DSN']
-else:
-    SENTRY_DSN = 'http://70fb2d62c5de48739cbaca564d2c855e:29ebb03040ee4eb79eca7e359f26b627@pingu.pin.unifi.it:8002/9'
+SENTRY_DSN = 'http://c8035c27b7ba4104b126561e64b30043:fa581b618fda4bec88880a4cf10eac04@sentry.otree.org/4'

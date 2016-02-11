@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-23 18:57+0100\n"
+"POT-Creation-Date: 2016-02-11 10:05+0100\n"
 "PO-Revision-Date: 2016-01-23 18:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,40 +18,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:83
+#: public_goods/models.py:83
 msgid "The payoff of the participant who contributed 80 points would be"
 msgstr "Il guadagno del partecipante che ha contribuito 80 punti sarebbe"
 
-#: templates/public_goods/Contribute.html:6
+#: public_goods/templates/public_goods/Contribute.html:6
 msgid "Contribute"
 msgstr "Contributo"
 
-#: templates/public_goods/Contribute.html:11
+#: public_goods/templates/public_goods/Contribute.html:11
 msgid "How much will you contribute to the project (from 0 to 100)?"
 msgstr "Quanto vuoi contribuire al progetto (da 0 a 100)?"
 
-#: templates/public_goods/Feedback.html:7
+#: public_goods/templates/public_goods/Feedback.html:7
 msgid "Solution to Understanding Question 1 of 1"
 msgstr "Soluzione alla Domanda di comprensione 1 di 1"
 
-#: templates/public_goods/Feedback.html:14
+#: public_goods/templates/public_goods/Feedback.html:14
 msgid "Your answer"
 msgstr "La tua risposta"
 
-#: templates/public_goods/Feedback.html:14
+#: public_goods/templates/public_goods/Feedback.html:14
 msgid "was"
 msgstr "era"
 
-#: templates/public_goods/Feedback.html:16
+#: public_goods/templates/public_goods/Feedback.html:16
 msgid "correct"
 msgstr "corretta"
 
-#: templates/public_goods/Feedback.html:18
+#: public_goods/templates/public_goods/Feedback.html:18
 msgid "incorrect"
 msgstr "errata"
 
-#: templates/public_goods/Feedback.html:22
-#: templates/public_goods/Question.html:12
+#: public_goods/templates/public_goods/Feedback.html:22
+#: public_goods/templates/public_goods/Question.html:12
 msgid ""
 "Suppose in a group, 1 participant contributed 80 points, 1 participant "
 "contributed 40, and 1 participant contributed nothing. What would be the "
@@ -61,11 +61,11 @@ msgstr ""
 "partecipante ha contribuito 40 punti, e 1 partecipante non ha contribuito. "
 "Quale sarebbe il guadagno per il partecipante che ha contribuito 80 punti?"
 
-#: templates/public_goods/Feedback.html:29
+#: public_goods/templates/public_goods/Feedback.html:29
 msgid "<b>Solution: 100 points</b>"
 msgstr "<b>Soluzione: 100 punti</b>"
 
-#: templates/public_goods/Feedback.html:35
+#: public_goods/templates/public_goods/Feedback.html:35
 msgid ""
 "<b>Explanation:</b> Total contribution from all participants was "
 "80+40+0=120. Total earnings from the project were 120*2=240. Each "
@@ -78,18 +78,24 @@ msgstr ""
 "quantità, cioè 240/3 = 80. Quindi, il guadagno per il partecipante che ha "
 "contribuito 80 punti è stato pari a 100-80+80 = 100. "
 
-#: templates/public_goods/Instructions.html:3
+#: public_goods/templates/public_goods/Instructions.html:3
 msgid "Instructions"
 msgstr "Istruzioni"
 
-#: templates/public_goods/Instructions.html:5
-#, python-format
+#: public_goods/templates/public_goods/Instructions.html:5
+#, fuzzy, python-format
+#| msgid ""
+#| "In this study, you will be in a randomly formed group of 3 or 4 "
+#| "participants. Each participant in the group is given %(endowment)s. The "
+#| "group has the opportunity to undertake a joint project. Each participant "
+#| "in the group decides how much she or he is going to contribute to the "
+#| "project. Contribution could be any integer from 0 to %(endowment)s."
 msgid ""
-"In this study, you will be in a randomly formed group of 3 or 4 "
-"participants. Each participant in the group is given %(endowment)s. The "
-"group has the opportunity to undertake a joint project. Each participant in "
-"the group decides how much she or he is going to contribute to the project. "
-"Contribution could be any integer from 0 to %(endowment)s."
+"In this study, you will be randomly allocated to a group of 3 or 4 "
+"participants. Each participant is given %(endowment)s. The group has the "
+"opportunity to undertake a joint project. Each participant in the group "
+"decides how much she or he is going to contribute to the project. The "
+"contribution could be any (integer) number from 0 to %(endowment)s."
 msgstr ""
 "In questo studio sarai parte di un gruppo composto da 3 o 4 partecipanti "
 "selezionati casualmente. Ad ogni partecipante del gruppo sono assegnati "
@@ -98,7 +104,7 @@ msgstr ""
 "progetto. Il contributo può essere qualsiasi numero intero da 0 a "
 "%(endowment)s."
 
-#: templates/public_goods/Instructions.html:12
+#: public_goods/templates/public_goods/Instructions.html:12
 #, python-format
 msgid ""
 "The earnings from the project are calculated as follows: The contributions "
@@ -116,7 +122,7 @@ msgstr ""
 "guadagno derivante dal progetto, più i punti che inizialmente hai trattenuto "
 "per te. "
 
-#: templates/public_goods/Instructions.html:19
+#: public_goods/templates/public_goods/Instructions.html:19
 msgid ""
 "For your convenience, these instructions will remain available to you on all "
 "subsequent screens of this study."
@@ -124,11 +130,11 @@ msgstr ""
 "Per comodità queste istruzioni rimarranno disponibili in tutte le successive "
 "schermate. "
 
-#: templates/public_goods/Introduction.html:7
+#: public_goods/templates/public_goods/Introduction.html:7
 msgid "Introduction"
 msgstr "Introduzione"
 
-#: templates/public_goods/Introduction.html:16
+#: public_goods/templates/public_goods/Introduction.html:16
 msgid ""
 "On the next page, you will have to answer one question to make sure you "
 "understand the instructions correctly."
@@ -136,23 +142,23 @@ msgstr ""
 "Nella prossima pagina dovrai rispondere a una domanda, assicurati quindi di "
 "aver letto e compreso correttamente le istruzioni."
 
-#: templates/public_goods/Question.html:7
+#: public_goods/templates/public_goods/Question.html:7
 msgid "Understanding Question 1 of 1"
 msgstr "Domanda di comprensione 1 di 1"
 
-#: templates/public_goods/Question.html:18
+#: public_goods/templates/public_goods/Question.html:18
 msgid "His payoff would be"
 msgstr "Il suo guadagno sarebbe"
 
-#: templates/public_goods/Results.html:7
+#: public_goods/templates/public_goods/Results.html:7
 msgid "Results"
 msgstr "Risultati"
 
-#: views.py:64
+#: public_goods/views.py:64
 msgid "Activity n.{}"
 msgstr "Attività n.{}"
 
-#: views.py:72
+#: public_goods/views.py:72
 msgid ""
 "Suppose in a group, 1 participant contributed 80 points,     1 participant "
 "contributed 40, and 1 participant contributed nothing.     What would be the "
@@ -162,15 +168,15 @@ msgstr ""
 "partecipante ha contribuito 40 punti, e 1 partecipante non ha contribuito. "
 "Quale sarebbe il guadagno per il partecipante che ha contribuito 80 punti?"
 
-#: views.py:97
+#: public_goods/views.py:97
 msgid "Payoff"
 msgstr "Guadagno"
 
-#: views.py:100
+#: public_goods/views.py:100
 msgid "<br><strong>Question: </strong>"
 msgstr "<br><strong>Domanda: </strong>"
 
-#: views.py:101
+#: public_goods/views.py:101
 msgid ""
 "<br><br><strong>Solution: </strong>Total contribution from all "
 "participants                 was 80+40+0 = 120. Total earnings from the "
@@ -185,45 +191,45 @@ msgstr ""
 "quantità, cioè 240/3 = 80. Quindi, il guadagno per il partecipante che ha "
 "contribuito 80 punti è stato pari a 100-80+80 = 100. "
 
-#: views.py:139
+#: public_goods/views.py:139
 msgid "Waiting for other participants to contribute."
 msgstr "In attesa dei contributi degli altri partecipanti"
 
-#: views.py:154
+#: public_goods/views.py:154
 msgid "You contributed"
 msgstr "Il tuo contributo"
 
-#: views.py:155
+#: public_goods/views.py:155
 msgid "Other participants contributed"
 msgstr "Contributi degli altri partecipanti: "
 
-#: views.py:160
+#: public_goods/views.py:160
 msgid "Total contribution"
 msgstr "Contributi totali"
 
-#: views.py:162
+#: public_goods/views.py:162
 msgid "Total earnings from the project"
 msgstr "Guadagni totali dal progetto"
 
-#: views.py:163
+#: public_goods/views.py:163
 msgid "Your earnings from the project"
 msgstr "Il tuo guadagno dal progetto"
 
-#: views.py:165
+#: public_goods/views.py:165
 msgid "Your payoff in this activity"
 msgstr "Il tuo profitto in questa attività"
 
-#: views.py:168
+#: public_goods/views.py:168
 msgid "Public goods game"
 msgstr "Gioco di contribuzione a un bene pubblico"
 
-#: views.py:171
+#: public_goods/views.py:171
 msgid "In this activity you chose how much to contribute to a joint project. "
 msgstr ""
 "In questa attività hai scelto quanto contribuire ad un progetto congiunto "
 "con altri partecipanti"
 
-#: views.py:182
+#: public_goods/views.py:182
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 

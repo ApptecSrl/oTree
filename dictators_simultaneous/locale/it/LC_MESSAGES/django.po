@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_dictator_sim\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 19:07+0100\n"
+"POT-Creation-Date: 2016-02-11 10:05+0100\n"
 "PO-Revision-Date: 2015-11-15 18:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: models.py:92
+#: dictators_simultaneous/models.py:92
 msgid "Your payoff would be"
 msgstr "Il tuo guadagno sarebbe"
 
-#: models.py:94
+#: dictators_simultaneous/models.py:94
 msgid "The other participant's payoff would be"
 msgstr "Il guadagno dell'altro partecipante sarebbe"
 
-#: models.py:99
+#: dictators_simultaneous/models.py:99
 #, python-format
 msgid "I will keep (from 0 to %i)"
 msgstr "Terrò per me (da 0 a %i)"
 
-#: templates/dictators_simultaneous/Feedback.html:6
-#| msgid ""
-#| "<p> <strong>Solution:</strong> Payoffs for you would be <strong>88 "
-#| "points</strong> and <strong>12 points</strong> for the other participant. "
-#| "</p>"
+#: dictators_simultaneous/templates/dictators_simultaneous/Feedback.html:6
 msgid ""
 "<p> <strong>Solution:</strong> Payoffs for you would be <strong>58 points</"
 "strong> and <strong>42 points</strong> for the other participant. </p>"
@@ -44,12 +40,16 @@ msgstr ""
 "punti</strong> e per l'altro partecipante sarebbe di <strong>42 punti</"
 "strong>. </p>"
 
-#: templates/dictators_simultaneous/Instructions.html:6
-#, python-format
+#: dictators_simultaneous/templates/dictators_simultaneous/Instructions.html:6
+#, fuzzy, python-format
+#| msgid ""
+#| "<p> You will be paired randomly and anonymously ... </p> <p> There are "
+#| "%(total)s to split. You have to decide decide how many points she or he "
+#| "will retain. The rest will go to the other participant. </p>"
 msgid ""
-"<p> You will be paired randomly and anonymously ... </p> <p> There are "
-"%(total)s to split. You have to decide decide how many points she or he will "
-"retain. The rest will go to the other participant. </p>"
+"You will be paired randomly and anonymously ... There are %(total)s to "
+"split. You have to decide decide how many points she or he will retain. The "
+"rest will go to the other participant."
 msgstr ""
 "<p> In questa attività sei associato in modo casuale ed anonimo ad un altro "
 "partecipante (non presente in questa stanza). </p> <p> Ci sono %(total)s da "
@@ -57,18 +57,15 @@ msgstr ""
 "per te e quanti invece assegnarne all'altro partecipante. </p><p>In questa "
 "attività non sarai sottoposto a nessuna domanda di controllo.</p>"
 
-#: templates/dictators_simultaneous/Offer.html:5
+#: dictators_simultaneous/templates/dictators_simultaneous/Offer.html:5
 msgid "Your Decision"
 msgstr "La tua decisione"
 
-#: templates/dictators_simultaneous/Offer.html:10
+#: dictators_simultaneous/templates/dictators_simultaneous/Offer.html:10
 msgid "<p> Please decide how many points you will keep for yourself. </p>"
 msgstr "<p> Per favore decidi quanti punti tenere per te. </p>"
 
-#: templates/dictators_simultaneous/Question.html:2
-#| msgid ""
-#| "<p> Suppose you decided to retain 88 points. What would be the payoffs "
-#| "for yourself and the other participant respectively? </p>"
+#: dictators_simultaneous/templates/dictators_simultaneous/Question.html:2
 msgid ""
 "<p> Suppose you decided to retain 58 points. What would be the payoffs for "
 "yourself and the other participant respectively? </p>"
@@ -76,27 +73,27 @@ msgstr ""
 "<p> Supponi di tenerti 58 punti. Quale sarebbe il guadagno per te e l'altro "
 "partecipante rispettivamente? </p>"
 
-#: views.py:42
+#: dictators_simultaneous/views.py:49
 msgid "payoff for you"
 msgstr "guadagno per te"
 
-#: views.py:43
+#: dictators_simultaneous/views.py:50
 msgid "payoff for the other participant"
 msgstr "guadagno per l'altro partecipante"
 
-#: views.py:117
+#: dictators_simultaneous/views.py:124
 msgid "Another participant decided to offer you"
 msgstr "Un altro partecipante ha deciso di offrirti"
 
-#: views.py:118
+#: dictators_simultaneous/views.py:125
 msgid "You kept for yourself"
 msgstr "Hai tenuto per te"
 
-#: views.py:122
+#: dictators_simultaneous/views.py:129
 msgid "Your payoff in this activity"
 msgstr "Il tuo profitto in questa attività"
 
-#: views.py:128
+#: dictators_simultaneous/views.py:135
 msgid ""
 "In this activity you chose how to split a given amount between yourself and "
 "another partecipant. In addition a third participant decided how to split "
@@ -106,7 +103,7 @@ msgstr ""
 "altro partecipante. Inoltre un terzo partecipante ha scelto come suddividere "
 "una somma di stessa entità tra sé stesso e te."
 
-#: views.py:139
+#: dictators_simultaneous/views.py:146
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 
