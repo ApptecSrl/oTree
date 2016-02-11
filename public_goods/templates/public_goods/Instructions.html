@@ -3,9 +3,9 @@
     <h4>{% trans "Instructions" %}</h4>
     <p>
         {% blocktrans trimmed with endowment=Constants.endowment  %}
-            In this study, you will be in a randomly formed group of 3 or 4 participants. Each participant in the group is given {{ endowment }}. The group
+            In this study, you will be randomly allocated to a group of 3 or 4 participants. Each participant is given {{ endowment }}. The group
             has the opportunity to undertake a joint project. Each participant in the group decides how much she or he is going to contribute to
-            the project. Contribution could be any integer from 0 to {{ endowment }}.
+            the project. The contribution could be any (integer) number from 0 to {{ endowment }}.
         {% endblocktrans %}
     </p>
     <p>

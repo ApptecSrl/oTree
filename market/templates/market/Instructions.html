@@ -7,13 +7,14 @@
 {% blocktrans trimmed %}
 <p> You are about to participate in a market game, together with another participant who has been randomly associated with you.
     You represent two firms competing against each other. You produce a fictional good and you are responsible for choosing
-    its <strong>selling price</strong> and its <strong>social quality</strong>, that is the type of external effect due to its production.
+    its <strong>selling price</strong> and its <strong>social quality</strong>, that is the external effect of its production.
     For example, you may think of choosing production inputs with a better environmental or social impact  (e.g. materials that involve less pollution,
-    no child labour, etc.). More social quality implies greater production costs.</p>
-<p> Each firm's <strong>market share</strong> is automatically determined by the computer, using
- a mathematical algorithm which mimics the realistic preferences of consumers having a given degree of social consciousness.
-A firm's market share is higher, the higher the produced good's social quality and the lower its price. At the same time, it is increasing in
-    the competitor's selling price and decreasing in its social quality. The following table summarizes these relations. </p>
+    no child labour, etc.). In this game more social quality implies greater production costs.</p>
+<p> Each firm's <strong>market share</strong> is determined by the computer, using
+ a mathematical algorithm which mimics the preferences of consumers with a particular degree of social consciousness.
+The higher a good's social quality and the lower its price the higher is the firm's market share.
+At the same time, the market share increases
+    with the competitor's selling price and decreases with in its social quality. The following table summarizes these relations. </p>
 {% endblocktrans %}
 
 <p>
@@ -47,8 +48,8 @@ A firm's market share is higher, the higher the produced good's social quality a
 {% blocktrans trimmed %}
 <p> The quality can be any integer number between 0 and 400: higher numbers mean higher quality (and hence higher production costs).
 The price can be any integer number between the chosen quality and 400. The market share will be a percentage between 0% and 100%.
-The game will last for 10 consecutive rounds in which you will be facing the same competitor. The algorithm that determines the market shares also remains
-the same throughout the whole game. At each round the firm's profit earned by yourself and your competitor will be equal to:</p>
+The game will last for 10 consecutive rounds in which you will be facing the same competitor. The algorithm that determines the relative market shares remains
+the same throughout the whole game. At each round each firm's profit, earned by yourself and your competitor, will be equal to:</p>
 {% endblocktrans %}
 
 <p>
@@ -70,10 +71,10 @@ the same throughout the whole game. At each round the firm's profit earned by yo
 <p>
 {% blocktrans trimmed %}
 <p> Notice that a unit increase in the good's quality generates an increase in social contribution which is proportionally higher than the
-cost increase (this is due to the multiplicative factor 1.5 in the formula). </p>
-<p> Between each round and the next both players will be notified qualities and prices and the resulting market shares. Your profit and social contribution
-will also be shown. At the end of the game one specific round will be randomly selected and the points you earned in that period, both in terms of
-profit and social contribution, will be transformed in cash. The money corresponding to the social contribution in the paying period will be transferred to the charity of your choice.
+cost increase (this is due to the coefficient equal to 1.5 in the formula). </p>
+<p> Between each round players will be notified of both player's qualities and prices and their resulting market shares. Your profit and social contribution
+will also be shown. At the end of the game one round will be randomly selected and the points you earned in that period, both in terms of
+profit and social contribution, will be transformed into cash. The money corresponding to the social contribution for that period will be transferred to the charity of your choice.
 </p>
 {% endblocktrans %}
 {% endblock %}

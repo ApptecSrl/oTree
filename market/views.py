@@ -213,8 +213,8 @@ class Question3(Page):
     form_fields = ['training_correct_answer_3']
     question = mark_safe(_(u'''Consider the following hypothetical situation. In the previous period you chose\
                 a quality of 100 and a price of 300. Your market share was 20%.\
-                Now you choose to lower your price to 200 while leaving the quality to 100.\
-                Your competitor makes the same choices of the previous period.\
+                Now you choose to lower your price to 200 while leaving quality at 100.\
+                Your competitor makes the same choices as the previous period.\
                 Which of the following statements is correct?''') + _('''<br><br>\
                  <strong>(1)</strong> My market share will certainly decrease.<br>\
                  <strong>(2)</strong> My market share will certainly increase.<br>\
@@ -247,8 +247,8 @@ class Feedback3(Page):
                 _('''<br><strong>Question: </strong>''') + Question3.question\
                 + _('''<br><br><strong>Solution: </strong>Answer nr. 2 is correct.''')\
                 + _(u'''<br><br><strong>Explanation: </strong> Answer n. 1 is wrong\
-                because your market share depends negatively on your price.\
-                For the same reason Answer n. 1 is correct. Lowering your price\
+                because your market share decreases when your price increases and vice versa.\
+                For the same reason Answer n. 1 is correct. Lowering your price,\
                 leaving all the other variables unchanged, increases  your market share.\
                 Answer n. 3 is wrong because your competitor makes the same choices,\
                 hence those choices cannot influence the change in the market shares\

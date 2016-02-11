@@ -90,7 +90,7 @@ class Results(Page):
             'label': 'Dictator game',
             'results': payment_result,
             'table': result_table,
-            'description': _(u'In this activity you chose how to split a given amount between yourself and another partecipant. In addition a third participant decided how to split the same amount between him/herself and you. '),
+            'description': _(u'In this activity you chose how to split a given amount between yourself and another participant. In addition a third participant decided how to split the same amount between him/herself and you. '),
         }
 
         # store dictator payment result in player session
