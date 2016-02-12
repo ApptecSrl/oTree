@@ -77,7 +77,7 @@ USE_POINTS = True
 # e.g. en-gb, de-de, it-it, fr-fr.
 # see: https://docs.djangoproject.com/en/1.6/topics/i18n/
 LANGUAGE_CODE = 'en-gb'
-#LANGUAGE_CODE = 'it-it'
+# LANGUAGE_CODE = 'it-it'
 
 INSTALLED_APPS = [
     'otree',
@@ -113,8 +113,6 @@ DEMO_PAGE_INTRO_TEXT = """
 # and also in docs for boto:
 # https://boto.readthedocs.org/en/latest/ref/mturk.html?highlight=mturk#module-boto.mturk.qualification
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
-
 mturk_hit_settings = {
     'keywords': ['easy', 'bonus', 'choice', 'study'],
     'title': 'Title for your experiment',
@@ -144,9 +142,9 @@ SESSION_CONFIG_DEFAULTS = {
 SESSION_CONFIGS = [
     {
          'name': 'public_goods',
-         'display_name': "Public Goods with final recap",
+         'display_name': "Public Goods",
          'num_demo_participants': 3,
-         'app_sequence': ['welcome_choice', 'public_goods', 'payment_recap'],
+         'app_sequence': ['public_goods', 'payment_recap'],
     },
     # {
     #     'name': 'bare_market',
@@ -167,7 +165,7 @@ SESSION_CONFIGS = [
         'name': 'risk_final_info',
         'display_name': "Risky choice with final recap",
         'num_demo_participants': 1,
-        'app_sequence': ['welcome_choice','risk', 'payment_recap'],
+        'app_sequence': ['welcome_noCharity','risk', 'payment_recap'],
     },
     # {
     #     'name': 'dictator',
@@ -183,10 +181,10 @@ SESSION_CONFIGS = [
     # },
     {
         'name': 'unc_role_dic',
-        'display_name': "Role Uncertain Dictators with final recap",
+        'display_name': "Role Uncertain Dictators",
         'num_demo_participants': 2,
         'random_start_order': True,
-        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
+        'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
     },
     # {
     #     'name': 'marketInfo',
@@ -198,7 +196,7 @@ SESSION_CONFIGS = [
     #     ],
     # },
         {
-        'name': 'Test_market',
+        'name': 'prova_market',
         'display_name': "Market game, Welcome and recap",
         #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
@@ -226,11 +224,11 @@ SESSION_CONFIGS = [
     },
 
     {
-        'name': 'sequenza_completa_conCharity',
+        'name': 'Students_UK_session',
         'display_name': "Students, UK session",
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
+            'welcome_choice','market','risk','public_goods','role_uncertain_dictator','payment_recap'
         ],
     },
     # {
