@@ -141,12 +141,12 @@ SESSION_CONFIG_DEFAULTS = {
     'mturk_hit_settings': mturk_hit_settings,
 }
 
-SESSION_CONFIGS = (
+SESSION_CONFIGS = [
     {
-        'name': 'public_goods',
-        'display_name': "Public Goods with final recap",
-        'num_demo_participants': 3,
-        'app_sequence': ['welcome_choice', 'public_goods', 'payment_recap'],
+         'name': 'public_goods',
+         'display_name': "Public Goods with final recap",
+         'num_demo_participants': 3,
+         'app_sequence': ['welcome_choice', 'public_goods', 'payment_recap'],
     },
     # {
     #     'name': 'bare_market',
@@ -167,7 +167,7 @@ SESSION_CONFIGS = (
         'name': 'risk_final_info',
         'display_name': "Risky choice with final recap",
         'num_demo_participants': 1,
-        'app_sequence': ['welcome_choice', 'risk', 'payment_recap'],
+        'app_sequence': ['welcome_choice','risk', 'payment_recap'],
     },
     # {
     #     'name': 'dictator',
@@ -186,7 +186,7 @@ SESSION_CONFIGS = (
         'display_name': "Role Uncertain Dictators with final recap",
         'num_demo_participants': 2,
         'random_start_order': True,
-        'app_sequence': ['welcome_choice', 'role_uncertain_dictator', 'payment_recap'],
+        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
     },
     # {
     #     'name': 'marketInfo',
@@ -197,10 +197,10 @@ SESSION_CONFIGS = (
     #         'welcome_choice','marketInfo'
     #     ],
     # },
-    {
+        {
         'name': 'Test_market',
         'display_name': "Market game, Welcome and recap",
-        # 'real_world_currency_per_point': 0.25,
+        #'real_world_currency_per_point': 0.25,
         'num_demo_participants': 2,
         'app_sequence': [
             'welcome_choice', 'market', 'payment_recap'
@@ -221,7 +221,7 @@ SESSION_CONFIGS = (
         'real_world_currency_per_point': 0.076923077,
         'participation_fee': 27.00,
         'app_sequence': [
-            'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'payment_recap'
+            'welcome_choice','market','risk','public_goods','role_uncertain_dictator','payment_recap'
         ],
     },
 
@@ -230,7 +230,7 @@ SESSION_CONFIGS = (
         'display_name': "Students, UK session",
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_choice', 'market', 'risk', 'public_goods', 'dictators_simultaneous', 'payment_recap'
+            'welcome_choice','market','risk','public_goods','dictators_simultaneous','payment_recap'
         ],
     },
     # {
@@ -257,7 +257,7 @@ SESSION_CONFIGS = (
     #         'welcome_choice','market','marketInfo','role_uncertain_dictator','payment_recap'
     #     ],
     # },
-)
+]
 
 otree.settings.augment_settings(globals())
 if 'SENTRY_DSN' in os.environ:
