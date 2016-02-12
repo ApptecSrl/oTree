@@ -61,7 +61,7 @@ class Results(Page):
 
     def vars_for_template(self):
         if self.player.payoff == self.player.kept:
-            self.player.stringRole=_('giver')
+            self.player.stringRole=_('decider')
         else:
             self.player.stringRole=_('receiver')
         payment_result = {
