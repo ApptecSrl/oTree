@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from django.utils.translation import ugettext as _
-
+from django.conf import settings
 from otree.common import Currency as c
 from ._builtin import Page, WaitPage
+from django.conf import settings
 
 
 class PaymentRecap(Page):
@@ -22,7 +23,12 @@ class PaymentRecap(Page):
         self.player.total_money_to_charity = c(self.retreive_charity_impact())\
             .to_real_world_currency(self.session)
         self.player.participant.vars['charity'] = self.player.total_money_to_charity
-        self.player.invoice=(self.player.total_payoff+self.player.total_money_to_charity)/0.8
+        # set the invoice amount, if in Italy must include taxes
+        if settings.LANGUAGE_CODE=='it-it':
+           tax = 0.8
+        else:
+            tax = 1
+        self.player.invoice=(self.player.total_payoff+self.player.total_money_to_charity)/tax
         self.player.participant.vars['invoice'] = self.player.invoice
         self.player.save()
 
