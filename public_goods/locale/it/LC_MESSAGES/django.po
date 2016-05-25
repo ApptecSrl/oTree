@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Otree\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-11 10:05+0100\n"
-"PO-Revision-Date: 2016-05-25 15:17+0100\n"
+"PO-Revision-Date: 2016-01-23 18:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: Italian\n"
@@ -83,7 +83,7 @@ msgid "Instructions"
 msgstr "Istruzioni"
 
 #: public_goods/templates/public_goods/Instructions.html:5
-#, python-format
+#, fuzzy, python-format
 #| msgid ""
 #| "In this study, you will be in a randomly formed group of 3 or 4 "
 #| "participants. Each participant in the group is given %(endowment)s. The "

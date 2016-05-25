@@ -9,7 +9,7 @@
 
 {% blocktrans with num_q=num_q|default:1 total_q=total_q|default:1 %}
 
-Domanda di Comprensione {{ num_q }} di {{ total_q }}
+Understanding Question {{ num_q }} of {{ total_q }}
 {% endblocktrans %}
 
 {% endif %}
@@ -35,5 +35,3 @@ Domanda di Comprensione {{ num_q }} di {{ total_q }}
 <p>{% next_button %}</p>
 {% include instructions %}
 {% endblock %}
-
- <!--Understanding Question {{ num_q }} of {{ total_q }}-->
