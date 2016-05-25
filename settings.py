@@ -131,7 +131,7 @@ mturk_hit_settings = {
         #qualification.Requirement('YOUR_QUALIFICATION_ID_HERE', 'DoesNotExist')
     ]
 }
-
+#maremmaserpente
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.05,
     'participation_fee': 3.00,
