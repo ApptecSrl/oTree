@@ -113,7 +113,7 @@ DEMO_PAGE_INTRO_TEXT = """
 # and also in docs for boto:
 # https://boto.readthedocs.org/en/latest/ref/mturk.html?highlight=mturk#module-boto.mturk.qualification
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+#LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 mturk_hit_settings = {
     'keywords': ['easy', 'bonus', 'choice', 'study'],
@@ -133,7 +133,7 @@ mturk_hit_settings = {
 }
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.04,
+    'real_world_currency_per_point': 0.05,
     'participation_fee': 3.00,
     'num_bots': 12,
     'doc': "",
