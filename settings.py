@@ -243,10 +243,10 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'sequenza_noCharity',
-        'display_name': "Sessione studenti senza charity, bare_market e public_goods",
+        'display_name': "Sessione studenti senza charity, bare_market, public_goods e ru_dictator",
         'num_demo_participants': 2,
         'app_sequence': [
-            'welcome_noCharity','bare_market','public_goods','payment_recap'
+            'welcome_noCharity','bare_market','public_goods','role_uncertain_dictator','payment_recap'
         ],
     },
     {
