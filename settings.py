@@ -163,12 +163,12 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': 1,
     #     'app_sequence': ['welcome_noCharity','risk'],
     # },
-    {
-        'name': 'risk_final_info',
-        'display_name': "Risky choice with final recap",
-        'num_demo_participants': 1,
-        'app_sequence': ['welcome_noCharity','risk', 'payment_recap'],
-    },
+    # {
+    #     'name': 'risk_final_info',
+    #     'display_name': "Risky choice with final recap",
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['welcome_noCharity','risk', 'payment_recap'],
+    # },
     # {
     #     'name': 'dictator',
     #     'display_name': "Dictator Game",
