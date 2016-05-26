@@ -197,15 +197,15 @@ SESSION_CONFIGS = [
     #         'welcome_choice','marketInfo'
     #     ],
     # },
-        {
-        'name': 'Test_market',
-        'display_name': "Market game, Welcome and recap",
-        #'real_world_currency_per_point': 0.25,
-        'num_demo_participants': 2,
-        'app_sequence': [
-            'welcome_choice', 'market', 'payment_recap'
-        ],
-    },
+    #     {
+    #     'name': 'Test_market',
+    #     'display_name': "Market game, Welcome and recap",
+    #     #'real_world_currency_per_point': 0.25,
+    #     'num_demo_participants': 2,
+    #     'app_sequence': [
+    #         'welcome_choice', 'market', 'payment_recap'
+    #     ],
+    # },
     # {
     #     'name': 'welcome_noCharity',
     #     'display_name': "Welcome",
