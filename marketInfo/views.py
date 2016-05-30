@@ -97,19 +97,27 @@ class Info(Page):
         return self.subsession.round_number == 1
 
     def vars_for_template(self):
-
         myType = self.player.participant.vars['kind']
         for p in self.player.get_others_in_group():
-            other_type=p.participant.vars['kind']
-        print 'My ', myType, ' Other ', other_type
-        if (myType%2==other_type%2):
-            esito=mark_safe(_('a student from the same field of studies as yourself'))
+            other_type = p.participant.vars['kind']
+        if 'treatment' in self.session.config:
+            temp=self.session.config['treatment']
+            print 'temp = ', temp
+            if (temp=='imprenditori'):
+                if (other_type % 2):
+                    esito = mark_safe(_('(Un imprenditore/imprenditrice tradizionale'))
+                else:
+                    esito = mark_safe(_('Un imprenditore/imprenditrice sociale'))
         else:
-            if other_type%2==0:
-                esito=mark_safe(_('a social studies student'))
+            print 'My ', myType, ' Other ', other_type
+            if (myType%2==other_type%2):
+                esito=mark_safe(_('a student from the same field of studies as yourself'))
             else:
-                esito=mark_safe(_('a business studies student')
-)
+                if other_type%2==0:
+                    esito=mark_safe(_('a social studies student'))
+                else:
+                    esito=mark_safe(_('a business studies student')
+    )
         return {
             'esito': esito
         }

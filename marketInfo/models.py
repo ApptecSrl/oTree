@@ -23,7 +23,7 @@ doc = """
 class Constants(otree.constants.BaseConstants):
     players_per_group = 2
     name_in_url = 'marketInfo'
-    num_rounds = 10
+    num_rounds = 5
     bonus = c(0)
     maximum_price = c(400)
     alpha = 1.5
@@ -36,7 +36,7 @@ class Subsession(otree.models.BaseSubsession):
         if self.round_number == 1:
 
             random.jumpahead(10)
-            paying_round = random.randint(Constants.num_rounds / 2, Constants.num_rounds)
+            paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round_Info'] = paying_round
 
 
