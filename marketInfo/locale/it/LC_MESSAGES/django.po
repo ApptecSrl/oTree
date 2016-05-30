@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_market\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-11 10:05+0100\n"
-"PO-Revision-Date: 2016-01-14 20:02+0100\n"
+"POT-Creation-Date: 2016-05-30 16:29+0200\n"
+"PO-Revision-Date: 2016-05-30 16:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: marketInfo/models.py:88 marketInfo/models.py:93
+#: models.py:88 models.py:93
 msgid "My profit would be"
 msgstr "Il mio profitto sarebbe"
 
-#: marketInfo/models.py:90 marketInfo/models.py:95
+#: models.py:90 models.py:95
 msgid "My social contribution would be"
 msgstr "Il beneficio sociale della mia produzione sarebbe"
 
-#: marketInfo/models.py:100
+#: models.py:100
 msgid "The correct answer is"
 msgstr "La risposta corretta è"
 
-#: marketInfo/templates/marketInfo/Decide.html:10
+#: templates/marketInfo/Decide.html:10
 msgid "Scegli la tua qualità e il tuo prezzo"
 msgstr "Scegli la tua qualità e il tuo prezzo"
 
-#: marketInfo/templates/marketInfo/Decide.html:10
+#: templates/marketInfo/Decide.html:10
 msgid " - Turno"
 msgstr " - Turno"
 
-#: marketInfo/templates/marketInfo/Decide.html:10
+#: templates/marketInfo/Decide.html:10
 msgid "di"
 msgstr ""
 
-#: marketInfo/templates/marketInfo/Info.html:10
+#: templates/marketInfo/Info.html:10
 #, python-format
 msgid ""
 "For this specific activity, during its %(num_rounds)s rounds, you have been "
@@ -52,23 +52,29 @@ msgstr ""
 "%(num_rounds)s turni, sei stato associato con: <br> <br> <strong>%(esito)s</"
 "strong>  <br>  <br>"
 
-#: marketInfo/templates/marketInfo/Instructions.html:7
+#: templates/marketInfo/Instructions.html:7
+#| msgid ""
+#| "This activity is exactly the same as the previous one. The only "
+#| "difference will be that you will be informed of the course of studies of "
+#| "your competitor (in the following screen). Your new competitor will in "
+#| "any case be selected afresh at random. <br>  <br>"
 msgid ""
-"This activity is exactly the same as the previous one. The only difference "
-"will be that you will be informed of the course of studies of your "
-"competitor (in the following screen). Your new competitor will in any case "
-"be selected afresh at random. <br>  <br>"
+"This activity is exactly the same as the very first one. The only difference "
+"will be that you will be informed of the type of your competitor (in the "
+"following screen). Your new competitor will in any case be selected afresh "
+"at random. <br>  <br>"
 msgstr ""
-"Questa attività è identica alla precedente. L'unica differenza è che ogni "
-"partecipante è informato del corso di laurea frequentato dal suo rivale "
+"Questa attività è identica alla prima attività. L'unica differenza è che "
+"ogni partecipante riceve una informazione riguardante il proprio rivale "
 "(nella prossima schermata).  Il nuovo rivale sarà in ogni caso di nuovo "
-"selezionato casualmente. <br>  <br>"
+"selezionato casualmente e sarà differente dal primo. Tutto il resto "
+"dell'attività rimane invariato. <br>  <br>"
 
-#: marketInfo/templates/marketInfo/Results.html:6
+#: templates/marketInfo/Results.html:6
 msgid "Risultati di questa attivita'"
 msgstr ""
 
-#: marketInfo/templates/marketInfo/Short_Instructions.html:7
+#: templates/marketInfo/Short_Instructions.html:7
 #, python-format
 msgid ""
 "<p> Ti ricordiamo che la tua quota di mercato è tanto maggiore quanto più "
@@ -88,90 +94,98 @@ msgid ""
 "euro. </p>"
 msgstr ""
 
-#: marketInfo/views.py:106
+#: views.py:108
+msgid "(Un imprenditore o imprenditrice tradizionale"
+msgstr ""
+
+#: views.py:110
+msgid "Un imprenditore o imprenditrice sociale"
+msgstr ""
+
+#: views.py:114
 msgid "a student from the same field of studies as yourself"
 msgstr "uno/a studente/essa del tuo stesso corso di studi"
 
-#: marketInfo/views.py:109
+#: views.py:117
 msgid "a social studies student"
 msgstr ""
 "uno studente/studentessa iscritto/a a Sviluppo Ecomomico e Cooperazione "
 "Internazionale"
 
-#: marketInfo/views.py:111
+#: views.py:119
 msgid "a business studies student"
 msgstr "uno studente/studentessa iscritto/a Economia Aziendale"
 
-#: marketInfo/views.py:142
+#: views.py:150
 msgid "Il prezzo non può essere più basso della qualità"
 msgstr ""
 
-#: marketInfo/views.py:158
+#: views.py:166
 msgid "Turno numero"
 msgstr ""
 
-#: marketInfo/views.py:159
+#: views.py:167
 msgid "Il prezzo che hai scelto"
 msgstr ""
 
-#: marketInfo/views.py:160
+#: views.py:168
 msgid "La qualità che hai scelto"
 msgstr ""
 
-#: marketInfo/views.py:162
+#: views.py:170
 msgid "Il prezzo scelto dall'altro giocatore"
 msgstr ""
 
-#: marketInfo/views.py:163
+#: views.py:171
 msgid "La qualità scelta dall'altro giocatore"
 msgstr ""
 
-#: marketInfo/views.py:165
+#: views.py:173
 msgid "La tua quota di mercato"
 msgstr ""
 
-#: marketInfo/views.py:166
+#: views.py:174
 msgid ""
 "Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il "
 "periodo pagato"
 msgstr ""
 
-#: marketInfo/views.py:167
+#: views.py:175
 msgid ""
 "Il <strong>beneficio sociale generato dalle tue scelte</strong> se questo "
 "fosse il periodo pagato"
 msgstr ""
 
-#: marketInfo/views.py:189
+#: views.py:197
 msgid "Periodo effettivamente pagato"
 msgstr ""
 
-#: marketInfo/views.py:190
+#: views.py:198
 msgid "Il prezzo che hai scelto nel periodo pagato"
 msgstr ""
 
-#: marketInfo/views.py:191
+#: views.py:199
 msgid "La qualità che hai scelto nel periodo pagato"
 msgstr ""
 
-#: marketInfo/views.py:192
+#: views.py:200
 msgid "Il beneficio sociale dovuto alle tue scelte"
 msgstr ""
 
-#: marketInfo/views.py:194
+#: views.py:202
 msgid "La tua quota di mercato nel periodo pagato"
 msgstr ""
 
-#: marketInfo/views.py:195
+#: views.py:203
 msgid "Il tuo guadagno in questa attività"
 msgstr ""
 
-#: marketInfo/views.py:202
+#: views.py:210
 msgid "In this activity you chose a price and a quality in a market game. "
 msgstr ""
 "In questa attività hai scelto un prezzo e una qualità in un gioco di mercato."
 
-#: marketInfo/views.py:214
+#: views.py:222
 msgid "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 msgstr ""
 
