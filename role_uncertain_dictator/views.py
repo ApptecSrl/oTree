@@ -58,7 +58,7 @@ class ResultsWaitPage(WaitPage):
 class Results(Page):
     template_name = 'global/ResultsTable.html'
 
-
+    timeout_seconds = Constants.timeout_r
     def vars_for_template(self):
         if self.player.payoff == self.player.kept:
             self.player.stringRole=_('decider')

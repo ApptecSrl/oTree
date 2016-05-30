@@ -23,15 +23,16 @@ Simple lottery to infer risk attitudes
 
 
 class Constants(BaseConstants):
+
     name_in_url = 'risk'
     players_per_group = None
     num_rounds = 1
     endowment = c(100)
     returnRate = 2.5
     prob = 0.5
-
-    # define more constants here
-
+    timeout_q = 80
+    timeout_f = 60
+    timeout_r = 20
 
 class Subsession(BaseSubsession):
     pass

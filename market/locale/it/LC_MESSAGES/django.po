@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Otree_market\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-11 10:05+0100\n"
-"PO-Revision-Date: 2016-01-28 09:40+0100\n"
+"POT-Creation-Date: 2016-05-30 10:20+0200\n"
+"PO-Revision-Date: 2016-05-30 10:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -18,57 +18,56 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: market/models.py:86 market/models.py:91
+#: models.py:86 models.py:91
 msgid "My profit would be"
 msgstr "Il mio profitto sarebbe"
 
-#: market/models.py:88 market/models.py:93
+#: models.py:88 models.py:93
 msgid "My social contribution would be"
 msgstr "Il beneficio sociale della mia produzione sarebbe"
 
-#: market/models.py:98
+#: models.py:98
 msgid "The correct answer is"
 msgstr "La risposta corretta è"
 
-#: market/templates/market/Decide.html:10
+#: templates/market/Decide.html:10
 msgid "Please choose quality and price"
 msgstr "Scegli la tua qualità e il tuo prezzo"
 
-#: market/templates/market/Decide.html:10
+#: templates/market/Decide.html:10
 msgid " - Round"
 msgstr "- Turno"
 
-#: market/templates/market/Decide.html:10
+#: templates/market/Decide.html:10
 msgid "of"
 msgstr "di"
 
-#: market/templates/market/Decide.html:15
+#: templates/market/Decide.html:15
 msgid "Choose a number between 0 and 400 as your quality."
 msgstr "Scegli un numero tra 0 e 400 per la tua qualità."
 
-#: market/templates/market/Decide.html:16
+#: templates/market/Decide.html:16
 msgid "Choose a number between quality (chosen above) and 400 as your price."
 msgstr "Scegli un numero tra la qualità scelta e 400 per il tuo prezzo."
 
-#: market/templates/market/Instructions.html:7
-#, fuzzy
+#: templates/market/Instructions.html:7
 #| msgid ""
 #| "<p> You are about to participate in a market game, together with another "
 #| "participant who has been randomly associated with you. You represent two "
 #| "firms competing against each other. You produce a fictional good and you "
 #| "are responsible for choosing its <strong>selling price</strong> and its "
-#| "<strong>social quality</strong>, that is the type of external effect due "
-#| "to its production. For example, you may think of choosing production "
-#| "inputs with a better environmental or social impact  (e.g. materials that "
-#| "involve less pollution, no child labour, etc.). More social quality "
+#| "<strong>social quality</strong>, that is the external effect of its "
+#| "production. For example, you may think of choosing production inputs with "
+#| "a better environmental or social impact  (e.g. materials that involve "
+#| "less pollution, no child labour, etc.). In this game more social quality "
 #| "implies greater production costs.</p> <p> Each firm's <strong>market "
-#| "share</strong> is automatically determined by the computer, using a "
-#| "mathematical algorithm which mimics the realistic preferences of "
-#| "consumers having a given degree of social consciousness. A firm's market "
-#| "share is higher, the higher the produced good's social quality and the "
-#| "lower its price. At the same time, it is increasing in the competitor's "
-#| "selling price and decreasing in its social quality. The following table "
-#| "summarizes these relations. </p>"
+#| "share</strong> is determined by the computer, using a mathematical "
+#| "algorithm which mimics the preferences of consumers with a particular "
+#| "degree of social consciousness. A firm's market share is higher, the "
+#| "higher the produced good's social quality and the lower its price. At the "
+#| "same time, it is increasing in the competitor's selling price and "
+#| "decreasing in its social quality. The following table summarizes these "
+#| "relations. </p>"
 msgid ""
 "<p> You are about to participate in a market game, together with another "
 "participant who has been randomly associated with you. You represent two "
@@ -81,10 +80,10 @@ msgid ""
 "greater production costs.</p> <p> Each firm's <strong>market share</strong> "
 "is determined by the computer, using a mathematical algorithm which mimics "
 "the preferences of consumers with a particular degree of social "
-"consciousness. A firm's market share is higher, the higher the produced "
-"good's social quality and the lower its price. At the same time, it is "
-"increasing in the competitor's selling price and decreasing in its social "
-"quality. The following table summarizes these relations. </p>"
+"consciousness. The higher a good's social quality and the lower its price "
+"the higher is the firm's market share. At the same time, the market share "
+"increases with the competitor's selling price and decreases with in its "
+"social quality. The following table summarizes these relations. </p>"
 msgstr ""
 "<p> Stai per partecipare ad un gioco di mercato assieme ad un altro "
 "partecipante abbinato a te casualmente.    Rappresentate due imprese che "
@@ -104,47 +103,56 @@ msgstr ""
 "qualità sociale del suo bene.    La seguente tabella sintetizza queste "
 "relazioni.</p>"
 
-#: market/templates/market/Instructions.html:24
-#: market/templates/market/Short_Instructions.html:18
+#: templates/market/Instructions.html:25
+#: templates/market/Short_Instructions.html:18
 msgid "Your quality"
 msgstr "Tua qualità"
 
-#: market/templates/market/Instructions.html:25
-#: market/templates/market/Short_Instructions.html:19
+#: templates/market/Instructions.html:26
+#: templates/market/Short_Instructions.html:19
 msgid "Your price"
 msgstr "Tuo prezzo"
 
-#: market/templates/market/Instructions.html:26
-#: market/templates/market/Short_Instructions.html:20
+#: templates/market/Instructions.html:27
+#: templates/market/Short_Instructions.html:20
 msgid "Competitor's quality"
 msgstr "Sua qualità"
 
-#: market/templates/market/Instructions.html:27
-#: market/templates/market/Short_Instructions.html:21
+#: templates/market/Instructions.html:28
+#: templates/market/Short_Instructions.html:21
 msgid "Competitor's price"
 msgstr "Suo prezzo"
 
-#: market/templates/market/Instructions.html:30
-#: market/templates/market/Short_Instructions.html:24 market/views.py:291
+#: templates/market/Instructions.html:31
+#: templates/market/Short_Instructions.html:24 views.py:291
 msgid "Your market share"
 msgstr "La tua quota di mercato"
 
-#: market/templates/market/Instructions.html:37
-#: market/templates/market/Short_Instructions.html:31
+#: templates/market/Instructions.html:38
+#: templates/market/Short_Instructions.html:31
 msgid "Competitor's market share"
 msgstr "Sua quota di mercato"
 
-#: market/templates/market/Instructions.html:47
+#: templates/market/Instructions.html:48
 #, python-format
+#| msgid ""
+#| "<p> The quality can be any integer number between 0 and 400: higher "
+#| "numbers mean higher quality (and hence higher production costs). The "
+#| "price can be any integer number between the chosen quality and 400. The "
+#| "market share will be a percentage between 0%% and 100%%. The game will "
+#| "last for 10 consecutive rounds in which you will be facing the same "
+#| "competitor. The algorithm that determines the market shares also remains "
+#| "the same throughout the whole game. At each round the firm's profit "
+#| "earned by yourself and your competitor will be equal to:</p>"
 msgid ""
 "<p> The quality can be any integer number between 0 and 400: higher numbers "
 "mean higher quality (and hence higher production costs). The price can be "
 "any integer number between the chosen quality and 400. The market share will "
 "be a percentage between 0%% and 100%%. The game will last for 10 consecutive "
 "rounds in which you will be facing the same competitor. The algorithm that "
-"determines the market shares also remains the same throughout the whole "
-"game. At each round the firm's profit earned by yourself and your competitor "
-"will be equal to:</p>"
+"determines the relative market shares remains the same throughout the whole "
+"game. At each round each firm's profit, earned by yourself and your "
+"competitor, will be equal to:</p>"
 msgstr ""
 "<p> La qualità può essere un qualsiasi numero intero fra 0 e 400: più alto "
 "il numero scelto, più alta sarà la qualità    (e quindi anche i costi di "
@@ -156,11 +164,11 @@ msgstr ""
 "turno il profitto di impresa ottenuto sia da te che dal rivale sarà pari al "
 "seguente punteggio:</p>"
 
-#: market/templates/market/Instructions.html:61
+#: templates/market/Instructions.html:62
 msgid "Profit = (Price - Quality) x Market share"
 msgstr "Profitto = (Prezzo - Qualità) x Quota di mercato"
 
-#: market/templates/market/Instructions.html:64
+#: templates/market/Instructions.html:65
 msgid ""
 "<p> The social contribution associated to your production at each round of "
 "the game will be equal to:</p> <p>"
@@ -168,24 +176,34 @@ msgstr ""
 "<p> Il beneficio sociale associato alla tua produzione in ogni turno del "
 "gioco sarà pari al seguente punteggio:</p> <p>"
 
-#: market/templates/market/Instructions.html:68
-#, fuzzy
-#| msgid "Social contribution = 1,5 x Quality x Market share"
+#: templates/market/Instructions.html:69
 msgid "Social contribution = 1.5 x Quality x Market share"
 msgstr "Beneficio sociale = 1,5 x Qualità x Quota di mercato"
 
-#: market/templates/market/Instructions.html:71
+#: templates/market/Instructions.html:72
+#| msgid ""
+#| "<p> Notice that a unit increase in the good's quality generates an "
+#| "increase in social contribution which is proportionally higher than the "
+#| "cost increase (this is due to the multiplicative factor 1.5 in the "
+#| "formula). </p> <p> Between each round and the next both players will be "
+#| "notified qualities and prices and the resulting market shares. Your "
+#| "profit and social contribution will also be shown. At the end of the game "
+#| "one specific round will be randomly selected and the points you earned in "
+#| "that period, both in terms of profit and social contribution, will be "
+#| "transformed in cash. The money corresponding to the social contribution "
+#| "in the paying period will be transferred to the charity of your choice. </"
+#| "p>"
 msgid ""
 "<p> Notice that a unit increase in the good's quality generates an increase "
 "in social contribution which is proportionally higher than the cost increase "
-"(this is due to the multiplicative factor 1.5 in the formula). </p> <p> "
-"Between each round and the next both players will be notified qualities and "
-"prices and the resulting market shares. Your profit and social contribution "
-"will also be shown. At the end of the game one specific round will be "
+"(this is due to the coefficient equal to 1.5 in the formula). </p> <p> "
+"Between each round players will be notified of both player's qualities and "
+"prices and their resulting market shares. Your profit and social "
+"contribution will also be shown. At the end of the game one round will be "
 "randomly selected and the points you earned in that period, both in terms of "
-"profit and social contribution, will be transformed in cash. The money "
-"corresponding to the social contribution in the paying period will be "
-"transferred to the charity of your choice. </p>"
+"profit and social contribution, will be transformed into cash. The money "
+"corresponding to the social contribution for that period will be transferred "
+"to the charity of your choice. </p>"
 msgstr ""
 "<p> Puoi notare che un incremento unitario della qualità del bene genera un "
 "aumento dei benefici sociali    proporzionalmente maggiore all’aumento dei "
@@ -199,7 +217,7 @@ msgstr ""
 "sarà presa dal tuo pagamento complessivo e versata alla organizzazione "
 "benefica da te indicata.</p>"
 
-#: market/templates/market/Short_Instructions.html:7
+#: templates/market/Short_Instructions.html:7
 msgid ""
 "<p> Your market share is higher the higher the quality and lower the price "
 "of the good you produce. At the same time, it is increasing in the "
@@ -211,13 +229,12 @@ msgstr ""
 "crescente nel prezzo del rivale e decrescente nella sua qualità. La seguente "
 "tabella sintetizza queste relazioni.</p>"
 
-#: market/templates/market/Short_Instructions.html:42
-#, fuzzy
+#: templates/market/Short_Instructions.html:42
 #| msgid ""
-#| "<p> In each round your profit will be equal to :</p> <p> <strong>\"Profit "
-#| "= (Price - Quality) x Market share</strong> </p> <p> The social "
+#| "<p> In each round your profit will be equal to:</p> <p> <strong>Profit = "
+#| "(Price - Quality) x Market share</strong> </p> <p> The social "
 #| "contribution associated to your production at each round of the game will "
-#| "be equal to:</p> <p><strong>Social contribution = 1,5 x Quality x Market "
+#| "be equal to:</p> <p><strong>Social contribution = 1.5 x Quality x Market "
 #| "share</strong> </p> <p> The points you earned in the paying period, both "
 #| "in terms of profit and social contribution, will be transformed in cash. "
 #| "</p>"
@@ -226,8 +243,8 @@ msgid ""
 "(Price - Quality) x Market share</strong> </p> <p> The social contribution "
 "associated to your production at each round of the game will be equal to:</"
 "p> <p><strong>Social contribution = 1.5 x Quality x Market share</strong> </"
-"p> <p> The points you earned in the paying period, both in terms of profit "
-"and social contribution, will be transformed in cash. </p>"
+"p> <p> The points you earn in the paying period, both in terms of profit and "
+"social contribution, will be transformed in cash. </p>"
 msgstr ""
 "<p> In ogni turno il tuo profitto sarà pari a:</p><p><strong>Profitto = "
 "(Prezzo - Qualità) x Quota di mercato</strong> </p><p>Il beneficio sociale "
@@ -236,11 +253,11 @@ msgstr ""
 "in termini di profitto e di beneficio sociale nel turno sorteggiato saranno "
 "trasformati    in euro.</p>"
 
-#: market/views.py:96
+#: views.py:96
 msgid "Activity n.{}"
 msgstr "Attività  n°{}"
 
-#: market/views.py:124
+#: views.py:124
 msgid ""
 "Consider the following hypothetical scenario. Your chosen quality is "
 "0,                 and your chosen price is 200. Also, as a consequence of "
@@ -254,19 +271,19 @@ msgstr ""
 "contesto, il tuo profitto e il beneficio sociale della tua produzione "
 "sarebbero ..."
 
-#: market/views.py:150 market/views.py:195
+#: views.py:150 views.py:195
 msgid "\"Profit\""
 msgstr "\"Profitto\""
 
-#: market/views.py:151 market/views.py:196
+#: views.py:151 views.py:196
 msgid "\"Social contribution\""
 msgstr "\"Beneficio sociale\""
 
-#: market/views.py:154 market/views.py:199 market/views.py:247
+#: views.py:154 views.py:199 views.py:247
 msgid "<br><strong>Question: </strong>"
 msgstr "<br><strong>Domanda: </strong>"
 
-#: market/views.py:155
+#: views.py:155
 msgid ""
 "<br><br><strong>Solution: </strong>Your Profit would be equal "
 "to                100 points and your Social Contribution would be equal to "
@@ -276,7 +293,7 @@ msgstr ""
 "a                100 punti e il beneficio sociale della tua produzione a 0 "
 "punti."
 
-#: market/views.py:157
+#: views.py:157
 msgid ""
 "<br><br><strong>Explanation: </strong> Profit equals                 Markup "
 "(Price - Quality) times market share.                In this case you have: "
@@ -293,7 +310,7 @@ msgstr ""
 "1,5) e la quota di mercato. In questo caso:                <strong>0 * 1.5 * "
 "50 / 100 = 0 punti</strong>."
 
-#: market/views.py:169
+#: views.py:169
 msgid ""
 "Consider the following hypothetical scenario. Your chosen quality is "
 "200,                 and your chosen price is 400. Also, as a consequence of "
@@ -307,7 +324,7 @@ msgstr ""
 "pari al 30%.                 In questo contesto, il tuo profitto e il "
 "beneficio sociale della tua produzione sarebbero ..."
 
-#: market/views.py:200
+#: views.py:200
 msgid ""
 "<br><br><strong>Solution: </strong>Your Profit would be equal "
 "to                60 points and your Social Contribution would be equal to "
@@ -317,7 +334,7 @@ msgstr ""
 "a                60 punti e il beneficio sociale della tua produzione a 90 "
 "punti."
 
-#: market/views.py:202
+#: views.py:202
 msgid ""
 "<br><br><strong>Explanation: </strong> Profit equals                 Markup "
 "(Price - Quality) times market share.                In this case you have: "
@@ -334,13 +351,20 @@ msgstr ""
 "1,5) e la quota di mercato. In questo caso:                <strong>0 * 1.5 * "
 "50 / 100 = 0 punti</strong>."
 
-#: market/views.py:214
+#: views.py:214
+#| msgid ""
+#| "Consider the following hypothetical situation. In the previous period you "
+#| "chose                a quality of 100 and a price of 300. Your market "
+#| "share was 20%.                Now you choose to lower your price to 200 "
+#| "while leaving the quality to 100.                Your competitor makes "
+#| "the same choices of the previous period.                Which of the "
+#| "following statements is correct?"
 msgid ""
 "Consider the following hypothetical situation. In the previous period you "
 "chose                a quality of 100 and a price of 300. Your market share "
 "was 20%.                Now you choose to lower your price to 200 while "
-"leaving the quality to 100.                Your competitor makes the same "
-"choices of the previous period.                Which of the following "
+"leaving quality at 100.                Your competitor makes the same "
+"choices as the previous period.                Which of the following "
 "statements is correct?"
 msgstr ""
 "Considera la seguente situazione ipotetica. Nel precedente periodo hai "
@@ -349,7 +373,7 @@ msgstr ""
 "mantenendo la qualità uguale a 100.  Il tuo concorrente mantiene inalterate "
 "le scelte del periodo precedente."
 
-#: market/views.py:218
+#: views.py:218
 msgid ""
 "<br><br>                 <strong>(1)</strong> My market share will certainly "
 "decrease.<br>                 <strong>(2)</strong> My market share will "
@@ -363,24 +387,33 @@ msgstr ""
 "La mia quota di mercato può essere aumentata o diminuita a seconda di quali "
 "erano state le scelte del mio concorrente nel periodo precedente."
 
-#: market/views.py:244
+#: views.py:244
 msgid "\"Correct statement\""
 msgstr "\"Affermazione corretta\""
 
-#: market/views.py:248
+#: views.py:248
 msgid "<br><br><strong>Solution: </strong>Answer nr. 2 is correct."
 msgstr "<br><br><strong>Soluzione: </strong>La Risposta nr. 2 è corretta."
 
-#: market/views.py:249
+#: views.py:249
+#| msgid ""
+#| "<br><br><strong>Explanation: </strong> Answer n. 1 is "
+#| "wrong                because your market share depends negatively on your "
+#| "price.                For the same reason Answer n. 1 is correct. "
+#| "Lowering your price                leaving all the other variables "
+#| "unchanged, increases  your market share.                Answer n. 3 is "
+#| "wrong because your competitor makes the same choices,                "
+#| "hence those choices cannot influence the change in the market "
+#| "shares                from previous to current period. "
 msgid ""
 "<br><br><strong>Explanation: </strong> Answer n. 1 is wrong                "
-"because your market share depends negatively on your price.                "
-"For the same reason Answer n. 1 is correct. Lowering your "
-"price                leaving all the other variables unchanged, increases  "
-"your market share.                Answer n. 3 is wrong because your "
-"competitor makes the same choices,                hence those choices cannot "
-"influence the change in the market shares                from previous to "
-"current period. "
+"because your market share decreases when your price increases and vice "
+"versa.                For the same reason Answer n. 1 is correct. Lowering "
+"your price,                leaving all the other variables unchanged, "
+"increases  your market share.                Answer n. 3 is wrong because "
+"your competitor makes the same choices,                hence those choices "
+"cannot influence the change in the market shares                from "
+"previous to current period. "
 msgstr ""
 "<br><br><strong>Spiegazione: </strong> La risposta n. 1 è "
 "errata                 perché la tua quota di mercato dipende in maniera "
@@ -392,37 +425,37 @@ msgstr ""
 "variazione delle quote di                mercato che intercorre fra il "
 "periodo precedente e quello attuale."
 
-#: market/views.py:268
+#: views.py:268
 msgid "Price cannot be lower than quality"
 msgstr "Il prezzo non può essere inferiore alla qualità"
 
-#: market/views.py:284
+#: views.py:284
 msgid "Round number"
 msgstr "Turno numero"
 
-#: market/views.py:285
+#: views.py:285
 msgid "The price you chose"
 msgstr "Il prezzo che hai scelto"
 
-#: market/views.py:286
+#: views.py:286
 msgid "The quality you chose"
 msgstr "La qualità che hai scelto"
 
-#: market/views.py:288
+#: views.py:288
 msgid "The price chosen by the competitor"
 msgstr "Il prezzo scelto dall'altro giocatore"
 
-#: market/views.py:289
+#: views.py:289
 msgid "The quality chosen by the competitor"
 msgstr "La qualità scelta dall'altro giocatore"
 
-#: market/views.py:292
+#: views.py:292
 msgid "Your <strong>payoff</strong> if this is the paying period"
 msgstr ""
 "Il <strong>tuo guadagno</strong> eventualmente risultante se questo fosse il "
 "periodo pagato"
 
-#: market/views.py:293
+#: views.py:293
 msgid ""
 "The <strong>social contribution arising from your choices</strong> if this "
 "is the paying period"
@@ -430,36 +463,36 @@ msgstr ""
 "Il <strong>beneficio sociale generato dalle tue scelte</strong> se questo "
 "fosse il periodo pagato"
 
-#: market/views.py:315
+#: views.py:315
 msgid "Paying period"
 msgstr "Periodo effettivamente pagato"
 
-#: market/views.py:316
+#: views.py:316
 msgid "Price chosen in the paying period"
 msgstr "Periodo effettivamente pagato"
 
-#: market/views.py:317
+#: views.py:317
 msgid "Quality chosen in the paying period"
 msgstr "La qualità che hai scelto nel periodo pagato"
 
-#: market/views.py:318
+#: views.py:318
 msgid "Social contribution due to your choices"
 msgstr "Il beneficio sociale dovuto alle tue scelte"
 
-#: market/views.py:320
+#: views.py:320
 msgid "Your market share in the paying period"
 msgstr "La tua quota di mercato nel periodo pagato"
 
-#: market/views.py:321
+#: views.py:321
 msgid "Your payoff from this activity"
 msgstr "Il tuo guadagno in questa attività"
 
-#: market/views.py:328
+#: views.py:328
 msgid "In this activity you chose a price and a quality in a market game. "
 msgstr ""
 "In questa attività hai scelto un prezzo e una qualità in un gioco di mercato."
 
-#: market/views.py:340
+#: views.py:340
 msgid "This activity is over. Results will be shown later."
 msgstr "Questa attività è conclusa. I risultati verranno mostrati in seguito."
 

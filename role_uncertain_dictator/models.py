@@ -31,13 +31,15 @@ bibliography = (
 )
 
 class Constants(BaseConstants):
+
+
     name_in_url = 'role_uncertain_dictator'
     players_per_group = None
     num_rounds = 1
     bonus = c(0)
     allocated_amount = c(100)
-
-
+    timeout_f = 60
+    timeout_r = 20
 
 class Subsession(BaseSubsession):
     pass

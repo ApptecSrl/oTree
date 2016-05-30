@@ -28,7 +28,9 @@ class Constants(otree.constants.BaseConstants):
     maximum_price = c(400)
     alpha = 1.5
     efficiency = 1.5
-
+    timeout_q=80
+    timeout_f=60
+    timeout_r=20
 
 class Subsession(otree.models.BaseSubsession):
     def before_session_starts(self):

@@ -34,6 +34,7 @@ keywords = ("Public Goods",)
 
 
 class Constants(otree.constants.BaseConstants):
+
     name_in_url = 'public_goods'
     players_per_group = None
     num_rounds = 1
@@ -44,7 +45,9 @@ class Constants(otree.constants.BaseConstants):
     base_points = c(0)
 
     question_correct = c(100)
-
+    timeout_q=80
+    timeout_f=60
+    timeout_r = 20
 
 class Subsession(otree.models.BaseSubsession):
 

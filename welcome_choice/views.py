@@ -29,7 +29,6 @@ class Welcome(Page, RateCalculator):
             'tasso':tasso
         }
 
-
 class GetInputKind(Page):
     template_name = 'welcome_choice/InputKind.html'
     form_model = models.Player

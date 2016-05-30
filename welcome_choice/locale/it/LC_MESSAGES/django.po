@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-11 10:05+0100\n"
-"PO-Revision-Date: 2016-01-27 17:08+0100\n"
+"PO-Revision-Date: 2016-05-29 19:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: dome\n"
 "Language: Italian\n"
@@ -46,7 +46,7 @@ msgid "Welcome"
 msgstr "Benvenuto"
 
 #: welcome_choice/templates/welcome_choice/Welcome.html:21
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "We are happy to welcome you to this experiment. Please read the following "
 #| "instructions carefully. During the experiment it is forbidden to "

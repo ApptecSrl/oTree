@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Otree_risk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-11 10:05+0100\n"
-"PO-Revision-Date: 2016-01-26 10:49+0100\n"
+"PO-Revision-Date: 2016-05-30 10:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: Italian\n"
@@ -31,7 +31,7 @@ msgstr ""
 "dell'investimento sarebbe"
 
 #: risk/templates/risk/Instructions.html:6
-#, fuzzy, python-format
+#, python-format
 #| msgid ""
 #| "You have an endowment of 100 points.  You can choose to invest part of "
 #| "this sum in a risky project. If the project goes well, which can happen "

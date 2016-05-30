@@ -72,7 +72,8 @@ class Question1(Page):
     question = _(u"Suppose in a group, 1 participant contributed 80 points,\
      1 participant contributed 40, and 1 participant contributed nothing.\
      What would be the payoff of the participant who contributed 80 points? ...")
-
+    timeout_seconds = Constants.timeout_q
+    timeout_submission = {'training_profit',100}
     def is_displayed(self):
         return self.subsession.round_number == 1
 
@@ -85,7 +86,7 @@ class Question1(Page):
 
 class Feedback1(Page):
     template_name = 'global/Feedback.html'
-
+    timeout_seconds = Constants.timeout_f
     def is_displayed(self):
         return self.subsession.round_number == 1
 
@@ -107,7 +108,7 @@ class Feedback1(Page):
 
 
 class Question(Page):
-
+    timeout_seconds = Constants.timeout_q
     def is_displayed(self):
         return True
 
@@ -119,6 +120,7 @@ class Feedback(Page):
     def is_displayed(self):
         return True
 
+    timeout_seconds = Constants.timeout_f
 
 class Contribute(Page):
 
@@ -142,7 +144,7 @@ class ResultsWaitPage(WaitPage):
 class Results(Page):
 
     """Players payoff: How much each has earned"""
-
+    timeout_seconds = Constants.timeout_r
     def vars_for_template(self):
 
         payment_result = {

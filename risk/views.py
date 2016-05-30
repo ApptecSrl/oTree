@@ -37,7 +37,8 @@ class Question1(Page):
              Assuming the project went well, how many points\
              would you earn as a whole?<br>\
              If instead the project failed, how many points would you earn?'''))
-
+    timeout_seconds = Constants.timeout_q
+    timeout_submission = {'training_my_profit_positive': 160, 'training_my_profit_negative': 60}
     def is_displayed(self):
         return self.subsession.round_number == 1
 
@@ -50,7 +51,7 @@ class Question1(Page):
 
 class Feedback1(Page):
     template_name = 'global/Feedback.html'
-
+    timeout_seconds = Constants.timeout_f
     def is_displayed(self):
         return self.subsession.round_number == 1
 
@@ -104,7 +105,7 @@ class Results(Page):
 class ResultsFinal(Page):
 
     template_name = 'global/ResultsTable.html'
-
+    timeout_seconds = Constants.timeout_r
 
     def vars_for_template(self):
         outcome = self.player.payoff+self.player.invested-Constants.endowment

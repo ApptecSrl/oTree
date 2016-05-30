@@ -129,6 +129,9 @@ class Question1(Page):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
+    timeout_seconds = Constants.timeout_q
+    timeout_submission = {'training_my_profit_1':100,'training_my_social_contribution_1':0}
+
     def vars_for_template(self):
         return {
             'num_q': 1,
@@ -142,6 +145,7 @@ class Feedback1(Page):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
+    timeout_seconds = Constants.timeout_f
     def vars_for_template(self):
         p = self.player
         return {
@@ -174,6 +178,9 @@ class Question2(Page):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
+    timeout_seconds = Constants.timeout_q
+    timeout_submission = {'training_my_profit_2': 60, 'training_my_social_contribution_2': 90}
+
     def vars_for_template(self):
         return {
             'num_q': 2,
@@ -183,7 +190,7 @@ class Question2(Page):
 
 class Feedback2(Page):
     template_name = 'global/Feedback.html'
-
+    timeout_seconds = Constants.timeout_f
     def is_displayed(self):
         return self.subsession.round_number == 1
 
@@ -223,6 +230,8 @@ class Question3(Page):
     def is_displayed(self):
         return self.subsession.round_number == 1
 
+    timeout_seconds = Constants.timeout_q
+    timeout_submission = {'training_correct_answer_3': 2}
     def vars_for_template(self):
         return {
             'num_q': 3,
@@ -232,7 +241,7 @@ class Question3(Page):
 
 class Feedback3(Page):
     template_name = 'global/Feedback.html'
-
+    timeout_seconds = Constants.timeout_f
     def is_displayed(self):
         return self.subsession.round_number == 1
 
@@ -275,7 +284,7 @@ class ResultsWaitPage(WaitPage):
 
 
 class ResultsTemp(Page):
-
+    timeout_seconds = Constants.timeout_f
     template_name = 'global/ResultsTable.html'
 
     def vars_for_template(self):
@@ -295,7 +304,7 @@ class ResultsTemp(Page):
         }
 
 class ResultsFinal(Page):
-
+    timeout_seconds = Constants.timeout_r
     template_name = 'global/ResultsTable.html'
     def is_displayed(self):
         return self.subsession.round_number == Constants.num_rounds
