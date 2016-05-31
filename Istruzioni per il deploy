@@ -7,7 +7,10 @@
 4) Fare heroku login (con id cionimario2010@gmail.com  e pw casalier1 )
 
 5) Fare il reset database su serene-basin:
-    otree-heroku resetdb serene-basin-8430
+
+    heroku run otree resetdb
+
+ vecchia istruzione  ## otree-heroku resetdb serene-basin-8430
 
 6) Togliere il debug mode:
     heroku config:set OTREE_PRODUCTION=1 --app serene-basin-8430

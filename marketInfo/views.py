@@ -157,7 +157,7 @@ class ResultsWaitPage(WaitPage):
 
 
 class ResultsTemp(Page):
-
+    timeout_seconds = Constants.timeout_f
     template_name = 'global/ResultsTable.html'
 
     def vars_for_template(self):
@@ -177,7 +177,7 @@ class ResultsTemp(Page):
         }
 
 class ResultsFinal(Page):
-
+    timeout_seconds = Constants.timeout_r
     template_name = 'global/ResultsTable.html'
     def is_displayed(self):
         return self.subsession.round_number == Constants.num_rounds
