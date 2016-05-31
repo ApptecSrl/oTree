@@ -36,7 +36,7 @@ class Subsession(otree.models.BaseSubsession):
     def before_session_starts(self):
 
         if self.round_number == 1:
-            paying_round = random.randint(Constants.num_rounds / 2, Constants.num_rounds)
+            paying_round = random.randint(Constants.num_rounds // 3, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
 
 

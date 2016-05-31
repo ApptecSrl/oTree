@@ -108,12 +108,14 @@ class Feedback1(Page):
 
 
 class Question(Page):
-    timeout_seconds = Constants.timeout_q
+
     def is_displayed(self):
         return True
 
     form_model = models.Player
     form_fields = ['question']
+    timeout_seconds = Constants.timeout_q
+    timeout_submission = {'question': 100}
 
 
 class Feedback(Page):

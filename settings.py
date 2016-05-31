@@ -142,12 +142,12 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
-    # {
-    #      'name': 'public_goods',
-    #      'display_name': "Public Goods",
-    #      'num_demo_participants': 3,
-    #      'app_sequence': ['public_goods'],
-    # },
+    {
+         'name': 'public_goods',
+         'display_name': "Public Goods",
+         'num_demo_participants': 3,
+         'app_sequence': ['public_goods'],
+    },
     # {
     #     'name': 'bare_market',
     #     'display_name': "Bare Market game",
@@ -157,12 +157,12 @@ SESSION_CONFIGS = [
     #         'welcome_noCharity','bare_market', 'payment_recap'
     #     ],
     # },
-    # {
-    #     'name': 'risk',
-    #     'display_name': "Risky choice",
-    #     'num_demo_participants': 1,
-    #     'app_sequence': ['welcome_noCharity','risk'],
-    # },
+     {
+        'name': 'risk',
+        'display_name': "Risky choice",
+        'num_demo_participants': 1,
+        'app_sequence': ['risk'],
+    },
     # {
     #     'name': 'risk_final_info',
     #     'display_name': "Risky choice with final recap",
@@ -187,13 +187,13 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'app_sequence': ['welcome_choice'],
     },
-    # {
-    #     'name': 'unc_role_dic',
-    #     'display_name': "Role Uncertain Dictators",
-    #     'num_demo_participants': 2,
-    #     'random_start_order': True,
-    #     'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
-    # },
+    {
+        'name': 'unc_role_dic',
+        'display_name': "Role Uncertain Dictators",
+        'num_demo_participants': 2,
+        'random_start_order': True,
+        'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
+    },
     {
         'name': 'marketInfo',
         'display_name': "Informed Market game",
