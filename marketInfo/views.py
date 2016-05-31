@@ -105,7 +105,7 @@ class Info(Page):
             print 'temp = ', temp
             if (temp=='imprenditori'):
                 if (other_type % 2):
-                    esito = mark_safe(_('(Un imprenditore o imprenditrice tradizionale'))
+                    esito = mark_safe(_('Un imprenditore o imprenditrice tradizionale'))
                 else:
                     esito = mark_safe(_('Un imprenditore o imprenditrice sociale'))
         else:

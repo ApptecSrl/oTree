@@ -67,7 +67,7 @@ msgstr ""
 "Questa attività è identica alla prima attività. L'unica differenza è che "
 "ogni partecipante riceve una informazione riguardante il proprio rivale "
 "(nella prossima schermata).  Il nuovo rivale sarà in ogni caso di nuovo "
-"selezionato casualmente e sarà differente dal primo. Tutto il resto "
+"selezionato casualmente. Tutto il resto "
 "dell'attività rimane invariato. <br>  <br>"
 
 #: templates/marketInfo/Results.html:6
