@@ -192,7 +192,7 @@ SESSION_CONFIGS = [
         'display_name': "Role Uncertain Dictators",
         'num_demo_participants': 2,
         'random_start_order': True,
-        'app_sequence': ['welcome_noCharity','role_uncertain_dictator', 'payment_recap'],
+        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
     },
     {
         'name': 'marketInfo',
