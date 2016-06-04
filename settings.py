@@ -242,6 +242,16 @@ SESSION_CONFIGS = [
             'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'payment_recap'
         ],
     },
+    {
+        'name': 'Imprenditori_lunga',
+        'display_name': "Sessione lunga imprenditori",
+        'num_demo_participants': 2,
+        'real_world_currency_per_point': 0.1,
+        'participation_fee': 35.00,
+        'app_sequence': [
+            'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'marketInfo','payment_recap'
+        ],
+    },
     # {
     #     'name': 'sequenza_corta_conCharity',
     #     'display_name': "Sessione studenti corta con Charity",
