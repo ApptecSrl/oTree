@@ -248,6 +248,8 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.1,
         'participation_fee': 35.00,
+        'treatment': 'imprenditori',
+        'iftherestime': True,
         'app_sequence': [
             'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'marketInfo','payment_recap'
         ],
