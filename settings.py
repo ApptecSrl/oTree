@@ -115,6 +115,24 @@ DEMO_PAGE_INTRO_TEXT = """
 
 #LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
+ROOM_DEFAULTS = {
+    'use_secure_urls': False,
+}
+
+ROOMS = [
+    {
+        'name': 'D15_102',
+        'display_name': 'D15_Firstfloor_lab',
+        'participant_label_file': 'lab1.txt',
+    },
+    {
+        'name': 'econ_lab',
+        'display_name': 'Experimental Economics Lab',
+        'participant_label_file': 'econ102.txt',
+    },
+]
+
+
 mturk_hit_settings = {
     'keywords': ['easy', 'bonus', 'choice', 'study'],
     'title': 'Title for your experiment',
