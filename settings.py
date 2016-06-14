@@ -132,6 +132,18 @@ mturk_hit_settings = {
     ]
 }
 
+ROOM_DEFAULTS = {
+    'use_secure_urls': True,
+}
+
+ROOMS = [
+    {
+        'name': 'D15_102',
+        'display_name': 'BeeLab primo piano',
+        'participant_label_file': 'lab1.txt',
+    },
+]
+
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.05,
     'participation_fee': 3.00,
