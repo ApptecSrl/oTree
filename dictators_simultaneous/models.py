@@ -71,14 +71,14 @@ class Group(otree.models.BaseGroup):
         players=self.get_players()
         num_players=len(players)
         for i in range(1,num_players+1):
-            print 'numero giocatori ', num_players
+            print ('numero giocatori ', num_players)
             p=self.get_player_by_id(i)
             prec= i-1
             if prec==0:
                 prec = num_players
             p.offered = Constants.allocated_amount - self.get_player_by_id(prec).kept
             p.payoff = Constants.bonus + p.kept +p.offered
-            print 'payoff ',i, p.payoff
+            print ('payoff ',i, p.payoff)
 
 
 class Player(otree.models.BasePlayer):

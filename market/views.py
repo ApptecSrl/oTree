@@ -31,10 +31,10 @@ class MatchingWaitPage(WaitPage):
             subsession.group_like_round(1)
 
     def matching(self):
-        print 'Ora matching in corso'
+        #print 'Ora matching in corso'
         for p in self.subsession.get_players():
             p.tipo = p.participant.vars['kind']
-            print p.tipo
+         #   print p.tipo
         players = self.subsession.get_players()
         if len(players) > 5:
             newGr_mat = []
@@ -45,14 +45,14 @@ class MatchingWaitPage(WaitPage):
             if minEO > 2:
                 threshold = self.computeThreshold(evenPlayers, oddPlayers, minEO)
                 self.makeGroups(evenPlayers, oddPlayers, newGr_mat, threshold)
-            print 'Nuovi gruppi: ', newGr_mat
+           # print 'Nuovi gruppi: ', newGr_mat
             self.subsession.set_groups(newGr_mat)
             # Check now the result
             # self.check_inside_groups()
 
     def computeThreshold(self, evenPlayers, oddPlayers, minEO):
         threshold = minEO // 3 + minEO % 3
-        print 'valore soglia = ',threshold
+       # print 'valore soglia = ',threshold
         return threshold
 
     def makeGroups(self, evenPlayers, oddPlayers, newGr_mat, threshold):
@@ -73,17 +73,17 @@ class MatchingWaitPage(WaitPage):
                 oddPLayers.append(players[i])
         random.shuffle(evenPlayers)
         random.shuffle(oddPLayers)
-        print 'pari', evenPlayers
-        print 'dispari', oddPLayers
+       # print 'pari', evenPlayers
+       # print 'dispari', oddPLayers
 
     def check_inside_groups(self):
             produced_groups = self.subsession.get_groups()
             for g in produced_groups:
-                print 'Gruppo numero ', g
+                #print 'Gruppo numero ', g
                 pl1 = g.get_player_by_id(1)
                 pl2 = g.get_player_by_id(2)
-                print 'codice del primo giocatore', pl1.tipo
-                print 'codice del secondo giocatore', pl2.tipo
+                #print 'codice del primo giocatore', pl1.tipo
+                #print 'codice del secondo giocatore', pl2.tipo
 
 class Introduction(Page):
 
@@ -273,8 +273,9 @@ class Decide(Page):
         turn = self.subsession.round_number
 
     def error_message(self, values):
+        #print ('check price vs quality')
         if values["price"] < values["quality"]:
-            return _(u'Price cannot be lower than quality')
+              return _(u'Price cannot be lower than quality')
 
 
 class ResultsWaitPage(WaitPage):
@@ -350,13 +351,13 @@ class ResultsFinal(Page):
         }
 
 page_sequence = [MatchingWaitPage,
-                 Introduction,
-                 Question1,
-                 Feedback1,
-                 Question2,
-                 Feedback2,
-                 Question3,
-                 Feedback3,
+                 #Introduction,
+                 #Question1,
+                 #Feedback1,
+                 #Question2,
+                 #Feedback2,
+                 #Question3,
+                 #Feedback3,
                  Decide,
                  ResultsWaitPage,
                  ResultsTemp,

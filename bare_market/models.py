@@ -47,7 +47,7 @@ class Group(BaseGroup):
 
     def set_payoffs(self):
         players = self.get_players()
-        print 'players =', players
+        print ('players =', players)
         p1 = players[0].price
         p2 = players[1].price
         q1 = players[0].quality

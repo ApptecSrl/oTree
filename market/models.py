@@ -47,8 +47,9 @@ class Group(otree.models.BaseGroup):
     tmp_payoff = models.FloatField
 
     def set_payoffs(self):
+
         players = self.get_players()
-        print 'players =', players
+        #print 'players =', players
         p1 = players[0].price
         p2 = players[1].price
         q1 = players[0].quality
@@ -104,12 +105,12 @@ class Player(otree.models.BasePlayer):
         doc="""Price player chooses to sell product for"""
     )
 
-    maxQ = min(price, Constants.maximum_price)
+
 
     # print 'price = ', price
 
     quality = models.CurrencyField(
-        min=0, max=maxQ,
+        min=0, max=Constants.maximum_price,
         doc="""Price player chooses to produce with quality equal to"""
     )
 
