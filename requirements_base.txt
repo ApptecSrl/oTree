@@ -66,7 +66,6 @@ raven==5.25.0
 redis==2.10.5
 requests==2.11.1
 selenium==2.53.2
-sessioninstaller==0.0.0
 six==1.10.0
 Twisted==16.2.0
 txaio==2.5.1
