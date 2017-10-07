@@ -2,7 +2,6 @@ alabaster==0.7.7
 amqp==1.4.9
 anyjson==0.3.3
 appdirs==1.4.3
-apturl==0.5.2
 asgi-redis==0.14.1
 asgiref==0.14.0
 autobahn==0.16.0
