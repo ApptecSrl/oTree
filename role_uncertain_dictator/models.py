@@ -54,7 +54,7 @@ class Group(BaseGroup):
         players=self.get_players()
         num_players=len(players)
         rndRoles=random.randint(0,1)
-        print 'rndRoles = ',rndRoles
+        print('rndRoles = ',rndRoles)
         for i in range(1,num_players+1):
             p=self.get_player_by_id(i)
             prec= i-1
@@ -71,8 +71,8 @@ class Group(BaseGroup):
                 p.yourRole = False
 
             p.payoff = Constants.bonus + p.kept*isDictator +p.offered*(1-isDictator)
-            print 'is Dictator?', i, isDictator, p.stringRole
-            print 'payoff ',i, p.payoff
+            print('is Dictator?', i, isDictator, p.stringRole)
+            print('payoff ',i, p.payoff)
 
 
 class Player(BasePlayer):
