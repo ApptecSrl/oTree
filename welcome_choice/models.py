@@ -3,7 +3,7 @@
 from __future__ import division
 
 import random
-
+import time
 import otree.models
 from otree.db import models
 from otree import widgets
@@ -28,7 +28,9 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    pass
+    def before_session_starts(self):
+        self.session.vars['started_at'] = time.time()
+
 
 
 class Group(BaseGroup):
