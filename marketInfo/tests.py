@@ -16,7 +16,7 @@ class PlayerBot(Bot):
         # compete price
         self.submit(views.Introduction)
         pr=c(random.randint(50,400))
-        print pr
+        #print pr
         self.submit(views.Decide,{'price': pr,'quality': c(50)})
 
         self.submit(views.ResultsWaitPage)

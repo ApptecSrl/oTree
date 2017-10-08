@@ -30,7 +30,7 @@ class PlayerBot(Bot):
 
         for i in range(1,self.subsession.round_number):
             pr=c(random.randint(50,400))
-            print 'stampo prezzo',pr, 'turno', i
+            #print 'stampo prezzo',pr, 'turno', i
             self.submit(views.Decide,{'price': pr,'quality': c(50)})
         self.submit(views.ResultsWaitPage)
         self.submit(views.ResultsTemp)

@@ -15,11 +15,10 @@ def vars_for_all_templates(self):
 
 class WaitOthers(WaitPage):
     def after_all_players_arrive(self):
-        print 'via'
+        #print ('via')
+
 class Introduction(Page):
-
     template_name = 'global/Introduction.html'
-
     def vars_for_template(self):
         ctx = super(Introduction, self).vars_for_template()
         name = 'risk'
@@ -54,7 +53,6 @@ class Feedback1(Page):
     timeout_seconds = Constants.timeout_f
     def is_displayed(self):
         return self.subsession.round_number == 1
-
     def vars_for_template(self):
         p = self.player
         return {
@@ -84,7 +82,7 @@ class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         for p in self.group.get_players():
             p.set_payoffs()
-            print p.payoff
+            ##print p.payoff
 
 
 class Results(Page):

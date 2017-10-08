@@ -50,7 +50,7 @@ class Group(otree.models.BaseGroup):
 
     def set_payoffs(self):
         players = self.get_players()
-        #print 'players =', players
+        ##print 'players =', players
         p1 = players[0].price
         p2 = players[1].price
         q1 = players[0].quality
@@ -63,8 +63,8 @@ class Group(otree.models.BaseGroup):
         players[1].impact = imp2
         tmp_payoff1 = float(p1 - q1) * float(share1)
         tmp_payoff2 = float(p2 - q2) * float(share2)
-        #print 'payoff 1: ', tmp_payoff1, 'type', type(tmp_payoff1)
-        #print 'payoff 2: ', tmp_payoff2, 'type', type(tmp_payoff1)
+        ##print 'payoff 1: ', tmp_payoff1, 'type', type(tmp_payoff1)
+        ##print 'payoff 2: ', tmp_payoff2, 'type', type(tmp_payoff1)
 
         players[0].share = share1
         players[1].share = share2
@@ -107,7 +107,7 @@ class Player(otree.models.BasePlayer):
     )
 
 
-    # print 'price = ', price
+    # #print 'price = ', price
 
     quality = models.CurrencyField(
         min=0, max=Constants.maximum_price,

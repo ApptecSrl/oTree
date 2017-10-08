@@ -47,7 +47,7 @@ class Group(BaseGroup):
 
     def set_payoffs(self):
         players = self.get_players()
-        print ('players =', players)
+        #print ('players =', players)
         p1 = players[0].price
         p2 = players[1].price
         q1 = players[0].quality
@@ -102,7 +102,7 @@ class Player(BasePlayer):
 
     maxQ = min(price, Constants.maximum_price)
 
-    # print 'price = ', price
+    # #print 'price = ', price
 
     quality = models.CurrencyField(
         min=0, max=maxQ,

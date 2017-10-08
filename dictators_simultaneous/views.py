@@ -65,13 +65,13 @@ class MatchingWaitPage(WaitPage):
         return self.subsession.round_number == 1
 
     def after_all_players_arrive(self):
-        print 'Ora matching per dittatore simultaneo'
+        ##print 'Ora matching per dittatore simultaneo'
         self.makeTheGroup()
 
     def makeTheGroup(self):
         for p in self.subsession.get_players():
             p.tipo=p.participant.vars['kind']
-            print p.tipo
+            ##print p.tipo
         players = self.subsession.get_players()
         num_players = len(players)
         list_of_players = []
@@ -82,7 +82,7 @@ class MatchingWaitPage(WaitPage):
         for i in range(0, min12):
             list_of_players.append(firstFloorPlayers[i])
             list_of_players.append(secondFloorPlayers[i])
-        print 'elenco (alterato) dei giocatori', list_of_players
+        #print 'elenco (alterato) dei giocatori', list_of_players
         
         for group in self.subsession.get_groups():
             players = group.get_players()
@@ -99,12 +99,12 @@ class MatchingWaitPage(WaitPage):
                 secondFloorPlayers.append(players[i])
         random.shuffle(firstFloorPlayers)
         random.shuffle(secondFloorPlayers)
-        print 'primo piano', firstFloorPlayers
-        print 'secondo piano', secondFloorPlayers
+        #print 'primo piano', firstFloorPlayers
+        #print 'secondo piano', secondFloorPlayers
 
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
-        print 'ora valuto il payoff'
+        #print 'ora valuto il payoff'
         self.group.set_payoffs()
 
 class Results(Page):

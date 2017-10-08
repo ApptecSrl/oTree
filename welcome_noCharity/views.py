@@ -11,7 +11,7 @@ from django.utils.translation import ugettext as _
 class RateCalculator:
     def get_tasso(self):
         prova = self.player.participant.session.config['real_world_currency_per_point']
-        print prova
+        #print prova
         tasso = int(1 / prova)
         return tasso
 
@@ -21,7 +21,7 @@ class Welcome(Page, RateCalculator):
     def vars_for_template(self):
         listApp=self.player.participant.session.config['app_sequence']
         n=len(listApp)
-        print 'n=',n
+        #print 'n=',n
         tasso = self.get_tasso()
         return {
             'n': n-2,
@@ -39,11 +39,11 @@ class GetInputKind(Page):
             return _(u'Inserisci il valore corretto in entrambi i campi')
         if self.player.participant.label:
             if values["kind"] != int(self.player.participant.label):
-                print _(u'Controlla di aver preso posto al computer con il numero corretto: ')
-                print 'label = ', int(self.player.participant.label)
-                print 'kind = ', values["kind"]
-                print 'type of label', type(self.player.participant.label)
-                print 'type of kind', type(values["kind"])
+                #print _(u'Controlla di aver preso posto al computer con il numero corretto: ')
+                #print 'label = ', int(self.player.participant.label)
+                #print 'kind = ', values["kind"]
+                #print 'type of label', type(self.player.participant.label)
+                #print 'type of kind', type(values["kind"])
                 return _(u'Controlla di essere alla postazione corretta')
         else:
             self.player.participant.label = 'codice={}'.format(values['kind'])

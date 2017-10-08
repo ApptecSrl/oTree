@@ -32,7 +32,7 @@ class MatchingWaitPage(WaitPage):
         return self.subsession.round_number == 1
 
     def after_all_players_arrive(self):
-        print ('Ora matching per dittatore role uncertain')
+        #print ('Ora matching per dittatore role uncertain')
        # self.makeTheGroup()
 
     def makeTheGroup(self):
@@ -52,7 +52,7 @@ class Offer(Page):
 class ResultsWaitPage(WaitPage):
 
     def after_all_players_arrive(self):
-            #print 'ora valuto il payoff'
+            ##print 'ora valuto il payoff'
             self.group.set_payoffs()
 
 class Results(Page):

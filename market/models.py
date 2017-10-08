@@ -63,7 +63,7 @@ class Group(otree.models.BaseGroup):
         tmp_payoff1 = float(p1 - q1) * float(share1)
         tmp_payoff2 = float(p2 - q2) * float(share2)
         #print 'payoff 1: ', tmp_payoff1, 'type', type(tmp_payoff1)
-        #print 'payoff 2: ', tmp_payoff2, 'type', type(tmp_payoff1)
+        ##print 'payoff 2: ', tmp_payoff2, 'type', type(tmp_payoff1)
 
         players[0].share = share1
         players[1].share = share2
@@ -107,7 +107,7 @@ class Player(otree.models.BasePlayer):
 
 
 
-    # print 'price = ', price
+    # #print 'price = ', price
 
     quality = models.CurrencyField(
         min=0, max=Constants.maximum_price,

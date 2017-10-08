@@ -17,7 +17,7 @@ class MatchingWaitPage(WaitPage):
 
     def after_all_players_arrive(self):
 
-        print 'Ora matching public goods in corso'
+        ##print 'Ora matching public goods in corso'
 
         players = self.subsession.get_players()
         num_players = len(players)
@@ -39,19 +39,19 @@ class MatchingWaitPage(WaitPage):
                 list_of_lists.append(players[num_players-6:num_players-3])
                 list_of_lists.append(players[num_players-3:num_players])
 
-            print list_of_lists
+            #print (list_of_lists)
 
         self.subsession.set_groups(list_of_lists)
 
-        print self.subsession.get_groups()
+        #print (self.subsession.get_groups())
         #Check now the result
        # self.check_inside_groups()
 
     def check_inside_groups(self):
             produced_groups = self.subsession.get_groups()
             for g in produced_groups:
-                print 'Gruppo numero ', g
-                print 'lunghezza gruppo', len(g)
+                #print ('Gruppo numero ', g)
+                ##print 'lunghezza gruppo', len(g)
 
 class Introduction(Page):
 
