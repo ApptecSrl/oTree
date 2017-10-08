@@ -154,12 +154,12 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
-    {
-         'name': 'public_goods',
-         'display_name': "Public Goods",
-         'num_demo_participants': 3,
-         'app_sequence': ['public_goods'],
-    },
+    # {
+    #      'name': 'public_goods',
+    #      'display_name': "Public Goods",
+    #      'num_demo_participants': 3,
+    #      'app_sequence': ['public_goods'],
+    # },
     # {
     #     'name': 'bare_market',
     #     'display_name': "Bare Market game",
@@ -169,12 +169,12 @@ SESSION_CONFIGS = [
     #         'welcome_noCharity','bare_market', 'payment_recap'
     #     ],
     # },
-     {
-        'name': 'risk',
-        'display_name': "Risky choice",
-        'num_demo_participants': 1,
-        'app_sequence': ['risk'],
-    },
+    #  {
+    #     'name': 'risk',
+    #     'display_name': "Risky choice",
+    #     'num_demo_participants': 1,
+    #     'app_sequence': ['risk'],
+    # },
     # {
     #     'name': 'risk_final_info',
     #     'display_name': "Risky choice with final recap",
@@ -199,13 +199,13 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'app_sequence': ['welcome_choice'],
     },
-    {
-        'name': 'unc_role_dic',
-        'display_name': "Role Uncertain Dictators",
-        'num_demo_participants': 2,
-        'random_start_order': True,
-        'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
-    },
+    # {
+    #     'name': 'unc_role_dic',
+    #     'display_name': "Role Uncertain Dictators",
+    #     'num_demo_participants': 2,
+    #     'random_start_order': True,
+    #     'app_sequence': ['welcome_choice','role_uncertain_dictator', 'payment_recap'],
+    # },
     # {
     #     'name': 'marketInfo',
     #     'display_name': "Informed Market game",
@@ -244,28 +244,28 @@ SESSION_CONFIGS = [
     #     ],
     # },
 
-    {
-        'name': 'Imprenditori',
-        'display_name': "Sessione imprenditori completa con Charity",
-        'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.1,
-        'participation_fee': 35.00,
-        'app_sequence': [
-            'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'payment_recap'
-        ],
-    },
-    {
-        'name': 'Imprenditori_lunga',
-        'display_name': "Sessione lunga imprenditori",
-        'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.1,
-        'participation_fee': 35.00,
-        'treatment': 'imprenditori',
-        'iftherestime': True,
-        'app_sequence': [
-            'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'marketInfo','payment_recap'
-        ],
-    },
+    # {
+    #     'name': 'Imprenditori',
+    #     'display_name': "Sessione imprenditori completa con Charity",
+    #     'num_demo_participants': 2,
+    #     'real_world_currency_per_point': 0.1,
+    #     'participation_fee': 35.00,
+    #     'app_sequence': [
+    #         'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'payment_recap'
+    #     ],
+    # },
+    # {
+    #     'name': 'Imprenditori_lunga',
+    #     'display_name': "Sessione lunga imprenditori",
+    #     'num_demo_participants': 2,
+    #     'real_world_currency_per_point': 0.1,
+    #     'participation_fee': 35.00,
+    #     'treatment': 'imprenditori',
+    #     'iftherestime': True,
+    #     'app_sequence': [
+    #         'welcome_choice', 'market', 'risk', 'public_goods', 'role_uncertain_dictator', 'marketInfo','payment_recap'
+    #     ],
+    # },
     # {
     #     'name': 'sequenza_corta_conCharity',
     #     'display_name': "Sessione studenti corta con Charity",
