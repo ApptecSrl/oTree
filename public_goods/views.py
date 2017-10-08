@@ -49,14 +49,11 @@ class MatchingWaitPage(WaitPage):
 
     def check_inside_groups(self):
             produced_groups = self.subsession.get_groups()
-            for g in produced_groups:
+            #for g in produced_groups:
                 #print ('Gruppo numero ', g)
                 ##print 'lunghezza gruppo', len(g)
 
 class Introduction(Page):
-
-    """Description of the game: How to play and returns expected"""
-
     def vars_for_template(self):
         ctx = super(Introduction, self).vars_for_template()
         name = 'public_goods'
