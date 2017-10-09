@@ -143,7 +143,7 @@ ROOMS = [
         'participant_label_file': 'lab1.txt',
     },
     {
-        'name': 'Phd Siena',
+        'name': 'Phd_Siena',
         'display_name': 'BeeLab primo piano',
         'participant_label_file': 'lab1.txt',
     },
