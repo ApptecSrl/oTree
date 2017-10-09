@@ -76,8 +76,8 @@ USE_POINTS = True
 
 # e.g. en-gb, de-de, it-it, fr-fr.
 # see: https://docs.djangoproject.com/en/1.6/topics/i18n/
-# LANGUAGE_CODE = 'en-gb'
-LANGUAGE_CODE = 'it-it'
+LANGUAGE_CODE = 'en-gb'
+#LANGUAGE_CODE = 'it-it'
 
 INSTALLED_APPS = [
     'otree',
@@ -139,6 +139,11 @@ ROOM_DEFAULTS = {
 ROOMS = [
     {
         'name': 'D15_102',
+        'display_name': 'BeeLab primo piano',
+        'participant_label_file': 'lab1.txt',
+    },
+    {
+        'name': 'Phd Siena',
         'display_name': 'BeeLab primo piano',
         'participant_label_file': 'lab1.txt',
     },
