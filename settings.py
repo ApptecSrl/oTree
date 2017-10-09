@@ -144,7 +144,7 @@ ROOMS = [
     },
     {
         'name': 'Phd_Siena',
-        'display_name': 'BeeLab primo piano',
+        'display_name': 'Siena San Francesco',
         'participant_label_file': 'lab1.txt',
     },
 ]
